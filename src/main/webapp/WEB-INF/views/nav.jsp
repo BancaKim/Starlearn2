@@ -64,7 +64,7 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href=#>생활연수 신청</a></li>
+									<li><a href="facility/apply_main">생활연수 신청</a></li>
 									<li><a href=#>생활연수 신청내역</a></li>
 									<li><a href=#>공지사항</a></li>
 								</ul>
