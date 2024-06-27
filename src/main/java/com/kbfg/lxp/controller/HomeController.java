@@ -1,4 +1,4 @@
-package com.kbfg.lxp;
+package src.main.java.com.kbfg.lxp.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
