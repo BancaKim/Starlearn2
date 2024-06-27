@@ -62,7 +62,55 @@
                     <!-- 테이블 내용은 비어있음 -->
                 </tbody>
             </table>
-            <button class="apply-button">연수원 간편신청</button>
+            <button type="button" class="apply-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            	연수원 간편신청
+            </button>
+           
+           <!-- Modal -->
+				<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-xl">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      </div>
+				      <div class="modal-body">
+				      <!-- grid -->
+						  <div class="container-fluid">
+						    <div class="row">
+						      <div class="col-md-4">.col-md-4</div>
+						      <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+						    </div>
+						    <div class="row">
+						      <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+						      <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
+						    </div>
+						    <div class="row">
+						      <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
+						    </div>
+						    <div class="row">
+						      <div class="col-sm-9">
+						        Level 1: .col-sm-9
+						        <div class="row">
+						          <div class="col-8 col-sm-6">
+						            Level 2: .col-8 .col-sm-6
+						          </div>
+						          <div class="col-4 col-sm-6">
+						            Level 2: .col-4 .col-sm-6
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Understood</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+            
         </section>
 
         <section class="quick-links">
