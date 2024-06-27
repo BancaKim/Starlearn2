@@ -1,13 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.ParseException"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="shortcut icon" href="<c:url value='./resources/images/favicon.ico'/>" type="image/x-icon"/>
-<link rel="icon" href="<c:url value='./resources/images/favicon.ico'/>" type="image/x-icon"/>
+
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<c:import url="../nav.jsp" var="NavBar"/>
-	<c:out value="${NavBar}" escapeXml="false"/>
+	<c:import url="../nav.jsp"></c:import>
     <meta charset="UTF-8">
     <style>
         * {
@@ -32,7 +37,7 @@
         #kb-btn:hover {
             background-color: #e6a700; /* 호버 시 색상 변화 */
         }
-        button {ㄴ
+        button {
             background-color: #ffbc00;
             border: 1px solid transparent;
             cursor: pointer;
@@ -44,16 +49,53 @@
         .flex-container select {
             width: 100%;
         }
-           .custom-control-input:checked ~ .custom-control-label::before {
-            background-color: #ffbc00; /* 선택된 라디오 버튼의 배경색을 노란색으로 설정 */
-            border-color: #ffbc00; /* 선택된 라디오 버튼의 테두리 색상을 노란색으로 설정 */
+         .date-input {
+            width: 200px; /* 원하는 가로 크기로 설정 */
+            display: inline-block;
         }
+
+		.academy_proof-file-button{
+		  padding: 6px 25px;
+		  background-color:#f7f4f0;
+		  border-radius: 4px;
+		  cursor: pointer;
+		}
+		 .academy_proof-file-button {
+		 	width : 184px;
+		 	height : 60px;
+		 	height: 60px;
+            display: inline-block;
+            font-color: balck;
+            background-color: #f7f4f0; /* 버튼 기본 색상 */
+            border: none;
+            border-radius: 8px; /* 둥근 모서리 */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none; /* 링크 밑줄 제거 */
+            transition: background-color 0.3s ease; /* 배경색 전환 효과 */
+        }
+
+        .academy_proof-file-button:hover {
+            background-color: #e8e8e8; /* 호버 시 색상 */
+        }
+
+        .academy_proof-file-button:focus {
+            outline: none; /* 포커스 시 아웃라인 제거 */
+            box-shadow: 0 0 5px #007bff; /* 포커스 시 그림자 효과 */
+        }
+        .main{
+        	text-align: center;
+        	background-color : white;
+        }
+
     </style>
 </head>
 <body>
+<div class ="main">
 		<br>
   		<br>
-    <center>
+  		<br>
+  		<br>
     	<br>
   		<br>
   		<br>
@@ -70,7 +112,7 @@
         <img src="./resources/images/지원내용.png"><br>
         <img src="./resources/images/지원대상.png"><br>
         <img src="./resources/images/필요서류.png">
-    </center>
+</div>
     
     <!-- 모달 창 -->
     <!-- Modal -->
@@ -78,7 +120,7 @@
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <center><h1 class="modal-title fs-5" id="staticBackdropLabel">학원비 신청</h1></center>
+       <h1 class="modal-title fs-5 center-text" id="staticBackdropLabel">학원비 신청</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -89,7 +131,9 @@
        	<table>
        		<tr>
        			<td>신청직원</td>
-       			<td>HR부(인재개발)LO 조사역 김설화 | 1653778</td>
+       			<td>
+       				<input class="form-control form-control-lg" type="text" placeholder="HR부(인재개발)LO 조사역 김설화 | 1653778" aria-label=".form-control-lg example" readonly>
+       			</td>
        		</tr>
        		<tr>
 	            <td>학습구분 및 분야</td>
@@ -112,6 +156,7 @@
        			<td>학습방법</td>
        			<td>
        				<select class="form-select form-select-lg mb-3" aria-label="Large select example">
+       				  <option selected disabled>학습방법을 선택해주세요</option>
 					  <option value="학원수강">학원수강</option>
 					  <option value="인터넷수강">인터넷수강</option>
 					  <option value="전화수강">전화수강</option>
@@ -140,13 +185,51 @@
        		<tr>
        			<td>수강기간</td>
        			<td>
-       				<input class="form-control form-control-lg" type="text" placeholder="과정명을 입력하세요" aria-label=".form-control-lg example">
+        			<input class="form-control form-control-lg date-input" id="startDate" name="startDate" 
+        			type="date" aria-label=".form-control-lg example"  onchange="handleDateChange()" required>
+
+       				 <input class="form-control form-control-lg date-input" id="endDate" name="endDate" 
+       				 type="date" aria-label=".form-control-lg example"  onchange="handleDateChange()" required>
+       				
+					&nbsp;&nbsp;&nbsp;<span id="datePrint"></span>
 				</td>
+				<script>
+					 function handleDateChange() {
+						 var startDate = document.getElementById("startDate").value;
+						    var endDate = document.getElementById("endDate").value;
+
+						    // 시작일자와 종료일자가 모두 입력되었을 때만 유효성 검사 수행
+						    if (startDate && endDate) {
+						        // 날짜를 Date 객체로 변환
+						        var startDateObj = new Date(startDate);
+						        var endDateObj = new Date(endDate);
+
+						        // 시작일자가 종료일자보다 이전인지 검사
+						        if (startDateObj > endDateObj) {
+						        	swal("시작일자는 종료일자보다 이전이어야 합니다.");
+						            // 시작일자와 종료일자를 초기화하거나 다시 입력할 수 있도록 처리
+						            document.getElementById("startDate").value = "";
+						            document.getElementById("endDate").value = "";
+						            // 출력 요소 초기화
+						            document.getElementById("datePrint").innerHTML = "";
+						            return;
+						        }
+
+						        // 날짜 출력 요소를 가져와서 설정
+						        var datePrint = document.getElementById("datePrint");
+						        var output = startDate + " ~ " + endDate;
+						        datePrint.innerHTML = output;
+			            }
+			        }
+				</script>
+
        		</tr>
        		<tr>
        			<td>수강증</td>
        			<td>
-       				<input class="form-control form-control-lg" type="text" placeholder="과정명을 입력하세요" aria-label=".form-control-lg example">
+       				
+       				<label class="academy_proof-file-button" for="academy_proof-file">수강증 등록하기</label>
+       				<input type="file" id="academy_proof-file" name="academy_proof-file" style="display:none"/>
 				</td>
        		</tr>
        		<tr>
@@ -219,10 +302,7 @@
        	 
        	 </table>
        	 <hr>
-       	 
-       	
        </div>
-       
       </div>
       <div class="modal-footer">
       	<button type="button" class="btn btn-secondary">지원신청</button>
@@ -231,5 +311,7 @@
     </div>
   </div>
 </div>
+	<c:import url="../footer.jsp"></c:import>
 </body>
+
 </html>

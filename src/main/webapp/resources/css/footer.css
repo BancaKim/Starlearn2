@@ -8,11 +8,10 @@
 }
 
 footer{
-    font-family: 'NanumSquareRound';
    	background-color:#f7f4f0;
 	border-top:1px #e8e8e8 solid;
-	position:absolute;
-	bottom:0;
+/* 	position:absolute;
+	bottom:0; */
 	width:100%;
 }
 
