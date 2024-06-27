@@ -1,0 +1,7 @@
+/META-INF/
+*.classpath
+<<<<<<< HEAD
+=======
+.settings/
+>>>>>>> branch 'develop' of https://github.com/BancaKim/Starlearn2.git
+/bin/
