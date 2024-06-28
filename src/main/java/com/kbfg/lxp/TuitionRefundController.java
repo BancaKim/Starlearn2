@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/tuition_refund")
 public class TuitionRefundController {
 	
-	@RequestMapping("/tuition_refund")
+	@RequestMapping("/tuition_refund_apply")
 	public String tuition_refundPage(Model model) {
-		return "tuition_refund/tuition_refund";
+		System.out.println("¿Ó½î ¸®ÆÝ");
+		return "tuition_refund/tuition_refund_apply";
 	}
 	
 	@RequestMapping("/refundApplyList")
 	public String refundApplyListPage(Model model) {
+		System.out.println("¿Ó½î ¸®½ºÆ®");
 		return "tuition_refund/refundApplyList";
 	}
 	

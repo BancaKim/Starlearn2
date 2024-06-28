@@ -1,11 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Áö¿ø ½ÅÃ» ÇöÈ² Á¶È¸</title>
+<title>ì§€ì› ì‹ ì²­ í˜„í™© ì¡°íšŒ</title>
 <c:import url="../nav.jsp"></c:import>
 <style>
 	@font-face {
@@ -22,6 +23,7 @@
 		    background-color: #f7f4f0;
 		}
 </style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 	<div class ="main">
@@ -32,15 +34,10 @@
     	<br>
   		<br>
   		<br>
-        <div id="title">ÇÐ¿øºñ Áö¿ø½ÅÃ»</div>
+        <div id="title">ì§€ì›ì‹ ì²­ í˜„í™©</div>
   		<br>
   		<Br>
   		<Br>
-        <div>
-        	<button type="button" id="kb-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  			Áö¿ø½ÅÃ»
-			</button>
-        </div>
         <br>
 
 	</div>

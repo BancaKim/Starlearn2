@@ -138,9 +138,9 @@
 			</button>
         </div>
         <br>
-        <img src="./resources/images/지원내용.png"><br>
-        <img src="./resources/images/지원대상.png"><br>
-        <img src="./resources/images/필요서류.png">
+        <img src="${pageContext.request.contextPath}/resources/images/지원내용.png"><br>
+        <img src="${pageContext.request.contextPath}/resources/images/지원대상.png"><br>
+        <img src="${pageContext.request.contextPath}/resources/images/필요서류.png">
 </div>
     
     <!-- 모달 창 -->
