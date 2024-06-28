@@ -53,8 +53,8 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href=#>학원비 지원신청</a></li>
-									<li><a href=#>지원신청 현황조회</a></li>
+									<li><a href="${pageContext.request.contextPath}/tuition_refund/tuition_refund_apply">학원비 지원신청</a></li>
+									<li><a href="${pageContext.request.contextPath}/tuition_refund/refundApplyList">지원신청 현황조회</a></li>
 								</ul>
 							</div>
 						</div>
@@ -64,9 +64,9 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href="facility/apply_main">생활연수 신청</a></li>
+									<li><a href="${pageContext.request.contextPath}/facility/apply_main">생활연수 신청</a></li>
 									<li><a href=#>생활연수 신청내역</a></li>
-									<li><a href=#>공지사항</a></li>
+									<li><a href="${pageContext.request.contextPath}/facility/notice">공지사항</a></li>
 								</ul>
 							</div>
 						</div>
