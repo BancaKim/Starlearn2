@@ -92,6 +92,18 @@
         	width: 900px;
         	height: 60p;
         }
+        #caution{
+            position: relative;
+   			min-height: 68px;
+    		padding: 22px 40px;
+    		background-color: #f7f4f0;
+        	width:1100px;
+        	height : 380px;
+        
+        }
+       table tr td {
+		    padding-bottom: 15px; /* 원하는 간격 크기로 설정 */
+		}
 
     </style>
 </head>
@@ -125,7 +137,7 @@
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-       <h1 class="modal-title fs-5 center-text" id="staticBackdropLabel">학원비 신청</h1>
+       <h1 class="modal-title fs-7 center-text" id="staticBackdropLabel" style="text-align: center;  flex: 1;">학원비 신청</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -144,23 +156,50 @@
 	            <td class="subject">학습구분 및 분야</td>
 	            <td >
 	                <div class="flex-container">
-	                    <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-	                        <option selected disabled>학습구분을 선택해주세요</option>
-	                        <option value="외국어">외국어</option>
-	                        <option value="IT">IT</option>
-	                    </select>
-	                    <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-	                        <option selected disabled>학습분야를 선택해주세요</option>
-	                        <option value="외국어">외국어</option>
-	                        <option value="IT">IT</option>
-	                    </select>
-	                </div>
+						<select id="categorySelect" name="categorySelect" class="form-select form-select-lg mb-3" aria-label="Large select example" onchange="handleCategoryChange()">
+					        <option selected disabled>학습구분을 선택해주세요</option>
+					        <option value="외국어">외국어</option>
+					        <option value="IT">IT</option>
+					    </select>
+			    
+			    		<select id="subCategorySelect" name="subCategorySelect" class="form-select form-select-lg mb-3" aria-label="Large select example" disabled>
+			        		<option selected disabled>학습분야를 선택해주세요</option>
+			   			 </select>
+			</div>
+			
+			<script>
+			 function handleCategoryChange() {
+			        var category = document.getElementById("categorySelect").value;
+			        var subCategorySelect = document.getElementById("subCategorySelect");
+
+			        // Clear the current options
+			        subCategorySelect.innerHTML = '<option selected disabled>학습분야를 선택해주세요</option>';
+			        
+			        if (category === "IT") {
+			            addOptions(subCategorySelect, ["프로그래밍", "데이터", "AI", "등급자격증(ICT관련)", "기타"]);
+			        } else if (category === "외국어") {
+			            addOptions(subCategorySelect, ["영어", "일어", "중국어", "기타"]);
+			        }
+
+			        // Enable the subCategorySelect
+			        subCategorySelect.disabled = false;
+			    }
+
+			    function addOptions(selectElement, options) {
+			        options.forEach(function(option) {
+			            var newOption = document.createElement("option");
+			            newOption.value = option;
+			            newOption.text = option;
+			            selectElement.appendChild(newOption);
+			        });
+			    }
+			</script>
 	            </td>
        		 </tr>
        		 <tr>
        			<td class="subject">학습방법</td>
        			<td class="form">
-       				<select class="form-select form-select-lg mb-3" aria-label="Large select example">
+       				<select class="form-select form-select-lg mb-3 " aria-label="Large select example">
        				  <option selected disabled>학습방법을 선택해주세요</option>
 					  <option value="학원수강">학원수강</option>
 					  <option value="인터넷수강">인터넷수강</option>
@@ -259,7 +298,7 @@
                         <span class="info-span">지원대상 금액은 수강료의 80% 교재비 제외</span>
                     </td>
                 </tr>
-                <script>
+               <script>
 				    // 수강료 입력 필드
 				    const academy_price = document.getElementById('academy_price');
 				    // 지원금액 출력 필드
@@ -268,25 +307,28 @@
 				    // 수강료 입력이 변경될 때마다 호출되는 함수
 				    academy_price.addEventListener('input', function() {
 				        // 입력된 수강료 가져오기
-				        const price = parseFloat(this.value);
+				        const price = parseFloat(this.value.replace(/,/g, ''));
 				
 				        // 수강료가 숫자이고 유효할 경우
 				        if (!isNaN(price) && price >= 0) {
 				            // 지원금액 계산 (수강료의 80%)
 				            const refund = price * 0.8;
 				
-				            // 계산된 지원금액을 지원금액 입력 필드에 출력
-				            refund_price.value = refund; 
+				            // 계산된 지원금액을 지원금액 입력 필드에 쉼표를 추가하여 출력
+				            refund_price.value = refund.toLocaleString('ko-KR');
 				        } else {
 				            // 유효하지 않은 입력이거나 빈 문자열인 경우
 				            refund_price.value = ''; // 입력 필드 비우기
 				        }
+				
+				        // 입력 필드에 쉼표 추가하여 출력
+				        this.value = price.toLocaleString('ko-KR');
 				    });
 				</script>
-	
        	</table>
-       	<hr>
+       	  <br>
        	  <span style="font-weight: bold;">결제정보</span>
+       	  <hr>
        	 <table>
        	 <tr>
        	 	<td class="subject">결제정보</td>
@@ -334,7 +376,7 @@
        		</tr>
        		<tr >
        			<td class="subject">결제영수증</td>
-       			<td class="d-flex align-items-center">
+       			<td class="d-flex align-items-center form">
        				<input id="receipt-name" class="form-control form-control-lg" type="text" placeholder="카드번호,승인번호, 승인일, 승인금액, 가맹점 정보가 기재된 결제영수증을 등록하세요." readonly>
                     <label class="receipt-file-button file-button" for="receipt-file">결제 영수증 가져오기</label>
                     <input type="file" id="receipt-file" name="receipt-file" style="display: none;" onchange="updateReceiptName(this)">
@@ -354,57 +396,88 @@
        		</tr>
        	 
        	 </table>
-       	 
+       	  <br>
        	  <span style="font-weight: bold;">결과 등록</span>
        	  <hr>
        	 <table>
-       		<tr >
-       			<td class="subject">수료증 등록</td>
-       			<td class="d-flex align-items-center">
-       				<input id="certificates-name" class="form-control form-control-lg" type="text" placeholder="수강한 교육과정의 수료증, 출석표, 진도율표 中 택1하여 등록해 주세요." readonly>
-                    <label class="certificates-file-button file-button" for="certificates-file">결제 영수증 가져오기</label>
-                    <input type="file" id="certificates-file" name="certificates-file" style="display: none;" onchange="updateCertificatesName(this)">
-				</td>
-				<tr>
-					<td></td>
-					<td>
-						<div>*영수증은 본인의 KB카드에 한함</div>
-					</td>
-				<tr>
-				<script>
-				 	function updateCertificatesName(input) {
-				        const fileName = input.files[0].name;
-				        document.getElementById('certificates-name').value = fileName;
-				    }
-				</script>
-       		</tr>
+       		<tr>
+			    <td class="subject">수료증 등록</td>
+			    <td class="d-flex align-items-center form">
+			        <input id="certificates-name" class="form-control form-control-lg" type="text" placeholder="수강한 교육과정의 수료증, 출석표, 진도율표 중 택1하여 등록해 주세요." readonly>
+			        <label class="certificates-file-button file-button" for="certificates-file">수료증 등록하기</label>
+			        <input type="file" id="certificates-file" name="certificates-file" style="display: none;" onchange="updateCertificatesName(this)">
+			    </td>
+			</tr>
+		<script>
+		    function updateCertificatesName(input) {
+		        const fileName = input.files[0].name;
+		        document.getElementById('certificates-name').value = fileName;
+		    }
+		</script>
        	 
        	 </table>
+			 <br>
        	  <span style="font-weight: bold;">지원 정보</span>
        	  <hr>
        	 <table>
        		<tr >
        			<td class="subject">지원 한도액</td>
        			<td class="form">
-       				<input class="form-control form-control-lg" type="text" aria-label="960,000" aria-label=".form-control-lg example" readonly>
+       				<input class="form-control form-control-lg" type="text" value="960,000" aria-label=".form-control-lg example" readonly>
 				</td>
        		</tr>
+       		
        		<tr >
        			<td class="subject">지원신청 누계액</td>
        			<td class="form">
-       				<input class="form-control form-control-lg" type="text" aria-label="0" aria-label=".form-control-lg example" readonly>
+       				<input class="form-control form-control-lg" type="text"  value="0" aria-label=".form-control-lg example" readonly>
 				</td>
        		</tr>
+       		
        		<tr >
        			<td class="subject">지원 누계액</td>
        			<td class="form">
-       				<input class="form-control form-control-lg" type="text" aria-label="0" aria-label=".form-control-lg example" readonly>
+       				<input class="form-control form-control-lg" type="text"  value="0" aria-label=".form-control-lg example" readonly>
 				</td>
        		</tr>
        	 
        	 </table>
+       	  <br>
        	  <span style="font-weight: bold;">지원 신청시 유의사항</span>
        	  <hr>
+       	  <div id="caution">
+       	  	<div>본인은 아래 사항에 대해 모두 확인 및 동의합니다.</div><br><br>
+       	  	<div class="form-check">
+			  <input class="form-check-input" type="checkbox" value="" id="caution1">
+			  <label class="form-check-label" for="caution1">
+			   자기주도학습비는 직원 본인의 자기개발 및 직무역량향상을 위해 지원하고 있습니다. 본 제도의 취지에 맞는 지원임을 확인합니다.
+			  </label>
+			  <br>
+			  <br>
+			  <input class="form-check-input" type="checkbox" value="" id="caution2">
+			  <label class="form-check-label" for="caution2">
+			    허위정보 등록 또는 부당수령 확인시 소속부점 통보,기지원금 환입,향후 자기주도학습비 지원 제한,각 연수참가 제한, 인사조치 등을 실시할 예정입니다.
+			  </label>
+			  <br>
+			  <br>
+			  <input class="form-check-input" type="checkbox" value="" id="caution3">
+			  <label class="form-check-label" for="caution3">
+			    신청 내용 검증을 위해 추가자료 제출 요청 및 개인정보 조회를 실시할 수 있습니다.
+			  </label>
+			  <br>
+			  <br>
+			  <input class="form-check-input" type="checkbox" value="" id="caution4">
+			  <label class="form-check-label" for="caution4">
+			    교육훈련비 미환입자의 경우, 자기주도학습비 지원이 제한됩니다.
+			  </label>
+			  <br>
+			  <br>
+			  <input class="form-check-input" type="checkbox" value="" id="caution5">
+			  <label class="form-check-label" for="caution5">
+			    지급된 자기주도학습비는 기소득 처리 대상으로 HR부(인재개발)에서 일괄 과표처리합니다.
+			  </label>
+			</div>
+       	  </div>
        		
        </div>
       </div>
