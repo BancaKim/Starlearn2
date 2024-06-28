@@ -4,7 +4,6 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.ParseException"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <link rel="shortcut icon" href="<c:url value='${pageContext.request.contextPath}/resources/images/favicon.ico' />" type="image/x-icon"/>
 <link rel="icon" href="<c:url value='${pageContext.request.contextPath}/resources/images/favicon.ico' />" type="image/x-icon"/>
@@ -15,10 +14,22 @@
 <head>
 	<c:import url="../nav.jsp"></c:import>
     <meta charset="UTF-8">
+    <title>학원비 지원신청 </title>
     <style>
-        * {
-            font-family: 국민연금체;
-        }
+    	@font-face {
+		    font-family: 'NanumSquareRound';
+		    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		body {
+		    font-family: 'NanumSquareRound';
+		    color: #545045;
+		    font: normal 1rem/1.25;
+		    background-color: #f7f4f0;
+		}
+    	
         #title {
             font-size: 32px;
             font-weight: bold;
@@ -458,7 +469,7 @@
 			  <br>
 			  <input class="form-check-input" type="checkbox" value="" id="caution2">
 			  <label class="form-check-label" for="caution2">
-			    허위정보 등록 또는 부당수령 확인시 소속부점 통보,기지원금 환입,향후 자기주도학습비 지원 제한,각 연수참가 제한, 인사조치 등을 실시할 예정입니다.
+			    허위정보 등록 또는 부당수령 확인시 소속부점 통보,기지원금 환입,향후 자기주도학습비 지원 제한, 각 종 연수참가 제한, 인사조치 등을 실시할 예정입니다.
 			  </label>
 			  <br>
 			  <br>
