@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: 'NanumSquareRound',Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height:100vh;
+}
+
+.loadingBox{position:fixed;width:370px;z-index:15;left:50%;top:50%;transform:translate(-50%,-50%);box-sizing: border-box;background-image: url("/files/images/kiki.gif");background-size: auto; background-repeat: no-repeat;height: 350px;background-position-x: center;}
+          .loadingBox .msg-box{position:relative;top:46%; padding:80px 15px 15px;background-color:#fff;border:2px solid #292929;box-shadow: 0 0 13px rgba(0,0,0,0.3);border-radius:10px;text-align: center;}
+          .loadingBox .msg-box:after{content:"";display:block;clear:both;}
+          .loadingBox .msg-box span{font-family:KBFGDisplay; display: inline; font-weight: 400;}
+
+
+.loading-circle {position:absolute; left:50%; top:23%; transform:translate(-50%, -50%); width:40px; height:40px;box-sizing: border-box; border:6px solid #f3f3f3; border-top:6px solid rgb(244, 148, 164); border-radius:50em; transition:all .2s;
+    animation-name:spinCircle;
+    animation-duration:.8s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.loadingWrap .dim {position:fixed; left:0; top:0; width:100%; height:100%; background:#f7f4f0;}
+.loadingWrap .loading-circle {position:absolute; transform:translate(-50%, -142px);}
+
+img{
+    left:auto;
+    right:auto;
+    display: inline;
+}
+@keyframes spinCircle {
+    from {
+        transform:translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform:translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+@media screen and (max-width: 460px){
+    .loadingBox{
+        background-size: 6rem;
+        background-position-y: 70px;
+    }
+
+    .loadingBox .msg-box{
+        font-size: 80%;
+        padding: 70px 10px 10px;
+        margin: 0 40px auto;
+    }
+
+    img{
+        width: 50%;
+    }
+
+    .loading-circle{
+        width: 30px;
+        height: 30px;
+    }
+          

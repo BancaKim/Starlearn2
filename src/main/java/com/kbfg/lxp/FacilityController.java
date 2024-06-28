@@ -17,4 +17,9 @@ public class FacilityController {
 		return "facility/facility_apply_main";
 	}
 	
+	@RequestMapping(value="/notice")
+	public String notice(Model model) {
+		return "facility/notice";
+	}
+	
 }
