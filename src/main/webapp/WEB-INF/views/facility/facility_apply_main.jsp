@@ -71,46 +71,55 @@
 				  <div class="modal-dialog modal-xl">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+				        <h1 class="modal-title fs-5" id="staticBackdropLabel" align="center">연수원 이용 신청하기</h1>
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
-				      <!-- grid -->
-						  <div class="container-fluid">
-						    <div class="row">
-						      <div class="col-md-4">.col-md-4</div>
-						      <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-						    </div>
-						    <div class="row">
-						      <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
-						      <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
-						    </div>
-						    <div class="row">
-						      <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
-						    </div>
-						    <div class="row">
-						      <div class="col-sm-9">
-						        Level 1: .col-sm-9
-						        <div class="row">
-						          <div class="col-8 col-sm-6">
-						            Level 2: .col-8 .col-sm-6
-						          </div>
-						          <div class="col-4 col-sm-6">
-						            Level 2: .col-4 .col-sm-6
-						          </div>
-						        </div>
-						      </div>
-						    </div>
+					  <p>설월과 충훈의 가득한 숙조, 대전연수원에 오셔서 즐겁고 행복한 시간 보내시길 바랍니다.</p>
+					  
+						  <div class="info">
+						    <p>숙조·대전연수원(안식년 휴가 활용 포함) 생활연수 안내<br/>
+						    운영 예정일 : '24.8.23(금) ~ 24.8.31(일)<br/>
+						    접수 Open : '24.7.1(월) 21:00 ~<br/>
+						    7월12일~8월19일 하계생활연수 신청<br/>
+						    8월19일~8월22일 미운영 (시설점검)<br/>
+						    ※ 참고 23.10.27.인재개발부 579<br/>
+						    숙조·대전연수원 "생활연수 운영방법, 변경 안내"</p>
 						  </div>
-						</div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Understood</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-            
+					<div class="second-container">
+					 <div class="image-container">
+					  </div>
+					<div class="right-container">
+					  <form>
+					    <div class="form-group">
+					      <label>연수원 선택</label>
+					      <div class="button-group">
+					        <button class="selected">숙조 연수원</button>
+					        <button>대전 연수원</button>
+					      </div>
+					    </div>
+					
+					    <div class="form-group">
+					      <label>방 유형 선택</label>
+					      <div class="button-group">
+					        <button class="selected">투룸</button>
+					        <button>안식년 (투룸)</button>
+					      </div>
+					    </div>
+					
+					    <div class="form-group">
+					      <label>투숙기간 선택</label>
+					      <input type="text" value="입실 2024.07.04" readonly>
+					    </div>
+					
+					    <button class="submit-btn">연수원 신청하기</button>
+					  </form>
+					  </div>
+					  </div>
+					</div> 
+					</div>
+					</div>
+					</div>   
         </section>
 
         <section class="quick-links">

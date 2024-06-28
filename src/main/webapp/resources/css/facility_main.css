@@ -115,3 +115,20 @@ main {
     color: #333;
     border-radius: 5px;
 }
+.second-container{
+	display:flex;
+}
+
+.image-container{
+	width:540px;
+	height:540px;
+	background-image:url("../images/sockcho.jpg");
+	background-repeat: no-repeat;
+	background-size:contain;
+	border-radius: 80%;
+}
+
+.image-container img {
+	
+	object-fit:cover;
+}
