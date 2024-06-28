@@ -93,19 +93,19 @@
 								<div class="second-container">
 									<div class="image-container"></div>
 									<div class="form-container">
-					
+										<form action="#" method="get">
 			                    			<div class="options">
 								    			<label>연수원 선택</label>
 								    			<div class="button_group">
-			                       					<button class="tab active">속초 연수원</button>
-			                        				<button class="tab">대천 연수원</button>
+			                       					<button type="button" class="tab active">속초 연수원</button>
+			                        				<button type="button" class="tab">대천 연수원</button>
 			                    				</div>
 			                    			</div>
 								   			<div class="options">
 				                       			<label>방 유형 선택</label>
 				                       			<div class="button_group">
-				                        			<button class="tab active">투룸</button>
-				                        			<button class="tab">안식년 (투룸)</button>
+				                        			<button type="button" class="tab active">투룸</button>
+				                        			<button type="button" class="tab">안식년 (투룸)</button>
 			                  					</div>
 			                  				</div>
 			                    			<div class="options">
@@ -150,7 +150,7 @@
            			
 			                    			</div>
 		                    				<button class="apply-button">연수원 신청하기</button>
-							  			
+							  			</form>
 									</div>
 									
 
