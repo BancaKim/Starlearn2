@@ -85,6 +85,7 @@
         	background-color : white;
         }
         .subject{
+        	text-align: center;
         	width: 200px;
         	height: 60p;
         }
@@ -137,10 +138,11 @@
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-       <h1 class="modal-title fs-7 center-text" id="staticBackdropLabel" style="text-align: center;  flex: 1;">학원비 신청</h1>
+       <h3 class="modal-title center-text" id="staticBackdropLabel" style="text-align: center;  flex: 1;">학원비 신청</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+      <br>
        <span style="font-weight: bold;">신청정보</span>
        <hr>
        <br>
