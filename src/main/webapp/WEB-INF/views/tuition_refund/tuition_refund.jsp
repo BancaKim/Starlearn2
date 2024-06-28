@@ -55,7 +55,7 @@
             display: inline-block;
         }
 
-		.academy_proof-file-button {
+		.file-button {
 		    width: 184px;
 		    height: 50px;
 		    display: inline-block;
@@ -72,11 +72,11 @@
 		    margin-left: 10px; /* 버튼과 입력 필드 사이 간격 조정 */
 		}
 
-        .academy_proof-file-button:hover {
+        .file-button:hover {
             background-color: #e8e8e8; /* 호버 시 색상 */
         }
 
-        .academy_proof-file-button:focus {
+        .file-button:focus {
             outline: none; /* 포커스 시 아웃라인 제거 */
             box-shadow: 0 0 5px #007bff; /* 포커스 시 그림자 효과 */
         }
@@ -234,7 +234,7 @@
        			<td class="subject">수강증</td>
        			<td class="d-flex align-items-center">
 				    <input id="academy_proof-name" class="form-control form-control-lg " type="text" placeholder="수강자명,학원명,수강과정명,수강기간,수강료가 기입된 수강증을 등록하세요."  style="display: inline-block;" readonly>
-				    <label class="academy_proof-file-button" for="academy_proof-file" style="display: inline-block; vertical-align: middle;">수강증 등록하기</label>
+				    <label class="academy_proof-file-button file-button" for="academy_proof-file" style="display: inline-block; vertical-align: middle;">수강증 등록하기</label>
 				    <input type="file" id="academy_proof-file" name="academy_proof-file" style="display: none;"  onchange="updateAcademy_proofName(this)">
 				</td>
 				<script>
@@ -335,21 +335,77 @@
        		<tr >
        			<td class="subject">결제영수증</td>
        			<td class="d-flex align-items-center">
-       				<input id="academy_proof-name" class="form-control form-control-lg " type="text" placeholder="수강자명,학원명,수강과정명,수강기간,수강료가 기입된 수강증을 등록하세요."  style="display: inline-block;" readonly>
-				    <label class="academy_proof-file-button" for="academy_proof-file" style="display: inline-block; vertical-align: middle;">수강증 등록하기</label>
-				    <input type="file" id="academy_proof-file" name="academy_proof-file" style="display: none;"  onchange="updateAcademy_proofName(this)">
+       				<input id="receipt-name" class="form-control form-control-lg" type="text" placeholder="카드번호,승인번호, 승인일, 승인금액, 가맹점 정보가 기재된 결제영수증을 등록하세요." readonly>
+                    <label class="receipt-file-button file-button" for="receipt-file">결제 영수증 가져오기</label>
+                    <input type="file" id="receipt-file" name="receipt-file" style="display: none;" onchange="updateReceiptName(this)">
 				</td>
+				<tr>
+					<td></td>
+					<td>
+						<div>*영수증은 본인의 KB카드에 한함</div>
+					</td>
+				<tr>
 				<script>
-				 	function updateAcademy_proofName(input) {
-				 		 const fileName = input.files[0].name;
-				         document.getElementById('academy_proof-name').value = fileName;
+				 	function updateReceiptName(input) {
+				        const fileName = input.files[0].name;
+				        document.getElementById('receipt-name').value = fileName;
 				    }
 				</script>
-				
        		</tr>
        	 
        	 </table>
-       	 <hr>
+       	 
+       	  <span style="font-weight: bold;">결과 등록</span>
+       	  <hr>
+       	 <table>
+       		<tr >
+       			<td class="subject">수료증 등록</td>
+       			<td class="d-flex align-items-center">
+       				<input id="certificates-name" class="form-control form-control-lg" type="text" placeholder="수강한 교육과정의 수료증, 출석표, 진도율표 中 택1하여 등록해 주세요." readonly>
+                    <label class="certificates-file-button file-button" for="certificates-file">결제 영수증 가져오기</label>
+                    <input type="file" id="certificates-file" name="certificates-file" style="display: none;" onchange="updateCertificatesName(this)">
+				</td>
+				<tr>
+					<td></td>
+					<td>
+						<div>*영수증은 본인의 KB카드에 한함</div>
+					</td>
+				<tr>
+				<script>
+				 	function updateCertificatesName(input) {
+				        const fileName = input.files[0].name;
+				        document.getElementById('certificates-name').value = fileName;
+				    }
+				</script>
+       		</tr>
+       	 
+       	 </table>
+       	  <span style="font-weight: bold;">지원 정보</span>
+       	  <hr>
+       	 <table>
+       		<tr >
+       			<td class="subject">지원 한도액</td>
+       			<td class="form">
+       				<input class="form-control form-control-lg" type="text" aria-label="960,000" aria-label=".form-control-lg example" readonly>
+				</td>
+       		</tr>
+       		<tr >
+       			<td class="subject">지원신청 누계액</td>
+       			<td class="form">
+       				<input class="form-control form-control-lg" type="text" aria-label="0" aria-label=".form-control-lg example" readonly>
+				</td>
+       		</tr>
+       		<tr >
+       			<td class="subject">지원 누계액</td>
+       			<td class="form">
+       				<input class="form-control form-control-lg" type="text" aria-label="0" aria-label=".form-control-lg example" readonly>
+				</td>
+       		</tr>
+       	 
+       	 </table>
+       	  <span style="font-weight: bold;">지원 신청시 유의사항</span>
+       	  <hr>
+       		
        </div>
       </div>
       <div class="modal-footer">
