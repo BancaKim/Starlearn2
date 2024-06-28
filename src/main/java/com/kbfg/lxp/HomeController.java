@@ -36,10 +36,10 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/tuition_refund", method = RequestMethod.GET)
-	public String tuition_refundPage(Model model) {
-		return "tuition_refund/tuition_refund";
+
+	
+	@RequestMapping(value = "/facility_apply", method = RequestMethod.GET)
+	public String faciltyApply(Model model) {
+		return "facility/facility_apply_main";
 	}
-	
-	
 }
