@@ -54,7 +54,7 @@
 							<div class="contents__menu">
 								<ul class="inner">
 									<li><a href=tuition_refund>학원비 지원신청</a></li>
-									<li><a href=#>지원신청 현황조회</a></li>
+									<li><a href=refundApplyList>지원신청 현황조회</a></li>
 								</ul>
 							</div>
 						</div>

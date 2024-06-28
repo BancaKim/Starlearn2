@@ -17,4 +17,9 @@ public class TuitionRefundController {
 		return "tuition_refund/tuition_refund";
 	}
 	
+	@RequestMapping("/refundApplyList")
+	public String refundApplyListPage(Model model) {
+		return "tuition_refund/refundApplyList";
+	}
+	
 }
