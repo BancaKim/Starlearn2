@@ -22,7 +22,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = {"/","home"}, method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
@@ -38,8 +38,21 @@ public class HomeController {
 	
 
 	
-	@RequestMapping(value = "/facility_apply", method = RequestMethod.GET)
-	public String faciltyApply(Model model) {
-		return "facility/facility_apply_main";
+	@RequestMapping(value = "/signIn", method = RequestMethod.GET)
+	public String signIn(Model model) {
+		return "login/signIn";
+	}
+	
+	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
+	public String signUp(Model model) {
+		return "login/signup";
+	}
+	
+	@RequestMapping(value = "/signInConfirm", method = RequestMethod.GET)
+	public String signInConfirm(Model model) {
+		
+		
+		
+		return "redirect:home";
 	}
 }

@@ -17,9 +17,13 @@ public class FacilityController {
 		return "facility/facility_apply_main";
 	}
 	
-	@RequestMapping(value="/notice")
+	@RequestMapping(value="/notice_view")
 	public String notice(Model model) {
-		return "facility/notice";
+		return "facility/noticeView";
 	}
 	
+	@RequestMapping(value="/notice_write")
+	public String noticeWrite(Model model) {
+		return "facility/noticeWrite";
+	}
 }
