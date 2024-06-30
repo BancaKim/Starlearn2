@@ -97,15 +97,15 @@
 			                    			<div class="options">
 								    			<label>연수원 선택</label>
 								    			<div class="button_group">
-			                       					<button type="button" class="tab active">속초 연수원</button>
-			                        				<button type="button" class="tab">대천 연수원</button>
+			                       					<button type="button" id="option1-tab" class="tab active" onclick="activateTab1('option1-tab')">속초 연수원</button>
+			                        				<button type="button" id="option2-tab" class="tab" onclick="activateTab1('option2-tab')">대천 연수원</button>
 			                    				</div>
 			                    			</div>
 								   			<div class="options">
 				                       			<label>방 유형 선택</label>
 				                       			<div class="button_group">
-				                        			<button type="button" class="tab active">투룸</button>
-				                        			<button type="button" class="tab">안식년 (투룸)</button>
+				                        			<button type="button" id="option3-tab" class="tab active" onclick="activateTab2('option3-tab')">투룸</button>
+				                        			<button type="button" id="option4-tab" class="tab" onclick="activateTab2('option4-tab')">안식년 (투룸)</button>
 			                  					</div>
 			                  				</div>
 			                    			<div class="options">
@@ -117,7 +117,6 @@
        												 <input class="form-control form-control-lg date-input" id="endDate" name="endDate"
        				 								type="date" aria-label=".form-control-lg example"  onchange="handleDateChange()" required>
        				 								<br>
-       				 								<!-- <div id="datePrint"></div> -->
        				 								
        				 								<script>
 													 function handleDateChange() {
@@ -174,5 +173,33 @@
     </main>
 	
 	<c:import url="../footer.jsp"></c:import>
+	
+    <script>
+        function activateTab1(tabId) {
+            var option1Tab = document.getElementById('option1-tab');
+            var option2Tab = document.getElementById('option2-tab');
+
+            if (tabId === 'option1-tab') {
+            	option1Tab.classList.add('active');
+            	option2Tab.classList.remove('active');
+            } else if (tabId === 'option2-tab') {
+            	option2Tab.classList.add('active');
+            	option1Tab.classList.remove('active');
+            }
+        }
+        
+        function activateTab2(tabId) {
+            var option3Tab = document.getElementById('option3-tab');
+            var option4Tab = document.getElementById('option4-tab');
+
+            if (tabId === 'option3-tab') {
+            	option3Tab.classList.add('active');
+            	option4Tab.classList.remove('active');
+            } else if (tabId === 'option4-tab') {
+            	option4Tab.classList.add('active');
+            	option3Tab.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>지원 신청 현황 조회</title>
 <c:import url="../nav.jsp"></c:import>
 <style>
