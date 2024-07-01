@@ -1,167 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.ParseException"%>
 
+<link rel="shortcut icon" href="<c:url value='${pageContext.request.contextPath}/resources/images/favicon.ico' />" type="image/x-icon"/>
+<link rel="icon" href="<c:url value='${pageContext.request.contextPath}/resources/images/favicon.ico' />" type="image/x-icon"/>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>지원 신청 현황 조회</title>
-<c:import url="../nav.jsp"></c:import>
-<style>
-    @font-face {
-        font-family: 'NanumSquareRound';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    body {
-        font-family: 'NanumSquareRound';
-        color: #545045;
-        font: normal 1rem/1.25;
-        background-color: #fff; /* 바디 배경색을 하얀색으로 설정 */
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-    }
-    
-    main {
-        text-align: center;
-    }
-    
-    #title {
-        font-size: 32px;
-        font-weight: bold;
-    }
-    
-    #menu {
-        padding: 8px;
-        border-radius: 50rem;
-        border: 1px solid #e8e8e8;
-        background-color: #fff;
-        line-height: 45px;
-        display: inline-block;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .menu-item {
-        display: inline-block;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin: 0 15px;
-        width: 150px;
-        background-color: transparent;
-    }
-    
-    .menu-item:hover,
-    .menu-item.active {
-        background-color: #f7f4f0; /* 클릭 시 배경색 변경 */
-        border-radius: 50rem;
-        width: 150px;
-    }
-    
-    #year {
-        display: none; /* 초기에는 숨겨진 상태 */
-        height: 70px;
-        background-color: #f7f4f0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px; /* 상단 여백 추가 */
-    }
-    
-    .menu-item.vertical-middle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        cursor: pointer;
-        transition: color 0.3s; /* 글자색 변화 트랜지션 */
-        margin: 0 15px;
-        width: 150px;
-        color: #545045; /* 기본 글자색 */
-    }
-    
-    .menu-item.vertical-middle:hover,
-    .menu-item.vertical-middle.active {
-        color: #ffbc00; /* 호버 및 클릭 시 글자색 변경 */
-    }
-    
-    #yesterdayRefundTable {
-        display: block; /* 초기에는 보이도록 설정 */
-        position: relative;
-        width: 1200px;
-        padding: 0 0;
-        margin: auto;
-    }
-    
-    #yesterdayRefundTable .header {
-        font-size: 18px;
-        font-weight: bold;
-        text-align: left;
-    }
-    
-    #yesterdayRefundTable .info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    #yesterdayRefundTable .info div {
-        flex: 1;
-        text-align: left;
-    }
-    
-    #yesterdayRefundTable .info .right {
-        text-align: right;
-    }
-    
-    th {
-        font-size: 20px;
-        color: #84888b;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-align: left;
-    }
-    
-    table {
-        width: 100%; /* 테이블 가로 너비 설정 */
-        border-collapse: collapse; /* 테이블 경계선 결합 */
-        vertical-align: middle;
-    }
-    
-    td {
-        text-align: left; /* 가운데 정렬 */
-        padding-top: 16px;
-        padding-bottom: 16px;
-        vertical-align: middle;
-    }
-    
-    td:first-child {
-        text-align: left; /* 첫 번째 열은 왼쪽 정렬 */
-    }
-    
-    #detail-btn {
-        background-color: #fff;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        height: 60px;
-        padding: 0 32px;
-        border-radius: 16px;
-        vertical-align: middle;
-        border: 1px solid #d7d7d7;
-    }
-    
-    #detail-btn:hover {
-        background-color: #f7f4f0;
-    }
-    
-    
-      .flex-container {
+	<c:import url="../nav.jsp"></c:import>
+    <meta charset="UTF-8">
+    <title>학원비 지원신청 </title>
+    <style>
+    	@font-face {
+		    font-family: 'NanumSquareRound';
+		    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		body {
+		    font-family: 'NanumSquareRound';
+		    color: #545045;
+		    font: normal 1rem/1.25;
+		    background-color: #f7f4f0;
+		}
+    	
+        #title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        #kb-btn {
+            width: 122.55px;
+            height: 60px;
+            background-color: #ffbc00;
+            border: none;
+            border-radius: 30px; /* 둥근 모서리 */
+            color: white;
+            font-size: 15px;
+            font-color : white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #kb-btn:hover {
+            background-color: #e6a700; /* 호버 시 색상 변화 */
+        }
+        button {
+            background-color: #ffbc00;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+         .flex-container {
             display: flex;
             gap: 10px;
         }
@@ -223,109 +116,34 @@
        table tr td {
 		    padding-bottom: 15px; /* 원하는 간격 크기로 설정 */
 		}
-</style>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-    function showYesterdayRefund() {
-        // 과거 신청 이력 보기를 클릭할 때 호출되는 함수
-        document.getElementById('yesterdayRefundTable').style.display = 'block'; // yesterdayRefundTable 보이기
-        document.getElementById('year').style.display = 'none'; // year 숨기기
 
-        // 메뉴 아이템 스타일 변경
-        document.getElementById('menuYesterday').classList.add('active');
-        document.getElementById('menuYear').classList.remove('active');
-    }
-    
-    function showYearRefund() {
-        // 학원비 신청 이력 보기를 클릭할 때 호출되는 함수
-        document.getElementById('yesterdayRefundTable').style.display = 'block'; // yesterdayRefundTable 보이기
-        document.getElementById('year').style.display = 'flex'; // year 보이기 
-
-        // 메뉴 아이템 스타일 변경
-        document.getElementById('menuYesterday').classList.remove('active');
-        document.getElementById('menuYear').classList.add('active');
-    }
-
-    function selectYear(element) {
-        // 연도 선택 메뉴에서 클릭 시 글자색 변경
-        var items = document.getElementsByClassName('menu-item vertical-middle');
-        for (var i = 0; i < items.length; i++) {
-            items[i].classList.remove('active');
-        }
-        element.classList.add('active');
-    }
-
-    // 페이지 로드 시 초기화
-    window.onload = function() {
-        // 학원비 신청 이력이 기본으로 선택되도록 설정
-        showYearRefund();
-    };
-</script>
+    </style>
 </head>
 <body>
-<main>
-    <br><br><br><br><br><br><br>
-    <div id="title">지원신청 현황 조회</div>
-    <br>
-    <div id="menu">
-        <div class="menu-item" id="menuYesterday" onclick="showYesterdayRefund()">과거 신청 이력</div>
-        <div class="menu-item" id="menuYear" onclick="showYearRefund()">학원비 신청 이력</div>
-    </div>
-
-    <br><br>
-    
-    <div id="year">
-        <div class="menu-item vertical-middle" onclick="selectYear(this)">전체</div>
-        <div class="menu-item vertical-middle" onclick="selectYear(this)">2024</div>
-        <div class="menu-item vertical-middle" onclick="selectYear(this)">2023</div>
-    </div>
-    
-    <div id="yesterdayRefundTable">
-        <br><br>
-        <div class="header">학원비 신청 이력</div>
-        <br>
-        <div class="info">
-            <div>0건</div>
-            <div class="right">신청 현황만 표시됩니다.</div>
+<div class ="main">
+		<br>
+  		<br>
+  		<br>
+  		<br>
+    	<br>
+  		<br>
+  		<br>
+        <div id="title">학원비 지원신청</div>
+  		<br>
+  		<Br>
+  		<Br>
+        <div>
+        	<button type="button" id="kb-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  			지원신청
+			</button>
         </div>
-        <br><br>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">관리번호</th>
-                    <th scope="col">지원 구분/분야</th>
-                    <th scope="col">과정명</th>
-                    <th scope="col">학습기간</th>
-                    <th scope="col">진행상태</th>
-                    <th scope="col">지원금액</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>133143</td>
-                    <td>IT/프로그래밍</td>
-                    <td>스프링 DB</td>
-                    <td>2024-03-26~2024-05-10</td>
-                    <td>승인완료</td>
-                    <td>43,120</td>
-                    <td>
-                    	<button type="button" id="detail-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  						상세
-						</button>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <br>
+        <img src="${pageContext.request.contextPath}/resources/images/지원내용.png"><br>
+        <img src="${pageContext.request.contextPath}/resources/images/지원대상.png"><br>
+        <img src="${pageContext.request.contextPath}/resources/images/필요서류.png">
+</div>
     
-    
-
-    
-    
-</main>
-     <!-- 모달 창 -->
+    <!-- 모달 창 -->
     <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
@@ -683,11 +501,7 @@
     </div>
   </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<c:import url="../footer.jsp"></c:import>
+	<c:import url="../footer.jsp"></c:import>
 </body>
+
 </html>

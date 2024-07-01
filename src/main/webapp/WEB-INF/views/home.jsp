@@ -6,6 +6,7 @@
 </head>
 <body>
 	<c:import url="./nav.jsp"></c:import>
+
 	
 	<main>
 		<div>
