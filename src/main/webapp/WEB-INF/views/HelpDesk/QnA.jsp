@@ -173,17 +173,20 @@
     span {
         text-align: left;
     }
+
     #qnaTable{
         z-index: 1;
-	    position: absolute;
-	    background-color: #f7f4f0
+	    position: relative;
+	    background-color: #f7f4f0;
 	    width:1100px;
 	    height:70px;
-	    border-radius: 50rem;
+	    border-radius: 25px;
 	    
     }
-      #qnaTableTR:hover{
-        background-color: #e7e4df
+     #qnaTableTR:hover{
+      	border-radius: 25px;
+        background-color: #e7e4df;
+       
     }
     
 </style>
@@ -242,6 +245,7 @@
     		</tr>
     	</table>
     </div>
+    <br><br>
 </main>
 <c:import url="../footer.jsp"></c:import>
 </body>
