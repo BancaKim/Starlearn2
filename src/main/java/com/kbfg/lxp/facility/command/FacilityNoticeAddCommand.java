@@ -30,7 +30,7 @@ public class FacilityNoticeAddCommand implements Command {
 		String realFolder="";
    		String saveFolder="/facilitynoticeupload";
    		
-int fileSize=5*1024*1024;
+   		int fileSize=5*1024*1024;
    		
    		realFolder=request.getRealPath(saveFolder);
    		
@@ -45,7 +45,7 @@ int fileSize=5*1024*1024;
    					new DefaultFileRenamePolicy());
    			
    			noticedata.setFacility_notice_title(multi.getParameter("facility_notice_title"));
-   			noticedata.setFacility_notice_content(multi.getParameter("BOARD_PASS"));
+   			noticedata.setFacility_notice_content(multi.getParameter("facility_notice_content"));
    			noticedata.setFacility_notice_file(
 	   				multi.getFilesystemName((String)multi.getFileNames().nextElement()));
 	   		
