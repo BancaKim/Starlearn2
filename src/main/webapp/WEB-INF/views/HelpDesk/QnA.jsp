@@ -20,14 +20,12 @@
         font-family: 'NanumSquareRound';
         color: #545045;
         font: normal 1rem/1.25;
-       
         margin: 0;
         padding: 0;
         height: 100vh;
     }
     
     main {
-    	 background-color: #fff; /* Set body background color to white */
         text-align: center; /* Center align content */
         width: 1100px; /* Set fixed width */
         margin: 0 auto; /* Center align horizontally */
@@ -175,13 +173,17 @@
     span {
         text-align: left;
     }
-    #qnaTableTR{
+    #qnaTable{
         z-index: 1;
 	    position: absolute;
 	    background-color: #f7f4f0
+	    width:1100px;
+	    height:70px;
+	    border-radius: 50rem;
+	    
     }
       #qnaTableTR:hover{
-        background-color: red;
+        background-color: #e7e4df
     }
     
 </style>
@@ -226,8 +228,10 @@
             </div>
         </form>
     </div>
-    <div id="qnaTable">
-    	<table>
+    <br>
+    
+    <div id="qnaTable_div">
+    	<table id="qnaTable">
     		<tr id="qnaTableTR">
     			<td>1</td>
     			<td>기타</td>
