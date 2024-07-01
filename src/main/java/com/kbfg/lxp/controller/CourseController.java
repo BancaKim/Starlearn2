@@ -2,12 +2,15 @@ package com.kbfg.lxp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseViewAction;
+import com.kbfg.lxp.user.util.Constant;
 
 
 /**s
@@ -17,8 +20,16 @@ import com.kbfg.lxp.course.CourseViewAction;
 @RequestMapping("/course")
 public class CourseController {
 
-	CourseCommand command = null;
+	private CourseCommand command;
+	private JdbcTemplate template;
 	
+	@Autowired
+	public CourseController(JdbcTemplate template) {
+		this.template = template;
+		Constant.template = this.template;
+	}
+
+
 	// �ڽ� ����
 	@RequestMapping("/courseView")
 	public String showMyCourse(HttpServletRequest request, Model model) throws Exception {
