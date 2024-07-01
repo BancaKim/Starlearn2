@@ -64,7 +64,6 @@ public class LoginController {
 	
 	@RequestMapping(value = "/signUpConfirm", method = RequestMethod.POST)
 	public String signUpConfirm(HttpServletRequest request, Model model) {
-		
 		model.addAttribute("request", request);
 
 		userAddCommand.execute(model);

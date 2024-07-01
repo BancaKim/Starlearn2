@@ -50,7 +50,7 @@ public class UserDAO {
 		String sql = "INSERT INTO user (user_id, user_name, user_pw, user_idn, user_rank, user_position, user_dept, user_ph, user_birthYear, user_birthMonth, user_birthDay, user_enrollYear, user_profile, user_isAdmin) " +
                 	 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		int result = 0;
-
+		System.out.println("inside insertUser userId:"+userdata.getUser_id());
 		 result = template.update(sql,
                  userdata.getUser_id(),
                  userdata.getUser_name(),
