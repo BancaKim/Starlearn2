@@ -115,3 +115,54 @@ main {
     color: #333;
     border-radius: 5px;
 }
+.second-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.image-container{
+	width:540px;
+	height:540px;
+	background-image:url("../images/sockcho.jpg");
+	background-repeat: no-repeat;
+	background-size:contain;
+	border-radius: 5%;
+}
+
+.form-container {
+    width: 50%;
+/*     display:flex;
+    justify-content:center;
+    align-items:center; */
+    margin-top: 80px;
+}
+
+.button_group{
+	display:flex;
+	width:100%;
+	justify-content:center;
+	align-items:center;
+}
+.button_group .tab{
+	width:50%;
+	margin:0 auto;
+	}
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.options input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+

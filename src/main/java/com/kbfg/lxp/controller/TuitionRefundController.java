@@ -1,4 +1,4 @@
-package src.main.java.com.kbfg.lxp.controller;
+package com.kbfg.lxp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

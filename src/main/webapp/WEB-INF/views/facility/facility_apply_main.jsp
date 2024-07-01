@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.ParseException"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
     <link href="${pageContext.request.contextPath}/resources/css/facility_main.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>KB 스타런</title>
 </head>
 <body>
@@ -68,50 +72,96 @@
            
            <!-- Modal -->
 				<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-				  <div class="modal-dialog modal-xl">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				      </div>
-				      <div class="modal-body">
-				      <!-- grid -->
-						  <div class="container-fluid">
-						    <div class="row">
-						      <div class="col-md-4">.col-md-4</div>
-						      <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
-						    </div>
-						    <div class="row">
-						      <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
-						      <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
-						    </div>
-						    <div class="row">
-						      <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
-						    </div>
-						    <div class="row">
-						      <div class="col-sm-9">
-						        Level 1: .col-sm-9
-						        <div class="row">
-						          <div class="col-8 col-sm-6">
-						            Level 2: .col-8 .col-sm-6
-						          </div>
-						          <div class="col-4 col-sm-6">
-						            Level 2: .col-4 .col-sm-6
-						          </div>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
+					<div class="modal-dialog modal-xl">
+				    	<div class="modal-content">
+				    		<div class="modal-header">
+				        		<h1 class="modal-title fs-5" id="staticBackdropLabel" align="center">연수원 이용 신청하기</h1>
+				        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				      		</div>
+				      		<div class="modal-body">
+						  		<p>설렘과 웃음이 가득한 속초, 대전연수원에 오셔서 즐겁고 행복한 시간 보내시길 바랍니다.</p>
+						  
+								<div class="info">
+								    <p>속초·대전연수원(안식년 휴가 활용 포함) 생활연수 안내<br/>
+								    운영 예정일 : '24.8.23(금) ~ 24.8.31(일)<br/>
+								    접수 Open : '24.7.1(월) 21:00 ~<br/>
+								    7월12일~8월19일 하계생활연수 신청<br/>
+								    8월19일~8월22일 미운영 (시설점검)<br/>
+								    ※ 참고 23.10.27.인재개발부 579<br/>
+								    숙조·대전연수원 "생활연수 운영방법, 변경 안내"</p>
+								</div>
+								<div class="second-container">
+									<div class="image-container"></div>
+									<div class="form-container">
+										<form action="#" method="get">
+			                    			<div class="options">
+								    			<label>연수원 선택</label>
+								    			<div class="button_group">
+			                       					<button type="button" id="option1-tab" class="tab active" onclick="activateTab1('option1-tab')">속초 연수원</button>
+			                        				<button type="button" id="option2-tab" class="tab" onclick="activateTab1('option2-tab')">대천 연수원</button>
+			                    				</div>
+			                    			</div>
+								   			<div class="options">
+				                       			<label>방 유형 선택</label>
+				                       			<div class="button_group">
+				                        			<button type="button" id="option3-tab" class="tab active" onclick="activateTab2('option3-tab')">투룸</button>
+				                        			<button type="button" id="option4-tab" class="tab" onclick="activateTab2('option4-tab')">안식년 (투룸)</button>
+			                  					</div>
+			                  				</div>
+			                    			<div class="options">
+			                        			<label>입실 날짜 선택</label>
+			                        			<div class="button_group">
+			                        				<input class="form-control form-control-lg date-input" id="startDate" name="startDate"
+       												type="date" aria-label=".form-control-lg example" required>
+       												
+       												 <input class="form-control form-control-lg date-input" id="endDate" name="endDate"
+       				 								type="date" aria-label=".form-control-lg example"  onchange="handleDateChange()" required>
+       				 								<br>
+       				 								
+       				 								<script>
+													 function handleDateChange() {
+														 var startDate = document.getElementById("startDate").value;
+														    var endDate = document.getElementById("endDate").value;
+														    // 시작일자와 종료일자가 모두 입력되었을 때만 유효성 검사 수행
+														    if (startDate && endDate) {
+														        // 날짜를 Date 객체로 변환
+														        var startDateObj = new Date(startDate);
+														        var endDateObj = new Date(endDate);
+														        // 시작일자가 종료일자보다 이전인지 검사
+														        if (startDateObj > endDateObj) {
+														        	swal("시작일자는 종료일자보다 이전이어야 합니다.");
+														            // 시작일자와 종료일자를 초기화하거나 다시 입력할 수 있도록 처리
+														            document.getElementById("startDate").value = "";
+														            document.getElementById("endDate").value = "";
+														            // 출력 요소 초기화
+														            document.getElementById("datePrint").innerHTML = "";
+														            return;
+														        }
+														        // 날짜 출력 요소를 가져와서 설정
+														        var datePrint = document.getElementById("datePrint");
+														        var output = startDate + " ~ " + endDate;
+														        datePrint.innerHTML = output;
+											            }
+											        }
+												</script>
+       				 								
+			                        			</div>
+           			
+			                    			</div>
+		                    				<button class="apply-button">연수원 신청하기</button>
+							  			</form>
+									</div>
+									
+
+								</div>
+							</div> 
 						</div>
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Understood</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-            
+					</div>
+				</div>   
         </section>
+
+
+
 
         <section class="quick-links">
             <h2>생활연수 바로가기</h2>
@@ -123,5 +173,33 @@
     </main>
 	
 	<c:import url="../footer.jsp"></c:import>
+	
+    <script>
+        function activateTab1(tabId) {
+            var option1Tab = document.getElementById('option1-tab');
+            var option2Tab = document.getElementById('option2-tab');
+
+            if (tabId === 'option1-tab') {
+            	option1Tab.classList.add('active');
+            	option2Tab.classList.remove('active');
+            } else if (tabId === 'option2-tab') {
+            	option2Tab.classList.add('active');
+            	option1Tab.classList.remove('active');
+            }
+        }
+        
+        function activateTab2(tabId) {
+            var option3Tab = document.getElementById('option3-tab');
+            var option4Tab = document.getElementById('option4-tab');
+
+            if (tabId === 'option3-tab') {
+            	option3Tab.classList.add('active');
+            	option4Tab.classList.remove('active');
+            } else if (tabId === 'option4-tab') {
+            	option4Tab.classList.add('active');
+            	option3Tab.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
