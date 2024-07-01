@@ -1,6 +1,8 @@
 package com.kbfg.lxp.facility.command;
 
-import java.util.ArrayList;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,15 +13,20 @@ import com.kbfg.lxp.facility.dao.FacilityNoticeDAO;
 import com.kbfg.lxp.facility.dto.FacilityNoticeBean;
 
 @Service
-public class FacilityNoticeAddCommand implements Command {
+public class FacilityContentCommand implements Command {
 	@Autowired
 	FacilityNoticeDAO noticedao;
 	
 	@Override
 	public void execute(Model model) {
 		
-		ArrayList<FacilityNoticeBean> dtos = noticedao.list();
-		model.addAttribute("list",dtos);
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		int num = Integer.parseInt(request.getParameter("num"));
+		
+		FacilityNoticeBean dto = noticedao.contentView(num);
+		
+		model.addAttribute("content_view", dto);
 
 	 }
  }

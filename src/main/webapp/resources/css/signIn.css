@@ -116,6 +116,7 @@ html, body {
     margin-top: 10px;
     transition: background-color 0.3s;
     height:60px;
+    width: 342px;
 }
 
 .login-button:hover {
