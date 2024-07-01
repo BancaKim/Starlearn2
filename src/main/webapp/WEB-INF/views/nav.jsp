@@ -92,7 +92,7 @@
 							<div class="contents__menu">
 								<ul class="inner">
 									<li><a href=#>공지사항</a></li>
-									<li><a href=#>Q&A</a></li>
+									<li><a href="${pageContext.request.contextPath}/HelpDesk/QnA">Q&A</a></li>
 									<li><a href=#>HR(인재개발) 소개</a></li>
 								</ul>
 							</div>
