@@ -1,3 +1,4 @@
+
 package com.kbfg.lxp.facility.dao;
 
 import java.util.ArrayList;
@@ -54,3 +55,4 @@ public class FacilityNoticeDAO {
 		  this.template.update(query, facility_notice_num);
  }
 }
+

@@ -1,19 +1,16 @@
-<<<<<<< HEAD
-/META-INF/
-*.classpath
+.classpath
 .settings/
-/bin/
-=======
+.project
+.springBeans
+bin/
+target/
+
 ### STS ###
 .apt_generated
-.classpath
 .factorypath
-.project
-.settings
-.springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
->>>>>>> 83255b641135d15e2634a8d80a3bf65fc03e09e6
-/target/
+
+
+
+
+
