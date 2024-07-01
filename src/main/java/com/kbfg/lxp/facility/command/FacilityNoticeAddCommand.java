@@ -19,8 +19,12 @@ public class FacilityNoticeAddCommand implements Command {
 	@Override
 	public void execute(Model model) {
 
+		
+
 		ArrayList<FacilityNoticeBean> dtos = noticedao.list();
 		model.addAttribute("list",dtos);
+
+
 
 	 }
  }

@@ -20,8 +20,10 @@ import com.kbfg.lxp.user.command.UserLoginCommand;
 @Controller
 public class LoginController {
 	
+
 	@Autowired UserLoginCommand userLoginCommand;
 	@Autowired UserAddCommand userAddCommand;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
@@ -50,7 +52,7 @@ public class LoginController {
 	@RequestMapping(value = "/signInConfirm", method = RequestMethod.POST)
 	public String signInConfirm(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
-		userLoginCommand.execute(model);
+		//userLoginCommand.execute(model);
 		
 		return "redirect:home";
 	}
@@ -64,7 +66,9 @@ public class LoginController {
 	public String signUpConfirm(HttpServletRequest request, Model model) {
 		
 		model.addAttribute("request", request);
+
 		userAddCommand.execute(model);
+
 		return "redirect:home";
 	}
 

@@ -11,7 +11,6 @@
 
 
 
-
 	</div>
 		<div>
 		<h1>my course</h1>
