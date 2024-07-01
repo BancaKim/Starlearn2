@@ -9,17 +9,8 @@
 	<div>
 		<h1>Hello world! line1</h1>
 
-<<<<<<< HEAD
-	Hello world!  HO~DFD
-	이렇게 가다간 다 죽어
-	다 죽는다구~~!!
-	
-	안녕 죽지는 않을거 같다.
-=======
-	</div>
-		<div>
-		<h1>Hello world! line2</h1>
->>>>>>> one0701
+
+
 
 	</div>
 		<div>
