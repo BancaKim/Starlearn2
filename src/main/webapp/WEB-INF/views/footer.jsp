@@ -10,7 +10,6 @@
 </head>
 <body>
     <footer>
-       	</div>
     	<div class="footer-component">
 	    	<div class="sitemap-column">
 	    		<h6 class="sitemap-title">나의강의실</h6>

@@ -1,134 +1,58 @@
-//package com.kbfg.lxp.facility.dao;
-//
-//import java.util.List;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.jdbc.core.BeanPropertyRowMapper;
-//import org.springframework.jdbc.core.JdbcTemplate;
-//import org.springframework.stereotype.Repository;
-//
-//import com.kbfg.lxp.facility.dto.FacilityNoticeBean;
-//
-//@Repository
-//public class FacilityNoticeDAO {
-//JdbcTemplate template;
-//	
-//	@Autowired
-//	public FacilityNoticeDAO(JdbcTemplate jdbcTemplate) {
-//		this.template = jdbcTemplate;
-//	}
-//
-//	public int getListCount() {
-//		String sql = "select count(*) from board";
-//		return template.queryForObject(sql, Integer.class);
-//	}
-//
-//	public List getBoardList(int page, int limit) {
-//		String query = "select * from "
-//				+ "(select row_number() over() rnum,BOARD_NUM,BOARD_NAME,BOARD_SUBJECT,"
-//				+ "BOARD_CONTENT,BOARD_FILE,BOARD_RE_REF,BOARD_RE_LEV,"
-//				+ "BOARD_RE_SEQ,BOARD_READCOUNT,BOARD_DATE from "
-//				+ "(select * from board order by BOARD_RE_REF desc,BOARD_RE_SEQ asc) AS s)AS u "
-//				+ "where rnum>=? and rnum<=?"; 
-//
-//		int startrow = (page - 1) * 10 + 1; 
-//		int endrow = startrow + limit - 1;
-//		
-//		return (List<FacilityNoticeBean>)template.query(query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class),startrow, endrow);
-//		}
-//			
-//		
-//	public boolean boardInsert(FacilityNoticeBean notice) {
-//		int num = 0;
-//		int result = 0;
-//
-//		String sql = "select max(facility_notice_num) from facility_notice";
-//		num = template.queryForObject(sql, Integer.class)+1;
-//		
-//		sql = "insert into facility_notice (FACILITY_NOTICE_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,";
-//		sql += "BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF," + "BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,"
-//				+ "BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,now())";
-//
-//		result = template.update(sql, num, notice.getBOARD_NAME(),notice.getBOARD_PASS(),notice.getBOARD_SUBJECT(),notice.getBOARD_CONTENT(), notice.getBOARD_FILE(),num,0,0,0);
-//		
-//		return result>0;
-//				}
-//
-//	public boolean boardModify(FacilityNoticeBean modifyboard) throws Exception {
-//		String sql = "update board set BOARD_SUBJECT=?,BOARD_CONTENT=? where BOARD_NUM=?";
-//
-//		int result = 0;
-//		result = template.update(sql, modifyboard.getBOARD_SUBJECT(),modifyboard.getBOARD_CONTENT(),modifyboard.getBOARD_NUM());
-//		
-//		return result>0;
-//	}
-//
-//	public boolean isBoardWriter(int num, String pass) {
-//
-//		String sql = "select BOARD_PASS from board where BOARD_NUM=?";
-//		try {
-//		String dbPass = template.queryForObject(sql, String.class, num);
-//		return pass.equals(dbPass);
-//		} catch (Exception ex) {
-//			System.out.println("exception:"+ex);
-//			return false;
-//		}
-//	}
-//
-//	public boolean boardDelete(int num) {
-//		String sql = "delete from board where BOARD_num=?";
-//		try {
-//			int result = template.update(sql,num);
-//			return result>0;
-//		}catch(Exception ex) {
-//			System.out.println("boardDelete:"+ex);
-//			return false;
-//			}
-//		}
-//
-//	
-//	public void setReadCountUpdate(int num){
-//		String sql = "update board set BOARD_READCOUNT = BOARD_READCOUNT+1 where BOARD_NUM = ?";
-//		
-//		try {
-//			template.update(sql,num);
-//		} catch (Exception ex) {
-//			System.out.println("setReadCountUpdate : " + ex);
-//		}
-//	}
-//
-//	public FacilityNoticeBean getDetail(int num) {
-//		String sql ="select * from board where BOARD_NUM = ?";
-//		try {
-//		return template.queryForObject(sql, new BeanPropertyRowMapper(FacilityNoticeBean.class),num);
-//		}catch(Exception ex) {
-//			System.out.println("ex:"+ex);
-//			return null;
-//		}
-//	}
-//	
-//	public int boardReply(FacilityNoticeBean board) {
-//		String board_max_sql = "select max(board_num) from board";
-//		String update_seq_sql = "update board set BOARD_RE_SEQ=BOARD_RE_SEQ+1 where BOARD_RE_REF=? and BOARD_RE_SEQ>?";
-//		String insert_sql = "insert into board (BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,BOARD_CONTENT, BOARD_FILE,BOARD_RE_REF,BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,BOARD_DATE) values(?,?,?,?,?,?,?,?,?,?,sysdate())";
-//		
-//		try {
-//			Integer maxBoardNum = template.queryForObject(board_max_sql, Integer.class);
-//			int num = (maxBoardNum != null ? maxBoardNum : 0) + 1;
-//		    int re_ref = board.getBOARD_RE_REF();
-//            int re_lev = board.getBOARD_RE_LEV();
-//            int re_seq = board.getBOARD_RE_SEQ();
-//            
-//            template.update(update_seq_sql,re_ref,re_seq);
-//			re_seq = re_seq + 1;
-//			re_lev = re_lev + 1;
-//
-//			template.update(insert_sql, num,board.getBOARD_NAME(),board.getBOARD_PASS(),board.getBOARD_SUBJECT(),board.getBOARD_CONTENT(),"",re_ref,re_lev,re_seq,0);
-//			
-//			return num;
-//		} catch (Exception ex) {
-//			System.out.println("boardReply : " + ex);
-//			return 0; 
-//			}
-//		}
-//	}
+
+package com.kbfg.lxp.facility.dao;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.kbfg.lxp.facility.dto.FacilityNoticeBean;
+
+@Repository
+public class FacilityNoticeDAO {
+	
+	JdbcTemplate template;
+	
+	@Autowired
+	public FacilityNoticeDAO(JdbcTemplate jdbcTemplate) {
+		this.template = jdbcTemplate;
+	}
+	
+	public ArrayList<FacilityNoticeBean> list() {
+		  
+	  String query =
+	  "select FACILITY_NOTICE_NUM, FACILITY_NOTICE_TITLE, FACILITY_NOTICE_CONTENT, FACILITY_NOTICE_HIT " +
+	  "from mvc_board order by FACILITY_NOTICE_NUM desc"; 
+	  
+	  return (ArrayList<FacilityNoticeBean>)template.query (query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));
+	  }
+
+	  public void write(FacilityNoticeBean notice) { 
+		  String query ="insert into mvc_board (FACILITY_NOTICE_TITLE, FACILITY_NOTICE_CONTENT,facility_notice_rolldate, FACILITY_NOTICE_HIT) values (?, ?, now(), 0);"; 
+		  this.template.update(query, notice.getFacility_notice_title(),notice.getFacility_notice_content());
+	  }
+		
+	  public void modify(int facility_notice_num, String facility_notice_title, String facility_notice_content) {   
+		  String query = "update facility_notice set FACILITY_NOTICE_TITLE = ?, FACILITY_NOTICE_CONTENT = ? where FACILITY_NOTICE_NUM = ?";
+		  this.template.update(query,facility_notice_title,facility_notice_content, facility_notice_num);
+		  };
+	
+	  public void delete(int facility_notice_num) { // TODO Auto-generated method stub
+		  String query = "delete from facility_notice where facility_notice_num = ?";
+		  this.template.update(query, facility_notice_num );
+		  }
+	
+	  public FacilityNoticeBean contentView(int facility_notice_num) {
+		  upHit(facility_notice_num);
+		  String query = "select * from mvc_board where bId = " + facility_notice_num; 
+		  return template.queryForObject(query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));
+		  }
+	
+	  private void upHit(int facility_notice_num) { // TODO Auto-generated method stub
+		  String query = "update mvc_board set bHit = bHit + 1 where bId = ?";
+		  this.template.update(query, facility_notice_num);
+ }
+}
+

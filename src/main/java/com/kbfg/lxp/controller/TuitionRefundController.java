@@ -1,4 +1,4 @@
-package com.kbfg.lxp;
+package com.kbfg.lxp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,13 +14,13 @@ public class TuitionRefundController {
 	
 	@RequestMapping("/tuition_refund_apply")
 	public String tuition_refundPage(Model model) {
-		System.out.println("¿Ó½î ¸®ÆÝ");
+		System.out.println("ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		return "tuition_refund/tuition_refund_apply";
 	}
 	
 	@RequestMapping("/refundApplyList")
 	public String refundApplyListPage(Model model) {
-		System.out.println("¿Ó½î ¸®½ºÆ®");
+		System.out.println("ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®");
 		return "tuition_refund/refundApplyList";
 	}
 	

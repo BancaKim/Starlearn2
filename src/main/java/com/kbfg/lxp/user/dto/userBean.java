@@ -1,4 +1,4 @@
-package com.kbfg.lxp.member.dto;
+package com.kbfg.lxp.user.dto;
 
 public class userBean {
 	

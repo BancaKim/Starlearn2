@@ -1,4 +1,3 @@
-
 package com.kbfg.lxp.facility.command;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import com.kbfg.lxp.facility.dao.FacilityNoticeDAO;
 import com.kbfg.lxp.facility.dto.FacilityNoticeBean;
 
 @Service
-public class FacilityNoticeAddCommand implements Command {
+public class FacilityNoticeListCommand implements Command {
 	@Autowired
 	FacilityNoticeDAO noticedao;
 	
