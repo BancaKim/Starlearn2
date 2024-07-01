@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
-	@Autowired UserLoginCommand userLoginCommand;
+	//@Autowired UserLoginCommand userLoginCommand;
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
@@ -48,7 +49,7 @@ public class LoginController {
 		HttpSession session = request.getSession();
 		
 		model.addAttribute("request", request);
-		userLoginCommand.execute(model);
+		//userLoginCommand.execute(model);
 		
 		/* String user_id */
 		/* session.setAttribute("user_id", user_id); */
@@ -65,7 +66,7 @@ public class LoginController {
 		HttpSession session = request.getSession();
 		
 		model.addAttribute("request", request);
-		facilityContentCommand.execute(model);
+		//facilityContentCommand.execute(model);
 		
 		/* String user_id */
 		/* session.setAttribute("user_id", user_id); */
