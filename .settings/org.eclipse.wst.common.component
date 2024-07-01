@@ -1,89 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< HEAD
-                    	
-    
-=======
-                	
->>>>>>> one0701
-    
-    
-    
     <wb-module deploy-name="lxp-1.0.0-BUILD-SNAPSHOT">
-<<<<<<< HEAD
-                                                
-        
-=======
-                                        
->>>>>>> one0701
-        
-        
-        
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-<<<<<<< HEAD
-                                        		
-        
-=======
-                                		
->>>>>>> one0701
-        
-        
-        
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-<<<<<<< HEAD
-                                        		
-        
-=======
-                                		
->>>>>>> one0701
-        
-        
-        
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-<<<<<<< HEAD
-                                        		
-        
-=======
-                                		
->>>>>>> one0701
-        
-        
-        
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-<<<<<<< HEAD
-                                                
-        
-        
-        
-        
         <property name="context-root" value="lxp"/>
-        <property name="java-output-path" value="/StarLearn2/target/classes"/>
-                                        	
-    
-=======
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-                                		
-        
-        
-        
-        <property name="java-output-path" value="target/classes"/>
-                                        
-        
-        
-        
-        <property name="context-root" value="lxp"/>
-                                	
->>>>>>> one0701
-    
-    
-    
+        <property name="java-output-path" value="/Starlearn2/target/classes"/>
     </wb-module>
-<<<<<<< HEAD
-                    
-
-=======
-                
->>>>>>> one0701
-
-
-
 </project-modules>

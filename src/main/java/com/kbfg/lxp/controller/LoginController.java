@@ -67,4 +67,5 @@ public class LoginController {
 		userAddCommand.execute(model);
 		return "redirect:home";
 	}
+
 }
