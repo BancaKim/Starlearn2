@@ -28,8 +28,8 @@
     main {
         text-align: center; /* Center align content */
         width: 1100px; /* Set fixed width */
-        margin: 0 auto; /* Center align horizontally */
         position: relative; /* Set as relative position */
+         margin: 200px auto 0; /* Center align horizontally */
     }
     
     
@@ -88,12 +88,12 @@
         background-color: #e7e4df;
        
     }
+
     
 </style>
 </head>
 <body>
 <main>
-    <br><br><br><br><br><br><br>
     <div id="title">공지사항</div>
     <br>
     <div class="notice">  
@@ -112,6 +112,7 @@
         </form>
     </div>
     <br>
+    </div>
     
     <div id="noticeTable_div">
     	<table id="noticeTable">

@@ -28,7 +28,7 @@
     main {
         text-align: center; /* Center align content */
         width: 1100px; /* Set fixed width */
-        margin: 0 auto; /* Center align horizontally */
+        margin: 200px auto 0; /* Center align horizontally */
         position: relative; /* Set as relative position */
     }
     
@@ -183,17 +183,18 @@
 	    border-radius: 25px;
 	    
     }
+    
      #qnaTableTR:hover{
       	border-radius: 25px;
         background-color: #e7e4df;
        
     }
+
     
 </style>
 </head>
 <body>
 <main>
-    <br><br><br><br><br><br><br>
     <div id="title">QnA</div>
     <br>
     <div class="QnA">

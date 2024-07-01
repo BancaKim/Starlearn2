@@ -54,7 +54,7 @@
 							<div class="contents__menu">
 								<ul class="inner">
 
-									<li><a href="#">HRD 클라우드</a></li>
+									<li><a href="${pageContext.request.contextPath}/HRD/HRD_CLOUD">HRD 클라우드</a></li>
 									<li><a href="#">SSL</a></li>
 
 								</ul>

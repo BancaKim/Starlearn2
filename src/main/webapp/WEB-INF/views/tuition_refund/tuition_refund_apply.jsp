@@ -27,7 +27,12 @@
 		    font-family: 'NanumSquareRound';
 		    color: #545045;
 		    font: normal 1rem/1.25;
-		    background-color: #f7f4f0;
+		   
+		}
+		main{
+			text-align: center;
+        	margin: 200px auto 0; /* Center align horizontally */
+        	background-color: #f7f4f0;
 		}
     	
         #title {
@@ -120,14 +125,7 @@
     </style>
 </head>
 <body>
-<div class ="main">
-		<br>
-  		<br>
-  		<br>
-  		<br>
-    	<br>
-  		<br>
-  		<br>
+<main>
         <div id="title">학원비 지원신청</div>
   		<br>
   		<Br>
@@ -500,7 +498,7 @@
       </div>
     </div>
   </div>
-</div>
+</main>
 	<c:import url="../footer.jsp"></c:import>
 </body>
 
