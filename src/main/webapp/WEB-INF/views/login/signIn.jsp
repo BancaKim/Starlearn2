@@ -29,8 +29,8 @@
 				<button class="tab" id="password-tab" onclick="activateTab('password-tab')">비밀번호 로그인</button>
 			</div>
 			<form class="login-form" action="${pageContext.request.contextPath}/signInConfirm">
-				<input type="text" placeholder = "아이디" class="login-input">
-				<input type="password" placeholder = "비밀번호" class="login-input">
+				<input type="text" name="user_id" placeholder = "아이디" class="login-input">
+				<input type="password" name="user_pw" placeholder = "비밀번호" class="login-input">
 				<button type="submit" class="login-button">
 				<i class="fa-solid fa-right-to-bracket"></i>
 				비밀번호 로그인</button>

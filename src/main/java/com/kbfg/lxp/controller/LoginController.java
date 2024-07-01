@@ -1,8 +1,5 @@
 package com.kbfg.lxp.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -17,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class LoginController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	@Autowired UserLoginCommand userLoginCommand;
+	
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -44,6 +43,18 @@ public class HomeController {
 		return "login/signIn";
 	}
 	
+	@RequestMapping(value = "/signInConfirm", method = RequestMethod.POST)
+	public String signInConfirm(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		
+		model.addAttribute("request", request);
+		userLoginCommand.execute(model);
+		
+		/* String user_id */
+		/* session.setAttribute("user_id", user_id); */
+		return "redirect:home";
+	}
+	
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public String signUp(Model model) {
 		return "login/signUp";
@@ -51,8 +62,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/signUpConfirm", method = RequestMethod.POST)
 	public String signUpConfirm(HttpServletRequest request, Model model) {
-		
 		HttpSession session = request.getSession();
+		
+		model.addAttribute("request", request);
+		facilityContentCommand.execute(model);
 		
 		/* String user_id */
 		/* session.setAttribute("user_id", user_id); */
