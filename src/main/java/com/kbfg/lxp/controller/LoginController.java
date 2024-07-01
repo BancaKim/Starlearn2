@@ -1,5 +1,7 @@
 package com.kbfg.lxp.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -48,13 +50,20 @@ public class LoginController {
 	public String signIn(Model model) {
 		return "login/signIn";
 	}
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		return "redirect:home";
+	}
 	
 	@RequestMapping(value = "/signInConfirm", method = RequestMethod.POST)
 	public String signInConfirm(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
-		//userLoginCommand.execute(model);
-		
-		return "redirect:home";
+		userLoginCommand.execute(model);
+		Map<String, Object> map = model.asMap();
+		String nextPage = (String) map.get("nextPage");
+		return nextPage;
 	}
 	
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
@@ -65,10 +74,10 @@ public class LoginController {
 	@RequestMapping(value = "/signUpConfirm", method = RequestMethod.POST)
 	public String signUpConfirm(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
-
 		userAddCommand.execute(model);
-
-		return "redirect:home";
+		Map<String, Object> map = model.asMap();
+		String nextPage = (String) map.get("nextPage");
+		return nextPage;
 	}
 
 }

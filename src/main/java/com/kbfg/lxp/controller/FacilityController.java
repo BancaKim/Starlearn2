@@ -46,4 +46,6 @@ public class FacilityController {
 	public String noticeWrite(Model model) {
 		return "facility/facility_notice_write";
 	}
+	
+	
 }

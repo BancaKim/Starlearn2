@@ -10,13 +10,13 @@
 	
 	<main>
 		<div>
-			<h1>Hello ${user_id}</h1>
+			<h1>Hello ${sessionScope.user_id}</h1>
 		</div>
 		<div>
 			<h1>Hello world! line2</h1>
 		</div>
 		<div>
-			<h1>Hello ${user_id}</h1>
+			<h1>Hello ${sessionScope.user_id}</h1>
 			<h1>my course</h1>
 			<a href="/lxp/course/courseView">my course</a><br>
 		</div>

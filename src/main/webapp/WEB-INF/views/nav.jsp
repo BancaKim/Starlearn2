@@ -103,6 +103,7 @@
 				<div class="right-container">
 					<div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-bell align-middle"></i></a></div>
 	                <div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-calendar align-middle"></i></a></div>
+	                <div class="iconRight"><a href="${pageContext.request.contextPath}/logout"><i class="fa-solid fa-right-from-bracket"></i></a></div>
 	                <div class="box">
 	                	<img id="profile-img" class="profile" src="${pageContext.request.contextPath}/resources/images/1654530.jpg">
 	                	<div class="dropdown-menu" id="dropdown-menu">

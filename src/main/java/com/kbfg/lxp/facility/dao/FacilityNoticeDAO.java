@@ -29,9 +29,10 @@ public class FacilityNoticeDAO {
 	  return (ArrayList<FacilityNoticeBean>)template.query (query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));
 	  }
 
-	  public void write(FacilityNoticeBean notice) { 
-		  String query ="insert into facility_notice (FACILITY_NOTICE_TITLE, FACILITY_NOTICE_CONTENT,facility_notice_rolldate, FACILITY_NOTICE_HIT) values (?, ?, now(), 0);"; 
-		  this.template.update(query, notice.getFacility_notice_title(),notice.getFacility_notice_content());
+	  public boolean write(FacilityNoticeBean notice) { 
+		  String query ="insert into facility_notice (FACILITY_NOTICE_TITLE, FACILITY_NOTICE_CONTENT, FACILITY_NOTICE_FILE, FACILITY_NOTICE_HIT) values (?, ?,?,0);"; 
+		  int result = this.template.update(query, notice.getFacility_notice_title(),notice.getFacility_notice_content(),notice.getFacility_notice_file());
+	      return result > 0;
 	  }
 		
 	  public void modify(int facility_notice_num, String facility_notice_title, String facility_notice_content) {   
