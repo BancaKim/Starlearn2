@@ -1,6 +1,6 @@
 package com.kbfg.lxp.user.dto;
 
-public class userBean {
+public class UserBean {
 	
 	int user_num;
 	String user_id;
