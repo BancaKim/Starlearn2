@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import com.kbfg.lxp.Command;
 import com.kbfg.lxp.user.dao.UserDAO;
 import com.kbfg.lxp.user.dto.UserBean;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 @Service
 public class UserAddCommand implements Command {
@@ -25,24 +27,40 @@ public class UserAddCommand implements Command {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		
-		int user_num = Integer.parseInt(request.getParameter("user_num"));
-		userdata.setUser_id(request.getParameter("user_id"));
-		String user_name = request.getParameter("user_name");
-		String user_pw = request.getParameter("user_pw");
-		String user_idn = request.getParameter("user_idn");
-		String user_rank = request.getParameter("user_rank");
-		String user_position = request.getParameter("user_position");
-		String user_dept = request.getParameter("user_dept");
-		String user_ph = request.getParameter("user_ph");
-		String user_birthYear = request.getParameter("user_birthYear");
-		String user_birthMonth = request.getParameter("user_birthMonth");
-		String user_birthDay = request.getParameter("user_birthDay");
-		String user_enrollYear = request.getParameter("user_enrollYear");
-		String user_profile = request.getParameter("user_profile");
+		String realFolder="";
+   		String saveFolder="/userupload";
 		
-		Boolean hasUser = userDao.hasUser(user_id);
-		
-		if(hasUser==false) {
+   		int fileSize=5*1024*1024;
+   		
+   		realFolder=request.getRealPath(saveFolder);
+   		boolean result=false;
+   		
+   		try{
+   			MultipartRequest multi=null;
+   			multi=new MultipartRequest(request,
+   					realFolder,
+   					fileSize,
+   					"utf-8",
+   					new DefaultFileRenamePolicy());
+   			
+			userdata.setUser_id(multi.getParameter("user_id"));
+			userdata.setUser_name(multi.getParameter("user_name"));
+			userdata.setUser_pw(multi.getParameter("user_pw"));
+			userdata.setUser_idn(multi.getParameter("user_idn"));
+			userdata.setUser_rank(multi.getParameter("user_rank"));
+			userdata.setUser_position(multi.getParameter("user_position"));
+			userdata.setUser_dept(multi.getParameter("user_dept"));
+			userdata.setUser_ph(multi.getParameter("user_ph"));
+			userdata.setUser_birthYear(multi.getParameter("user_birthYear"));
+			userdata.setUser_birthMonth(multi.getParameter("user_birthMonth"));
+			userdata.setUser_birthDay(multi.getParameter("user_birthDay"));
+			userdata.setUser_enrollYear(multi.getParameter("user_enrollYear"));
+			userdata.setUser_profile(multi.getFilesystemName((String)multi.getFileNames().nextElement()));
+			
+			Boolean hasUser = userDao.hasUser(userdata.getUser_id());
+			String user_id = userdata.getUser_id();
+			
+			if(hasUser==false) {
 				if(userDao.insertUser(userdata)) {
 					HttpSession session = request.getSession();
 					session.setAttribute("user_id", user_id);
@@ -56,7 +74,9 @@ public class UserAddCommand implements Command {
 			} else {
 				model.addAttribute("message", "중복된 아이디입니다!");
 				model.addAttribute("nextPage", "redirect:signUp");
-			};
-		}
+			}
+   		} catch (Exception ex) {
+   			ex.printStackTrace();
+   		}
 	}
-	
+}
