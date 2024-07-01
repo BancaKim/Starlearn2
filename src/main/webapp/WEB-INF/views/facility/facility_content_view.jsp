@@ -16,8 +16,7 @@
 	
 	  <main>
 		<table width="500" cellpadding="0" cellspacing="0" border="1">
-			<form action="modify" method="post">
-				<input type="hidden" name="bId" value="${content_view.facility_notice_num}">
+				<input type="hidden" name="facility_notice_num" value="${content_view.facility_notice_num}"/>
 				<tr>
 					<td> 번호 </td>
 					<td> ${content_view.facility_notice_num} </td>
@@ -32,16 +31,23 @@
 				</tr>
 				<tr>
 					<td> 제목 </td>
-					<td> <input type="text" name="bTitle" value="${content_view.facility_notice_title}"></td>
+					<td> ${content_view.facility_notice_title}</td>
 				</tr>
 				<tr>
 					<td> 내용 </td>
-					<td> <textarea rows="10" name="bContent" >${content_view.facility_notice_content}</textarea></td>
+					<td> ${content_view.facility_notice_content}</td>
 				</tr>
-				<tr >
-					<td colspan="2"> <input type="submit" value="수정"> &nbsp;&nbsp; <a href="list">목록보기</a> &nbsp;&nbsp; <a href="delete?bId=${content_view.facility_notice_num}">삭제</a> &nbsp;&nbsp;</td>
+				<tr>
+					<td colspan="2"> 
+					<a href="${pageContext.request.contextPath}/facility/notice_modify?num=${content_view.facility_notice_num}">
+					[수정]
+					</a>
+					<a href="${pageContext.request.contextPath}/facility/notice_delete?num=${content_view.facility_notice_num}">
+					[삭제]
+					</a>
+					<a href="${pageContext.request.contextPath}/facility/notice_view">[목록]</a>
+					</td>
 				</tr>
-			</form>
 		</table>
     </main>
 	
