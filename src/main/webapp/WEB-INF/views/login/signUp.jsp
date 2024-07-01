@@ -52,11 +52,11 @@
 		<td> <input type="text" name="user_rank" id="userRank" size="20"> </td>
 		</tr>
 		<tr> 
-		<td bgcolor="gray">이름: 
+		<td bgcolor="gray">직위: 
 		<td> <input type="text" name="user_position" id="userPosition" size="20"> </td>
 		</tr>
 		<tr> 
-		<td bgcolor="gray">이름: 
+		<td bgcolor="gray">부서: 
 		<td> <input type="text" name="user_dept" id="userDept" size="20"> </td>
 		</tr>
 		
