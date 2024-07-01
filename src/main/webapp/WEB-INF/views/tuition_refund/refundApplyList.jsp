@@ -321,10 +321,6 @@
     </div>
     
     
-
-    
-    
-</main>
      <!-- 모달 창 -->
     <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -683,6 +679,9 @@
     </div>
   </div>
 </div>
+    
+    
+</main>
 <br>
 <br>
 <br>
