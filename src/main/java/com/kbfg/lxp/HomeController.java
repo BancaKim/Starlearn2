@@ -2,7 +2,9 @@ package com.kbfg.lxp;
 
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,17 +25,16 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = {"/","home"}, method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home(HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		String path = "";
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
+		if (session.getAttribute("user_id")==null) {
+			path = "redirect:signIn";
+		} else {
+			path = "home";
+		}
+		return path;
 	}
 	
 
@@ -45,14 +46,16 @@ public class HomeController {
 	
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public String signUp(Model model) {
-		return "login/signup";
+		return "login/signUp";
 	}
 	
-	@RequestMapping(value = "/signInConfirm", method = RequestMethod.GET)
-	public String signInConfirm(Model model) {
+	@RequestMapping(value = "/signUpConfirm", method = RequestMethod.POST)
+	public String signUpConfirm(HttpServletRequest request, Model model) {
 		
+		HttpSession session = request.getSession();
 		
-		
+		/* String user_id */
+		/* session.setAttribute("user_id", user_id); */
 		return "redirect:home";
 	}
 }

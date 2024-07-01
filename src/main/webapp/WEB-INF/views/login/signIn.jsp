@@ -25,14 +25,14 @@
 				<img src="${pageContext.request.contextPath}/resources/images/kblogo_signin.png" alt="스타런 로고"/>
 			</div>
 			<div class="lgoin-tabs">
-				<button class="tab active" id="kb-tab" onclick="activateTab('kb-tab')">KB국민인증서 로그인</button>
+				<button class="tab active" id="kb-tab" onclick="activateTab('kb-tab')">KB인증서 로그인</button>
 				<button class="tab" id="password-tab" onclick="activateTab('password-tab')">비밀번호 로그인</button>
 			</div>
 			<form class="login-form" action="${pageContext.request.contextPath}/signInConfirm">
 				<input type="text" placeholder = "아이디" class="login-input">
 				<input type="password" placeholder = "비밀번호" class="login-input">
 				<button type="submit" class="login-button">
-				<i class="fa-solid fa-right-to-bracket"></i>2
+				<i class="fa-solid fa-right-to-bracket"></i>
 				비밀번호 로그인</button>
 			</form>
 			<div class="options">

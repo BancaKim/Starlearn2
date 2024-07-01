@@ -1,4 +1,4 @@
-package com.kbfg.lxp.facility.command;
+package com.kbfg.lxp.user.command;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ import com.kbfg.lxp.facility.dao.FacilityNoticeDAO;
 import com.kbfg.lxp.facility.dto.FacilityNoticeBean;
 
 @Service
-public class FacilityNoticeAddCommand implements Command {
+public class UserAddCommand implements Command {
 	@Autowired
 	FacilityNoticeDAO noticedao;
 	

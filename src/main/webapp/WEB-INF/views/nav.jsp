@@ -86,9 +86,19 @@
 				</ul>
 				</div>
 				<div class="right-container">
-					 <div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-bell align-middle"></i></a></div>
+					<div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-bell align-middle"></i></a></div>
 	                <div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-calendar align-middle"></i></a></div>
-	                <div class="box"><img class="profile" src="${pageContext.request.contextPath}/resources/images/1654530.jpg"></div>
+	                <div class="box">
+	                	<img id="profile-img" class="profile" src="${pageContext.request.contextPath}/resources/images/1654530.jpg">
+	                	<div class="dropdown-menu" id="dropdown-menu">
+	                        <ul class="inner">
+	                        	<li><a href="#">마이페이지</a></li>
+	                        	<li><a href="#">Talent Board</a></li>
+	                        	<li><a href="#">역량개발평가</a></li>
+	                        	<li><a href="#">로그아웃</a></li>
+	                        </ul>
+	                    </div>
+                	</div>
 				</div>
 		</nav>
 	</header>
@@ -97,6 +107,22 @@
         <!-- Content here -->
     </div>
 
+	<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const profileImg = document.getElementById('profile-img');
+        const dropdownMenu = document.getElementById('dropdown-menu');
 
+        profileImg.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!dropdownMenu.contains(e.target) && e.target !== profileImg) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    });
+</script>
 </body>
 </html>
