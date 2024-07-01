@@ -2,6 +2,9 @@ package com.kbfg.lxp.course;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DTO_Course {
 
     private int courseRef;

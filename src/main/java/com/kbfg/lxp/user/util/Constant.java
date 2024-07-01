@@ -1,4 +1,4 @@
-package util;
+package com.kbfg.lxp.user.util;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 

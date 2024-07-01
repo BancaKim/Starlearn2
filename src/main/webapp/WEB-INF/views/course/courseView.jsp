@@ -1,4 +1,5 @@
-courseView.jsp<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+courseView.jsp<%@ page language="java"
+	contentType="text/html; charset=EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
@@ -24,26 +25,26 @@ courseView.jsp<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
 	crossorigin="anonymous"></script>
 
 <style>
-.one-nav {
+/* .one-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	font-size: 13px;
 	height: 60px;
 	margin: 20px;
-}
+} */
 /* 기본 스타일 설정 */
 .one-main {
 	font-family: 'NanumSquareRound', Arial, sans-serif;
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-top: 10px;
+/* 	padding-top: 10px; */
 	padding-bottom: 10px;
 	border: 0.2px solid #000000;
 }
 
 .one-main-header {
-	margin-bottom: 20px;
+/* 	margin-bottom: 20px; */
 	border: 0.2px solid #000000;
 }
 
@@ -157,159 +158,134 @@ courseView.jsp<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
 
 <body>
 
-	<nav class="navbar" style="border: 0.2px solid #000000;">
-		<h1>nav bar ${today}</h1>
+	<c:import url="../nav.jsp"></c:import>
+	<main style="padding-bottom: 100px;">
+		<nav class="navbar" ></nav>
 
-	</nav>
-
-	<div class="one-main">
-		<!-- <p>one-main</p> -->
-		<div class="one-main-header">
-			<p class="one-font14">홈>나의 강의실 > 진행중인연수 one-main-header</p>
-			<div class="one-main-header-row">
-				<h4 style="text-align: 80px;">진행 중 연수 one-main-header-row</h4>
-				<div class="one-main-callendar">
+		<div class="one-main">
+			<!-- <p>one-main</p> -->
+			<div class="one-main-header">
+				<p class="one-font14">홈>나의 강의실 > 진행중인연수 one-main-header</p>
+				<div class="one-main-header-row">
+					<h4 style="text-align: 80px;">진행 중 연수 one-main-header-row</h4>
+					<div class="one-main-callendar">
 
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="direction" value="prev"> <input
-							type="hidden" name="weekDate" value="${weekDates[0]}">
-						<button type="submit" class="btn btn-light one-i-callendar"><</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="direction" value="prev"> <input
+								type="hidden" name="weekDate" value="${weekDates[0]}">
+							<button type="submit" class="btn btn-light one-i-callendar"><</button>
+						</form>
 
-					<form action="courseView" method="post">
+						<form action="courseView" method="post">
 
-						<input type="hidden" name="weekDate" value="${weekDates[0]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[0].isEqual(today) ? 'today' : ''}">
-							${weekDates[0].dayOfMonth} <span class="break one-font14">월</span>
-						</button>
-					</form>
+							<input type="hidden" name="weekDate" value="${weekDates[0]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[0].isEqual(today) ? 'today' : ''}">
+								${weekDates[0].dayOfMonth} <span class="break one-font14">월</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="weekDate" value="${weekDates[1]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[1].isEqual(today) ? 'today' : ''}">
-							${weekDates[1].dayOfMonth} <span class="break one-font14">화</span>
-						</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="weekDate" value="${weekDates[1]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[1].isEqual(today) ? 'today' : ''}">
+								${weekDates[1].dayOfMonth} <span class="break one-font14">화</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="weekDate" value="${weekDates[2]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[2].isEqual(today) ? 'today' : ''}">
-							${weekDates[2].dayOfMonth} <span class="break one-font14">수</span>
-						</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="weekDate" value="${weekDates[2]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[2].isEqual(today) ? 'today' : ''}">
+								${weekDates[2].dayOfMonth} <span class="break one-font14">수</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="weekDate" value="${weekDates[3]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[3].isEqual(today) ? 'today' : ''}">
-							${weekDates[3].dayOfMonth} <span class="break one-font14">목</span>
-						</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="weekDate" value="${weekDates[3]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[3].isEqual(today) ? 'today' : ''}">
+								${weekDates[3].dayOfMonth} <span class="break one-font14">목</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="weekDate" value="${weekDates[4]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[4].isEqual(today) ? 'today' : ''}">
-							${weekDates[4].dayOfMonth} <span class="break one-font14">금</span>
-						</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="weekDate" value="${weekDates[4]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[4].isEqual(today) ? 'today' : ''}">
+								${weekDates[4].dayOfMonth} <span class="break one-font14">금</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="weekDate" value="${weekDates[5]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[5].isEqual(today) ? 'today' : ''}">
-							${weekDates[5].dayOfMonth} <span class="break one-font14">토</span>
-						</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="weekDate" value="${weekDates[5]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[5].isEqual(today) ? 'today' : ''}">
+								${weekDates[5].dayOfMonth} <span class="break one-font14">토</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="weekDate" value="${weekDates[6]}">
-						<input type="hidden" name="direction" value="thisPage">
-						<button type="submit"
-							class="btn btn-light break one-a-callendar one-font24 ${weekDates[6].isEqual(today) ? 'today' : ''}">
-							${weekDates[6].dayOfMonth} <span class="break one-font14">일</span>
-						</button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="weekDate" value="${weekDates[6]}">
+							<input type="hidden" name="direction" value="thisPage">
+							<button type="submit"
+								class="btn btn-light break one-a-callendar one-font24 ${weekDates[6].isEqual(today) ? 'today' : ''}">
+								${weekDates[6].dayOfMonth} <span class="break one-font14">일</span>
+							</button>
+						</form>
 
-					<form action="courseView" method="post">
-						<input type="hidden" name="direction" value="next"> <input
-							type="hidden" name="weekDate" value="${weekDates[6]}">
-						<button type="submit" class="btn btn-light one-i-callendar">></button>
-					</form>
+						<form action="courseView" method="post">
+							<input type="hidden" name="direction" value="next"> <input
+								type="hidden" name="weekDate" value="${weekDates[6]}">
+							<button type="submit" class="btn btn-light one-i-callendar">></button>
+						</form>
 
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="one-main">
-		<div>
-			<h4 style="text-align: 80px;">일정</h4>
-		</div>
-		<div>
-			<p style="color: #84888b;">오늘 등록된 일정이 없어요.</p>
-		</div>
-	</div>
-
-	<div class="one-main">
-		<div>
-			<h4 style="text-align: 80px;">진행 중 연수</h4>
-		</div>
-
-		<div class="one-container">
-			<div class="one-image-container">
-				<img
-					src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
-					alt="Placeholder Image">
-
-				<!--  <img src="@tmp_course_thumbnail_03.a341108a.jpg" alt="Placeholder Image">
- -->
-				<div class="one-overlay-text">2024년 DIGI Campus 과정</div>
-				<a href="https://www.example.com"></a>
-				<p class="one-font16" style="padding-top: 15px; margin: 0px;">KB국민은행</p>
-				<p style="color: #84888b;">2024.01.19~2024.12.21</p>
-				<p style="color: #8d744a;">마일리지 50</p>
+		<div class="one-main">
+			<div>
+				<h4 style="text-align: 80px;">일정</h4>
 			</div>
-			<div class="one-image-container">
-				<img
-					src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
-					alt="Placeholder Image">
+			<div>
+				<p style="color: #84888b;">오늘 등록된 일정이 없어요.</p>
+			</div>
+		</div>
 
-				<!--  <img src="@tmp_course_thumbnail_03.a341108a.jpg" alt="Placeholder Image">
- -->
-				<div class="one-overlay-text">2024년 DIGI Campus 과정</div>
-				<a href="https://www.example.com"></a>
-				<p class="one-font16" style="padding-top: 15px; margin: 0px;">KB국민은행</p>
-				<p style="color: #84888b;">2024.01.19~2024.12.21</p>
-				<p style="color: #8d744a;">마일리지 50</p>
+		<div class="one-main">
+			<div>
+				<h4 style="text-align: 80px;">진행 중 연수</h4>
 			</div>
 
+			<div class="one-container">
+				<div class="one-image-container">
+					<img
+						src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
+						alt="Placeholder Image">
 
-
+					<!--  <img src="@tmp_course_thumbnail_03.a341108a.jpg" alt="Placeholder Image">
+ -->
+					<div class="one-overlay-text">2024년 DIGI Campus 과정</div>
+					<a href="https://www.example.com"></a>
+					<p class="one-font16" style="padding-top: 15px; margin: 0px;">KB국민은행</p>
+					<p style="color: #84888b;">2024.01.19~2024.12.21</p>
+					<p style="color: #8d744a;">마일리지 50</p>
+				</div>
+			</div>
 		</div>
-
-
-	</div>
-
-
-<%-- 	<h1>Week Dates</h1>
-	<ul>
-		<c:forEach var="date" items="${weekDates}">
-			<li>${date}</li>
-		</c:forEach>
-	</ul>
- --%>
-
+	</main>
+	<footer>
+	<c:import url="../footer.jsp"></c:import>
+	</footer>
 
 </body>
 </html>

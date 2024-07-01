@@ -9,15 +9,15 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
 
-@Component
 public class CourseViewAction implements CourseCommand {
+	
 	@Override
 	public void execute(Model model) throws Exception {
 
+	
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 
@@ -51,12 +51,28 @@ public class CourseViewAction implements CourseCommand {
 		request.setAttribute("weekDates", weekDates);
 		request.setAttribute("today", today);
 		
-		DAO_Course dao = new DAO_Course();
 		
-		System.out.println(dao.list());
-	
+		DAO_Course dao = new DAO_Course();
+//		DTO_Course dto =new DTO_Course();
 		
 
+		List CourseList=new ArrayList();
+		List myCourseList=new ArrayList();
+		
+		CourseList= dao.list();
+		String user_idn = "1234";
+		
+		
+		
+		myCourseList=new ArrayList();
+		myCourseList=dao.getItem(today, user_idn);
+		
+		System.out.println("dao.list().size()"+CourseList.size());
+		System.out.println("dao.getItem().size()"+myCourseList.size());
+		
+		
+		request.setAttribute("boardList", myCourseList);
+	
 	}
 
 	private List<LocalDate> getDatesBetween(LocalDate startDate, LocalDate endDate) {
@@ -68,25 +84,4 @@ public class CourseViewAction implements CourseCommand {
 		}
 		return dates;
 	}
-
-//	public static String getKoreanDayOfWeek(DayOfWeek dayOfWeek) {
-//		switch (dayOfWeek) {
-//		case MONDAY:
-//			return "월";
-//		case TUESDAY:
-//			return "화";
-//		case WEDNESDAY:
-//			return "수";
-//		case THURSDAY:
-//			return "목";
-//		case FRIDAY:
-//			return "금";
-//		case SATURDAY:
-//			return "토";
-//		case SUNDAY:
-//			return "일";
-//		default:
-//			return "";
-//		}
-//	}
 }
