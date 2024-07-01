@@ -13,10 +13,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HelpDestController {
 	
 	@RequestMapping("/QnA")
-	public String tuition_refundPage(Model model) {
+	public String QnAPage(Model model) {
 		return "HelpDesk/QnA";
 	}
 	
-
+	@RequestMapping("/introduceHR")
+	public String introduceHRPage(Model model) {
+		return "HelpDesk/introduceHR";
+	}
 	
+	@RequestMapping("/HelpDeskNotice")
+	public String HelpDeskNoticePage(Model model) {
+		return "HelpDesk/HelpDeskNotice";
+	}
+
 }
