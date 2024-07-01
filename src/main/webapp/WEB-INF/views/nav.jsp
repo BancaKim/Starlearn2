@@ -54,6 +54,19 @@
 							<div class="contents__menu">
 								<ul class="inner">
 
+									<li><a href="#">HRD 클라우드</a></li>
+									<li><a href="#">SSL</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="item">
+						<div class="item__name">자기주도 학습지원</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+
 									<li><a href="${pageContext.request.contextPath}/tuition_refund/tuition_refund_apply">학원비 지원신청</a></li>
 									<li><a href="${pageContext.request.contextPath}/tuition_refund/refundApplyList">지원신청 현황조회</a></li>
 
@@ -105,26 +118,26 @@
 		</nav>
 	</header>
 
-    <div class="main container">
-        <!-- Content here -->
-    </div>
-
-	<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const profileImg = document.getElementById('profile-img');
-        const dropdownMenu = document.getElementById('dropdown-menu');
-
-        profileImg.addEventListener('click', function(e) {
-            e.stopPropagation();
+	 <script>
+        document.getElementById('profile-img').addEventListener('click', function(event) {
+            event.stopPropagation();
+            var dropdownMenu = document.getElementById('dropdown-menu');
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         });
 
-        document.addEventListener('click', function(e) {
-            if (!dropdownMenu.contains(e.target) && e.target !== profileImg) {
-                dropdownMenu.style.display = 'none';
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-img')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
             }
-        });
-    });
-</script>
+        }
+    </script>
+
 </body>
 </html>

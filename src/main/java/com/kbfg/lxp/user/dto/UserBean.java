@@ -1,5 +1,9 @@
 package com.kbfg.lxp.user.dto;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserBean {
 	
 	int user_num;

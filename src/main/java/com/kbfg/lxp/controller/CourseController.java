@@ -1,4 +1,4 @@
-package com.kbfg.lxp;
+package com.kbfg.lxp.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,7 +19,7 @@ public class CourseController {
 
 	CourseCommand command = null;
 	
-	// ÄÚ½º º¸±â
+	// ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/courseView")
 	public String showMyCourse(HttpServletRequest request, Model model) throws Exception {
 
@@ -33,7 +33,7 @@ public class CourseController {
 	}
 	
 	
-	// ÄÚ½º º¸±â
+	// ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("/courseResister")
 	public String CourseResister(HttpServletRequest request, Model model) throws Exception {
 

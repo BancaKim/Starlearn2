@@ -9,8 +9,11 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
+
+@Component
 public class CourseViewAction implements CourseCommand {
 	@Override
 	public void execute(Model model) throws Exception {
@@ -19,41 +22,43 @@ public class CourseViewAction implements CourseCommand {
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 
 		LocalDate today = LocalDate.now();
-		
+
 		System.out.println(request.getParameter("weekDate"));
-		
-		if (request.getParameter("weekDate") != null&&request.getParameter("direction").equals("prev")) {
-		    today = LocalDate.parse(request.getParameter("weekDate")).minusDays(1);
+
+		if (request.getParameter("weekDate") != null) {
+			if (request.getParameter("direction").equals("prev")) {
+				today = LocalDate.parse(request.getParameter("weekDate")).minusDays(1);
+			}
+
+			else if (request.getParameter("direction").equals("next")) {
+				today = LocalDate.parse(request.getParameter("weekDate")).plusDays(1);
+			}
+
+			else if (request.getParameter("direction").equals("thisPage")) {
+				today = LocalDate.parse(request.getParameter("weekDate"));
+			}
 		}
-		
-		if (request.getParameter("weekDate") != null&&request.getParameter("direction").equals("next")) {
-		    today = LocalDate.parse(request.getParameter("weekDate")).plusDays(1);
-		}
-		
-		if (request.getParameter("weekDate") != null&&request.getParameter("direction").equals("thisPage")) {
-		    today = LocalDate.parse(request.getParameter("weekDate"));
-		}
-		
-		
-	
+
 		LocalDate monday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
 		LocalDate sunday = today.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
 
-		System.out.println("today"+today);
-		System.out.println("monday"+monday);
-		System.out.println("sunday"+sunday);
-		
-		List<LocalDate> weekDates = getDatesBetween(monday, sunday);
+		System.out.println("today" + today);
+		System.out.println("monday" + monday);
+		System.out.println("sunday" + sunday);
 
-		// courses?óê ?òà?ãú ?ç∞?ù¥?Ñ∞ Ï∂îÍ? (?ã§?†ú DB?óê?Ñú ?ç∞?ù¥?Ñ∞Î•? Í∞??†∏?ò§Í±∞ÎÇò ?ÑúÎπÑÏä§ ?ò∏Ï∂úÏùÑ ?Üµ?ï¥ ?ç∞?ù¥?Ñ∞Î•? Í∞??†∏???ïº ?ï®)
+		List<LocalDate> weekDates = getDatesBetween(monday, sunday);
 
 		request.setAttribute("weekDates", weekDates);
 		request.setAttribute("today", today);
-
+		
+		DAO_Course dao = new DAO_Course();
+		
+		System.out.println(dao.list());
 	
+		
+
 	}
 
-	// Ï£ºÏñ¥Ïß? ?ãú?ûë?ùºÍ≥? Ï¢ÖÎ£å?ùº ?Ç¨?ù¥?ùò ?Ç†Ïß? Î™©Î°ù?ùÑ Î∞òÌôò?ïò?äî Î©îÏÑú?ìú
 	private List<LocalDate> getDatesBetween(LocalDate startDate, LocalDate endDate) {
 		List<LocalDate> dates = new ArrayList<LocalDate>();
 		LocalDate date = startDate;
@@ -64,25 +69,24 @@ public class CourseViewAction implements CourseCommand {
 		return dates;
 	}
 
-	// ?öî?ùº?ùÑ ?ïúÍ∏?Î°? Î≥??ôò?ïò?äî Î©îÏÑú?ìú
-	public static String getKoreanDayOfWeek(DayOfWeek dayOfWeek) {
-		switch (dayOfWeek) {
-		case MONDAY:
-			return "ø˘";
-		case TUESDAY:
-			return "»≠";
-		case WEDNESDAY:
-			return "ºˆ";
-		case THURSDAY:
-			return "∏Ò";
-		case FRIDAY:
-			return "±›";
-		case SATURDAY:
-			return "≈‰";
-		case SUNDAY:
-			return "¿œ";
-		default:
-			return "";
-		}
-	}
+//	public static String getKoreanDayOfWeek(DayOfWeek dayOfWeek) {
+//		switch (dayOfWeek) {
+//		case MONDAY:
+//			return "ø˘";
+//		case TUESDAY:
+//			return "»≠";
+//		case WEDNESDAY:
+//			return "ºˆ";
+//		case THURSDAY:
+//			return "∏Ò";
+//		case FRIDAY:
+//			return "±›";
+//		case SATURDAY:
+//			return "≈‰";
+//		case SUNDAY:
+//			return "¿œ";
+//		default:
+//			return "";
+//		}
+//	}
 }

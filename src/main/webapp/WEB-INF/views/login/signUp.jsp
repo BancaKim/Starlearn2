@@ -16,7 +16,7 @@
 	
 	<main>
 		<h1><center> 회원가입</center> </h1>
-    	<form action = "${pageContext.request.contextPath}/signUpConfirm" id="regiform" method="Post"enctype="multipart/form-data" name="regiform">
+    	<form action = "${pageContext.request.contextPath}/signUpConfirm" id="regiform" method="Post" enctype="multipart/form-data" name="regiform">
 
 		<table bgcolor = "white" border="1">
 		
@@ -52,11 +52,11 @@
 		<td> <input type="text" name="user_rank" id="userRank" size="20"> </td>
 		</tr>
 		<tr> 
-		<td bgcolor="gray">이름: 
+		<td bgcolor="gray">직위: 
 		<td> <input type="text" name="user_position" id="userPosition" size="20"> </td>
 		</tr>
 		<tr> 
-		<td bgcolor="gray">이름: 
+		<td bgcolor="gray">부서: 
 		<td> <input type="text" name="user_dept" id="userDept" size="20"> </td>
 		</tr>
 		
@@ -71,8 +71,8 @@
 		
 		<tr> 
 		<td bgcolor="gray">생일: </td>
-		<td> <input type="text" name="birthYear" id="birthYear" size="10">년
-		<select name="birthMonth" id="birthMonth">
+		<td> <input type="text" name="user_birthYear" id="birthYear" size="10">년
+		<select name="user_birthMonth" id="birthMonth">
 		<option value="1"> 1</option>
 		<option value="2"> 2</option>
 		<option value="3"> 3</option>
@@ -86,7 +86,7 @@
 		<option value="11"> 11</option>
 		<option value="12"> 12</option>
 		</select> 월
-		<select name="birthDay" id="birthDay">
+		<select name="user_birthDay" id="birthDay">
 		<option value="1"> 1</option>
 		<option value="2"> 2</option>
 		<option value="3"> 3</option>
@@ -123,7 +123,7 @@
 		
 		<tr> 
 		<td bgcolor="gray">입행년도: </td>
-		<td> <input type="number" name="user_enrollYHear" id="ph" size="20"> 예)2018 </td>
+		<td> <input type="number" name="user_enrollYear" id="ph" size="20"> 예)2018 </td>
 		</tr>
 		
 		<tr> 

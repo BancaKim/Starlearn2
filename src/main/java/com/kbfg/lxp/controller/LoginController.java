@@ -11,13 +11,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kbfg.lxp.user.command.UserAddCommand;
+import com.kbfg.lxp.user.command.UserLoginCommand;
+
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class LoginController {
 	
-	//@Autowired UserLoginCommand userLoginCommand;
+
+	@Autowired UserLoginCommand userLoginCommand;
+	@Autowired UserAddCommand userAddCommand;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
@@ -36,7 +42,6 @@ public class LoginController {
 		}
 		return path;
 	}
-	
 
 	
 	@RequestMapping(value = "/signIn", method = RequestMethod.GET)
@@ -46,13 +51,9 @@ public class LoginController {
 	
 	@RequestMapping(value = "/signInConfirm", method = RequestMethod.POST)
 	public String signInConfirm(HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		
 		model.addAttribute("request", request);
 		//userLoginCommand.execute(model);
 		
-		/* String user_id */
-		/* session.setAttribute("user_id", user_id); */
 		return "redirect:home";
 	}
 	
@@ -63,13 +64,11 @@ public class LoginController {
 	
 	@RequestMapping(value = "/signUpConfirm", method = RequestMethod.POST)
 	public String signUpConfirm(HttpServletRequest request, Model model) {
-		HttpSession session = request.getSession();
-		
 		model.addAttribute("request", request);
-		//facilityContentCommand.execute(model);
-		
-		/* String user_id */
-		/* session.setAttribute("user_id", user_id); */
+
+		userAddCommand.execute(model);
+
 		return "redirect:home";
 	}
+
 }

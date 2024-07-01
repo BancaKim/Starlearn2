@@ -44,7 +44,13 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.13</version>
 		</dependency>	
-			
+		
+		<!-- https://mvnrepository.com/artifact/com.servlets/cos -->
+		<dependency>
+		    <groupId>com.servlets</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>09May2002</version>
+		</dependency>	
 				
 		<!-- AspectJ -->
 		<dependency>
