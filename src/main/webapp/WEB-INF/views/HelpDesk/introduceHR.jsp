@@ -28,14 +28,14 @@
     main {
         text-align: center; /* Center align content */
         width: 1100px; /* Set fixed width */
-        margin: 0 auto; /* Center align horizontally */
+        margin: 200px auto 0; /* Center align horizontally */
 
     }
 </style>
 
 <body>
 <main>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
+
 	 <img src="${pageContext.request.contextPath}/resources/images/hr1.png"><br>
      <img src="${pageContext.request.contextPath}/resources/images/hr2.png"><br>
      <img src="${pageContext.request.contextPath}/resources/images/hr3.png"><br>

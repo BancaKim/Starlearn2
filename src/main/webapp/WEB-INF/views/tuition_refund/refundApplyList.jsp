@@ -28,6 +28,7 @@
     
     main {
         text-align: center;
+        margin: 200px auto 0; /* Center align horizontally */
     }
     
     #title {
@@ -264,7 +265,6 @@
 </head>
 <body>
 <main>
-    <br><br><br><br><br><br><br>
     <div id="title">지원신청 현황 조회</div>
     <br>
     <div id="menu">
