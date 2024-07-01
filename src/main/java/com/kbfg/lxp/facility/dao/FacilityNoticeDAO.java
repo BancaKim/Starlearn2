@@ -55,4 +55,3 @@ public class FacilityNoticeDAO {
 		  this.template.update(query, facility_notice_num);
  }
 }
-
