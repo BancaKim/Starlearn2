@@ -29,7 +29,7 @@ public class CourseController {
 		Constant.template = this.template;
 	}
 
-	// �ڽ� ����
+	// View Course
 	@RequestMapping("/courseView")
 	public String showMyCourse(HttpServletRequest request, Model model) throws Exception {
 
@@ -42,18 +42,7 @@ public class CourseController {
 		return "course/courseView"; // "ShoppingList.ba"
 	}
 
-	// �ڽ� ����
-	@RequestMapping("/courseResister")
-	public String CourseResister(HttpServletRequest request, Model model) throws Exception {
 
-		model.addAttribute("request", request);
-		System.out.println("courseResister();");
-//
-//		command = new CourseResister();
-//		command.execute(model);
-
-		return "course/courseResister"; // "ShoppingList.ba"
-	}
 	
 	@RequestMapping(value = "/courseResister", method = RequestMethod.GET)
 	public String signUp(Model model) {
@@ -61,6 +50,18 @@ public class CourseController {
 	}
 	
 	
+	// coure resister action
+	@RequestMapping("/signUpConfirm")
+	public String CourseResister(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("showMyCourse();");
+
+		command = new CourseViewAction();
+		command.execute(model);
+
+		return "course/courseView"; // "ShoppingList.ba"
+	}
 	
 	
 
