@@ -33,11 +33,11 @@ public class FacilityNoticeModifyActionCommand implements Command {
 			 
 			 if(noticedao.modify(noticedata)==false){
 		   		System.out.println("수정실패");
-	   			model.addAttribute("nextPage","redirect:faciility/content_view?num="+num);
+	   			model.addAttribute("nextPage","faciility/content_view?num="+num);
 		   	 } else {
 		   	 System.out.println("수정 성공");
 		   	 model.addAttribute("message","수정 성공");
-		   	 model.addAttribute("nextPage","redirect:faciility/content_view?num="+num);
+		   	 model.addAttribute("nextPage","faciility/content_view?num="+num);
 		   	 	}
 			 }catch(Exception ex){
 	   			ex.printStackTrace();	 

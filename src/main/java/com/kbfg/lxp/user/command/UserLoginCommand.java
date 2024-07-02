@@ -28,7 +28,7 @@ public class UserLoginCommand implements Command {
 		Boolean isUser = userDao.isUser(user_id, user_pw);
 
 		if(isUser==false) {
-			model.addAttribute("message", "로그인 실패!");
+			model.addAttribute("message", "濡쒓렇�씤 �떎�뙣!");
 			model.addAttribute("nextPage", "redirect:signIn");
 		} else {
 			HttpSession session = request.getSession();
@@ -37,10 +37,10 @@ public class UserLoginCommand implements Command {
 			session.setMaxInactiveInterval(60 * 30);
 				if (user_id.equals("admin") && user_pw.equals("1234")) {
 				model.addAttribute("message", "로그인 성공");
-				model.addAttribute("nextPage", "redirect:home");
+				model.addAttribute("nextPage", "home");
 			} else {
 				model.addAttribute("message", "로그인 성공");
-				model.addAttribute("nextPage", "redirect:home");
+				model.addAttribute("nextPage", "home");
 				}
 			}
 		}

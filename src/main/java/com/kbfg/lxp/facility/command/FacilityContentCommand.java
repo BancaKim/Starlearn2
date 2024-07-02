@@ -25,7 +25,9 @@ public class FacilityContentCommand implements Command {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
 		FacilityNoticeBean dto = noticedao.contentView(num);
-		
+		System.out.println("dto num"+dto.getFacility_notice_num());
+		System.out.println("dto title"+dto.getFacility_notice_title());
+		System.out.println("dto content"+dto.getFacility_notice_content());
 		model.addAttribute("content_view", dto);
 
 	 }

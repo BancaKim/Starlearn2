@@ -12,8 +12,6 @@ import org.springframework.ui.Model;
 import com.kbfg.lxp.Command;
 import com.kbfg.lxp.facility.dao.FacilityNoticeDAO;
 import com.kbfg.lxp.facility.dto.FacilityNoticeBean;
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 @Service
 public class FacilityNoticeDeleteCommand implements Command {
@@ -31,10 +29,8 @@ public class FacilityNoticeDeleteCommand implements Command {
 		boolean result=noticedao.delete(num);
 	   	if(result==false) {
 		   	System.out.println("에러 발생");
-	   		model.addAttribute("nextPage","redirect:facility/facility_notice_view");
 	   		} else {
 		   	System.out.println("삭제 성공");
-	   		model.addAttribute("nextPage","redirect:facility/facility_notice_view");
 	   		}
 	   	}
 }
