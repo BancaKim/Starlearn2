@@ -97,23 +97,23 @@
 			                    			<div class="options">
 								    			<label for="trainingCenter">연수원 선택</label>
 								    			<div class="button_group">
-	<!-- 		                       					<button type="button" id="sokcho" class="tab active" onclick="choiceFacility('sokcho')">속초 연수원</button>
-			                        				<button type="button" id="daecheon" class="tab" onclick="choiceFacility('daecheon')">대천 연수원</button> -->
-			                        				<select class="choiceFacility">
-			                        					<option>속초 연수원</option>
-			                        					<option>대천 연수원</option>
-			                        				</select>
+			                        				
+			                        				<input type="radio" class="btn-check" name="trainingCenter" id="option5" autocomplete="off" value="sokcho" checked>
+													<label class="btn" for="option5">속초 연수원</label>
+
+													<input type="radio" class="btn-check" name="trainingCenter" id="option6" autocomplete="off" value="daecheon" >
+													<label class="btn" for="option6">대천 연수원</label>
+
 			                    				</div>
 			                    			</div>
 								   			<div class="options">
 				                       			<label>방 유형 선택</label>
-				                       			<div class="button_group">
-<!-- 				                        			<button type="button" id="tworoom" class="tab active" onclick="choiceRoom('tworoom')">투룸</button>
-				                        				<button type="button" id="tworoomR" class="tab" onclick="choiceRoom('tworoomR')">안식년 (투룸)</button> -->
-				                        			<select class="choiceRoom">
-				                        				<option>투룸</option>
-		                        						<option>쓰리룸</option>
-				                        			</select>		
+				                       			<div class="button_group">	
+			                        				<input type="radio" class="btn-check" name="roomType" id="option7" autocomplete="off" checked>
+													<label class="btn" for="option7">투룸</label>
+
+													<input type="radio" class="btn-check" name="roomType" id="option8" autocomplete="off">
+													<label class="btn" for="option8">쓰리룸</label>	
 			                  					</div>
 			                  				</div>
 			                    			<div class="options">
@@ -181,35 +181,5 @@
     </main>
 	
 	<c:import url="../footer.jsp"></c:import>
-	
-<!--      <script>
-        function selectTrainingCenter(center, button) {
-            document.getElementById('trainingCenter').value = center;
-            const buttons = document.querySelectorAll('.button-group button');
-            buttons.forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
-        }
-
-        document.getElementById('applicationForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const trainingCenter = document.getElementById('trainingCenter').value;
-            const roomType = document.getElementById('roomType').value;
-            const checkInDate = document.getElementById('checkInDate').value;
-            const checkOutDate = document.getElementById('checkOutDate').value;
-
-            const formData = {
-                trainingCenter,
-                roomType,
-                checkInDate,
-                checkOutDate
-            };
-
-            console.log('Form submitted:', formData);
-
-            // Add your form submission logic here (e.g., send formData to the server)
-            document.getElementById('applicationForm').submit(); // Uncomment this line to submit the form
-        });
-    </script> -->
 </body>
 </html>

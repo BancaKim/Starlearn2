@@ -19,10 +19,10 @@ public class GetInfoTuition_refundCommand implements Command {
 	
 	@Autowired Tuition_refundDao tuitionDao;
 	@Autowired UserDAO userDao;
+
 	@Override
 	public void execute(Model model) {
-		// TODO Auto-generated method stub
-		
+
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		HttpSession session = request.getSession();
@@ -34,8 +34,6 @@ public class GetInfoTuition_refundCommand implements Command {
 	    
 	    model.addAttribute("info", info);
 	        
-		
-		
 	}
 
 }

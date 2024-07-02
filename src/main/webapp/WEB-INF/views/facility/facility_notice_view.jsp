@@ -20,7 +20,11 @@
                 <a href="#">홈</a> &gt; <a href="#">생활연수</a> &gt; 공지사항
             </div>
             <h1>공지사항</h1>
-            <a href="notice_write"><button>글쓰기</button></a>
+            
+            <c:if test="${sessionScope.user_id == 'admin'}">
+            	<a href="notice_write"><button>글쓰기</button></a>
+            </c:if>
+            
             <div class="search-container">
                 <input type="text" class="form-search-input" placeholder="공지사항 검색">
                 <button class="form-search-btn">
