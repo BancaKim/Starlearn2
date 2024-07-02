@@ -34,12 +34,12 @@ public class FacilityNoticeModifyCommand implements Command {
 			
 			if(noticedata==null){
 			   	System.out.println("불러오기 실패");
-				model.addAttribute("nextPage","redirect:facility/facility_notice_view");
+				model.addAttribute("nextPage","facility/facility_notice_view");
 			} else {
 			System.out.println("불러오기 성공");
 			
 			model.addAttribute("noticedata", noticedata);
-			model.addAttribute("nextPage","redirect:facility/noticeModifyAction?num="+num);
+			model.addAttribute("nextPage","facility/facility_notice_modify");
 			}
 		}
 	}

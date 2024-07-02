@@ -93,19 +93,27 @@
 								<div class="second-container">
 									<div class="image-container"></div>
 									<div class="form-container">
-										<form action="#" method="get">
+										<form id="applicationForm" action="${pageContext.request.contextPath}/facility/facilityApplyForm" method="post">
 			                    			<div class="options">
-								    			<label>연수원 선택</label>
+								    			<label for="trainingCenter">연수원 선택</label>
 								    			<div class="button_group">
-			                       					<button type="button" id="option1-tab" class="tab active" onclick="activateTab1('option1-tab')">속초 연수원</button>
-			                        				<button type="button" id="option2-tab" class="tab" onclick="activateTab1('option2-tab')">대천 연수원</button>
+	<!-- 		                       					<button type="button" id="sokcho" class="tab active" onclick="choiceFacility('sokcho')">속초 연수원</button>
+			                        				<button type="button" id="daecheon" class="tab" onclick="choiceFacility('daecheon')">대천 연수원</button> -->
+			                        				<select class="choiceFacility">
+			                        					<option>속초 연수원</option>
+			                        					<option>대천 연수원</option>
+			                        				</select>
 			                    				</div>
 			                    			</div>
 								   			<div class="options">
 				                       			<label>방 유형 선택</label>
 				                       			<div class="button_group">
-				                        			<button type="button" id="option3-tab" class="tab active" onclick="activateTab2('option3-tab')">투룸</button>
-				                        			<button type="button" id="option4-tab" class="tab" onclick="activateTab2('option4-tab')">안식년 (투룸)</button>
+<!-- 				                        			<button type="button" id="tworoom" class="tab active" onclick="choiceRoom('tworoom')">투룸</button>
+				                        				<button type="button" id="tworoomR" class="tab" onclick="choiceRoom('tworoomR')">안식년 (투룸)</button> -->
+				                        			<select class="choiceRoom">
+				                        				<option>투룸</option>
+		                        						<option>쓰리룸</option>
+				                        			</select>		
 			                  					</div>
 			                  				</div>
 			                    			<div class="options">
@@ -148,7 +156,7 @@
 			                        			</div>
            			
 			                    			</div>
-		                    				<button class="apply-button">연수원 신청하기</button>
+		                    				<button type="submit" class="apply-button">연수원 신청하기</button>
 							  			</form>
 									</div>
 									
@@ -174,32 +182,34 @@
 	
 	<c:import url="../footer.jsp"></c:import>
 	
-    <script>
-        function activateTab1(tabId) {
-            var option1Tab = document.getElementById('option1-tab');
-            var option2Tab = document.getElementById('option2-tab');
-
-            if (tabId === 'option1-tab') {
-            	option1Tab.classList.add('active');
-            	option2Tab.classList.remove('active');
-            } else if (tabId === 'option2-tab') {
-            	option2Tab.classList.add('active');
-            	option1Tab.classList.remove('active');
-            }
+<!--      <script>
+        function selectTrainingCenter(center, button) {
+            document.getElementById('trainingCenter').value = center;
+            const buttons = document.querySelectorAll('.button-group button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
         }
-        
-        function activateTab2(tabId) {
-            var option3Tab = document.getElementById('option3-tab');
-            var option4Tab = document.getElementById('option4-tab');
 
-            if (tabId === 'option3-tab') {
-            	option3Tab.classList.add('active');
-            	option4Tab.classList.remove('active');
-            } else if (tabId === 'option4-tab') {
-            	option4Tab.classList.add('active');
-            	option3Tab.classList.remove('active');
-            }
-        }
-    </script>
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const trainingCenter = document.getElementById('trainingCenter').value;
+            const roomType = document.getElementById('roomType').value;
+            const checkInDate = document.getElementById('checkInDate').value;
+            const checkOutDate = document.getElementById('checkOutDate').value;
+
+            const formData = {
+                trainingCenter,
+                roomType,
+                checkInDate,
+                checkOutDate
+            };
+
+            console.log('Form submitted:', formData);
+
+            // Add your form submission logic here (e.g., send formData to the server)
+            document.getElementById('applicationForm').submit(); // Uncomment this line to submit the form
+        });
+    </script> -->
 </body>
 </html>

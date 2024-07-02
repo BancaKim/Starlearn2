@@ -37,10 +37,10 @@ public class UserLoginCommand implements Command {
 			session.setMaxInactiveInterval(60 * 30);
 				if (user_id.equals("admin") && user_pw.equals("1234")) {
 				model.addAttribute("message", "로그인 성공");
-				model.addAttribute("nextPage", "redirect:home");
+				model.addAttribute("nextPage", "home");
 			} else {
 				model.addAttribute("message", "로그인 성공");
-				model.addAttribute("nextPage", "redirect:home");
+				model.addAttribute("nextPage", "home");
 				}
 			}
 		}
