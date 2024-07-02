@@ -38,13 +38,13 @@ courseView.jsp<%@ page language="java"
 	font-family: 'NanumSquareRound', Arial, sans-serif;
 	padding-left: 20px;
 	padding-right: 20px;
-/* 	padding-top: 10px; */
+	/* 	padding-top: 10px; */
 	padding-bottom: 10px;
 	border: 0.2px solid #000000;
 }
 
 .one-main-header {
-/* 	margin-bottom: 20px; */
+	/* 	margin-bottom: 20px; */
 	border: 0.2px solid #000000;
 }
 
@@ -160,7 +160,7 @@ courseView.jsp<%@ page language="java"
 
 	<c:import url="../nav.jsp"></c:import>
 	<main style="padding-bottom: 100px;">
-		<nav class="navbar" ></nav>
+		<nav class="navbar"></nav>
 
 		<div class="one-main">
 			<!-- <p>one-main</p> -->
@@ -266,25 +266,26 @@ courseView.jsp<%@ page language="java"
 				<h4 style="text-align: 80px;">진행 중 연수</h4>
 			</div>
 
-			<div class="one-container">
-				<div class="one-image-container">
-					<img
-						src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
-						alt="Placeholder Image">
 
-					<!--  <img src="@tmp_course_thumbnail_03.a341108a.jpg" alt="Placeholder Image">
- -->
-					<div class="one-overlay-text">2024년 DIGI Campus 과정</div>
-					<a href="https://www.example.com"></a>
-					<p class="one-font16" style="padding-top: 15px; margin: 0px;">KB국민은행</p>
-					<p style="color: #84888b;">2024.01.19~2024.12.21</p>
-					<p style="color: #8d744a;">마일리지 50</p>
-				</div>
-			</div>
-		</div>
+
+<div class="one-container">
+    <c:forEach var="myCourse" items="${myCourseList}">
+        <div class="one-image-container">
+            <img src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
+                 alt="Placeholder Image">
+            <div class="one-overlay-text">${myCourse.course_name}</div>
+            <a href="https://www.example.com"></a>
+            <p class="one-font16" style="padding-top: 15px; margin: 0px;">KB국민은행</p>
+            <p style="color: #84888b;">${myCourse.course_start_date}~${myCourse.course_end_date}</p>
+            <p style="color: #8d744a;">마일리지 ${myCourse.mileage}</p>
+        </div>
+    </c:forEach>
+</div>
+
+
 	</main>
 	<footer>
-	<c:import url="../footer.jsp"></c:import>
+		<c:import url="../footer.jsp"></c:import>
 	</footer>
 
 </body>

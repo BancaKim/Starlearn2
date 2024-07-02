@@ -3,100 +3,101 @@ package com.kbfg.lxp.course;
 import java.time.LocalDate;
 
 public class DTO_UserCourses {
-    private int userCourseRef;
-    private String userIdn;
-    private int courseRef;
-    private int sessionNumber;
-    private String courseName;
-    private String courseCategory;
-    private String courseSubcategory;
-    private String courseStatus;
-    private String enrollmentStatus;
-    private LocalDate courseStartDate;
-    private LocalDate courseEndDate;
-    private LocalDate completionDate;
-    private String positionAtCompletion;
+    private int user_course_ref;
+    private String user_idn;
+    private int course_ref;
+    private int session_number;
+    private String course_name;
+    private String course_category;
+    private String course_subcategory;
+    private String course_status;
+    private String enrollment_status;
+    private LocalDate course_start_date;
+    private LocalDate course_end_date;
+    private LocalDate completion_date;
+    private String position_at_completion;
     private int mileage;
     private int score;
     private String approver;
-    private String approvalStatus;
-	public int getUserCourseRef() {
-		return userCourseRef;
+    private String approval_status;
+    
+	public int getUser_course_ref() {
+		return user_course_ref;
 	}
-	public void setUserCourseRef(int userCourseRef) {
-		this.userCourseRef = userCourseRef;
+	public void setUser_course_ref(int user_course_ref) {
+		this.user_course_ref = user_course_ref;
 	}
-	public String getUserIdn() {
-		return userIdn;
+	public String getUser_idn() {
+		return user_idn;
 	}
-	public void setUserIdn(String userIdn) {
-		this.userIdn = userIdn;
+	public void setUser_idn(String user_idn) {
+		this.user_idn = user_idn;
 	}
-	public int getCourseRef() {
-		return courseRef;
+	public int getCourse_ref() {
+		return course_ref;
 	}
-	public void setCourseRef(int courseRef) {
-		this.courseRef = courseRef;
+	public void setCourse_ref(int course_ref) {
+		this.course_ref = course_ref;
 	}
-	public int getSessionNumber() {
-		return sessionNumber;
+	public int getSession_number() {
+		return session_number;
 	}
-	public void setSessionNumber(int sessionNumber) {
-		this.sessionNumber = sessionNumber;
+	public void setSession_number(int session_number) {
+		this.session_number = session_number;
 	}
-	public String getCourseName() {
-		return courseName;
+	public String getCourse_name() {
+		return course_name;
 	}
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
+	public void setCourse_name(String course_name) {
+		this.course_name = course_name;
 	}
-	public String getCourseCategory() {
-		return courseCategory;
+	public String getCourse_category() {
+		return course_category;
 	}
-	public void setCourseCategory(String courseCategory) {
-		this.courseCategory = courseCategory;
+	public void setCourse_category(String course_category) {
+		this.course_category = course_category;
 	}
-	public String getCourseSubcategory() {
-		return courseSubcategory;
+	public String getCourse_subcategory() {
+		return course_subcategory;
 	}
-	public void setCourseSubcategory(String courseSubcategory) {
-		this.courseSubcategory = courseSubcategory;
+	public void setCourse_subcategory(String course_subcategory) {
+		this.course_subcategory = course_subcategory;
 	}
-	public String getCourseStatus() {
-		return courseStatus;
+	public String getCourse_status() {
+		return course_status;
 	}
-	public void setCourseStatus(String courseStatus) {
-		this.courseStatus = courseStatus;
+	public void setCourse_status(String course_status) {
+		this.course_status = course_status;
 	}
-	public String getEnrollmentStatus() {
-		return enrollmentStatus;
+	public String getEnrollment_status() {
+		return enrollment_status;
 	}
-	public void setEnrollmentStatus(String enrollmentStatus) {
-		this.enrollmentStatus = enrollmentStatus;
+	public void setEnrollment_status(String enrollment_status) {
+		this.enrollment_status = enrollment_status;
 	}
-	public LocalDate getCourseStartDate() {
-		return courseStartDate;
+	public LocalDate getCourse_start_date() {
+		return course_start_date;
 	}
-	public void setCourseStartDate(LocalDate courseStartDate) {
-		this.courseStartDate = courseStartDate;
+	public void setCourse_start_date(LocalDate course_start_date) {
+		this.course_start_date = course_start_date;
 	}
-	public LocalDate getCourseEndDate() {
-		return courseEndDate;
+	public LocalDate getCourse_end_date() {
+		return course_end_date;
 	}
-	public void setCourseEndDate(LocalDate courseEndDate) {
-		this.courseEndDate = courseEndDate;
+	public void setCourse_end_date(LocalDate course_end_date) {
+		this.course_end_date = course_end_date;
 	}
-	public LocalDate getCompletionDate() {
-		return completionDate;
+	public LocalDate getCompletion_date() {
+		return completion_date;
 	}
-	public void setCompletionDate(LocalDate completionDate) {
-		this.completionDate = completionDate;
+	public void setCompletion_date(LocalDate completion_date) {
+		this.completion_date = completion_date;
 	}
-	public String getPositionAtCompletion() {
-		return positionAtCompletion;
+	public String getPosition_at_completion() {
+		return position_at_completion;
 	}
-	public void setPositionAtCompletion(String positionAtCompletion) {
-		this.positionAtCompletion = positionAtCompletion;
+	public void setPosition_at_completion(String position_at_completion) {
+		this.position_at_completion = position_at_completion;
 	}
 	public int getMileage() {
 		return mileage;
@@ -116,11 +117,11 @@ public class DTO_UserCourses {
 	public void setApprover(String approver) {
 		this.approver = approver;
 	}
-	public String getApprovalStatus() {
-		return approvalStatus;
+	public String getApproval_status() {
+		return approval_status;
 	}
-	public void setApprovalStatus(String approvalStatus) {
-		this.approvalStatus = approvalStatus;
+	public void setApproval_status(String approval_status) {
+		this.approval_status = approval_status;
 	}
     
    
