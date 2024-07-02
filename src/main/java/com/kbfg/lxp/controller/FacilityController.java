@@ -10,13 +10,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kbfg.lxp.facility.command.FacilityApplyActionCommand;
 import com.kbfg.lxp.facility.command.FacilityApplyCommand;
+import com.kbfg.lxp.facility.command.FacilityApplyListCommand;
 import com.kbfg.lxp.facility.command.FacilityContentCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeAddCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeDeleteCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeListCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeModifyActionCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeModifyCommand;
+import com.kbfg.lxp.facility.dto.FacilityApplyBean;
 
 /**
  * Handles requests for the application home page.
@@ -32,10 +35,17 @@ public class FacilityController {
 	@Autowired FacilityNoticeModifyCommand facilityNoticeModifyCommand;
 	@Autowired FacilityNoticeModifyActionCommand facilityNoticeModifyActionCommand;
 	@Autowired FacilityApplyCommand facilityApplyCommand;
+	@Autowired FacilityApplyActionCommand facilityApplyActionCommand;
+	@Autowired FacilityApplyListCommand facilityApplyListCommand;
 	
 	@RequestMapping(value = "/apply_main", method = RequestMethod.GET)
-	public String faciltyApply(Model model) {
-		return "facility/facility_apply_main";
+	public String faciltyApply(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		facilityApplyListCommand.execute(model);
+
+		Map<String, Object> map = model.asMap();
+		String nextPage = (String) map.get("nextPage");
+		return nextPage;
 	}
 	
 	@RequestMapping("/notice_view")
@@ -98,6 +108,13 @@ public class FacilityController {
 	@RequestMapping("/facilityApplyForm")
 	public String facilityApplyForm(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
+		facilityApplyCommand.execute(model);
 		return "facility/facility_apply_write";
+	}
+	
+	@RequestMapping("/facilityApplyAction")
+	public String facilityApplyAction(FacilityApplyBean facilityApplyBean) {
+		facilityApplyActionCommand.applyForFacility(facilityApplyBean);
+		return "redirect:apply_main";
 	}
 }

@@ -20,81 +20,148 @@
 		<div class="container">
 	        <h1>연수원 이용 신청하기</h1>
 	        <div class="instructions">
-	            신청 전형 안내: 신청 전형은 연수원 이용 1일 전 18시까지 완료되어야 합니다. 연수원 이용은 프로토 1장당 연수원 하루 당첨 횟수로 제한됩니다.
-	        </div>
-	        <form>
+	            <h1>신청 안내</h1>
+	            <div>
+	            	<p>신청 진행 중입니다. 아래 세부 정보 입력 후 신청하셔야 합니다.<br/>
+	            	동반 가족 필수 입력(입력된 가족 외 입소 제한)<br/>
+	            	직원간 이용은 코로나19 감영 예방을 위해 별도 통보시까지 제한</p>
+            	</div>
+	        </div>		
+	        <form name="facility_apply" action="facilityApplyAction" method="post">
+    	        <input type="hidden" id="facility_userIdn" name="user_idn" value="${userIdn}" readonly>
 	            <div class="form-group">
-	                <label for="applicant">신청자명</label>
-	                <input type="text" id="applicant" value="본인" readonly>
+	                <label for="applicant">연수원 선택</label>
+	                <input type="text" id="trainingCenter" name="facility_trainingCenter" value="${requestScope.trainingCenter}" readonly>
+	            </div>
+	            <div class="form-group">
+	                <label for="applicant">방 선택</label>
+	                <input type="text" id="roomType" name="facility_roomType" value="${requestScope.roomType}" readonly>
+	            </div>
+	            <div class="form-group">
+	                <label for="applicant">입실일</label>
+	                <input type="text" id="roomType" name="facility_startDate" value="${requestScope.startDate}" readonly>
+	            </div>
+	            <div class="form-group">
+	                <label for="applicant">퇴실일</label>
+	                <input type="text" id="roomType" name="facility_endDate" value="${requestScope.endDate}" readonly>
+	            </div>
+	            <div class="form-group">
+	                <label for="applicant">비상 연락처</label>
+	                <input type="text" id="facility_ph" name="facility_ph" placeholder="-없이 숫자만으로 비상연락처를 입력하세요">
+	            </div>
+	            <div class="form-group">
+	                <label for="applicant">차량번호</label>
+	                <input type="text" id="facility_car" name="facility_car">
 	            </div>
 	            <div class="form-group">
 	                <label for="person1">입소자 1</label>
-	                <input type="text" id="person1" placeholder="이름을 입력하세요">
-	                <select>
-	                    <option value="">관계 선택</option>
-	                    <option value="친구">친구</option>
-	                    <option value="가족">가족</option>
-	                    <option value="동료">동료</option>
+	                <input type="text" id="person1" name="facility_person1_name" value="${requestScope.user_name}" readonly>
+	                <select name="facility_person1_rel">
+	                    <option value="inperson">본인</option>
+	                    <option value="spouse">배우자</option>
+	                    <option value="children">자녀</option>
 	                </select>
 	            </div>
 	            <div class="form-group">
 	                <label for="person2">입소자 2</label>
-	                <input type="text" id="person2" placeholder="이름을 입력하세요">
-	                <select>
+	                <input type="text" id="person2" name="facility_person2_name" placeholder="이름을 입력하세요"/>
+	                <select name="facility_person2_rel">
 	                    <option value="">관계 선택</option>
-	                    <option value="친구">친구</option>
-	                    <option value="가족">가족</option>
-	                    <option value="동료">동료</option>
+	                    <option value="inperson">본인</option>
+	                    <option value="spouse">배우자</option>
+	                    <option value="children">자녀</option>
 	                </select>
 	            </div>
 	            <div class="form-group">
 	                <label for="person3">입소자 3</label>
-	                <input type="text" id="person3" placeholder="이름을 입력하세요">
-	                <select>
+	                <input type="text" id="person3" name="facility_person3_name" placeholder="이름을 입력하세요">
+	                <select name="facility_person3_rel">
 	                    <option value="">관계 선택</option>
-	                    <option value="친구">친구</option>
-	                    <option value="가족">가족</option>
-	                    <option value="동료">동료</option>
+	                    <option value="inperson">본인</option>
+	                    <option value="spouse">배우자</option>
+	                    <option value="children">자녀</option>
 	                </select>
 	            </div>
 	            <div class="form-group">
 	                <label for="person4">입소자 4</label>
-	                <input type="text" id="person4" placeholder="이름을 입력하세요">
-	                <select>
+	                <input type="text" id="person4" name="facility_person4_name" placeholder="이름을 입력하세요">
+	                <select name="facility_person4_rel">
 	                    <option value="">관계 선택</option>
-	                    <option value="친구">친구</option>
-	                    <option value="가족">가족</option>
-	                    <option value="동료">동료</option>
+	                    <option value="inperson">본인</option>
+	                    <option value="spouse">배우자</option>
+	                    <option value="children">자녀</option>
 	                </select>
 	            </div>
 	            <div class="form-group">
 	                <label for="person5">입소자 5</label>
-	                <input type="text" id="person5" placeholder="이름을 입력하세요">
-	                <select>
+	                <input type="text" id="person5" name="facility_person5_name" placeholder="이름을 입력하세요">
+	                <select name="facility_person5_rel">
 	                    <option value="">관계 선택</option>
-	                    <option value="친구">친구</option>
-	                    <option value="가족">가족</option>
-	                    <option value="동료">동료</option>
+	                    <option value="inperson">본인</option>
+	                    <option value="spouse">배우자</option>
+	                    <option value="children">자녀</option>
 	                </select>
 	            </div>
 	            <div class="form-group">
 	                <label for="usePeople">이용 인원</label>
-	                <input type="text" id="usePeople" value="1명" readonly>
+	                <input type="number" name="facility_appl_pn" id="usePeople"/>
 	            </div>
 	            <div class="form-group">
 	                <label for="notes">특이사항</label>
-	                <textarea id="notes" placeholder="특이사항이 있는 경우 입력해 주세요."></textarea>
+	                <textarea id="notes" name="facility_significiant" placeholder="특이사항이 있는 경우 입력해 주세요."></textarea>
 	            </div>
 	            <div class="instructions">
 	                <ul>
-	                    <li>이 신청서의 개인 정보는 연수원 이용을 위해 수집됩니다.</li>
-	                    <li>연수원 이용은 1일 전 18시까지 완료되어야 합니다.</li>
-	                    <li>연수원 이용은 프로토 1장당 연수원 하루 당첨 횟수로 제한됩니다.</li>
+	                    <li>
+	  	                	<div class="form-check">
+							  	<input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+								<label class="form-check-label" for="flexCheckDefault">
+							    	1.이용일 기준 재직중인 임직원만 신청가능하며, 입소정원은 직원 본인 포함 5인 이내 직계가족, 차량은 1대로 제한
+								</label>
+							</div>
+	                    </li>
+	                    <li>
+	  	                	<div class="form-check">
+							  	<input class="form-check-input" type="checkbox" value="" id="flexCheck2">
+								<label class="form-check-label" for="flexCheckDefault">
+							    	2.안식년 휴가 활용 신청자는 안식년 휴가로 평일 연수시설을 이용하는 직원(이용일 기준 휴직/퇴직직원 제외)
+								</label>
+							</div>
+	                    </li>
+	                    <li>
+	  	                	<div class="form-check">
+							  	<input class="form-check-input" type="checkbox" value="" id="flexCheck3">
+								<label class="form-check-label" for="flexCheckDefault">
+							    	3.입소(16:00-24:00) 퇴소 (10:00) 시간을 준수합니다.
+								</label>
+							</div>
+	                    </li>
+	                    <li>
+	  	                	<div class="form-check">
+							  	<input class="form-check-input" type="checkbox" value="" id="flexCheck4">
+								<label class="form-check-label" for="flexCheckDefault">
+							    	4.수건 등 세면도구는 지원되지 않으니 개별 지참하시기 바랍니다.
+								</label>
+							</div>
+	                    </li>
+	                    <li>
+	  	                	<div class="form-check">
+							  	<input class="form-check-input" type="checkbox" value="" id="flexCheck5">
+								<label class="form-check-label" for="flexCheckDefault">
+							    	5.애완동물 동반 입소 금지합니다.
+								</label>
+							</div>
+	                    </li>
 	                </ul>
 	            </div>
+	            <div class="consent-section">
+                	<input type="checkbox" id="consent" required>
+                	<label for="consent">본인은 위 안내사항을 준수하고 기 제출한 개인(신용)정보 수집·이용·제공 동의서(임직원용)에 의거 각 연수시설 관리업체에 개인식별정보(성명, 연락처, 신청정보)를 제공함을 동의합니다.</label>
+                <div class="consent-completed">동의완료</div>
+            </div>
 	            <div class="button-group">
 	                <button type="button">이전</button>
-	                <button type="submit">다음</button>
+	                <button type="submit">신청</button>
 	            </div>
 	        </form>
 	    </div>
