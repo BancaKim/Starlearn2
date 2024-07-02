@@ -29,6 +29,7 @@
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	
 	<beans:property name = "driverClassName" value = "com.mysql.cj.jdbc.Driver"/>
+
 	<beans:property name = "url" value ="jdbc:mysql://211.37.179.32:3306/starlearn?serverTimezone=UTC&amp;useSSL=false"/>
 	<beans:property name = "username" value="manager"/>
 	<beans:property name = "password" value="!Q@W3e4r"/>

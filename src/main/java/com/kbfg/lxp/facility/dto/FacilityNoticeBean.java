@@ -1,10 +1,14 @@
 package com.kbfg.lxp.facility.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FacilityNoticeBean {
 	int facility_notice_num;
 	String facility_notice_title;
 	String facility_notice_content;
 	String facility_notice_rolldate;
+	String facility_notice_file;
 	String facility_notice_hit;
 	
 	public int getFacility_notice_num() {
@@ -30,6 +34,12 @@ public class FacilityNoticeBean {
 	}
 	public void setFacility_notice_rolldate(String facility_notice_rolldate) {
 		this.facility_notice_rolldate = facility_notice_rolldate;
+	}
+	public String getFacility_notice_file() {
+		return facility_notice_file;
+	}
+	public void setFacility_notice_file(String facility_notice_file) {
+		this.facility_notice_file = facility_notice_file;
 	}
 	public String getFacility_notice_hit() {
 		return facility_notice_hit;

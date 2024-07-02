@@ -54,7 +54,7 @@
 							<div class="contents__menu">
 								<ul class="inner">
 
-									<li><a href="#">HRD 클라우드</a></li>
+									<li><a href="${pageContext.request.contextPath}/HRD/HRD_CLOUD">HRD 클라우드</a></li>
 									<li><a href="#">SSL</a></li>
 
 								</ul>
@@ -91,9 +91,9 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href=#>공지사항</a></li>
+									<li><a href="${pageContext.request.contextPath}/HelpDesk/HelpDeskNotice">공지사항</a></li>
 									<li><a href="${pageContext.request.contextPath}/HelpDesk/QnA">Q&A</a></li>
-									<li><a href=#>HR(인재개발) 소개</a></li>
+									<li><a href="${pageContext.request.contextPath}/HelpDesk/introduceHR">HR(인재개발) 소개</a></li>
 								</ul>
 							</div>
 						</div>
@@ -103,6 +103,7 @@
 				<div class="right-container">
 					<div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-bell align-middle"></i></a></div>
 	                <div class="iconRight"><a href="#"><i class="fa-xl fa-solid fa-calendar align-middle"></i></a></div>
+	                <div class="iconRight"><a href="${pageContext.request.contextPath}/logout"><i class="fa-solid fa-right-from-bracket"></i></a></div>
 	                <div class="box">
 	                	<img id="profile-img" class="profile" src="${pageContext.request.contextPath}/resources/images/1654530.jpg">
 	                	<div class="dropdown-menu" id="dropdown-menu">

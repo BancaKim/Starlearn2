@@ -22,30 +22,12 @@
 			<tr align="center" valign="middle">
 				<td colspan="5"><h1>공지사항</h1></td>
 			</tr>
-<!-- 			<tr>
-				<td style="font-family:돋음; font-size:12" height="16">
-					<div align="center">글쓴이</div>
-				</td>
-				<td>
-					<input name="BOARD_NAME" type="text" size="10" maxlength="10" 
-						value=""/>
-				</td>
-			</tr>
-			<tr>
-				<td style="font-family:돋음; font-size:12" height="16">
-					<div align="center">비밀번호</div>
-				</td>
-				<td>
-					<input name="BOARD_PASS" type="password" size="10" maxlength="10" 
-						value=""/>
-				</td>
-			</tr> -->
 			<tr>
 				<td style="font-family:돋음; font-size:12" height="16">
 					<div align="center">제 목</div>
 				</td>
 				<td>
-					<input name="BOARD_SUBJECT" type="text" size="50" maxlength="100" 
+					<input name="facility_notice_title" type="text" size="50" maxlength="100" 
 						value=""/>
 				</td>
 			</tr>
@@ -54,7 +36,7 @@
 					<div align="center">내 용</div>
 				</td>
 				<td>
-					<textarea name="BOARD_CONTENT" cols="67" rows="15"></textarea>
+					<textarea name="facility_notice_content" cols="67" rows="15"></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -62,7 +44,7 @@
 					<div align="center">파일 첨부</div>
 				</td>
 				<td>
-					<input name="BOARD_FILE" type="file"/>
+					<input name="facility_notice_file" type="file"/>
 				</td>
 			</tr>
 			<tr bgcolor="cccccc">

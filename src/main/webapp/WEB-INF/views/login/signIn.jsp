@@ -28,7 +28,7 @@
 				<button class="tab active" id="kb-tab" onclick="activateTab('kb-tab')">KB인증서 로그인</button>
 				<button class="tab" id="password-tab" onclick="activateTab('password-tab')">비밀번호 로그인</button>
 			</div>
-			<form class="login-form" action="${pageContext.request.contextPath}/signInConfirm">
+			<form class="login-form" action="${pageContext.request.contextPath}/signInConfirm" method="Post">
 				<input type="text" name="user_id" placeholder = "아이디" class="login-input">
 				<input type="password" name="user_pw" placeholder = "비밀번호" class="login-input">
 				<button type="submit" class="login-button">

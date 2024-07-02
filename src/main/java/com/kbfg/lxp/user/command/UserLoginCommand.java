@@ -33,6 +33,7 @@ public class UserLoginCommand implements Command {
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", user_id);
+			System.out.println("command user_id:"+user_id);
 			session.setMaxInactiveInterval(60 * 30);
 				if (user_id.equals("admin") && user_pw.equals("1234")) {
 				model.addAttribute("message", "로그인 성공");
