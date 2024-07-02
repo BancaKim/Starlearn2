@@ -111,6 +111,7 @@
         }
         #caution{
             position: relative;
+            text-align: left;
    			min-height: 68px;
     		padding: 22px 40px;
     		background-color: #f7f4f0;
