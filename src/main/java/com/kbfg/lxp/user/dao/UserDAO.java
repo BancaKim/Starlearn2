@@ -19,7 +19,7 @@ public class UserDAO {
 	
 	public boolean isUser(String user_id, String user_pw) {
 
-	    String sql = "SELECT COUNT(*) FROM USER WHERE user_id=? AND user_pw=?";
+	    String sql = "SELECT COUNT(*) FROM user WHERE user_id=? AND user_pw=?";
 		int result=0;
 
         try {
@@ -32,7 +32,7 @@ public class UserDAO {
     }
 	
 	public boolean hasUser(String user_id) {
-		String sql = "SELECT COUNT(*) FROM USER WHERE USER_ID=?";
+		String sql = "SELECT COUNT(*) FROM user WHERE user_id=?";
 		int result=0;
 		
 		try {

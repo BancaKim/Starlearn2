@@ -23,20 +23,20 @@ public class FacilityNoticeDAO {
 	public ArrayList<FacilityNoticeBean> list() {
 		  
 	  String query =
-	  "select FACILITY_NOTICE_NUM, FACILITY_NOTICE_TITLE, FACILITY_NOTICE_CONTENT, FACILITY_NOTICE_HIT " +
-	  "from facility_notice order by FACILITY_NOTICE_NUM desc"; 
+	  "select facility_notice_num, facility_notice_title, facility_notice_content, facility_notice_hit " +
+	  "from facility_notice order by facility_notice_num desc"; 
 	  
 	  return (ArrayList<FacilityNoticeBean>)template.query (query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));
 	  }
 
 	  public boolean write(FacilityNoticeBean notice) { 
-		  String query ="insert into facility_notice (FACILITY_NOTICE_TITLE, FACILITY_NOTICE_CONTENT, FACILITY_NOTICE_FILE, FACILITY_NOTICE_HIT) values (?, ?,?,0);"; 
+		  String query ="insert into facility_notice (facility_notice_title, facility_notice_content, facility_notice_file, facility_notice_hit) values (?,?,?,0);"; 
 		  int result = this.template.update(query, notice.getFacility_notice_title(),notice.getFacility_notice_content(),notice.getFacility_notice_file());
 	      return result > 0;
 	  }
 		
 	  public boolean modify(FacilityNoticeBean notice) {   
-		  String query = "update facility_notice set FACILITY_NOTICE_TITLE = ?, FACILITY_NOTICE_CONTENT = ? where FACILITY_NOTICE_NUM = ?";
+		  String query = "update facility_notice set facility_notice_title = ?, facility_notice_content = ? where facility_notice_num = ?";
 		  int result = this.template.update(query,notice.getFacility_notice_title(),notice.getFacility_notice_content(), notice.getFacility_notice_num());
 		  return result>0;
 		  };
