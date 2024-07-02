@@ -41,17 +41,12 @@ public class DAO_Course {
 
     public List<DTO_UserCourses> getItem(LocalDate today, String user_idn) {
         String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND course_start_date <= ? AND course_end_date >= ?;";
-        logger.info("Executing query: {}", query);
-        logger.info("Parameters: user_idn = {}, today = {}", user_idn, today);
+        
 
-        try {
             List<DTO_UserCourses> result = template.query(query, new UserCoursesRowMapper(), user_idn, Date.valueOf(today), Date.valueOf(today));
-            logger.info("Query executed successfully. Result size: {}", result.size());
+//            logger.info("Query executed successfully. Result size: {}", result.size());
             return result;
-        } catch (Exception e) {
-            logger.error("Error executing query: {}", e.getMessage(), e);
-            return new ArrayList<DTO_UserCourses>();
-        }
+  
     }
     
     private static class UserCoursesRowMapper implements RowMapper<DTO_UserCourses> {

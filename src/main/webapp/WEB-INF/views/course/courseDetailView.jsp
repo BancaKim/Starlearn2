@@ -159,7 +159,8 @@ courseView.jsp<%@ page language="java"
 <body>
 
 	<c:import url="../nav.jsp"></c:import>
-	<main style="margin: 100px auto 0;" /* Center align horizontally */>
+	<main style="padding-bottom: 100px;">
+		<nav class="navbar"></nav>
 
 		<div class="one-main">
 			<!-- <p>one-main</p> -->

@@ -7,14 +7,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseViewAction;
 import com.kbfg.lxp.user.util.Constant;
 
-
-/**s
- * Handles requests for the application home page.
+/**
+ * s Handles requests for the application home page.
  */
 @Controller
 @RequestMapping("/course")
@@ -22,13 +22,12 @@ public class CourseController {
 
 	private CourseCommand command;
 	private JdbcTemplate template;
-	
+
 	@Autowired
 	public CourseController(JdbcTemplate template) {
 		this.template = template;
 		Constant.template = this.template;
 	}
-
 
 	// �ڽ� ����
 	@RequestMapping("/courseView")
@@ -39,11 +38,10 @@ public class CourseController {
 
 		command = new CourseViewAction();
 		command.execute(model);
-	
-		return "course/courseView"; //"ShoppingList.ba"
+
+		return "course/courseView"; // "ShoppingList.ba"
 	}
-	
-	
+
 	// �ڽ� ����
 	@RequestMapping("/courseResister")
 	public String CourseResister(HttpServletRequest request, Model model) throws Exception {
@@ -53,22 +51,23 @@ public class CourseController {
 //
 //		command = new CourseResister();
 //		command.execute(model);
-	
-		return "course/courseResister"; //"ShoppingList.ba"
+
+		return "course/courseResister"; // "ShoppingList.ba"
 	}
 	
-
+	@RequestMapping(value = "/courseResister", method = RequestMethod.GET)
+	public String signUp(Model model) {
+		return "course/courseResister";
 	}
 	
 	
+	
+	
 
-	
-	
+}
 
 //	@RequestMapping("/courseView")
 //	public String join(Member member) {
 //		return "course/courseView";
 //		
 //	}
-	
-
