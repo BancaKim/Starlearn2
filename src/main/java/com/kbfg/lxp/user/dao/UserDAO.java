@@ -112,4 +112,19 @@ public class UserDAO {
         int result = template.update(sql, user_id);
         return result > 0;
     }
+    
+    public String getUserIdn(String user_id) {
+        String sql = "SELECT user_idn FROM user WHERE user_id = ?";
+        String userIdn = "";
+
+        try {
+            // Execute query and map result to a single string
+            userIdn = template.queryForObject(sql,String.class,user_id); // Pass user_id as parameter
+        } catch (EmptyResultDataAccessException e) {
+            // Handle case where no user with given user_id is found
+        	userIdn = ""; // or handle as needed
+        }
+
+        return userIdn;
+   }
 }

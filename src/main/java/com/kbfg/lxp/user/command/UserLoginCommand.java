@@ -26,13 +26,16 @@ public class UserLoginCommand implements Command {
 		String user_pw = request.getParameter("user_pw");
 		
 		Boolean isUser = userDao.isUser(user_id, user_pw);
+		
 
 		if(isUser==false) {
 			model.addAttribute("message", "濡쒓렇�씤 �떎�뙣!");
 			model.addAttribute("nextPage", "redirect:signIn");
 		} else {
+			String userIdn = userDao.getUserIdn(user_id);
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", user_id);
+			session.setAttribute("userIdn", userIdn);
 			System.out.println("command user_id:"+user_id);
 			session.setMaxInactiveInterval(60 * 30);
 				if (user_id.equals("admin") && user_pw.equals("1234")) {
