@@ -76,7 +76,7 @@ public class UserDAO {
         String sql = "SELECT * FROM user WHERE user_id = ?";
         
         try {
-            return template.queryForObject(sql, new BeanPropertyRowMapper(UserBean.class), user_id);
+            return (UserBean) template.queryForObject(sql, new BeanPropertyRowMapper(UserBean.class), user_id);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
@@ -101,7 +101,7 @@ public class UserDAO {
     public UserBean getDetail(String user_id) {
         String sql = "SELECT * FROM user WHERE user_id = ?";
         try {
-            return template.queryForObject(sql, new BeanPropertyRowMapper(UserBean.class), user_id);
+            return (UserBean) template.queryForObject(sql, new BeanPropertyRowMapper(UserBean.class), user_id);
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
