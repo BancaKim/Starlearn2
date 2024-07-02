@@ -66,12 +66,14 @@ public class CourseViewAction implements CourseCommand {
 		
 		myCourseList=new ArrayList();
 		myCourseList=dao.getItem(today, user_idn);
+		int itemNum = myCourseList.size();
 		
 		System.out.println("dao.list().size()"+CourseList.size());
 		System.out.println("dao.getItem().size()"+myCourseList.size());
 		
 		
-		request.setAttribute("boardList", myCourseList);
+		request.setAttribute("myCourseList", myCourseList);
+		request.setAttribute("itemNum", itemNum);
 	
 	}
 

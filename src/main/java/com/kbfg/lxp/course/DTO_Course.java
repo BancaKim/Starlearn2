@@ -7,104 +7,104 @@ import org.springframework.stereotype.Component;
 @Component
 public class DTO_Course {
 
-    private int courseRef;
-    private String courseName;
-    private int sessionNumber;
-    private String courseCategory;
-    private String courseSubcategory;
-    private LocalDate courseStartDate;
-    private LocalDate courseEndDate;
-    private LocalDate courseEntrolStartDate;
-    private LocalDate courseEntrolEndDate;
-    private LocalDate courseCancelStartDate;
-    private LocalDate courseCancelEndDate;
-    private String progressStatus;
+    private int course_ref;
+    private String course_name;
+    private int session_number;
+    private String course_category;
+    private String course_subcategory;
+    private LocalDate course_start_date;
+    private LocalDate course_end_date;
+    private LocalDate course_entrol_start_date;
+    private LocalDate course_entrol_end_date;
+    private LocalDate course_cancel_start_date;
+    private LocalDate course_cancel_end_date;
+    private String progress_status;
     private int mileage;
-    private String courseSummary;
-    private String courseDetails;
-    private String evaluationStyle;
-    private String trainingType;
-    private String operatingFirm;
-    private String courseDifficulty;
-    private String materialAvailabe;
-    private String evaluationDate;
-    private String evaluationDateSecond;
-    private String managerApproval;
-    private int coursExpense;
-    private int courseCapacity;
-    private int courseCount;
+    private String course_summary;
+    private String course_details;
+    private String evaluation_style;
+    private String training_type;
+    private String operating_firm;
+    private String course_difficulty;
+    private String material_availabe;
+    private String evaluation_date;
+    private String evaluation_date_second;
+    private String manager_approval;
+    private int cours_expense;
+    private int course_capacity;
+    private int course_count;
     
-	public int getCourseRef() {
-		return courseRef;
+	public int getCourse_ref() {
+		return course_ref;
 	}
-	public void setCourseRef(int courseRef) {
-		this.courseRef = courseRef;
+	public void setCourse_ref(int course_ref) {
+		this.course_ref = course_ref;
 	}
-	public String getCourseName() {
-		return courseName;
+	public String getCourse_name() {
+		return course_name;
 	}
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
+	public void setCourse_name(String course_name) {
+		this.course_name = course_name;
 	}
-	public int getSessionNumber() {
-		return sessionNumber;
+	public int getSession_number() {
+		return session_number;
 	}
-	public void setSessionNumber(int sessionNumber) {
-		this.sessionNumber = sessionNumber;
+	public void setSession_number(int session_number) {
+		this.session_number = session_number;
 	}
-	public String getCourseCategory() {
-		return courseCategory;
+	public String getCourse_category() {
+		return course_category;
 	}
-	public void setCourseCategory(String courseCategory) {
-		this.courseCategory = courseCategory;
+	public void setCourse_category(String course_category) {
+		this.course_category = course_category;
 	}
-	public String getCourseSubcategory() {
-		return courseSubcategory;
+	public String getCourse_subcategory() {
+		return course_subcategory;
 	}
-	public void setCourseSubcategory(String courseSubcategory) {
-		this.courseSubcategory = courseSubcategory;
+	public void setCourse_subcategory(String course_subcategory) {
+		this.course_subcategory = course_subcategory;
 	}
-	public LocalDate getCourseStartDate() {
-		return courseStartDate;
+	public LocalDate getCourse_start_date() {
+		return course_start_date;
 	}
-	public void setCourseStartDate(LocalDate courseStartDate) {
-		this.courseStartDate = courseStartDate;
+	public void setCourse_start_date(LocalDate course_start_date) {
+		this.course_start_date = course_start_date;
 	}
-	public LocalDate getCourseEndDate() {
-		return courseEndDate;
+	public LocalDate getCourse_end_date() {
+		return course_end_date;
 	}
-	public void setCourseEndDate(LocalDate courseEndDate) {
-		this.courseEndDate = courseEndDate;
+	public void setCourse_end_date(LocalDate course_end_date) {
+		this.course_end_date = course_end_date;
 	}
-	public LocalDate getCourseEntrolStartDate() {
-		return courseEntrolStartDate;
+	public LocalDate getCourse_entrol_start_date() {
+		return course_entrol_start_date;
 	}
-	public void setCourseEntrolStartDate(LocalDate courseEntrolStartDate) {
-		this.courseEntrolStartDate = courseEntrolStartDate;
+	public void setCourse_entrol_start_date(LocalDate course_entrol_start_date) {
+		this.course_entrol_start_date = course_entrol_start_date;
 	}
-	public LocalDate getCourseEntrolEndDate() {
-		return courseEntrolEndDate;
+	public LocalDate getCourse_entrol_end_date() {
+		return course_entrol_end_date;
 	}
-	public void setCourseEntrolEndDate(LocalDate courseEntrolEndDate) {
-		this.courseEntrolEndDate = courseEntrolEndDate;
+	public void setCourse_entrol_end_date(LocalDate course_entrol_end_date) {
+		this.course_entrol_end_date = course_entrol_end_date;
 	}
-	public LocalDate getCourseCancelStartDate() {
-		return courseCancelStartDate;
+	public LocalDate getCourse_cancel_start_date() {
+		return course_cancel_start_date;
 	}
-	public void setCourseCancelStartDate(LocalDate courseCancelStartDate) {
-		this.courseCancelStartDate = courseCancelStartDate;
+	public void setCourse_cancel_start_date(LocalDate course_cancel_start_date) {
+		this.course_cancel_start_date = course_cancel_start_date;
 	}
-	public LocalDate getCourseCancelEndDate() {
-		return courseCancelEndDate;
+	public LocalDate getCourse_cancel_end_date() {
+		return course_cancel_end_date;
 	}
-	public void setCourseCancelEndDate(LocalDate courseCancelEndDate) {
-		this.courseCancelEndDate = courseCancelEndDate;
+	public void setCourse_cancel_end_date(LocalDate course_cancel_end_date) {
+		this.course_cancel_end_date = course_cancel_end_date;
 	}
-	public String getProgressStatus() {
-		return progressStatus;
+	public String getProgress_status() {
+		return progress_status;
 	}
-	public void setProgressStatus(String progressStatus) {
-		this.progressStatus = progressStatus;
+	public void setProgress_status(String progress_status) {
+		this.progress_status = progress_status;
 	}
 	public int getMileage() {
 		return mileage;
@@ -112,85 +112,86 @@ public class DTO_Course {
 	public void setMileage(int mileage) {
 		this.mileage = mileage;
 	}
-	public String getCourseSummary() {
-		return courseSummary;
+	public String getCourse_summary() {
+		return course_summary;
 	}
-	public void setCourseSummary(String courseSummary) {
-		this.courseSummary = courseSummary;
+	public void setCourse_summary(String course_summary) {
+		this.course_summary = course_summary;
 	}
-	public String getCourseDetails() {
-		return courseDetails;
+	public String getCourse_details() {
+		return course_details;
 	}
-	public void setCourseDetails(String courseDetails) {
-		this.courseDetails = courseDetails;
+	public void setCourse_details(String course_details) {
+		this.course_details = course_details;
 	}
-	public String getEvaluationStyle() {
-		return evaluationStyle;
+	public String getEvaluation_style() {
+		return evaluation_style;
 	}
-	public void setEvaluationStyle(String evaluationStyle) {
-		this.evaluationStyle = evaluationStyle;
+	public void setEvaluation_style(String evaluation_style) {
+		this.evaluation_style = evaluation_style;
 	}
-	public String getTrainingType() {
-		return trainingType;
+	public String getTraining_type() {
+		return training_type;
 	}
-	public void setTrainingType(String trainingType) {
-		this.trainingType = trainingType;
+	public void setTraining_type(String training_type) {
+		this.training_type = training_type;
 	}
-	public String getOperatingFirm() {
-		return operatingFirm;
+	public String getOperating_firm() {
+		return operating_firm;
 	}
-	public void setOperatingFirm(String operatingFirm) {
-		this.operatingFirm = operatingFirm;
+	public void setOperating_firm(String operating_firm) {
+		this.operating_firm = operating_firm;
 	}
-	public String getCourseDifficulty() {
-		return courseDifficulty;
+	public String getCourse_difficulty() {
+		return course_difficulty;
 	}
-	public void setCourseDifficulty(String courseDifficulty) {
-		this.courseDifficulty = courseDifficulty;
+	public void setCourse_difficulty(String course_difficulty) {
+		this.course_difficulty = course_difficulty;
 	}
-	public String getMaterialAvailabe() {
-		return materialAvailabe;
+	public String getMaterial_availabe() {
+		return material_availabe;
 	}
-	public void setMaterialAvailabe(String materialAvailabe) {
-		this.materialAvailabe = materialAvailabe;
+	public void setMaterial_availabe(String material_availabe) {
+		this.material_availabe = material_availabe;
 	}
-	public String getEvaluationDate() {
-		return evaluationDate;
+	public String getEvaluation_date() {
+		return evaluation_date;
 	}
-	public void setEvaluationDate(String evaluationDate) {
-		this.evaluationDate = evaluationDate;
+	public void setEvaluation_date(String evaluation_date) {
+		this.evaluation_date = evaluation_date;
 	}
-	public String getEvaluationDateSecond() {
-		return evaluationDateSecond;
+	public String getEvaluation_date_second() {
+		return evaluation_date_second;
 	}
-	public void setEvaluationDateSecond(String evaluationDateSecond) {
-		this.evaluationDateSecond = evaluationDateSecond;
+	public void setEvaluation_date_second(String evaluation_date_second) {
+		this.evaluation_date_second = evaluation_date_second;
 	}
-	public String getManagerApproval() {
-		return managerApproval;
+	public String getManager_approval() {
+		return manager_approval;
 	}
-	public void setManagerApproval(String managerApproval) {
-		this.managerApproval = managerApproval;
+	public void setManager_approval(String manager_approval) {
+		this.manager_approval = manager_approval;
 	}
-	public int getCoursExpense() {
-		return coursExpense;
+	public int getCours_expense() {
+		return cours_expense;
 	}
-	public void setCoursExpense(int coursExpense) {
-		this.coursExpense = coursExpense;
+	public void setCours_expense(int cours_expense) {
+		this.cours_expense = cours_expense;
 	}
-	public int getCourseCapacity() {
-		return courseCapacity;
+	public int getCourse_capacity() {
+		return course_capacity;
 	}
-	public void setCourseCapacity(int courseCapacity) {
-		this.courseCapacity = courseCapacity;
+	public void setCourse_capacity(int course_capacity) {
+		this.course_capacity = course_capacity;
 	}
-	public int getCourseCount() {
-		return courseCount;
+	public int getCourse_count() {
+		return course_count;
 	}
-	public void setCourseCount(int courseCount) {
-		this.courseCount = courseCount;
+	public void setCourse_count(int course_count) {
+		this.course_count = course_count;
 	}
-
+    
+	
 	
     
 }
