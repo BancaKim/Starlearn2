@@ -28,7 +28,7 @@ public class UserLoginCommand implements Command {
 		Boolean isUser = userDao.isUser(user_id, user_pw);
 
 		if(isUser==false) {
-			model.addAttribute("message", "로그인 실패!");
+			model.addAttribute("message", "濡쒓렇�씤 �떎�뙣!");
 			model.addAttribute("nextPage", "redirect:signIn");
 		} else {
 			HttpSession session = request.getSession();
