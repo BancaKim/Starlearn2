@@ -15,7 +15,7 @@
 
 <body>
 <!-- 게시판 수정 -->
-<form action="${pageContext.request.contextPath}/facility/noticeModifyAction" method="post" name="modifyform">
+<form action="${pageContext.request.contextPath}/facility/noticeModifyAction?num=${noticedata.facility_notice_num}" method="post" name="modifyform">
 <input type="hidden" name="facility_notice_num" value="${noticedata.facility_notice_num}">
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">

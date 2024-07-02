@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kbfg.lxp.facility.command.FacilityApplyCommand;
 import com.kbfg.lxp.facility.command.FacilityContentCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeAddCommand;
 import com.kbfg.lxp.facility.command.FacilityNoticeDeleteCommand;
@@ -30,6 +31,7 @@ public class FacilityController {
 	@Autowired FacilityNoticeDeleteCommand facilityNoticeDeleteCommand;
 	@Autowired FacilityNoticeModifyCommand facilityNoticeModifyCommand;
 	@Autowired FacilityNoticeModifyActionCommand facilityNoticeModifyActionCommand;
+	@Autowired FacilityApplyCommand facilityApplyCommand;
 	
 	@RequestMapping(value = "/apply_main", method = RequestMethod.GET)
 	public String faciltyApply(Model model) {
@@ -86,12 +88,16 @@ public class FacilityController {
 		return nextPage;
 	}
 	
-	
-	
 	@RequestMapping("/notice_delete")
 	public String noticeDelete(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		facilityNoticeDeleteCommand.execute(model);
 		return "redirect:notice_view";
+	}
+	
+	@RequestMapping("/facilityApplyForm")
+	public String facilityApplyForm(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);
+		return "facility/facility_apply_write";
 	}
 }

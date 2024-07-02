@@ -23,7 +23,14 @@ public class FacilityNoticeModifyActionCommand implements Command {
 		
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		
+		String noticeIdStr = request.getParameter("num");
+		if (noticeIdStr == null || noticeIdStr.isEmpty()) {
+            throw new IllegalArgumentException("Notice ID is required and cannot be null or empty");
+        }
 		int num = Integer.parseInt(request.getParameter("num"));
+		
+		System.out.println("num:"+num);
 		
 		
 		try{
@@ -37,7 +44,7 @@ public class FacilityNoticeModifyActionCommand implements Command {
 		   	 } else {
 		   	 System.out.println("수정 성공");
 		   	 model.addAttribute("message","수정 성공");
-		   	 model.addAttribute("nextPage","faciility/content_view?num="+num);
+		   	 model.addAttribute("nextPage","facility/content_view?num="+num);
 		   	 	}
 			 }catch(Exception ex){
 	   			ex.printStackTrace();	 
