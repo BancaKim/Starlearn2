@@ -44,14 +44,27 @@
         justify-content: center;
         margin-top: 20px; /* 상단 여백 추가 */
     }
+    #hrd_search{
+    	 background-color: transparent; 
+
+ 		border: none;
+
+		right: 8px;
+    
+    }
+    #hrd_search-btn{
+    	 background-color: transparent; 
+    }
 </style>
 <body>
     <div id="title">HRD 클라우드</div>
     <br>
     <div>
+    	<button id="hrd_search-btn">
     	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   		<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
 		</svg>
+		</button>
 		<input type="text" id="hrd_search" name="hrd_search">
 			
 		
