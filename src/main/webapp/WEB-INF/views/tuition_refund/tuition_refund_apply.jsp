@@ -32,7 +32,7 @@
 		main{
 			text-align: center;
         	margin: 200px auto 0; /* Center align horizontally */
-        	background-color: #f7f4f0;
+        	background-color: #ffff;
 		}
     	
         #title {
