@@ -48,9 +48,10 @@ public class FacilityNoticeDAO {
 		  }
 	
 	  public FacilityNoticeBean contentView(int facility_notice_num) {
+		  System.out.println("content view num:"+facility_notice_num);
 		  upHit(facility_notice_num);
 		  String query = "select * from facility_notice where facility_notice_num = " + facility_notice_num; 
-		  return template.queryForObject(query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));
+		  return (FacilityNoticeBean)template.queryForObject(query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));
 		  }
 	
 	  private void upHit(int facility_notice_num) { // TODO Auto-generated method stub

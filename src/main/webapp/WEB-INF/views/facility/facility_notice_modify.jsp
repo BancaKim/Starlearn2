@@ -15,8 +15,8 @@
 
 <body>
 <!-- 게시판 수정 -->
-<form action="${pageContext.request.contextPath}/board/boardModifyAction" method="post" name="modifyform">
-<input type="hidden" name="facility_notice_num" value="${content_view.facility_notice_num}">
+<form action="${pageContext.request.contextPath}/facility/noticeModifyAction" method="post" name="modifyform">
+<input type="hidden" name="facility_notice_num" value="${noticedata.facility_notice_num}">
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
 		<td colspan="5">MVC 게시판</td>
@@ -27,7 +27,7 @@
 		</td>
 		<td>
 			<input name="facility_notice_title" size="50" maxlength="100" 
-				value="${content_view.facility_notice_title}">
+				value="${noticedata.facility_notice_title}">
 		</td>
 	</tr>
 	<tr>
@@ -36,7 +36,7 @@
 		</td>
 		<td>
 			<textarea name="facility_notice_content" cols="67" rows="15">
-			${content_view.facility_notice_content}
+			${noticedata.facility_notice_content}
 			</textarea>
 		</td>
 	</tr>
@@ -47,21 +47,10 @@
 				<div align="center">파일 첨부</div>
 			</td>
 			<td>
-				&nbsp;&nbsp;${boarddata.BOARD_fILE}
+				&nbsp;&nbsp;${noticedata.facility_notice_file}
 			</td>
 	</tr>
 	</c:if>
-
-<%-- 	<%} %> --%>
-	<tr>
-		<td height="16" style="font-family:돋음; font-size:12">
-			<div align="center">비밀번호</div>
-		</td>
-		<td>
-			<input name="BOARD_PASS" type="password">
-		</td>
-	</tr>
-	
 	<tr bgcolor="cccccc">
 		<td colspan="2" style="height:1px;">
 		</td>

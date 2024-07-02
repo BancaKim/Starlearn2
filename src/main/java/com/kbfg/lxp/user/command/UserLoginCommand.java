@@ -36,11 +36,11 @@ public class UserLoginCommand implements Command {
 			System.out.println("command user_id:"+user_id);
 			session.setMaxInactiveInterval(60 * 30);
 				if (user_id.equals("admin") && user_pw.equals("1234")) {
-				model.addAttribute("message", "濡쒓렇�씤 �꽦怨�");
-				model.addAttribute("nextPage", "redirect:home");
+				model.addAttribute("message", "로그인 성공");
+				model.addAttribute("nextPage", "home");
 			} else {
-				model.addAttribute("message", "濡쒓렇�씤 �꽦怨�");
-				model.addAttribute("nextPage", "redirect:home");
+				model.addAttribute("message", "로그인 성공");
+				model.addAttribute("nextPage", "home");
 				}
 			}
 		}

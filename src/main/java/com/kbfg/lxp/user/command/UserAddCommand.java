@@ -65,15 +65,15 @@ public class UserAddCommand implements Command {
 					HttpSession session = request.getSession();
 					session.setAttribute("user_id", user_id);
 					session.setMaxInactiveInterval(60 * 30);
-					model.addAttribute("message", "�쉶�썝媛��엯 �꽦怨�");
-					model.addAttribute("nextPage", "redirect:home");
+					model.addAttribute("message", "signup:sucess");
+					model.addAttribute("nextPage", "home");
 				} else {
-					model.addAttribute("message", "�쉶�썝媛��엯 �떎�뙣! DB �삤瑜�");
-					model.addAttribute("nextPage", "redirect:signUp");
+					model.addAttribute("message", "signup error");
+					model.addAttribute("nextPage", "signUp");
 				}
 			} else {
-				model.addAttribute("message", "以묐났�맂 �븘�씠�뵒�엯�땲�떎!");
-				model.addAttribute("nextPage", "redirect:signUp");
+				model.addAttribute("message", "id already exist!");
+				model.addAttribute("nextPage", "home");
 			}
    		} catch (Exception ex) {
    			ex.printStackTrace();

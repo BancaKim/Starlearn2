@@ -39,13 +39,13 @@
 				</tr>
 				<tr>
 					<td colspan="2"> 
-					<a href="${pageContext.request.contextPath}/facility/notice_modify?num=${content_view.facility_notice_num}">
+					<a href="notice_modify?num=${content_view.facility_notice_num}">
 					[수정]
 					</a>
-					<a href="${pageContext.request.contextPath}/facility/notice_delete?num=${content_view.facility_notice_num}">
+					<a href="notice_delete?num=${content_view.facility_notice_num}">
 					[삭제]
 					</a>
-					<a href="${pageContext.request.contextPath}/facility/notice_view">[목록]</a>
+					<a href="notice_view">[목록]</a>
 					</td>
 				</tr>
 		</table>
