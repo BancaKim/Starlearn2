@@ -122,6 +122,12 @@
        table tr td {
 		    padding-bottom: 15px; /* 원하는 간격 크기로 설정 */
 		}
+		span{
+			text-align: left;
+		}
+		#title_subject{
+			text-align: left;
+		}
 
     </style>
 </head>
@@ -153,15 +159,19 @@
       </div>
       <div class="modal-body">
       <br>
-       <span style="font-weight: bold;">신청정보</span>
+      <div id="title_subject">
+      	<span style="font-weight: bold; text-align: left;">신청정보</span>
+      </div>
+       
        <hr>
        <br>
        <div>
+
        	<table>
        		<tr>
 			    <td class="subject">신청직원</td>
 			    <td class="form">
-			        <input class="form-control form-control-lg" type="text" placeholder="HR부(인재개발)LO 조사역 김설화 | 1653778" aria-label=".form-control-lg example" readonly>
+			        <input class="form-control form-control-lg" type="text" placeholder=" ${info}" aria-label=".form-control-lg example" readonly>
 			    </td>
 			</tr>
        		<tr>
@@ -339,7 +349,9 @@
 				</script>
        	</table>
        	  <br>
-       	  <span style="font-weight: bold;">결제정보</span>
+       	  <div id="title_subject">
+       	 	 <span style="font-weight: bold; text-align: left;">결제정보</span>
+       	  </div>
        	  <hr>
        	 <table>
        	 <tr>
@@ -409,7 +421,9 @@
        	 
        	 </table>
        	  <br>
-       	  <span style="font-weight: bold;">결과 등록</span>
+       	  <div id="title_subject">
+       	  	<span style="font-weight: bold; text-align: left;">결과 등록</span>
+       	  </div>
        	  <hr>
        	 <table>
        		<tr>
@@ -429,7 +443,9 @@
        	 
        	 </table>
 			 <br>
-       	  <span style="font-weight: bold;">지원 정보</span>
+		<div id="title_subject">
+       	  	<span style="font-weight: bold; text-align: left;">지원 정보</span>
+       	  </div>
        	  <hr>
        	 <table>
        		<tr >
@@ -455,7 +471,9 @@
        	 
        	 </table>
        	  <br>
-       	  <span style="font-weight: bold;">지원 신청시 유의사항</span>
+       	  <div id="title_subject">
+       	  	<span style="font-weight: bold; text-align: left;">지원 신청시 유의사항</span>
+       	  </div>
        	  <hr>
        	  <div id="caution">
        	  	<div>본인은 아래 사항에 대해 모두 확인 및 동의합니다.</div><br><br>
