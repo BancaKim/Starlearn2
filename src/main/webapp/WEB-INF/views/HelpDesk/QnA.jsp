@@ -192,6 +192,11 @@
 
     
 </style>
+<script>
+function QnAWritePage() {
+    window.location.href = "${pageContext.request.contextPath}/HelpDesk/QnAwriteView"; // 여기에 이동할 페이지의 URL을 입력합니다.
+}
+</script>
 </head>
 <body>
 <main>
@@ -206,11 +211,8 @@
         <div class="QnA__contents">
             <div class="QnAcontents__menu">
                 <ul class="inner">
-                    <li><a href="#">나의강의실</a></li>
                     <li><a href="#">연수신청</a></li>
                     <li><a href="#">학원비지원신청</a></li>
-                    <li><a href="#">생활연수</a></li>
-                    <li><a href="#">HelpDesk</a></li>
                     <li><a href="#">기타</a></li>
                 </ul>
             </div>
@@ -218,7 +220,7 @@
     </div>
     <br>
     <div id="btn">
-        <input type="button" id="write-btn" name="write-btn" value="글쓰기">
+        <input type="button" id="write-btn" name="write-btn" value="글쓰기" onclick="QnAWritePage()">
         <form>
             <br>
             <div style="position: relative;">

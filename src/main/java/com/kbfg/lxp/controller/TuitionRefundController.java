@@ -57,6 +57,7 @@ public class TuitionRefundController {
 		refundListDetailCommand.execute(model);
 		return "tuition_refund/refundApplyDetail";
 	}
+
 	
 	
 }
