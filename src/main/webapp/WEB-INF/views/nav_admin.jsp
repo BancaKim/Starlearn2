@@ -59,6 +59,10 @@
 					<li class="item">
 						<a href="${pageContext.request.contextPath}/admin/adminMain"><span class="item__name">[관리자]스타런분석</span></a>
 					</li>
+					<li class="item">
+						<a href="${pageContext.request.contextPath}/HelpDesk/QnA"><span class="item__name">[관리자]QnA 관리</span></a>
+					</li>
+					
 				</ul>
 			</div>
 			<div class="right-container">

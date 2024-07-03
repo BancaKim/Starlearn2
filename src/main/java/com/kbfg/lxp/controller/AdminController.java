@@ -15,4 +15,9 @@ public class AdminController {
 	public String adminMain(Model model) {
 		return "admin/adminMain";
 	}
+	
+	@RequestMapping("/adminMain")
+	public String replayInsert(Model model) {
+		return "admin/replay";
+	}
 }
