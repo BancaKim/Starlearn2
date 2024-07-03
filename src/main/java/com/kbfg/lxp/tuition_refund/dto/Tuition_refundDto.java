@@ -1,5 +1,8 @@
 package com.kbfg.lxp.tuition_refund.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Tuition_refundDto {
 	private int tuition_index;
 	private String user_idn;

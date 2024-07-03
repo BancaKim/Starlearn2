@@ -39,7 +39,15 @@
 		<res-auth>Container</res-auth>
 	</resource-ref>
 	
-	
+	<!-- 여러개 파일 업로드 -->
+	<servlet>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <servlet-class>com.example.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
 	
 
 	<!-- 파비콘 -->
