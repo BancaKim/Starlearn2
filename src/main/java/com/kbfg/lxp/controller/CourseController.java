@@ -15,6 +15,7 @@ import com.kbfg.lxp.course.CourseApplyView;
 import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseResisterAction;
 import com.kbfg.lxp.course.CourseViewAction;
+import com.kbfg.lxp.course.UserCourseResisterAction;
 import com.kbfg.lxp.user.util.Constant;
 
 /**
@@ -102,7 +103,19 @@ public class CourseController {
 		 * command = new ApplyDetailView(); command.execute(model);
 		 */
 		
-		return "course/courseApplyView";
+		return "course/applyDetailView";
+		}
+	
+	@RequestMapping("/UserCourseResister")
+	public String userCourseResister(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("userCourseResister();");
+
+		command = new UserCourseResisterAction();
+		command.execute(model);
+		
+		return "course/courseView";
 		}
 	
 	
