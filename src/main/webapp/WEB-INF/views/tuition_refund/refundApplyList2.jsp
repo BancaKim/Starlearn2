@@ -232,26 +232,29 @@
         // 과거 신청 이력 보기를 클릭할 때 호출되는 함수
         document.getElementById('yesterdayRefundTable').style.display = 'block'; // yesterdayRefundTable 보이기
 
-
         // 메뉴 아이템 스타일 변경
         document.getElementById('menuYesterday').classList.add('active');
         document.getElementById('menuYear').classList.remove('active');
     }
     
+    function showYearRefund() {
+        // 학원비 신청 이력 보기를 클릭할 때 호출되는 함수
+        document.getElementById('yesterdayRefundTable').style.display = 'block'; // yesterdayRefundTable 보이기
 
 
+        // 메뉴 아이템 스타일 변경
+        document.getElementById('menuYesterday').classList.remove('active');
+        document.getElementById('menuYear').classList.add('active');
+    }
 
     // 페이지 로드 시 초기화
     window.onload = function() {
         // 학원비 신청 이력이 기본으로 선택되도록 설정
-        showYesterdayRefund();
+        showYearRefund();
     };
     
-    function AgoRefundList(){
-    	window.location.href =" ${pageContext.request.contextPath}/tuition_refund/AgoRefundList";
-    }
-    function detatil(){
-    	window.location.href =" ${pageContext.request.contextPath}/tuition_refund/RefundListDetail";
+    function RefundList(){
+    	window.location.href = "${pageContext.request.contextPath}/tuition_refund/refundApplyList";
     }
 </script>
 </head>
@@ -260,8 +263,8 @@
     <div id="title">지원신청 현황 조회</div>
     <br>
     <div id="menu">
-        <div class="menu-item" id="menuYesterday">현재 신청 내역</div>
-        <div class="menu-item" id="menuYear" onclick="AgoRefundList()">학원비 신청 이력</div>
+        <div class="menu-item" id="menuYesterday" onclick="RefundList()">현재 신청 내역</div>
+        <div class="menu-item" id="menuYear">학원비 신청 이력</div>
     </div>
 
     <br><br>
@@ -272,8 +275,8 @@
         <div class="header">학원비 신청 이력</div>
         <br>
         <div class="info">
-            <div>${RefundApplyCount}건</div>
-            <div class="right">신청 현황만 표시됩니다.</div>
+            <div>${AgoRefundListCount}건</div>
+            <div class="right">과거 승인 건에 대해서만 표시됩니다.</div>
         </div>
         <br><br>
         <table class="table">
@@ -291,7 +294,7 @@
             </thead>
             <tbody>
                 <tr>
-                	<c:forEach var="refund" items="${RefundApplyList}">
+                	<c:forEach var="refund" items="${AgoRefundList}">
 	                    <td>${refund.tuition_index}</td>
 	                    <td>${refund.learning_division}/${refund.learning_field}</td>
 	                    <td>${refund.academy_course}</td>
@@ -314,7 +317,7 @@
 	                    </td>
 	                    <td>${refund.refund_price}</td>
 	                    <td>
-	                    	<button type="button" id="detail-btn" onclick="detatil(${refund.tuition_index})">
+	                    	<button type="button" id="detail-btn" onclick="">
 	  						상세
 							</button>
 	

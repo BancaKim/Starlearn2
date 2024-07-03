@@ -28,7 +28,7 @@
 	<header>
 		<nav class="navbar">
 			<div class="left-container">
-				<a href="#" class="logo"> </a>
+				<a href="${pageContext.request.contextPath}/home" class="logo"> </a>
 				<ul class="main-menu">
 					<li class="item">
 						<div class="item__name">나의강의실</div>
@@ -38,7 +38,9 @@
 									<li><a
 										href="${pageContext.request.contextPath}/course/courseView">진행중인연수</a></li>
 									<li><a href=#>예정된 연수</a></li>
-									<li><a href=#>[관리자] 연수등록</a></li>
+									<c:if test="${user_id==admin}">
+										<li><a href=#>[관리자] 연수등록</a></li>
+									</c:if>
 								</ul>
 							</div>
 						</div>
@@ -48,7 +50,7 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href=#>연수신청</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청</a></li>
 									<li><a href=#>연간연수 일정</a></li>
 									<li><a href=#>연수신청 현황조회</a></li>
 
@@ -132,9 +134,11 @@
 					<a href="${pageContext.request.contextPath}/logout"><i
 						class="fa-solid fa-right-from-bracket"></i></a>
 				</div>
+				
+				<c:if test="${user_id != null}">
 				<div class="box">
 					<img id="profile-img" class="profile"
-						src="${pageContext.request.contextPath}/resources/images/1654530.jpg">
+						src="${pageContext.request.contextPath}/userupload/${user_profile}">
 					<div class="dropdown-menu" id="dropdown-menu">
 						<ul class="inner">
 							<li><a href="#">마이페이지</a></li>
@@ -144,6 +148,8 @@
 						</ul>
 					</div>
 				</div>
+				</c:if>
+				
 			</div>
 		</nav>
 	</header>

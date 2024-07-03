@@ -127,4 +127,12 @@ public class UserDAO {
 
         return userIdn;
    }
+    
+    public String getUserProfileImage(String user_id) {
+    	String filePath = null;
+    	String sql = "SELECT user_profile FROM user WHERE user_id = ?";
+    	filePath = template.queryForObject(sql,String.class,user_id);
+    	return filePath;
+    	
+    }
 }

@@ -1,5 +1,7 @@
 package com.kbfg.lxp.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kbfg.lxp.course.ApplyDetailView;
+import com.kbfg.lxp.course.CourseApplyView;
 import com.kbfg.lxp.course.CourseCommand;
+import com.kbfg.lxp.course.CourseResisterAction;
 import com.kbfg.lxp.course.CourseViewAction;
 import com.kbfg.lxp.user.util.Constant;
 
@@ -29,13 +34,12 @@ public class CourseController {
 		Constant.template = this.template;
 	}
 
-	// View Course
+	// User's Course View 
 	@RequestMapping("/courseView")
 	public String showMyCourse(HttpServletRequest request, Model model) throws Exception {
 
 		model.addAttribute("request", request);
 		System.out.println("showMyCourse();");
-
 		command = new CourseViewAction();
 		command.execute(model);
 
@@ -43,25 +47,63 @@ public class CourseController {
 	}
 
 
-	
+	// Admin's course resister
 	@RequestMapping(value = "/courseResister", method = RequestMethod.GET)
-	public String signUp(Model model) {
+	public String courseResister(Model model) {
 		return "course/courseResister";
 	}
 	
+	/*
+	 * // every course view
+	 * 
+	 * @RequestMapping(value = "/courseApplyView", method = RequestMethod.GET)
+	 * public String courseApplyView(Model model) { return "course/courseApplyView";
+	 * }
+	 */
+	
 	
 	// coure resister action
-	@RequestMapping("/signUpConfirm")
-	public String CourseResister(HttpServletRequest request, Model model) throws Exception {
+	@RequestMapping("/courseResisterAction")
+	public String courseResisterAction(HttpServletRequest request, Model model) throws Exception {
 
 		model.addAttribute("request", request);
-		System.out.println("showMyCourse();");
+		System.out.println("courseResisterAction();");
 
-		command = new CourseViewAction();
+		command = new CourseResisterAction();
 		command.execute(model);
-
-		return "course/courseView"; // "ShoppingList.ba"
+		
+		Map<String, Object> map = model.asMap();
+		String nextPage = (String) map.get("nextPage");
+		
+		return nextPage;
+		
 	}
+	
+	
+	
+	@RequestMapping("/courseApplyView")
+	public String courseApplyView(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("courseApplyView();");
+
+		command = new CourseApplyView();
+		command.execute(model);
+		
+		return "course/courseApplyView";
+		}
+	
+	@RequestMapping("/applyDetailView")
+	public String applyDetailView(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("applyDetailView();");
+
+		command = new ApplyDetailView();
+		command.execute(model);
+		
+		return "course/courseApplyView";
+		}
 	
 	
 

@@ -33,10 +33,13 @@ public class UserLoginCommand implements Command {
 			model.addAttribute("nextPage", "redirect:signIn");
 		} else {
 			String userIdn = userDao.getUserIdn(user_id);
+			String user_profilePath = userDao.getUserProfileImage(user_id);
+			
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", user_id);
 			session.setAttribute("userIdn", userIdn);
-			System.out.println("command user_id:"+user_id);
+			session.setAttribute("user_profile", user_profilePath);
+			
 			session.setMaxInactiveInterval(60 * 30);
 				if (user_id.equals("admin") && user_pw.equals("1234")) {
 				model.addAttribute("message", "로그인 성공");
