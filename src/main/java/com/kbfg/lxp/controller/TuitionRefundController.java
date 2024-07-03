@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kbfg.lxp.tuition_refund.command.AgoRefundListCommand;
 import com.kbfg.lxp.tuition_refund.command.GetInfoTuition_refundCommand;
 import com.kbfg.lxp.tuition_refund.command.RefundApplyListCommand;
+import com.kbfg.lxp.tuition_refund.command.RefundListDetailCommand;
 import com.kbfg.lxp.tuition_refund.command.Tuition_refundAddCommand;
 
 @Controller
@@ -20,7 +21,7 @@ public class TuitionRefundController {
 	@Autowired Tuition_refundAddCommand tuition_refundAddCommand;
 	@Autowired RefundApplyListCommand refundApplyListCommand;
 	@Autowired AgoRefundListCommand agoRefundListCommand;
-
+	@Autowired RefundListDetailCommand refundListDetailCommand;
 	
 	@RequestMapping("/tuition_refund_apply")
 	public String tuition_refundPage(HttpServletRequest request, Model model) {
@@ -49,5 +50,13 @@ public class TuitionRefundController {
 		agoRefundListCommand.execute(model);
 		return "tuition_refund/refundApplyList2";
 	}
+	
+	@RequestMapping("/RefundListDetail")
+	public String RefundListDetailPage(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
+		refundListDetailCommand.execute(model);
+		return "tuition_refund/refundApplyDetail";
+	}
+	
 	
 }

@@ -130,6 +130,13 @@ public class Tuition_refundDao {
 	}
 
 
+	public List<Tuition_refundDto> RefundListDetail(String tuition_index) {
+		String sql = "SELECT * FROM tuition_refund WHERE tuition_index=?";
+
+		 return template.query(sql, new BeanPropertyRowMapper<Tuition_refundDto>(Tuition_refundDto.class),tuition_index);
+	}
+
+
 
 
 	
