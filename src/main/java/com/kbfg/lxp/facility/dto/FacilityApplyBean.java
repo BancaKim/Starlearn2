@@ -10,20 +10,20 @@ public class FacilityApplyBean {
     private String user_idn;
     private String facility_trainingCenter;
     private String facility_roomType;
-    private Date facility_StartDate;
-    private Date facility_EndDate;
-    private String facility_Ph;
-    private String facility_Car;
-    private String facility_Person1Name;
-    private String facility_Person1Rel;
-    private String facility_Person2Name;
-    private String facility_Person2Rel;
-    private String facility_Person3Name;
-    private String facility_Person3Rel;
-    private String facility_Person4Name;
-    private String facility_Person4Rel;
-    private String facility_Person5Name;
-    private String facility_Person5Rel;
+    private Date facility_startDate;
+    private Date facility_endDate;
+    private String facility_ph;
+    private String facility_car;
+    private String facility_person1_name;
+    private String facility_person1_rel;
+    private String facility_person2_name;
+    private String facility_person2_rel;
+    private String facility_person3_name;
+    private String facility_person3_rel;
+    private String facility_person4_name;
+    private String facility_person4_rel;
+    private String facility_person5_name;
+    private String facility_person5_rel;
     private int facility_appl_pn;
     private String facility_significiant;
     
@@ -51,89 +51,89 @@ public class FacilityApplyBean {
 	public void setFacility_roomType(String facility_roomType) {
 		this.facility_roomType = facility_roomType;
 	}
-	public Date getFacility_StartDate() {
-		return facility_StartDate;
+	public Date getFacility_startDate() {
+		return facility_startDate;
 	}
-	public void setFacility_StartDate(Date facility_StartDate) {
-		this.facility_StartDate = facility_StartDate;
+	public void setFacility_startDate(Date facility_startDate) {
+		this.facility_startDate = facility_startDate;
 	}
-	public Date getFacility_EndDate() {
-		return facility_EndDate;
+	public Date getFacility_endDate() {
+		return facility_endDate;
 	}
-	public void setFacility_EndDate(Date facility_EndDate) {
-		this.facility_EndDate = facility_EndDate;
+	public void setFacility_endDate(Date facility_endDate) {
+		this.facility_endDate = facility_endDate;
 	}
-	public String getFacility_Ph() {
-		return facility_Ph;
+	public String getFacility_ph() {
+		return facility_ph;
 	}
-	public void setFacility_Ph(String facility_Ph) {
-		this.facility_Ph = facility_Ph;
+	public void setFacility_ph(String facility_ph) {
+		this.facility_ph = facility_ph;
 	}
-	public String getFacility_Car() {
-		return facility_Car;
+	public String getFacility_car() {
+		return facility_car;
 	}
-	public void setFacility_Car(String facility_Car) {
-		this.facility_Car = facility_Car;
+	public void setFacility_car(String facility_car) {
+		this.facility_car = facility_car;
 	}
-	public String getFacility_Person1Name() {
-		return facility_Person1Name;
+	public String getFacility_person1_name() {
+		return facility_person1_name;
 	}
-	public void setFacility_Person1Name(String facility_Person1Name) {
-		this.facility_Person1Name = facility_Person1Name;
+	public void setFacility_person1_name(String facility_person1_name) {
+		this.facility_person1_name = facility_person1_name;
 	}
-	public String getFacility_Person1Rel() {
-		return facility_Person1Rel;
+	public String getFacility_person1_rel() {
+		return facility_person1_rel;
 	}
-	public void setFacility_Person1Rel(String facility_Person1Rel) {
-		this.facility_Person1Rel = facility_Person1Rel;
+	public void setFacility_person1_rel(String facility_person1_rel) {
+		this.facility_person1_rel = facility_person1_rel;
 	}
-	public String getFacility_Person2Name() {
-		return facility_Person2Name;
+	public String getFacility_person2_name() {
+		return facility_person2_name;
 	}
-	public void setFacility_Person2Name(String facility_Person2Name) {
-		this.facility_Person2Name = facility_Person2Name;
+	public void setFacility_person2_name(String facility_person2_name) {
+		this.facility_person2_name = facility_person2_name;
 	}
-	public String getFacility_Person2Rel() {
-		return facility_Person2Rel;
+	public String getFacility_person2_rel() {
+		return facility_person2_rel;
 	}
-	public void setFacility_Person2Rel(String facility_Person2Rel) {
-		this.facility_Person2Rel = facility_Person2Rel;
+	public void setFacility_person2_rel(String facility_person2_rel) {
+		this.facility_person2_rel = facility_person2_rel;
 	}
-	public String getFacility_Person3Name() {
-		return facility_Person3Name;
+	public String getFacility_person3_name() {
+		return facility_person3_name;
 	}
-	public void setFacility_Person3Name(String facility_Person3Name) {
-		this.facility_Person3Name = facility_Person3Name;
+	public void setFacility_person3_name(String facility_person3_name) {
+		this.facility_person3_name = facility_person3_name;
 	}
-	public String getFacility_Person3Rel() {
-		return facility_Person3Rel;
+	public String getFacility_person3_rel() {
+		return facility_person3_rel;
 	}
-	public void setFacility_Person3Rel(String facility_Person3Rel) {
-		this.facility_Person3Rel = facility_Person3Rel;
+	public void setFacility_person3_rel(String facility_person3_rel) {
+		this.facility_person3_rel = facility_person3_rel;
 	}
-	public String getFacility_Person4Name() {
-		return facility_Person4Name;
+	public String getFacility_person4_name() {
+		return facility_person4_name;
 	}
-	public void setFacility_Person4Name(String facility_Person4Name) {
-		this.facility_Person4Name = facility_Person4Name;
+	public void setFacility_person4_name(String facility_person4_name) {
+		this.facility_person4_name = facility_person4_name;
 	}
-	public String getFacility_Person4Rel() {
-		return facility_Person4Rel;
+	public String getFacility_person4_rel() {
+		return facility_person4_rel;
 	}
-	public void setFacility_Person4Rel(String facility_Person4Rel) {
-		this.facility_Person4Rel = facility_Person4Rel;
+	public void setFacility_person4_rel(String facility_person4_rel) {
+		this.facility_person4_rel = facility_person4_rel;
 	}
-	public String getFacility_Person5Name() {
-		return facility_Person5Name;
+	public String getFacility_person5_name() {
+		return facility_person5_name;
 	}
-	public void setFacility_Person5Name(String facility_Person5Name) {
-		this.facility_Person5Name = facility_Person5Name;
+	public void setFacility_person5_name(String facility_person5_name) {
+		this.facility_person5_name = facility_person5_name;
 	}
-	public String getFacility_Person5Rel() {
-		return facility_Person5Rel;
+	public String getFacility_person5_rel() {
+		return facility_person5_rel;
 	}
-	public void setFacility_Person5Rel(String facility_Person5Rel) {
-		this.facility_Person5Rel = facility_Person5Rel;
+	public void setFacility_person5_rel(String facility_person5_rel) {
+		this.facility_person5_rel = facility_person5_rel;
 	}
 	public int getFacility_appl_pn() {
 		return facility_appl_pn;
@@ -147,6 +147,5 @@ public class FacilityApplyBean {
 	public void setFacility_significiant(String facility_significiant) {
 		this.facility_significiant = facility_significiant;
 	}
-    
     
 }

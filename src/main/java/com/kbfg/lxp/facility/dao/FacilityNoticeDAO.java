@@ -23,7 +23,7 @@ public class FacilityNoticeDAO {
 	public ArrayList<FacilityNoticeBean> list() {
 		  
 	  String query =
-	  "select facility_notice_num, facility_notice_title, facility_notice_content, facility_notice_hit " +
+	  "select facility_notice_num, facility_notice_title, facility_notice_content,facility_notice_rolldate, facility_notice_hit " +
 	  "from facility_notice order by facility_notice_num desc"; 
 	  
 	  return (ArrayList<FacilityNoticeBean>)template.query (query, new BeanPropertyRowMapper<FacilityNoticeBean>(FacilityNoticeBean.class));

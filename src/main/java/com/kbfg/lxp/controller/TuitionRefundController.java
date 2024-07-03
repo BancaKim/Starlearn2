@@ -14,9 +14,11 @@ import com.kbfg.lxp.tuition_refund.command.Tuition_refundAddCommand;
 @Controller
 @RequestMapping("/tuition_refund")
 public class TuitionRefundController {
+
 	@Autowired GetInfoTuition_refundCommand getInfoTuition_refundCommand;
 	@Autowired Tuition_refundAddCommand tuition_refundAddCommand;
 	@Autowired RefundApplyListCommand refundApplyListCommand;
+
 	
 	@RequestMapping("/tuition_refund_apply")
 	public String tuition_refundPage(HttpServletRequest request, Model model) {
