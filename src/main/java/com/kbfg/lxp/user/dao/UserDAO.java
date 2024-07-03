@@ -1,5 +1,7 @@
 package com.kbfg.lxp.user.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -80,6 +82,15 @@ public class UserDAO {
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
+    }
+    public List<UserBean> getAllUserData() {
+    	String sql = "SELECT * FROM user";
+    	
+    	try {
+    		return template.query(sql, new BeanPropertyRowMapper(UserBean.class));
+    	} catch (EmptyResultDataAccessException e) {
+    		return null;
+    	}
     }
 
     public int getUserCount() {
