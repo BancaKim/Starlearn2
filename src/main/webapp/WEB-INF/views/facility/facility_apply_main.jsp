@@ -27,43 +27,43 @@
         <section class="notice-board">
             <h2>공지사항</h2>
             <ul>
-                <li>
-                    <span class="number">1</span>
-                    <span class="title">속초 대전연수원 '생활 연수 운영 방법' 변경 안내</span>
-                    <span class="date">2023-11-01</span>
-                    <span class="views">10572 조회</span>
+            <c:forEach items="${noticelist}" var="item">
+            	<li>
+                    <span class="number">${item.facility_notice_num}</span>
+                    <span class="title">${item.facility_notice_title}</span>
+                    <span class="date">${item.facility_notice_hit} 조회</span>
+                    <span class="views">${item.facility_notice_rolldate}</span>
                 </li>
-                <li>
-                    <span class="number">2</span>
-                    <span class="title">생활연수 예약접수일자 임시변경 안내</span>
-                    <span class="date">2022-12-29</span>
-                    <span class="views">7346 조회</span>
-                </li>
-                <li>
-                    <span class="number">3</span>
-                    <span class="title">속초 · 대전연수원 생활연수 이용안내 입니다.</span>
-                    <span class="date">2022-12-01</span>
-                    <span class="views">15379 조회</span>
-                </li>
+            
+            </c:forEach>
             </ul>
         </section>
 
         <section class="application-status">
             <h2>신청현황</h2>
-            <p>전체 0건</p>
+            <p>전체 ${listCount} 건</p>
             <table>
                 <thead>
                     <tr>
-                        <th>구분</th>
                         <th>시설명</th>
-                        <th>신청기간</th>
-                        <th>신청일시</th>
-                        <th>신청상태</th>
+                        <th>세부사항</th>
+                        <th>신청입실일</th>
+                        <th>신청퇴실일</th>
+                        <th>신청인원</th>
                         <th>기능</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 테이블 내용은 비어있음 -->
+                    <c:forEach items="${facilityApplyList}" var="item">
+                    	<tr>
+	                    	<td>${item.facility_trainingCenter}</td>
+	                    	<td>${item.facility_roomType}</td>
+	                    	<td>${item.facility_startDate}</td>
+	                    	<td>${item.facility_endDate}</td>
+	                    	<td>${item.facility_appl_pn}</td>
+	                    	<td></td>
+	                    </tr>
+                    </c:forEach>
                 </tbody>
             </table>
             <button type="button" class="apply-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -74,7 +74,7 @@
 				<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 					<div class="modal-dialog modal-xl">
 				    	<div class="modal-content">
-				    		<div class="modal-header">
+				    		<div class="modal-header text-center">
 				        		<h1 class="modal-title fs-5" id="staticBackdropLabel" align="center">연수원 이용 신청하기</h1>
 				        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      		</div>
@@ -93,19 +93,27 @@
 								<div class="second-container">
 									<div class="image-container"></div>
 									<div class="form-container">
-										<form action="#" method="get">
+										<form id="applicationForm" action="${pageContext.request.contextPath}/facility/facilityApplyForm" method="post">
 			                    			<div class="options">
-								    			<label>연수원 선택</label>
+								    			<label for="trainingCenter">연수원 선택</label>
 								    			<div class="button_group">
-			                       					<button type="button" class="tab active">속초 연수원</button>
-			                        				<button type="button" class="tab">대천 연수원</button>
+			                        				
+			                        				<input type="radio" class="btn-check" name="trainingCenter" id="option5" autocomplete="off" value="속초" checked>
+													<label class="btn" for="option5">속초 연수원</label>
+
+													<input type="radio" class="btn-check" name="trainingCenter" id="option6" autocomplete="off" value="대천" >
+													<label class="btn" for="option6">대천 연수원</label>
+
 			                    				</div>
 			                    			</div>
 								   			<div class="options">
 				                       			<label>방 유형 선택</label>
-				                       			<div class="button_group">
-				                        			<button type="button" class="tab active">투룸</button>
-				                        			<button type="button" class="tab">안식년 (투룸)</button>
+				                       			<div class="button_group">	
+			                        				<input type="radio" class="btn-check" name="roomType" id="option7" value="투룸" autocomplete="off" checked>
+													<label class="btn" for="option7">투룸</label>
+
+													<input type="radio" class="btn-check" name="roomType" id="option8" value="쓰리룸" autocomplete="off">
+													<label class="btn" for="option8">쓰리룸</label>	
 			                  					</div>
 			                  				</div>
 			                    			<div class="options">
@@ -117,7 +125,6 @@
        												 <input class="form-control form-control-lg date-input" id="endDate" name="endDate"
        				 								type="date" aria-label=".form-control-lg example"  onchange="handleDateChange()" required>
        				 								<br>
-       				 								<!-- <div id="datePrint"></div> -->
        				 								
        				 								<script>
 													 function handleDateChange() {
@@ -149,7 +156,7 @@
 			                        			</div>
            			
 			                    			</div>
-		                    				<button class="apply-button">연수원 신청하기</button>
+		                    				<button type="submit" class="apply-button">연수원 신청하기</button>
 							  			</form>
 									</div>
 									
