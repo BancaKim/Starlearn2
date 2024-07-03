@@ -24,6 +24,11 @@ public class AdminController {
 		return "admin/adminMain";
 	}
 	
+
+	@RequestMapping("/adminReplay")
+	public String replayInsert(Model model) {
+		return "admin/replay";
+
 	@RequestMapping("/adminCharts")
 	public String adminCharts(Model model) {
 		adminChartsCommand.execute(model);
@@ -35,5 +40,6 @@ public class AdminController {
 	public String adminUserList(Model model) {
 		adminUserListCommand.execute(model);
 		return "admin/adminUserList";
+
 	}
 }
