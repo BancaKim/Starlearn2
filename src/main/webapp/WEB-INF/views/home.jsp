@@ -7,39 +7,87 @@
 <head>
 <meta charset="UTF-8">
 <title>스타런</title>
-<c:import url="./nav.jsp"></c:import>
+
 <style>
-    @font-face {
-        font-family: 'NanumSquareRound';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    
-    body {
-        font-family: 'NanumSquareRound';
-        color: #545045;
-        font: normal 1rem/1.25;
-        background-color: #fff; /* 바디 배경색을 하얀색으로 설정 */
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-    }
-    
-    main {
-        text-align: center;
-        margin: 200px auto 0; /* Center align horizontally */
-    }
+
 </style>
-
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
+</head>
 <body>
 	<c:import url="./nav.jsp"></c:import>
 	<main>
-	<video data-v-2187eb61="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240524/1652204_d355685d.mp4" 
+	<div class="row gx-3">
+		<div class="itembox col-3 mycol-3">
+			<div id="home_my">
+			<div style="font-weight: bold; font-size:20px; ">김건님 반가워요</div>
+			<div style="font-size:16px; color:#84888b; ">L1 조사역 HR부(인재개발)</div><br><br><br><br>
+			</div>
+			<div id="home_my_buttom">
+			<div>
+			<a href="#">마이페이지</a><br>
+			<a href="#">Hot Tube</a><br>
+			<a href="#">연수신청</a><br>
+			</div>
+			<div id="collyImg">
+				<img class="obj" src="${pageContext.request.contextPath}/resources/images/colly.svg" alt="멜랑 콜리">
+			</div>
+			</div>
+		</div>
+		<div class="itembox col-9">
+			<video id="video" data-v-2187eb61="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240524/1652204_d355685d.mp4" 
 	tabindex="-1" role="application" loop="" muted="muted" playsinline="playsinline" autoplay="">
-</video>
+		</video>
 	
+		</div>
+	</div>
+	<div class="row gx-3">
+		<div class="itembox col-3">
+			오늘 일정
+		</div>
+		<div class="itembox col-6">
+		지금 주목할 연수
+		</div>
+		<div class="itembox col-3">
+		연수현황
+		</div>
+	</div>
+	<div class="row gx-3">
+		<div class="itembox col-3">
+		핫팁
+		</div>
+		<div class="itembox col-9 cloud">
+		HRD클라우드
+		</div>
+	</div>
+	<div class="row gx-3">
+	
+		<div class="itembox col-3">
+		최근 배지
+		</div>
+		<div class="itembox col-9 sslNote">
+			SSL 학습노트
+		</div>
+	</div>	
+	<div class="row gx-3">
+		<div class="itembox col-2">
+		핫팁
+		</div>
+		<div class="itembox col-2">
+		쓸
+		</div>
+		<div class="itembox col-2">
+		hrd 클라우드
+		</div>
+		<div class="itembox col-2">
+		판매자격연수
+		</div>
+		<div class="itembox col-2">
+		통합법정교육
+		</div>
+		<div class="itembox col-2">
+		역량개발평가
+		</div>
+	</div>
 		
 	
 	</main>
