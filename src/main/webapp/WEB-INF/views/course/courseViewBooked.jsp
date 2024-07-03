@@ -184,19 +184,19 @@ body {
 	<div class="one-main">
 		<!-- <p>one-main</p> -->
 		<div class="one-main-header">
-			<p class="one-font14" style="color: #84888b;">홈>나의 강의실 > 진행중인연수</p>
+			<p class="one-font14" style="color: #84888b;">홈>나의 강의실 > 예정된 연수</p>
 			<div class="one-main-header-row">
-				<h4 style="text-align: 80px;">진행 중 연수</h4>
+				<h4 style="text-align: 80px;">예정된 연수</h4>
 				<div class="one-main-callendar">
 
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="direction" value="prev"> <input
 							type="hidden" name="weekDate" value="${weekDates[0]}">
 						<button type="submit" class="btn btn-light one-i-callendar"><</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 
 						<input type="hidden" name="weekDate" value="${weekDates[0]}">
 						<input type="hidden" name="direction" value="thisPage">
@@ -206,7 +206,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="weekDate" value="${weekDates[1]}">
 						<input type="hidden" name="direction" value="thisPage">
 						<button type="submit" style="font-size: 26px; color: #84888b;"
@@ -215,7 +215,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="weekDate" value="${weekDates[2]}">
 						<input type="hidden" name="direction" value="thisPage">
 						<button type="submit" style="font-size: 26px; color: #84888b;"
@@ -224,7 +224,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="weekDate" value="${weekDates[3]}">
 						<input type="hidden" name="direction" value="thisPage">
 						<button type="submit" style="font-size: 26px; color: #84888b;"
@@ -233,7 +233,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="weekDate" value="${weekDates[4]}">
 						<input type="hidden" name="direction" value="thisPage">
 						<button type="submit" style="font-size: 26px; color: #84888b;"
@@ -242,7 +242,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="weekDate" value="${weekDates[5]}">
 						<input type="hidden" name="direction" value="thisPage">
 						<button type="submit" style="font-size: 26px; color: #84888b;"
@@ -251,7 +251,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="weekDate" value="${weekDates[6]}">
 						<input type="hidden" name="direction" value="thisPage">
 						<button type="submit" style="font-size: 26px; color: #84888b;"
@@ -260,7 +260,7 @@ body {
 						</button>
 					</form>
 
-					<form action="courseView" method="post">
+					<form action="courseViewBooked" method="post">
 						<input type="hidden" name="direction" value="next"> <input
 							type="hidden" name="weekDate" value="${weekDates[6]}">
 						<button type="submit" class="btn btn-light one-i-callendar">></button>
@@ -272,27 +272,17 @@ body {
 	</div>
 
 	<div class="one-main">
-		<div>
-			<h4 style="text-align: 80px;">일정</h4>
-		</div>
-	
-		
-			<div class="alert alert-secondary" style="color: #84888b;" role="alert">
-				오늘 등록된 일정이 없어요.</div>
-	
-	</div>
 
 	<div class="one-main">
 		<div>
-			<h4 style="text-align: 80px;">진행 중 연수</h4>
+			<h4 style="text-align: 80px;">예정된 연수</h4>
 		</div>
-
-
 
 		<div class="one-container">
 			<c:forEach var="myCourse" items="${myCourseList}">
 				<div class="one-image-container">
-										<img
+
+					<img
 						src="${pageContext.request.contextPath}/userupload/${myCourse.course_proflie}"
 						>
 					<div class="one-overlay-text">${myCourse.course_name}</div>

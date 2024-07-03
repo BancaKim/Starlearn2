@@ -37,7 +37,7 @@
 								<ul class="inner">
 									<li><a
 										href="${pageContext.request.contextPath}/course/courseView">진행중인연수</a></li>
-									<li><a href=#>예정된 연수</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseViewBooked">예정된 연수</a></li>
 								</ul>
 							</div>
 						</div>
@@ -48,7 +48,7 @@
 							<div class="contents__menu">
 								<ul class="inner">
 									<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청</a></li>
-									<li><a href=#>연간연수 일정</a></li>
+								<!-- 	<li><a href=#>연간연수 일정</a></li> -->
 									<li><a href=#>연수신청 현황조회</a></li>
 
 								</ul>

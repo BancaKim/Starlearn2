@@ -18,7 +18,7 @@
 <style>
 body {
 	font-family: Arial, sans-serif;
-	margin: 0;
+	margin: 20px;
 	padding: 0;
 	background-color: #f8f9fa;
 	color: #333;
@@ -36,6 +36,7 @@ body {
 
 .course-header {
 	text-align: center;
+	 margin: 20px;
 	margin-bottom: 20px;
 }
 
