@@ -14,12 +14,20 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
 </head>
 <body>
-	<c:import url="./nav.jsp"></c:import>
+	<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="./nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="./nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>
+
 	<main>
 	<div class="row gx-3">
 		<div class="itembox col-3 mycol-3">
 			<div id="home_my">
-			<div style="font-weight: bold; font-size:20px; ">김건님 반가워요</div>
+			<div style="font-weight: bold; font-size:20px; ">${user_name}님 반가워요</div>
 			<div style="font-size:16px; color:#84888b; ">L1 조사역 HR부(인재개발)</div><br><br><br><br>
 			</div>
 			<div id="home_my_buttom">
