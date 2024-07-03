@@ -17,6 +17,7 @@ import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseResisterAction;
 import com.kbfg.lxp.course.CourseViewAction;
 import com.kbfg.lxp.course.CourseViewBooked;
+import com.kbfg.lxp.course.MyCourseList;
 import com.kbfg.lxp.course.UserCourseResisterAction;
 import com.kbfg.lxp.user.util.Constant;
 
@@ -47,6 +48,20 @@ public class CourseController {
 
 		return "course/courseView"; // "ShoppingList.ba"
 	}
+	
+	// User's Applied Course View
+	@RequestMapping("/myCourseList")
+	public String myCourseList(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("myCourseList();");
+		command = new MyCourseList();
+		command.execute(model);
+
+		return "course/myCourseList"; // "ShoppingList.ba"
+	}
+	
+	
 	
 	// User's Course View
 	@RequestMapping("/courseViewBooked")
@@ -87,6 +102,17 @@ public class CourseController {
 		return nextPage;
 
 	}
+	
+	@RequestMapping("/courseAdminList")
+	public String courseAdminList(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("courseDeleteView();");
+//		command = new CourseAdminList();
+//		command.execute(model);
+		return "course/courseAdminList";
+	}
+	
 
 	@RequestMapping("/courseApplyView")
 	public String courseApplyView(HttpServletRequest request, Model model) throws Exception {

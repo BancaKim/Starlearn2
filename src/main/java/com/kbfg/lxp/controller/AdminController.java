@@ -28,6 +28,7 @@ public class AdminController {
 	@RequestMapping("/adminReplay")
 	public String replayInsert(Model model) {
 		return "admin/replay";
+	}
 
 	@RequestMapping("/adminCharts")
 	public String adminCharts(Model model) {

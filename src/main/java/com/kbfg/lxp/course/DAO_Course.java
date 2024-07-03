@@ -47,7 +47,17 @@ public class DAO_Course {
 
             return result;
     }
+	
+	// 사용자가 현재 등록했으며, 아직 완료되거나 취소되지 않은 연수 명세 리턴
+	public List<DTO_UserCourses> getUserTotalItem(LocalDate today, String user_idn) {
+        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_end_date) >= ? AND course_status in ('예정','진행중')";
+        today=today.minusDays(-1);
+            List<DTO_UserCourses> result = template.query(query, new UserCoursesRowMapper(), user_idn, Date.valueOf(today));
 
+            return result;
+    }
+	
+	
 	public List<DTO_UserCourses> getItemBooked(LocalDate today, String user_idn) {
 		String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) > ?";
 		today=today.minusDays(-1);

@@ -49,7 +49,7 @@
 								<ul class="inner">
 									<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청</a></li>
 								<!-- 	<li><a href=#>연간연수 일정</a></li> -->
-									<li><a href=#>연수신청 현황조회</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/myCourseList">연수신청 현황조회</a></li>
 
 								</ul>
 							</div>

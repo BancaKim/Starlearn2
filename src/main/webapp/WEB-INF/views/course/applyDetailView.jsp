@@ -105,8 +105,8 @@ body {
 		<div class="course-container">
 			<div class="image-container">
 				<img style="width: 200px; height: 270px; border-radius: 15px;"
-					src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
-					alt="Placeholder Image">
+					src="${pageContext.request.contextPath}/userupload/${courseDetail.course_proflie}"
+					alt="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg">
 			</div>
 
 			<div class="course-header">
