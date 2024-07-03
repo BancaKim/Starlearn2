@@ -28,7 +28,7 @@
 	<header>
 		<nav class="navbar">
 			<div class="left-container">
-				<a href="#" class="logo"> </a>
+				<a href="${pageContext.request.contextPath}/home" class="logo"> </a>
 				<ul class="main-menu">
 					<li class="item">
 						<div class="item__name">나의강의실</div>
@@ -38,7 +38,9 @@
 									<li><a
 										href="${pageContext.request.contextPath}/course/courseView">진행중인연수</a></li>
 									<li><a href=#>예정된 연수</a></li>
-									<li><a href=#>[관리자] 연수등록</a></li>
+									<c:if test="${user_id==admin}">
+										<li><a href=#>[관리자] 연수등록</a></li>
+									</c:if>
 								</ul>
 							</div>
 						</div>
