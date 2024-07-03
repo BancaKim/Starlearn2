@@ -7,7 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>지원 신청 현황 조회</title>
-<c:import url="../nav.jsp"></c:import>
+<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="../nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="../nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>
 <style>
     @font-face {
         font-family: 'NanumSquareRound';
