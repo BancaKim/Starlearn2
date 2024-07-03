@@ -112,4 +112,60 @@ public class DAO_Course {
 		}
 	}
 
+
+
+	public boolean insert(DTO_Course course) {
+		 
+		String sql = "INSERT INTO Courses (course_name, session_number, course_category, course_subcategory, course_start_date, course_end_date, course_entrol_start_date, course_entrol_end_date, course_cancel_start_date, course_cancel_end_date, progress_status, mileage, course_summary, course_details, evaluation_style, training_type, operating_firm, course_difficulty, material_availabe, evaluation_date, evaluation_date_second, manager_approval, course_capacity, course_count, course_proflie) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		int result = 0;
+		result=template.update(sql,
+                course.getCourse_name(),
+                course.getSession_number(),
+                course.getCourse_category(),
+                course.getCourse_subcategory(),
+                course.getCourse_start_date() != null ? java.sql.Date.valueOf(course.getCourse_start_date()) : null,
+                course.getCourse_end_date() != null ? java.sql.Date.valueOf(course.getCourse_end_date()) : null,
+                course.getCourse_entrol_start_date() != null ? java.sql.Date.valueOf(course.getCourse_entrol_start_date()) : null,
+                course.getCourse_entrol_end_date() != null ? java.sql.Date.valueOf(course.getCourse_entrol_end_date()) : null,
+                course.getCourse_cancel_start_date() != null ? java.sql.Date.valueOf(course.getCourse_cancel_start_date()) : null,
+                course.getCourse_cancel_end_date() != null ? java.sql.Date.valueOf(course.getCourse_cancel_end_date()) : null,
+                course.getProgress_status(),
+                course.getMileage(),
+                course.getCourse_summary(),
+                course.getCourse_details(),
+                course.getEvaluation_style(),
+                course.getTraining_type(),
+                course.getOperating_firm(),
+                course.getCourse_difficulty(),
+                course.getMaterial_availabe(),
+                course.getEvaluation_date(),
+                course.getEvaluation_date_second(),
+                course.getManager_approval(),
+                course.getCourse_capacity(),
+                course.getCourse_count(),
+                course.getCourse_proflie());
+                
+                System.out.println("insertUser result:"+result);
+		
+		 return result > 0;
+	}
+
+	public List applyList(LocalDate today, String user_idn) {
+		// TODO Auto-generated method stub
+		if (template == null) {
+			return new ArrayList<DTO_Course>();
+		}
+
+		String query = "SELECT * FROM Courses;";
+		System.out.println(template);
+		try {
+			ArrayList<DTO_Course> result = (ArrayList<DTO_Course>) template.query(query, new CourseRowMapper());
+			return result;
+		} catch (Exception e) {
+			return new ArrayList<DTO_Course>();
+		}
+			
+	}
+
+
 }

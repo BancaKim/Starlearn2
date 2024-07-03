@@ -33,7 +33,16 @@ public class DTO_Course {
     private int cours_expense;
     private int course_capacity;
     private int course_count;
+    private String course_proflie;
     
+    
+
+	public String getCourse_proflie() {
+		return course_proflie;
+	}
+	public void setCourse_proflie(String course_proflie) {
+		this.course_proflie = course_proflie;
+	}
 	public int getCourse_ref() {
 		return course_ref;
 	}

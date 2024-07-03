@@ -44,10 +44,9 @@ td {
 	<main style="margin: 150px auto 0;" /* Center align horizontally * />
 
 
-	<form class="resister_body"
-		action="${pageContext.request.contextPath}/signUpConfirm"
-		id="regiform" method="Post" enctype="multipart/form-data"
-		name="regiform">
+
+		
+		<form class="resister_body" action = "${pageContext.request.contextPath}/course/courseResisterAction" id="regiform" method="Post" enctype="multipart/form-data" name="regiform">
 		<table class="full-width" bgcolor="#faebd7" border="1">
 			<tr style="height: 40px;">
 				<td colspan="4" bgcolor="d4a373"><center>
@@ -223,8 +222,8 @@ td {
 
 			<tr>
 				<td class="label-cell">대표 사진:</td>
-				<td class="input-cell" colspan="3"><input type="file"
-					name="course_proflie"></td>
+				<td class="input-cell" colspan="3">
+				<input type="file" name="course_proflie"></td>
 			</tr>
 
 			<tr>
