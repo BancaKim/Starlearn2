@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 
 
-public class CourseViewAction implements CourseCommand {
+public class CourseViewBooked implements CourseCommand {
 	
 	@Override
 	public void execute(Model model) throws Exception {
@@ -24,8 +24,6 @@ public class CourseViewAction implements CourseCommand {
 		HttpSession session = request.getSession();
 		
 		LocalDate today = LocalDate.now();
-		
-		System.out.println("today"+today);
 		String user_idn = (String) session.getAttribute("userIdn");
 
 		System.out.println(request.getParameter("weekDate"));
@@ -47,9 +45,6 @@ public class CourseViewAction implements CourseCommand {
 		LocalDate monday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
 		LocalDate sunday = today.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
 
-		System.out.println("today" + today);
-		System.out.println("monday" + monday);
-		System.out.println("sunday" + sunday);
 
 		List<LocalDate> weekDates = getDatesBetween(monday, sunday);
 
@@ -57,29 +52,23 @@ public class CourseViewAction implements CourseCommand {
 		request.setAttribute("today", today);
 		
 		
+	
 		DAO_Course dao = new DAO_Course();
-//		DTO_Course dto =new DTO_Course();
-		
 
-		List CourseList=new ArrayList();
+//		List CourseList=new ArrayList();
 		List myCourseList=new ArrayList();
 		
-		CourseList= dao.list();
-
+//		CourseList= dao.list();
 		
-		
-		
-		/* myCourseList=new ArrayList<DTO_UserCourses>(); */
-		myCourseList=dao.getItem(today, user_idn);
+		myCourseList=new ArrayList();
+		myCourseList=dao.getItemBooked(today, user_idn);
 		int itemNum = myCourseList.size();
 		
-		System.out.println("dao.list().size()"+CourseList.size());
 		System.out.println("dao.getItem().size()"+myCourseList.size());
 		
-	
+		
 		request.setAttribute("myCourseList", myCourseList);
-		request.setAttribute("itemNum", itemNum);
-	
+		
 	}
 
 	private List<LocalDate> getDatesBetween(LocalDate startDate, LocalDate endDate) {

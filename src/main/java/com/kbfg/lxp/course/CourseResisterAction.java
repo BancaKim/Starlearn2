@@ -21,7 +21,7 @@ public class CourseResisterAction implements CourseCommand {
         HttpServletRequest request = (HttpServletRequest) map.get("request");
 
         String realFolder = "";
-        String saveFolder = "/courseUpload";
+        String saveFolder = "/userupload";
 
         int fileSize = 5 * 1024 * 1024;
 

@@ -11,10 +11,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kbfg.lxp.course.ApplyDetailView;
 import com.kbfg.lxp.course.CourseApplyView;
 import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseResisterAction;
 import com.kbfg.lxp.course.CourseViewAction;
+import com.kbfg.lxp.course.CourseViewBooked;
 import com.kbfg.lxp.course.UserCourseResisterAction;
 import com.kbfg.lxp.user.util.Constant;
 
@@ -34,7 +36,7 @@ public class CourseController {
 		Constant.template = this.template;
 	}
 
-	// User's Course View 
+	// User's Course View
 	@RequestMapping("/courseView")
 	public String showMyCourse(HttpServletRequest request, Model model) throws Exception {
 
@@ -45,23 +47,30 @@ public class CourseController {
 
 		return "course/courseView"; // "ShoppingList.ba"
 	}
+	
+	// User's Course View
+	@RequestMapping("/courseViewBooked")
+	public String courseViewBooked(HttpServletRequest request, Model model) throws Exception {
 
+		model.addAttribute("request", request);
+		System.out.println("courseViewBooked();");
+		command = new CourseViewBooked();
+		command.execute(model);
 
+		return "course/courseViewBooked"; // "ShoppingList.ba"
+	}
+
+	
+	
 	// Admin's course resister
 	@RequestMapping(value = "/courseResister", method = RequestMethod.GET)
 	public String courseResister(Model model) {
 		return "course/courseResister";
 	}
+
+
 	
-	/*
-	 * // every course view
-	 * 
-	 * @RequestMapping(value = "/courseApplyView", method = RequestMethod.GET)
-	 * public String courseApplyView(Model model) { return "course/courseApplyView";
-	 * }
-	 */
-	
-	
+
 	// coure resister action
 	@RequestMapping("/courseResisterAction")
 	public String courseResisterAction(HttpServletRequest request, Model model) throws Exception {
@@ -71,16 +80,14 @@ public class CourseController {
 
 		command = new CourseResisterAction();
 		command.execute(model);
-		
+
 		Map<String, Object> map = model.asMap();
 		String nextPage = (String) map.get("nextPage");
-		
+
 		return nextPage;
-		
+
 	}
-	
-	
-	
+
 	@RequestMapping("/courseApplyView")
 	public String courseApplyView(HttpServletRequest request, Model model) throws Exception {
 
@@ -89,23 +96,22 @@ public class CourseController {
 
 		command = new CourseApplyView();
 		command.execute(model);
-		
+
 		return "course/courseApplyView";
-		}
-	
+	}
+
 	@RequestMapping("/applyDetailView")
 	public String applyDetailView(HttpServletRequest request, Model model) throws Exception {
 
 		model.addAttribute("request", request);
 		System.out.println("applyDetailView();");
 
-		/*
-		 * command = new ApplyDetailView(); command.execute(model);
-		 */
-		
+		command = new ApplyDetailView();
+		command.execute(model);
+
 		return "course/applyDetailView";
-		}
-	
+	}
+
 	@RequestMapping("/UserCourseResister")
 	public String userCourseResister(HttpServletRequest request, Model model) throws Exception {
 
@@ -114,11 +120,9 @@ public class CourseController {
 
 		command = new UserCourseResisterAction();
 		command.execute(model);
-		
-		return "course/courseView";
-		}
-	
-	
+
+		return "redirect:courseView";
+	}
 
 }
 
