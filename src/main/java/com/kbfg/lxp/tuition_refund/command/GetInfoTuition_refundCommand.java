@@ -32,7 +32,13 @@ public class GetInfoTuition_refundCommand implements Command {
 	    String info = userBean.getUser_dept() + " " + userBean.getUser_rank() + " " +
 	            	  userBean.getUser_position() + " " + userBean.getUser_name() + " | " + userBean.getUser_idn();
 	    
+	    
+	    int requestAmount = tuitionDao.getrequestAmount(user_id); //지원 신청 누계액
+	    int ApplyAmount = tuitionDao.getApplyAmount(user_id); //지원 금액
+	    
 	    model.addAttribute("info", info);
+	    model.addAttribute("requestAmount", requestAmount);
+	    model.addAttribute("ApplyAmount", ApplyAmount);
 	        
 	}
 
