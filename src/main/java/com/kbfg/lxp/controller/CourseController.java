@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.kbfg.lxp.course.ApplyDetailView;
 import com.kbfg.lxp.course.CourseApplyView;
 import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseResisterAction;
@@ -100,8 +99,9 @@ public class CourseController {
 		model.addAttribute("request", request);
 		System.out.println("applyDetailView();");
 
-		command = new ApplyDetailView();
-		command.execute(model);
+		/*
+		 * command = new ApplyDetailView(); command.execute(model);
+		 */
 		
 		return "course/applyDetailView";
 		}

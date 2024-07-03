@@ -7,7 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>지원 신청 현황 조회</title>
-<c:import url="../nav.jsp"></c:import>
+<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="../nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="../nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>
 <style>
     @font-face {
         font-family: 'NanumSquareRound';
@@ -27,97 +34,128 @@
     }
     
     main {
+    	width:1100px;
         text-align: center;
         margin: 200px auto 0; /* Center align horizontally */
+        
+    }
+    table{
+    	border: 1px solid #d7d7d7;
+    	border-radius: 30px; /* 둥근 모서리 */
+    }
+    td{
+    	padding-bottom: 15px;
+    }
+        #title {
+        font-size: 32px;
+        font-weight: bold;
     }
 </style>
+<script>
+
+function RefundList(){
+	window.location.href = "${pageContext.request.contextPath}/tuition_refund/refundApplyList";
+}
+function refundApplyOk(tuition_index){
+	window.location.href = "${pageContext.request.contextPath}/";
+}
+function refundApplyNo(tuition_index){
+	window.location.href = "${pageContext.request.contextPath}/";
+}
+function back(){
+	window.location.href = "${pageContext.request.contextPath}/";
+}
+</script>
 
 <body>
 <main>
-	<table>
+	<div id="title">지원신청 상세 조회</div>
+	<br><br>
+	<table class="table table-bordered">
+		<c:forEach var="refund" items="${RefundListDetail}">
 		<tr>
-			  <td class="subject">신청직원</td>
-			  <td class="form">
-			      
-			  </td>
+			  <td>신청직원</td>
+			  <td>${info}</td>
 		</tr>
        	<tr>
-	          <td class="subject">학습구분 및 분야</td>
-	          <td></td>
+	          <td>학습구분 및 분야</td>
+	          <td>${refund.learning_division} / ${refund.learning_field}</td>
        	</tr>
        	<tr>
-       		  <td class="subject">학습방법</td>
-       	      <td class="form"></td>
+       		  <td>학습방법</td>
+       	      <td>${refund.learning_how}</td>
        	</tr>
        	<tr>
-       		  <td class="subject">학원명</td>
-       		  <td class="form"></td>
+       		  <td>학원명</td>
+       		  <td>${refund.academy_name}</td>
        	</tr>
        	<tr>
-       		  <td class="subject">학원 홈페이지</td>
-       		  <td class="form"></td>
+       		  <td>학원 홈페이지</td>
+       		  <td>${refund.academy_page}</td>
        	</tr>
        	<tr>
-       		  <td class="subject">과정명</td>
-       		  <td class="form"></td>
+       		  <td>과정명</td>
+       		  <td>${refund.academy_course}</td>
        	</tr>
        	<tr>
-       		  <td class="subject">수강기간</td>
-       		  <td class="form"></td>	
+       		  <td>수강기간</td>
+       		  <td>${refund.academy_date}</td>	
        	</tr>
        	<tr>
-              <td class="subject">수강료</td>
-              <td class="form"></td>      
+              <td>수강료</td>
+              <td>${refund.academy_price}</td>      
         </tr>
         <tr>
-               <td class="subject">지원금액</td>
-               <td class="form"></td>
+               <td>지원금액</td>
+               <td>${refund.refund_price}</td>
         </tr>
   
-       	<br>
-       	  <div id="title_subject">
-       	 	 <span style="font-weight: bold; text-align: left;">결제정보</span>
-       	  </div>
-       	  <hr>
-
        	 <tr>
-       	 	<td class="subject">결제정보</td>
-       	 	<td class="form">
-       	 		
-       	 	</td>
+       	 	<td>결제정보</td>
+       	 	<td>${refund.payment_how}</td>
        	 
        	 </tr>
        	 <tr>
-       			<td class="subject">카드번호</td>
-       			<td class="form">
-       				
-				</td>
+       		<td>카드번호</td>
+       		<td>${refund.credit_number}</td>
 				
        		</tr>
        		 <tr>
-       			<td class="subject">승인번호</td>
-       			<td class="form">
-       				
-				</td>
+       			<td>승인번호</td>
+       			<td>${refund.confirm_number}</td>
 				
        		</tr>
        		<tr>
-       			<td class="subject">승인·입금일</td>
-       			<td class="form">
-       				
-				</td>
+       			<td>승인·입금일</td>
+       			<td>${refund.confirm_date}</td>
 				
        		</tr>
        		<tr>
-       			<td class="subject">가맹점명</td>
-       			<td class="form">
-       				
-				</td>
+       			<td>가맹점명</td>
+       			<td>${refund.franchisee_name}</td>
        		</tr>
-
-
+       		<tr>
+       			<td>신청일자</td>
+       			<td>${refund.request_date}</td>
+       		</tr>
+       		</c:forEach>
 	</table>
-
+	<br>
+	<c:choose>
+        <c:when test="${sessionScope.user_id == 'admin'}">
+            <div class="admin">
+                <button type="button" class="btn btn-success" onclick="refundApplyOk('${RefundListDetail.tuition_index}')">승인</button>
+                <button type="button" class="btn btn-danger" onclick="refundApplyNo('${RefundListDetail.tuition_index}')">거절</button>
+                <button type="button" class="btn btn-secondary" onclick="back()">돌아가기</button>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="user">
+                <button type="button" class="btn btn-warning" onclick="RefundList()">돌아가기</button>
+            </div>
+        </c:otherwise>
+    </c:choose>
+	
 </main>
 <br>
 <br>

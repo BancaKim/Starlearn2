@@ -26,5 +26,12 @@ public class HelpDestController {
 	public String HelpDeskNoticePage(Model model) {
 		return "HelpDesk/HelpDeskNotice";
 	}
+	
+	@RequestMapping("/QnAwriteView")
+	public String QnAwriteViewPage(Model model) {
+		return "HelpDesk/QnAWrite";
+	}
 
+	
+	
 }

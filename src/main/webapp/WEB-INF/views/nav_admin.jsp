@@ -31,92 +31,33 @@
 				<a href="${pageContext.request.contextPath}/home" class="logo"> </a>
 				<ul class="main-menu">
 					<li class="item">
-						<div class="item__name">나의강의실</div>
+						<div class="item__name">[관리자]연수관리</div>
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a
-										href="${pageContext.request.contextPath}/course/courseView">진행중인연수</a></li>
-									<li><a href=#>예정된 연수</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseResister">연수 등록</a></li>
+									<li><a href=#>연수 삭제</a></li>
+									<li><a href=#>연수 수정</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
 					<li class="item">
-						<div class="item__name">연수신청</div>
+						<div class="item__name">[관리자]회원관리</div>
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청</a></li>
-									<li><a href=#>연간연수 일정</a></li>
-									<li><a href=#>연수신청 현황조회</a></li>
-
+									<li><a href=#>회원조회</a></li>
+									<li><a href=#>회원삭제</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
 					<li class="item">
-						<div class="item__name">자기주도 학습</div>
-						<div class="item__contents">
-							<div class="contents__menu">
-								<ul class="inner">
-
-									<li><a
-										href="${pageContext.request.contextPath}/HRD/HRD_CLOUD">HRD
-											클라우드</a></li>
-									<li><a href="#">SSL</a></li>
-
-								</ul>
-							</div>
-						</div>
+						<a href="#"><span class="item__name">[관리자]학원비 지원승인</span></a>
 					</li>
 					<li class="item">
-						<div class="item__name">자기주도 학습지원</div>
-						<div class="item__contents">
-							<div class="contents__menu">
-								<ul class="inner">
-
-									<li><a
-										href="${pageContext.request.contextPath}/tuition_refund/tuition_refund_apply">학원비
-											지원신청</a></li>
-									<li><a
-										href="${pageContext.request.contextPath}/tuition_refund/refundApplyList">지원신청
-											현황조회</a></li>
-
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class="item">
-						<div class="item__name">생활연수</div>
-						<div class="item__contents">
-							<div class="contents__menu">
-								<ul class="inner">
-									<li><a
-										href="${pageContext.request.contextPath}/facility/apply_main">생활연수
-											신청</a></li>
-									<li><a href=#>생활연수 신청내역</a></li>
-									<li><a
-										href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class="item">
-						<div class="item__name">Help Desk</div>
-						<div class="item__contents">
-							<div class="contents__menu">
-								<ul class="inner">
-									<li><a
-										href="${pageContext.request.contextPath}/HelpDesk/HelpDeskNotice">공지사항</a></li>
-									<li><a
-										href="${pageContext.request.contextPath}/HelpDesk/QnA">Q&A</a></li>
-									<li><a
-										href="${pageContext.request.contextPath}/HelpDesk/introduceHR">HR(인재개발)
-											소개</a></li>
-								</ul>
-							</div>
-						</div>
+						<a href="${pageContext.request.contextPath}/admin/adminMain"><span class="item__name">[관리자]스타런분석</span></a>
 					</li>
 				</ul>
 			</div>
@@ -132,10 +73,11 @@
 						class="fa-solid fa-right-from-bracket"></i></a>
 				</div>
 				
+				
 				<c:if test="${user_id != null}">
 				<div class="box">
 					<img id="profile-img" class="profile"
-						src="${pageContext.request.contextPath}/userupload/${user_profile}">
+						src="https://oimg1.kbstar.com/img/oabout/2021/bibi.png"/>
 					<div class="dropdown-menu" id="dropdown-menu">
 						<ul class="inner">
 							<li><a href="#">마이페이지</a></li>
