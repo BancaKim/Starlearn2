@@ -183,5 +183,7 @@ public class DAO_Course {
         return template.update(UPDATE_COURSE, course.getCourse_name(), course.getSession_number(), course.getCourse_category(), course.getCourse_subcategory(), course.getCourse_start_date(), course.getCourse_end_date(), course.getCourse_entrol_start_date(), course.getCourse_entrol_end_date(), course.getCourse_cancel_start_date(), course.getCourse_cancel_end_date(), course.getProgress_status(), course.getMileage(), course.getCourse_summary(), course.getCourse_details(), course.getEvaluation_style(), course.getTraining_type(), course.getOperating_firm(), course.getCourse_difficulty(), course.getMaterial_availabe(), course.getEvaluation_date(), course.getEvaluation_date_second(), course.getManager_approval(), course.getCours_expense(), course.getCourse_capacity(), course.getCourse_count(), course.getCourse_proflie(), course.getCourse_ref());
     }
     
+    
+    
 
 }
