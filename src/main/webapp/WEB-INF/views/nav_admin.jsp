@@ -57,7 +57,7 @@
 						<a href="#"><span class="item__name">[관리자]학원비 지원승인</span></a>
 					</li>
 					<li class="item">
-						<a href="${pageContext.request.contextPath}/admin/adminMain"><span class="item__name">[관리자]스타런분석</span></a>
+						<a href="${pageContext.request.contextPath}/admin/adminCharts"><span class="item__name">[관리자]스타런분석</span></a>
 					</li>
 				</ul>
 			</div>
