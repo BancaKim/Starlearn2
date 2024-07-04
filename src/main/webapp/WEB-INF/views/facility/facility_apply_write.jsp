@@ -155,7 +155,7 @@
 	                </ul>
 	            </div>
 	            <div class="button-group">
-	                <button type="button">이전</button>
+	                <button type="button" onclick="javascript:history.go(-1)">이전</button>
 	                <button type="submit">신청</button>
 	            </div>
 	        </form>
