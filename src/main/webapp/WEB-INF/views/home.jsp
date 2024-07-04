@@ -120,49 +120,49 @@
 			    <div class="swiper-slide">
 			    	<a href="https://www.youtube.com/watch?v=kWiCuklohdY">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240619/01fc779c14a84282bc7c/Thumbnails/3835551_080ff717dab54883b37a.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[이슈]역대 3자대면 토의</div>
 			    	<div class="datetext">2024.06.05</div>
 				</div>
 			    <div class="swiper-slide">
 			   		 <a href="https://www.youtube.com/watch?v=qspWEqvsJ5I">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1011004.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[노후]현명한 노후생활</div>
 			    	<div class="datetext">2023.05.16</div>
 				</div>
 				<div class="swiper-slide">
 					 <a href="https://www.youtube.com/watch?v=qMwzWk81tVM&t=7s">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240610/9c39d49601bf46328618/Thumbnails/2840534_45d8ee7c7b254caf8703.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[노후]생활비 절약?!누구나</div>
 			    	<div class="datetext">2023.05.10</div>
 				</div>
 			  	<div class="swiper-slide">
 			  		 <a href="https://www.youtube.com/watch?v=KMErwuu5q5Q">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240618/18f15151b29a47eca0f7/Thumbnails/2853390_e39463243ae54441adce.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[자산]세액공제 연말정산</div>
 			    	<div class="datetext">2023.08.16</div>
 				</div>
 				<div class="swiper-slide">
 					<a href="https://www.youtube.com/watch?v=4WTxn1hcsaI">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240701/2f6bdb11260b4d478416/Thumbnails/1653886_953a25bca8904d8a911d.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[이슈]보이스 피싱</div>
 			    	<div class="datetext">2022.08.16</div>
 				</div>
 				<div class="swiper-slide">
 					<a href="https://www.youtube.com/watch?v=IVlbmAcJqdY">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1037021.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[문화]직장생활 이대로 괜찮을까?</div>
 			    	<div class="datetext">2024.04.16</div>
 				</div>
 				<div class="swiper-slide">
 					<a href="https://www.youtube.com/watch?v=VleN8IpK2xA">
 					<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240627/a0652402eab4475494b6/Thumbnails/1653167_64fed78999d2450a8674.PNG" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-					</a>
+					</a><br>
 					<div>[문화]검은유혹!!</div>
 			    	<div class="datetext">2024.02.16</div>
 				</div>
@@ -242,42 +242,42 @@
 	    <div class="swiper-slide">
 	    	<a href="https://www.youtube.com/watch?v=cbuZfY2S2UQ&t=3635s">
 	    	<img class="sslImg" src="https://lxp.kbstar.com/files/abstract_30/abstract_11.jpg" alt="">
-	    	</a>
+	    	</a><br>
 	    	<div>[가계여신]DSR 전격 파헤치기</div>
 			<div class="datetext">2024.07.04</div>
 	    </div>
 	    <div class="swiper-slide">
 	    	<a href="https://www.youtube.com/watch?v=kWiCuklohdY">
 			<img  class="sslImg" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/ssl/thumb/2024/07/01/1652204/ad349c9a.jpg" alt="">
-			</a>
+			</a><br>
 			<div>[기업여신]소매형 소호 초보자편</div>
 			<div class="datetext">2024.07.04</div>
 		</div>
 	    <div class="swiper-slide">
 	   		 <a href="https://www.youtube.com/watch?v=qspWEqvsJ5I">
 			<img  class="sslImg" src="https://lxp.kbstar.com/files/abstract_30/abstract_15.jpg" alt="">
-			</a>
+			</a><br>
 			<div>[전자금융]오픈뱅킹 노하우 공개</div>
 			<div class="datetext">2024.07.04</div>
 		</div>
 		<div class="swiper-slide">
 			 <a href="https://www.youtube.com/watch?v=qMwzWk81tVM&t=7s">
 			<img  class="sslImg" src="https://lxp.kbstar.com/files/abstract_30/abstract_9.jpg" alt="">
-			</a>
+			</a><br>
 			<div>[자격증]파생비법 노트</div>
 			<div class="datetext">2024.07.04</div>
 		</div>
 	  	<div class="swiper-slide">
 	  		 <a href="https://www.youtube.com/watch?v=KMErwuu5q5Q">
 			<img  class="sslImg" src="https://lxp.kbstar.com/files/abstract_30/abstract_26.jpg" alt="">
-			</a>
+			</a><br>
 			<div>[은실종]은실종 예상문제</div>
 			<div class="datetext">2024.07.04</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=4WTxn1hcsaI">
 			<img  class="sslImg" src="https://lxp.kbstar.com/files/abstract_30/abstract_29.jpg" alt="">
-			</a>
+			</a><br>
 			<div>[수신상품]아파트 관리소 등록학</div>
 			<div class="datetext">2024.07.04</div>
 		</div>
