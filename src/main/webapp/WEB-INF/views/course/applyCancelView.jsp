@@ -36,7 +36,7 @@ body {
 
 .course-header {
 	text-align: center;
-	 margin: 20px;
+	margin: 20px;
 	margin-bottom: 20px;
 }
 
@@ -112,7 +112,7 @@ body {
 			<div class="course-header">
 				<p>수강신청 정보</p>
 				<h1>${courseDetail.course_name}</h1>
-				<p>${courseDetail.operating_firm}| 연수기간:
+				<p>${courseDetail.operating_firm}|연수기간:
 					${courseDetail.course_start_date}~${courseDetail.course_end_date}</p>
 				<p>
 					신청기간:
@@ -141,14 +141,28 @@ body {
 					</div>
 				</div>
 			</div>
-			
-			<h1>${today}</h1>
+
+			<c:choose>
+				<c:when
+					test="${today >= courseDetail.course_cancel_start_date && today <= courseDetail.course_cancel_end_date}">
+					<div class="button-container">
+						<a href="UserCourseCancer?course_ref=${courseDetail.course_ref}"
+							class="btn btn-warning">취소하기</a>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<p>신청 취소 기간이 아닙니다.</p>
+				</c:otherwise>
+			</c:choose>
+
+
+			<%-- 			<h1>${today}</h1>
 			
 			<div class="button-container">			
 				<a href="UserCourseResister?course_ref=${courseDetail.course_ref}" class="btn btn-warning">취소하기</a>
 			</div>
-			
-			
+			 --%>
+
 		</div>
 	</main>
 	<footer>

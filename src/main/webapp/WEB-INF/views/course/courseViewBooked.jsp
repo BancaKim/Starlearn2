@@ -179,14 +179,14 @@ body {
 <body>
 
 	<c:import url="../nav.jsp"></c:import>
-	<main style="margin: 100px auto 0;" /* Center align horizontally * />
+	<main style="margin: 100px auto 0; width:1400px;" /* Center align horizontally * />
 
 	<div class="one-main">
 		<!-- <p>one-main</p> -->
 		<div class="one-main-header">
 			<p class="one-font14" style="color: #84888b;">홈>나의 강의실 > 예정된 연수</p>
 			<div class="one-main-header-row">
-				<h4 style="text-align: 80px;">예정된 연수</h4>
+				<h4 style="text-align: 80px; font-weight:bold;">예정된 연수</h4>
 				<div class="one-main-callendar">
 
 
@@ -286,7 +286,7 @@ body {
 						src="${pageContext.request.contextPath}/userupload/${myCourse.course_proflie}"
 						>
 					<div class="one-overlay-text">${myCourse.course_name}</div>
-					<a href="https://www.example.com"></a>
+					<a href="applyCancelView?course_ref=${myCourse.course_ref}"></a>
 					<p class="one-font16" style="padding-top: 15px; margin: 0px;">KB국민은행</p>
 					<p style="color: #84888b;">${myCourse.course_start_date}~${myCourse.course_end_date}</p>
 					<p style="color: #8d744a;">마일리지 ${myCourse.mileage}</p>

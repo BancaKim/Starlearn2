@@ -24,6 +24,7 @@
         text-align: center; 
     }
     main {
+    	font-family: 'NanumSquareRound';
         text-align: center; /* Center align content */
         width: 1780px; /* Set fixed width */
         position: relative; /* Set as relative position */
@@ -436,35 +437,35 @@
 			 <a href="https://www.youtube.com/watch?v=qMwzWk81tVM&t=7s">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1010855.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
 			</a><br>
-	    	<div>[은실종]은실종 예상문제</div>
-			<div class="datetext">2024.07.04</div>
+	    	<div>[독서]데미안 읽어보기</div>
+			<div class="datetext">2023.01.03</div>
 		</div>
 	  	<div class="swiper-slide">
 	  		 <a href="https://www.youtube.com/watch?v=KMErwuu5q5Q">
 				<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1010877.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
 			</a><br>
-	    	<div>[은실종]은실종 예상문제</div>
-			<div class="datetext">2024.07.04</div>
+	    	<div>[ESG]환경문제 펭귄이 위험해!</div>
+			<div class="datetext">2024.05.12</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=4WTxn1hcsaI">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240701/2f6bdb11260b4d478416/Thumbnails/1653886_953a25bca8904d8a911d.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
 			</a><br>
-	    	<div>[은실종]은실종 예상문제</div>
-			<div class="datetext">2024.07.04</div>
+	    	<div>[자산]자산관리 채권?주식?</div>
+			<div class="datetext">2023.04.15</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=IVlbmAcJqdY">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1037021.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
 			</a><br>
-	    	<div>[은실종]은실종 예상문제</div>
-			<div class="datetext">2024.07.04</div>
+	    	<div>[문화]올바른 회식문화알기</div>
+			<div class="datetext">2023.05.24</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=VleN8IpK2xA">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240627/a0652402eab4475494b6/Thumbnails/1653167_64fed78999d2450a8674.PNG" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
 			</a><br>
-	    	<div>[은실종]은실종 예상문제</div>
+	    	<div>[문화]돈과의 전쟁</div>
 			<div class="datetext">2024.07.04</div>
 		</div>
 		</div>

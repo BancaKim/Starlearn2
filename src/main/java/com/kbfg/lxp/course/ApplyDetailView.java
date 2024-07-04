@@ -27,6 +27,8 @@ public class ApplyDetailView implements CourseCommand {
 		String course_ref = request.getParameter("course_ref");
 //		System.out.println("course_ref" + course_ref);
 
+		
+		
 		courseDetail = dao.getCourseById(course_ref);
 
 		request.setAttribute("courseDetail", courseDetail);
