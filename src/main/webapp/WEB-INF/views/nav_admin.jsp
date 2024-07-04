@@ -56,7 +56,10 @@
 					<li class="item">
 						<a href="${pageContext.request.contextPath}/admin/adminTuition_refundList"><span class="item__name">[관리자]학원비 지원승인</span></a>
 					</li>
+							
+								
 					<li class="item">
+
 						<div class="item__name">[관리자]생활연수</div>
 						<div class="item__contents">
 							<div class="contents__menu">
@@ -68,7 +71,21 @@
 					</li>
 					<li class="item">
 						<a href="${pageContext.request.contextPath}/admin/adminCharts"><span class="item__name">[관리자]스타런분석</span></a>
+
+						<div class="item__name">[관리자]스타런분석</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a href="${pageContext.request.contextPath}/admin/adminCharts">직원 통계</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseStatic">연수 통계</a></li>			
+								</ul>
+							</div>
+						</div>
+
 					</li>
+					
+					
+					
 					<li class="item">
 						<a href="${pageContext.request.contextPath}/HelpDesk/QnA"><span class="item__name">[관리자]QnA 관리</span></a>
 					</li>

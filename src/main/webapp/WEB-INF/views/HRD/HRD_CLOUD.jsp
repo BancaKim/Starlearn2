@@ -8,7 +8,7 @@
 <title>HRD CLOUD</title>
 
 <style>
-      @font-face {
+     @font-face {
         font-family: 'NanumSquareRound';
         src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
         font-weight: normal;
@@ -35,7 +35,7 @@
     #title {
     	text-align: center;
         font-size: 32px;
-       
+       font-family: 'NanumSquareRound';
         font-weight: bold;
     }
     #kind {
@@ -268,7 +268,7 @@
 	   		
 	   		<div class="home_my_bottom_left">
 					<ul>
-						<li><a href="#">마이페이지 &nbsp; <i class="fa-solid fa-chevron-right"></i></a></li>
+						<li><a href="${pageContext.request.contextPath}/MyPage">마이페이지 &nbsp; <i class="fa-solid fa-chevron-right"></i></a></li>
 						<li><a href="${pageContext.request.contextPath}/facility/apply_main">생활연수 신청 &nbsp;  <i class="fa-solid fa-chevron-right"></i></a></li>
 						<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청 &nbsp;  <i class="fa-solid fa-chevron-right"></i></a></li>
 					</ul>
@@ -344,7 +344,7 @@
 	        prevEl: ".swiper-button-prev",
 	      },
 	      autoplay: {
-              delay: 10000, // 10 seconds delay
+              delay: 1000, // 10 seconds delay
               disableOnInteraction: false,
           },
 	    });
@@ -450,7 +450,7 @@
 	        prevEl: ".swiper-button-prev",
 	      },
 	      autoplay: {
-              delay: 10000, // 10 seconds delay
+              delay: 1000, // 10 seconds delay
               disableOnInteraction: false,
           },
 	    });

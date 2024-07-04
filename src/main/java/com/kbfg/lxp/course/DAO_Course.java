@@ -41,7 +41,7 @@ public class DAO_Course {
 	}
 
 	public List<DTO_UserCourses> getItem(LocalDate today, String user_idn) {
-        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) <= ? AND DATE(course_end_date) >= ?;";
+        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) <= ? AND DATE(course_end_date) >= ? ORDER BY course_ref DESC;";
         today=today.minusDays(-1);
             List<DTO_UserCourses> result = template.query(query, new UserCoursesRowMapper(), user_idn, Date.valueOf(today), Date.valueOf(today));
 
@@ -176,7 +176,7 @@ public class DAO_Course {
 
 	public List<DTO_Course> getAppliableCourses(LocalDate today) {
 		String SELECT_ALL_COURSES = "SELECT * FROM Courses where DATE(course_entrol_start_date) "
-				+ "<= ? AND DATE(course_entrol_end_date) >= ?;";
+				+ "<= ? AND DATE(course_entrol_end_date) >= ? ORDER BY course_ref DESC;";
 		today=today.minusDays(-1);
 		
 		return template.query(SELECT_ALL_COURSES, new CourseRowMapper(), Date.valueOf(today), Date.valueOf(today));
