@@ -16,12 +16,10 @@
 	
 	  <main>
       <!-- 게시판 등록 -->
+      	<div class="maintitle"><span>공지사항</span></div>
 		<form action="${pageContext.request.contextPath}/facility/noticeAddAction" method="post" 
 			enctype="multipart/form-data" name="noticeform">
-		<table cellpadding="0" cellspacing="0">
-			<tr align="center" valign="middle">
-				<td colspan="5"><h1>공지사항</h1></td>
-			</tr>
+		<table class="table table-striped">
 			<tr>
 				<td style="font-family:돋음; font-size:12" height="16">
 					<div align="center">제 목</div>

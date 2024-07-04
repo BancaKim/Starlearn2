@@ -18,7 +18,6 @@
 	
 	<main>
 		<div class="container">
-	        <h1>연수원 이용 신청하기</h1>
 	        <div class="instructions">
 	            <h1>신청 안내</h1>
 	            <div>
@@ -154,11 +153,6 @@
 	                    </li>
 	                </ul>
 	            </div>
-	            <div class="consent-section">
-                	<input type="checkbox" id="consent" required>
-                	<label for="consent">본인은 위 안내사항을 준수하고 기 제출한 개인(신용)정보 수집·이용·제공 동의서(임직원용)에 의거 각 연수시설 관리업체에 개인식별정보(성명, 연락처, 신청정보)를 제공함을 동의합니다.</label>
-                <div class="consent-completed">동의완료</div>
-            </div>
 	            <div class="button-group">
 	                <button type="button">이전</button>
 	                <button type="submit">신청</button>
