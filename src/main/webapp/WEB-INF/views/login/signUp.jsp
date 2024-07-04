@@ -13,7 +13,7 @@
    	<script src="${pageContext.request.contextPath}/resources/js/signup.js"></script>
 </head>
 <body>
-	<c:import url="../nav.jsp"></c:import>
+	<c:import url="../nav_signUp.jsp"></c:import>
 	
 	<main>
 		<h1><center> 회원가입</center> </h1>
