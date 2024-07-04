@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -94,38 +94,38 @@ public class DAO_Course {
 	}
 
 	public class CourseRowMapper implements RowMapper<DTO_Course> {
-		@Override
-		public DTO_Course mapRow(ResultSet rs, int rowNum) throws SQLException {
-			DTO_Course course = new DTO_Course();
-			course.setCourse_ref(rs.getInt("course_ref"));
-			course.setCourse_name(rs.getString("course_name"));
-			course.setSession_number(rs.getInt("session_number"));
-			course.setCourse_category(rs.getString("course_category"));
-			course.setCourse_subcategory(rs.getString("course_subcategory"));
-			course.setCourse_start_date(rs.getDate("course_start_date").toLocalDate());
-			course.setCourse_end_date(rs.getDate("course_end_date").toLocalDate());
-			course.setCourse_entrol_start_date(rs.getDate("course_entrol_start_date").toLocalDate());
-			course.setCourse_entrol_end_date(rs.getDate("course_entrol_end_date").toLocalDate());
-			course.setCourse_cancel_start_date(rs.getDate("course_cancel_start_date").toLocalDate());
-			course.setCourse_cancel_end_date(rs.getDate("course_cancel_end_date").toLocalDate());
-			course.setProgress_status(rs.getString("progress_status"));
-			course.setMileage(rs.getInt("mileage"));
-			course.setCourse_summary(rs.getString("course_summary"));
-			course.setCourse_details(rs.getString("course_details"));
-			course.setEvaluation_style(rs.getString("evaluation_style"));
-			course.setTraining_type(rs.getString("training_type"));
-			course.setOperating_firm(rs.getString("operating_firm"));
-			course.setCourse_difficulty(rs.getString("course_difficulty"));
-			course.setMaterial_availabe(rs.getString("material_availabe"));
-			course.setEvaluation_date(rs.getString("evaluation_date"));
-			course.setEvaluation_date_second(rs.getString("evaluation_date_second"));
-			course.setManager_approval(rs.getString("manager_approval"));
-			course.setCours_expense(rs.getInt("cours_expense"));
-			course.setCourse_capacity(rs.getInt("course_capacity"));
-			course.setCourse_count(rs.getInt("course_count"));
-			course.setCourse_proflie(rs.getString("course_proflie"));
-			return course;
-		}
+        @Override
+        public DTO_Course mapRow(ResultSet rs, int rowNum) throws SQLException {
+            DTO_Course course = new DTO_Course();
+            course.setCourse_ref(rs.getInt("course_ref"));
+            course.setCourse_name(rs.getString("course_name"));
+            course.setSession_number(rs.getInt("session_number"));
+            course.setCourse_category(rs.getString("course_category"));
+            course.setCourse_subcategory(rs.getString("course_subcategory"));
+            course.setCourse_start_date(rs.getDate("course_start_date").toLocalDate());
+            course.setCourse_end_date(rs.getDate("course_end_date").toLocalDate());
+            course.setCourse_entrol_start_date(rs.getDate("course_entrol_start_date").toLocalDate());
+            course.setCourse_entrol_end_date(rs.getDate("course_entrol_end_date").toLocalDate());
+            course.setCourse_cancel_start_date(rs.getDate("course_cancel_start_date").toLocalDate());
+            course.setCourse_cancel_end_date(rs.getDate("course_cancel_end_date").toLocalDate());
+            course.setProgress_status(rs.getString("progress_status"));
+            course.setMileage(rs.getInt("mileage"));
+            course.setCourse_summary(rs.getString("course_summary"));
+            course.setCourse_details(rs.getString("course_details"));
+            course.setEvaluation_style(rs.getString("evaluation_style"));
+            course.setTraining_type(rs.getString("training_type"));
+            course.setOperating_firm(rs.getString("operating_firm"));
+            course.setCourse_difficulty(rs.getString("course_difficulty"));
+            course.setMaterial_availabe(rs.getString("material_availabe"));
+            course.setEvaluation_date(rs.getString("evaluation_date"));
+            course.setEvaluation_date_second(rs.getString("evaluation_date_second"));
+            course.setManager_approval(rs.getString("manager_approval"));
+            course.setCours_expense(rs.getInt("cours_expense"));
+            course.setCourse_capacity(rs.getInt("course_capacity"));
+            course.setCourse_count(rs.getInt("course_count"));
+            course.setCourse_proflie(rs.getString("course_proflie"));
+            return course;
+        }
 	}
 
 	public boolean insert(DTO_Course course) {
@@ -174,10 +174,20 @@ public class DAO_Course {
 
 	}
 
-	public List<DTO_Course> getAllCourses() {
-		String SELECT_ALL_COURSES = "SELECT * FROM Courses";
-		return template.query(SELECT_ALL_COURSES, new CourseRowMapper());
-	}
+	public List<DTO_Course> getAppliableCourses(LocalDate today) {
+		String SELECT_ALL_COURSES = "SELECT * FROM Courses where DATE(course_entrol_start_date) "
+				+ "<= ? AND DATE(course_entrol_end_date) >= ?;";
+		today=today.minusDays(-1);
+		
+		return template.query(SELECT_ALL_COURSES, new CourseRowMapper(), Date.valueOf(today), Date.valueOf(today));
+					}
+	
+//	public List<DTO_Course> getAllCourses() {
+//		String SELECT_ALL_COURSES = "SELECT * FROM Courses";
+//		System.out.println("getAllCourses SELECT * FROM Courses");
+//		return template.query(SELECT_ALL_COURSES, new CourseRowMapper());
+//	}
+	
 
 	public DTO_Course getCourseById(String course_ref) {
 		String SELECT_COURSE_BY_ID = "SELECT * FROM Courses WHERE course_ref = ?";

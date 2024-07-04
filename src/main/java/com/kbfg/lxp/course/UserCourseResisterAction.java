@@ -2,6 +2,7 @@ package com.kbfg.lxp.course;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,7 @@ public class UserCourseResisterAction implements CourseCommand {
 //		System.out.println("course_ref" + course_ref);
 
 		course = dao.getCourseById(course_ref);
-		System.out.println(course.getCourse_name());
+		System.out.println("course.getCourse_start_date()"+course.getCourse_start_date());
 		request.setAttribute("courseDetail", course);
 
 		DAO_UserCourses dao_UserCourses =new DAO_UserCourses();
@@ -45,9 +46,9 @@ public class UserCourseResisterAction implements CourseCommand {
 		userCourse.setCourse_subcategory(course.getCourse_subcategory());
 		userCourse.setCourse_status(course.getProgress_status()); // Assuming progress_status maps to course_status
 		userCourse.setEnrollment_status("Enrolled"); // You can set the initial enrollment status as needed
-		userCourse.setCourse_start_date(course.getCourse_start_date());
-		userCourse.setCourse_end_date(course.getCourse_end_date());
-		userCourse.setCompletion_date(course.getCourse_end_date()); // Assuming the course has not yet been completed
+		userCourse.setCourse_start_date(course.getCourse_start_date().plus(1, ChronoUnit.DAYS));
+		userCourse.setCourse_end_date(course.getCourse_end_date().plus(1, ChronoUnit.DAYS));
+		userCourse.setCompletion_date(course.getCourse_end_date().plus(1, ChronoUnit.DAYS)); // Assuming the course has not yet been completed
 		userCourse.setPosition_at_completion("none"); // Assuming no position data at the start
 		userCourse.setMileage(course.getMileage());
 		userCourse.setScore(0); // Assuming initial score is 0
@@ -55,9 +56,8 @@ public class UserCourseResisterAction implements CourseCommand {
 		userCourse.setApproval_status("Pending"); // Assuming initial approval status is pending
 		userCourse.setCourse_proflie(course.getCourse_proflie());
 		
-		System.out.println(userCourse.getUser_idn());
-		System.out.println(userCourse.getCourse_ref());
-		System.out.println(userCourse.getCourse_name());
+		System.out.println("userCourse.getCourse_start_date()"+userCourse.getCourse_start_date());
+
 		dao_UserCourses.addUserCourse(userCourse);
 	}
 

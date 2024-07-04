@@ -25,14 +25,14 @@ public class CourseApplyView implements CourseCommand {
 		
 		
 		DAO_Course dao = new DAO_Course();
-		String user_idn = "1234";
+
 		//		DTO_Course dto =new DTO_Course();
 		
 
 		List applyCourseList=new ArrayList();
 //		applyCourseList= dao.applyList(today,user_idn);
 		
-		applyCourseList= dao.getAllCourses();
+		applyCourseList= dao.getAppliableCourses(today);
 
 				
 		
