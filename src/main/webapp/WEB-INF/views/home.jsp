@@ -26,6 +26,8 @@
 	</c:choose>
 
 	<main>
+	<c:choose>
+		<c:when test="${user_id != 'admin'}">
 	<div class="row g-4 mb-4">
 		<div class="itembox box1 col-3 mycol-3 myhome">
 			<div id="home_my">
@@ -373,6 +375,16 @@
 		
 	
 	</main>
+	</c:when>
+		<c:otherwise>
+				<div class="bg-video">
+			  		<video class="bg-video__content" autoplay muted loop>
+			   		 <source src="${pageContext.request.contextPath}/resources/images/login_bg_video.mp4" type="video/mp4" />
+			  		</video>
+				</div>	
+		</c:otherwise>
+	</c:choose>
+	
 	
 	<c:import url="./footer.jsp"></c:import>
 </body>
