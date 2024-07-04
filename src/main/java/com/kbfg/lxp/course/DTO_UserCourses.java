@@ -15,11 +15,11 @@ public class DTO_UserCourses {
     private LocalDate course_start_date;
     private LocalDate course_end_date;
     private LocalDate completion_date;
-    private String position_at_completion;
+    private String position_at_completion; // 직급 L0, L1, L2, L3
     private int mileage;
     private int score;
-    private String approver;
-    private String approval_status;
+    private String approver; //status, 진행중, 취소, 완료
+    private String approval_status; //통과여부로 변경 fail, pass
     private String course_proflie;
     
     
