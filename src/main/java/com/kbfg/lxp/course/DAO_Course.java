@@ -41,7 +41,7 @@ public class DAO_Course {
 	}
 
 	public List<DTO_UserCourses> getItem(LocalDate today, String user_idn) {
-        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) <= ? AND DATE(course_end_date) >= ? ORDER BY course_ref DESC;";
+        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) <= ? AND DATE(course_end_date) >= ? and course_status !='취소' ORDER BY course_ref DESC;";
         today=today.minusDays(-1);
             List<DTO_UserCourses> result = template.query(query, new UserCoursesRowMapper(), user_idn, Date.valueOf(today), Date.valueOf(today));
 
@@ -50,7 +50,7 @@ public class DAO_Course {
 	
 	// 사용자가 현재 등록했으며, 아직 완료되거나 취소되지 않은 연수 명세 리턴
 	public List<DTO_UserCourses> getUserTotalItem(LocalDate today, String user_idn) {
-        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_end_date) >= ? AND course_status in ('예정','진행중')";
+        String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_end_date) >= ? and course_status !='취소'";
         today=today.minusDays(-1);
             List<DTO_UserCourses> result = template.query(query, new UserCoursesRowMapper(), user_idn, Date.valueOf(today));
 
@@ -59,7 +59,7 @@ public class DAO_Course {
 	
 	
 	public List<DTO_UserCourses> getItemBooked(LocalDate today, String user_idn) {
-		String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) > ?";
+		String query = "SELECT * FROM UserCourses WHERE user_idn = ? AND DATE(course_start_date) > ? and course_status !='취소'";
 		today=today.minusDays(-1);
 		List<DTO_UserCourses> result = template.query(query, new UserCoursesRowMapper(), user_idn, Date.valueOf(today));
 

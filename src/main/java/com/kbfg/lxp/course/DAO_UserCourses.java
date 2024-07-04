@@ -55,6 +55,14 @@ public class DAO_UserCourses {
         String query = "DELETE FROM UserCourses WHERE user_course_ref = ?";
         template.update(query, user_course_ref);
     }
+    
+ // 등록 취소 -> progress_status 를 "취소"로 update
+    public void cancelUserCourse(String user_idn, String course_ref) {
+        System.out.println("user_idn"+user_idn);
+        System.out.println("course_ref"+course_ref);
+    	String query = "UPDATE UserCourses SET course_status = '취소' WHERE user_idn = ? AND course_ref = ?;";
+        System.out.println("취소건: "+template.update(query, user_idn, course_ref));
+    }
 
     // List all user courses
     public List<DTO_UserCourses> getAllUserCourses() {
