@@ -29,6 +29,7 @@
 		<nav class="navbar">
 			<div class="left-container">
 				<a href="${pageContext.request.contextPath}/home" class="logo"> </a>
+				${user_id}
 				<ul class="main-menu">
 					<li class="item">
 						<div class="item__name">[관리자]연수관리</div>
@@ -58,6 +59,19 @@
 							
 								
 					<li class="item">
+
+						<div class="item__name">[관리자]생활연수</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="item">
+						<a href="${pageContext.request.contextPath}/admin/adminCharts"><span class="item__name">[관리자]스타런분석</span></a>
+
 						<div class="item__name">[관리자]스타런분석</div>
 						<div class="item__contents">
 							<div class="contents__menu">
@@ -67,6 +81,7 @@
 								</ul>
 							</div>
 						</div>
+
 					</li>
 					
 					

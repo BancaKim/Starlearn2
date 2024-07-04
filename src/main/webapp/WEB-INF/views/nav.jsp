@@ -95,7 +95,6 @@
 									<li><a
 										href="${pageContext.request.contextPath}/facility/apply_main">생활연수
 											신청</a></li>
-									<li><a href=#>생활연수 신청내역</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
 								</ul>

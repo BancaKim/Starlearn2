@@ -31,6 +31,12 @@ main {
     padding: 20px;
     height: 
 }
+.maintitle{
+	font-size: 30px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 50px;	
+}
 
 .tab-container {
     display: flex;
@@ -71,6 +77,7 @@ main {
     float: right;
     color: #888;
     font-size: 0.9em;
+        margin-right: 10px;
 }
 
 .application-status table {
@@ -78,11 +85,15 @@ main {
     border-collapse: collapse;
 }
 
+.application-status table th{
+	font-weight:800px;	
+}
+	
 .application-status th,
 .application-status td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+	text-align:center;
 }
 
 .apply-button {
@@ -94,6 +105,7 @@ main {
     border: none;
     border-radius: 25px;
     cursor: pointer;
+    heigth: 50px;
 }
 
 .quick-links {
@@ -165,4 +177,3 @@ main {
     border-radius: 5px;
     margin-top: 10px;
 }
-
