@@ -15,6 +15,8 @@ import com.kbfg.lxp.admin.command.AdminTuition_refundListCommand;
 import com.kbfg.lxp.admin.command.AdminUserDeleteCommand;
 import com.kbfg.lxp.admin.command.AdminUserListCommand;
 import com.kbfg.lxp.admin.command.RepalyInsertCommand;
+import com.kbfg.lxp.course.CourseCommand;
+import com.kbfg.lxp.course.StaticActionL3;
 
 /**
  * Handles requests for the application home page.
@@ -28,6 +30,8 @@ public class AdminController {
 	@Autowired AdminUserDeleteCommand adminUserDeleteCommand;
 	@Autowired AdminTuition_refundListCommand adminTuition_refundListCommand;
 	@Autowired AdminRefundApplyCommand adminRefundApplyCommand;
+	
+	private CourseCommand command;
 
 	@RequestMapping("/adminMain")
 	public String adminMain(Model model) {
@@ -43,7 +47,16 @@ public class AdminController {
 	public String adminCharts(Model model) {
 		adminChartsCommand.execute(model);
 		adminChartsRankCommand.execute(model);
-		return "admin/adminCharts";
+		
+		command = new StaticActionL3();
+		try {
+			command.execute(model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		return "admin/adminCharts";		
 	}
 	
 	@RequestMapping("/adminUserList")

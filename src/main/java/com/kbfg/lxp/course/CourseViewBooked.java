@@ -28,10 +28,33 @@ public class CourseViewBooked implements CourseCommand {
 
 		System.out.println(request.getParameter("weekDate"));
 
+		System.out.println(request.getParameter("weekDate"));
 
-		request.setAttribute("today", today);
-		
-		
+		if (request.getParameter("weekDate") != null) {
+			if (request.getParameter("direction").equals("prev")) {
+				today = LocalDate.parse(request.getParameter("weekDate")).minusDays(1);
+			}
+
+			else if (request.getParameter("direction").equals("next")) {
+				today = LocalDate.parse(request.getParameter("weekDate")).plusDays(1);
+			}
+
+			else if (request.getParameter("direction").equals("thisPage")) {
+				today = LocalDate.parse(request.getParameter("weekDate"));
+			}
+		}
+
+		LocalDate monday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+		LocalDate sunday = today.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
+
+		System.out.println("today" + today);
+		System.out.println("monday" + monday);
+		System.out.println("sunday" + sunday);
+
+		List<LocalDate> weekDates = getDatesBetween(monday, sunday);
+
+		request.setAttribute("weekDates", weekDates);
+		request.setAttribute("today", today);		
 	
 		DAO_Course dao = new DAO_Course();
 
