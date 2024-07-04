@@ -28,27 +28,7 @@ public class CourseViewBooked implements CourseCommand {
 
 		System.out.println(request.getParameter("weekDate"));
 
-		if (request.getParameter("weekDate") != null) {
-			if (request.getParameter("direction").equals("prev")) {
-				today = LocalDate.parse(request.getParameter("weekDate")).minusDays(1);
-			}
 
-			else if (request.getParameter("direction").equals("next")) {
-				today = LocalDate.parse(request.getParameter("weekDate")).plusDays(1);
-			}
-
-			else if (request.getParameter("direction").equals("thisPage")) {
-				today = LocalDate.parse(request.getParameter("weekDate"));
-			}
-		}
-
-		LocalDate monday = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
-		LocalDate sunday = today.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
-
-
-		List<LocalDate> weekDates = getDatesBetween(monday, sunday);
-
-		request.setAttribute("weekDates", weekDates);
 		request.setAttribute("today", today);
 		
 		
@@ -66,7 +46,7 @@ public class CourseViewBooked implements CourseCommand {
 		
 		System.out.println("dao.getItem().size()"+myCourseList.size());
 		
-		
+	
 		request.setAttribute("myCourseList", myCourseList);
 		
 	}

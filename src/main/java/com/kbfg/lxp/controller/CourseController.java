@@ -61,13 +61,14 @@ public class CourseController {
 		return "course/myCourseList"; // "ShoppingList.ba"
 	}
 	
+	
 		// 취소 직전 확인
 	@RequestMapping("/applyCancelView")
 	public String applyCancelView(HttpServletRequest request, Model model) throws Exception {
 
 		model.addAttribute("request", request);
 		System.out.println("myCourseList();");
-		command = new CourseViewBooked();
+		command = new ApplyDetailView();
 		command.execute(model);
 
 		return "course/applyCancelView"; // "ShoppingList.ba"
@@ -75,7 +76,7 @@ public class CourseController {
 	
 	
 	
-	// User's Course View
+	// User's Course View 도래예정인 강의 명세 보기
 	@RequestMapping("/courseViewBooked")
 	public String courseViewBooked(HttpServletRequest request, Model model) throws Exception {
 
