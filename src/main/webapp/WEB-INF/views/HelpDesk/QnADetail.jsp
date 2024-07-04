@@ -58,7 +58,7 @@
 function validateForm() {
     var replay = document.getElementById("replay").value;
     if (replay === '') {
-        alert("내용을 입력해주세요.");
+        swal("내용을 입력해주세요.");
         return false;
     }
     
@@ -68,6 +68,7 @@ function validateForm() {
 }
 
 </script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 <main>
@@ -91,28 +92,23 @@ function validateForm() {
 </table>
 <hr>
 <table>
-	 <c:forEach var="reply" items="${reply}">
+	 <c:forEach var="reply" items="${replay}">
 	<tr>
-		<td id="subTitle">${qnaDetail.title}</td>
+		<td>${reply.content}</td>
 	</tr>
 	<tr>
-		<td id="user">${qnaDetail.dp}&nbsp;${qnaDetail.user_name} | ${qnaDetail.date}</td>
-	</tr>
-	<tr>
-		<td> &nbsp;&nbsp; </td>
-	</tr>
-	<tr>
-		<td>${qnaDetail.content}</td>
+		<td id="user">${name}&nbsp;${reply.date} | ${qnaDetail.date}</td>
 	</tr>
 	</c:forEach>
 </table>
-
+<br><br>
 	<c:choose>
 		<c:when test="${user_id == 'admin'}">
 			<div id="reply_admin">
-				<form action="${pageContext.request.contextPath}/admin/replay" method="post" name="replayForm" id="replayForm">
+				<form action="${pageContext.request.contextPath}/HelpDesk/adminReplay" method="post" name="replayForm" >
 					<textarea class="form-control" placeholder="내용을 입력해주세요" id="replay" name="replay" rows="3"></textarea>
 					<br>
+					<input type="hidden" value="${index}" name="index" id="index">
 				</form>
 			
 			<div style="text-align:right">

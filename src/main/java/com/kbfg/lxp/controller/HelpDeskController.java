@@ -1,5 +1,7 @@
 package com.kbfg.lxp.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import com.kbfg.lxp.HelpDesk.Command.QaAListCommand;
 import com.kbfg.lxp.HelpDesk.Command.QaAListDetailCommand;
 import com.kbfg.lxp.HelpDesk.Command.QnAInsetCommand;
 import com.kbfg.lxp.HelpDesk.Command.QnAwriteViewCommand;
+import com.kbfg.lxp.admin.command.RepalyInsertCommand;
 
 
 /**
@@ -24,6 +27,7 @@ public class HelpDeskController {
 	@Autowired QnAInsetCommand qnAInsetCommand;
 	@Autowired QaAListCommand qaAListCommand;
 	@Autowired QaAListDetailCommand qaAListDetailCommand;
+	@Autowired RepalyInsertCommand repalyInsertCommand;
 	
 	@RequestMapping ("/QnA")
 	public String QnAPage(HttpServletRequest request,Model model) {
@@ -61,6 +65,16 @@ public class HelpDeskController {
 		model.addAttribute("request",request);
 		qaAListDetailCommand.execute(model);
 		return "HelpDesk/QnADetail";
+	}
+	
+	@RequestMapping("/adminReplay")
+	public String replayInsert(HttpServletRequest request,Model model) {
+		model.addAttribute("request",request);
+		repalyInsertCommand.execute(model);
+		Map<String, Object> map = model.asMap();
+
+	    String index = (String) map.get("index");
+		return "redirect:QaAListDetail?";
 	}
 
 	

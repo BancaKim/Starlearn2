@@ -142,7 +142,7 @@ body {
 				</div>
 			</div>
 			<div class="button-container">
-				<a href="UserCourseResister?course_ref=${courseDetail.course_ref}" class="btn btn-warning">신청하기</a>
+				<a href="UserCourseResister?course_ref=${courseDetail.course_ref}" class="btn btn-warning">취소하기</a>
 			</div>
 		</div>
 	</main>
