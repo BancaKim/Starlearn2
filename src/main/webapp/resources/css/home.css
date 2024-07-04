@@ -278,6 +278,18 @@ img{
       height: 100%;
       object-fit: cover;
     }
+    .fa-clock{
+    	width: 32px;
+    	height: 32px;
+    }
+     .fa-circle-play{
+    	width: 32px;
+    	height: 32px;
+    }
+     .fa-circle-check{
+    	width: 32px;
+    	height: 32px;
+    }
 	
 
 
