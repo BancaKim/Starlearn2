@@ -5,11 +5,21 @@ function allFun() {
     a += pw();
     a +=pwCheck();
     a +=name();
+    a +=idn();
+    a +=rank();
+	a +=position();
+	a +=dept();
+	a +=phone();
+	a +=birthYear();
+	a +=birthMonth();
+	a +=birthDay();
+	a +=enrollYear();
 
+	
     console.log(a);
-    if(a == 4){
+    if(a == 13){
         let regiform = document.getElementById("regiform");
-    	regiform.submit(); // subject는 제목을 정의하기 위한 구문으로 필수 아님
+    	regiform.submit(); 
     }
 }
 
@@ -82,9 +92,103 @@ function name() {
     var name = document.getElementById("userName");
 
     if (name.value == "") {
-        alert("빈칸 에러");
+        alert("이름을 입력해주세요.");
         name.value = "";
         name.focus();
+        return 0;
+    } return 1;
+}
+
+function idn() {
+    var idn = document.getElementById("userIdn");
+
+    if (idn.value == "") {
+        alert("사번을 입력해주세요.");
+        idn.value = "";
+        idn.focus();
+        return 0;
+    } return 1;
+}
+
+function rank() {
+    var rank = document.getElementById("userRank");
+    if (rank.value == "") {
+        alert("직급을 입력해주세요.");
+        rank.value = "";
+        rank.focus();
+        return 0;
+    } return 1;
+}
+
+function position() {
+    var position = document.getElementById("userPosition");
+
+    if (position.value == "") {
+        alert("직위를 입력해주세요.");
+        position.value = "";
+        position.focus();
+        return 0;
+    } return 1;
+}
+
+function dept() {
+    var dept = document.getElementById("userDept");
+
+    if (dept.value == "") {
+        alert("직위를 입력해주세요.");
+        dept.value = "";
+        dept.focus();
+        return 0;
+    } return 1;
+}
+
+function phone() {
+    var phone = document.getElementById("user_ph");
+
+    if (phone.value == "") {
+        alert("직위를 입력해주세요.");
+        phone.value = "";
+        phone.focus();
+        return 0;
+    } return 1;
+}
+function birthYear() {
+    var birthYear = document.getElementById("birthYear");
+
+    if (birthYear.value == "") {
+        alert("생년을 입력해주세요.");
+        birthYear.value = "";
+        birthYear.focus();
+        return 0;
+    } return 1;
+}
+function birthMonth() {
+    var birthMonth = document.getElementById("birthMonth");
+
+    if (birthMonth.value == "") {
+        alert("생월을 입력해주세요.");
+        birthMonth.value = "";
+        birthMonth.focus();
+        return 0;
+    } return 1;
+}
+function birthDay() {
+    var birthDay = document.getElementById("birthDay");
+
+    if (birthDay.value == "") {
+        alert("생일을 입력해주세요.");
+        birthDay.value = "";
+        birthDay.focus();
+        return 0;
+    } return 1;
+}
+function enrollYear() {
+    var enrollYear = document.getElementById("enrollYear");
+
+    if (enrollYear.value == "") {
+        alert("생일을 입력해주세요.");
+        enrollYear.value = "";
+        enrollYear.focus();
         return 0;
     } return 1;
 }
