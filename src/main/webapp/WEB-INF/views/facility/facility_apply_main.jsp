@@ -17,6 +17,7 @@
 	<c:import url="../nav.jsp"></c:import>
 	
 	<main>
+		<br><Br><Br>
 		<div class="maintitle">생활연수 신청</div>
         <div class="tab-container">
             <button class="tab active">연수원</button>
