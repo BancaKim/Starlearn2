@@ -158,6 +158,13 @@ public class Tuition_refundDao {
 	}
 
 
+	public void AdminRefundApply(String index, String yN) {
+		// TODO Auto-generated method stub
+		String sql = "UPDATE tuition_refund SET approval = ? WHERE tuition_index = ?";
+		template.update(sql,yN,index);
+	}
+
+
 
 
 	
