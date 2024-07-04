@@ -9,6 +9,11 @@
 <title>스타런</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adminCharts.css"/>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<style>
+        body, input, button, select, textarea {
+            font-family: 'NanumSquareRound', sans-serif;
+        }
+    </style>
 </head>
 <body>
 	<c:choose>

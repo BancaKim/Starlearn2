@@ -47,8 +47,7 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href=#>회원조회</a></li>
-									<li><a href=#>회원삭제</a></li>
+									<li><a href="${pageContext.request.contextPath}/admin/adminUserList">회원조회</a></li>
 								</ul>
 							</div>
 						</div>
