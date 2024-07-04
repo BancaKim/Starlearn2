@@ -25,23 +25,26 @@
 
 	<main>
 	<div class="row gx-3">
-		<div class="itembox col-3 mycol-3">
+		<div class="itembox box1 col-3 mycol-3">
 			<div id="home_my">
-			<div style="font-weight: bold; font-size:20px; ">${user_id}님 반가워요</div>
-			<div style="font-size:16px; color:#84888b; ">${userBean.user_rank} ${userBean.user_position} ${userBean.user_dept}</div><br><br><br><br>
+				<div style="font-weight: bold; font-size:20px; padding-left:20px; margin-bottom:20px;">${user_id}님 반가워요!</div>
+				<div style="font-size:16px; color:#84888b; padding-left:20px;">${userBean.user_rank} ${userBean.user_position} ${userBean.user_dept}</div>
 			</div>
-			<div id="home_my_buttom">
-			<div>
-			<a href="#">마이페이지</a><br>
-			<a href="#">Hot Tube</a><br>
-			<a href="#">연수신청</a><br>
-			</div>
-		<!-- 	<div id="collyImg"> -->
-				<img class="colly" src="https://oimg1.kbstar.com/img/oabout/2021/ccoli.png" alt="멜랑 콜리">
-	<!-- 		</div> -->
+			<div class="home_my_bottom">
+				<div class="home_my_bottom_left">
+					<ul>
+						<li><a href="#">마이페이지<i class="fa-solid fa-chevron-right"></i></a></li>
+						<li><a href="#">Hot Tube<i class="fa-solid fa-chevron-right"></i></a></li>
+						<li><a href="#">연수신청<i class="fa-solid fa-chevron-right"></i></a></li>
+					</ul>
+					</div>
+				<div class="home_my_bottom_right">
+					<img class="colly" src="${pageContext.request.contextPath}/resources/images/ccoli.png" alt="멜랑 콜리">
+				</div>
 			</div>
 		</div>
-		<div class="itembox col-9">
+		
+		<div class="itembox box1 col-9">
 			<video id="video" data-v-2187eb61="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240524/1652204_d355685d.mp4" 
 	tabindex="-1" role="application" loop="" muted="muted" playsinline="playsinline" autoplay="">
 		</video>
@@ -53,7 +56,8 @@
 			오늘 일정
 		</div>
 		<div class="itembox col-6">
-		지금 주목할 연수
+			<div class="subtitle">지금 주목할 연수</div>
+			
 		</div>
 		<div class="itembox col-3">
 		연수현황
