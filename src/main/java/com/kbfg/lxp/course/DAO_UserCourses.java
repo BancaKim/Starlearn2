@@ -86,6 +86,39 @@ public class DAO_UserCourses {
             userCourse.setApproval_status(rs.getString("approval_status"));
             return userCourse;
         }
-    }    
+    }
+
+	public int countIng(String userIdn) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) from UserCourses where user_idn=? and approver=0; ";
+	    try {
+	        return template.queryForObject(sql, Integer.class,userIdn);
+	    } catch (Exception e) {
+	        System.out.println("countIng");
+	        return 0;
+	    }
+	}
+
+	public int countFuture(String userIdn) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) from UserCourses where user_idn=? and approver=1; ";
+	    try {
+	        return template.queryForObject(sql, Integer.class,userIdn);
+	    } catch (Exception e) {
+	        System.out.println("countFuture");
+	        return 0;
+	    }
+	}
+
+	public int countFinish(String userIdn) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) from UserCourses where user_idn=? and approver=2; ";
+	    try {
+	        return template.queryForObject(sql, Integer.class,userIdn);
+	    } catch (Exception e) {
+	        System.out.println("countFinish");
+	        return 0;
+	    }
+	}    
 
 }
