@@ -24,7 +24,7 @@
 	</c:choose>
 
 	<main>
-	<div class="row gx-3">
+	<div class="row g-4 mb-4">
 		<div class="itembox box1 col-3 mycol-3">
 			<div id="home_my">
 				<div style="font-weight: bold; font-size:20px; padding-left:20px; margin-bottom:20px;">${user_id}님 반가워요!</div>
@@ -51,54 +51,78 @@
 	
 		</div>
 	</div>
-	<div class="row gx-3">
+	<div class="row g-4 mb-4">
 		<div class="itembox col-3">
-			오늘 일정
+			<div class="subtitle">오늘</div> 일정
 		</div>
 		<div class="itembox col-6">
-			<div class="subtitle">지금 주목할 연수</div>
+			<div class="subtitle">지금 주목할 연수</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 			
 		</div>
-		<div class="itembox col-3">
-		연수현황
+		<div class="itembox col-3 training-status">
+			<div class="title-area">
+				<div class="titles">
+					<h2>연수현황</h2>
+				</div>
+			</div>
+			<div class="status-wrapper">
+				<ul class="status-list">
+					<li class="status-item">
+						<div class="status-inner">
+							<div>
+							<i class="fa-regular fa-clock"></i>
+							<h3>진행중 연수</h3>
+							</div>
+							<i class="fa-solid fa-chevron-right"></i>
+						</div>
+					</li>
+					<li class="status-item">
+						<div class="status-inner">
+							<div>
+							<i class="fa-regular fa-circle-play"></i>
+							<h3>예정된 연수</h3>
+							</div>
+							<i class="fa-solid fa-chevron-right"></i>
+						</div>
+					</li>
+					<li class="status-item">
+						<div class="status-inner">
+							<div>
+							<i class="fa-regular fa-circle-check"></i>
+							<h3>완료된 연수</h3>
+							</div>
+							<i class="fa-solid fa-chevron-right"></i>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	<div class="row gx-3">
+	<div class="row g-4 mb-4">
 		<div class="itembox col-3">
-		핫팁
+			<img class="hottip" src="${pageContext.request.contextPath}/resources/images/hottip.png">
+
 		</div>
 		<div class="itembox col-9 cloud">
-		HRD클라우드
+			<img class="hrdcloud" src="${pageContext.request.contextPath}/resources/images/hrdcloud.jpg">
 		</div>
 	</div>
-	<div class="row gx-3">
 	
-		<div class="itembox col-3">
-		최근 배지
+	<div class="row g-4 mb-4">
+		<div class="itembox col-3 sslNote">
+			<img class="badge" src="${pageContext.request.contextPath}/resources/images/badge.jpg">
 		</div>
 		<div class="itembox col-9 sslNote">
-			SSL 학습노트
+			<img class="ssl" src="${pageContext.request.contextPath}/resources/images/ssl.png">
 		</div>
 	</div>	
-	<div class="row gx-3">
-		<div class="itembox col-2">
-		핫팁
-		</div>
-		<div class="itembox col-2">
-		쓸
-		</div>
-		<div class="itembox col-2">
-		hrd 클라우드
-		</div>
-		<div class="itembox col-2">
-		판매자격연수
-		</div>
-		<div class="itembox col-2">
-		통합법정교육
-		</div>
-		<div class="itembox col-2">
-		역량개발평가
-		</div>
+	<div class="bottom-button">
+			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/hottipicon.png">
+			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/sslicon.png">
+			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/cloudicon.png">
+			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/lectureicon.png">
+			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/lecture2icon.png">
+			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/evalicon.png">
 	</div>
 		
 	

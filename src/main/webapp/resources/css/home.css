@@ -15,9 +15,9 @@ body {
     font: normal 1rem/1.25;
 }
 
-main {/* 
+main {
 	padding-left: 100px;
-    padding-right: 100px; */
+    padding-right: 100px; 
     text-align: center;
 	margin: 100px auto 0; 
     background-color: #f7f4f0;
@@ -26,9 +26,16 @@ main {/*
 .itembox {
 	border-radius:24px;
 	background-color: #fff;
-/* 	border : 1px solid #333; */
-	margin:20px;
+    overflow: hidden; /* 이미지가 박스 밖으로 나가지 않도록 */
+/*     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;  */
 }
+.row:last-child .itembox {
+    height: 100px; /* 또는 원하는 높이 */
+}
+
 .box1{
 	height:270px;
 }
@@ -53,6 +60,30 @@ main {/*
 	height:200px;
 }
 
+.training-status{
+	background:linear-gradient(-51deg,#88b530,#99c93c);
+	color:#fff;
+	font-family: 'NanumSquareRound';
+}
+
+.title-area{
+	padding-left:32px;
+	padding-right:32px;
+	display:flex;
+	justify-content:space-between;
+}
+.training-status .status-wrapper ul{}
+
+.training-status .status-wrapper ul li{
+	list-style:none;
+
+}
+
+.training-status .status-wrapper ul li .status-inner{
+	display:flex;
+	justify-content:space-between;
+}
+
 #video{
 	 border-radius: 24px;
 	
@@ -64,11 +95,35 @@ main {/*
 	text-align:left;
 }
 .cloud{
-	border : 1px solid #333;
+
+}
+.badge{
+	object-fit:contain;
 }
 .sslNote{
-	border : 1px solid #333;
+	height:600px;
 }
+/* .hottip{
+	background-image:url("../images/hottip.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+	height:
+} */
+
+.bottom-button{
+	display:flex;
+	justify-content:space-around;
+	margin-bottom:50px;
+}
+
+.bottom-icon {
+	border-radius:24px;
+    width: 247px;
+    height: 247px;
+    object-fit: contain;
+    max-height: 100%;
+}
+
 #home_my{
 	margin-top:20px;
 }

@@ -1,11 +1,9 @@
-/* @font-face {
+@font-face {
     font-family: 'NanumSquareRound';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
     font-weight: normal;
-    font-style: normal; */
+    font-style: normal;
 }
-
-@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.css');
 
 body {
     margin: 0;
@@ -16,6 +14,7 @@ body {
 }
 
 main {
+    font-family: 'NanumSquareRound';
 	width:1200px;
 	padding-left: 160px;
     padding-right: 160px;

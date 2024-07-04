@@ -58,5 +58,6 @@
             }
         }
     </script>
+    <script src="${pageContext.request.contextPath}/resources/js/signup.js"></script>
 </body>
 </html>
