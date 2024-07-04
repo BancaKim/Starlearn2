@@ -33,8 +33,8 @@
 			<div class="home_my_bottom">
 				<div class="home_my_bottom_left">
 					<ul>
-						<li><a href="#">마이페이지<i class="fa-solid fa-chevron-right"></i></a></li>
-						<li><a href="#">Hot Tube<i class="fa-solid fa-chevron-right"></i></a></li>
+						<li><a href="${pageContext.request.contextPath}/MyPage">마이페이지<i class="fa-solid fa-chevron-right"></i></a></li>
+						<li><a href="#">HRD CLOUD<i class="fa-solid fa-chevron-right"></i></a></li>
 						<li><a href="#">연수신청<i class="fa-solid fa-chevron-right"></i></a></li>
 					</ul>
 					</div>

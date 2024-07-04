@@ -117,14 +117,16 @@
     #my{
     	 display: flex;
     }
-    #profile{
+    #profiles{
     	width:320px;
     	hight:200px;
+    	border-radius:50%;
     	text-align:center;
     }
-    #profile-img{
+    #profile-imgs{
     	width:170px;
     	hight:170px;
+    	border-radius:50%;
     	padding-top:40px;
     	
     }
@@ -258,8 +260,8 @@
 	        <video id="vjs_video_3_html5_api" tabindex="-1" role="application" class="vjs-tech" loop="" muted="muted" playsinline="playsinline" autoplay="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240108/1652204_fde64927.mp4"></video>
 	    </div>
 	    <div id="mypage">
-	    	<div id="profile">
-	    	<img id="profile-img" class="profile" src="${pageContext.request.contextPath}/userupload/${user_profile}">
+	    	<div id="profiles">
+	    	<img id="profile-imgs" class="profiles" src="${pageContext.request.contextPath}/userupload/${user_profile}">
 	   		<div id="id">${user_id}</div>
 	   		<div id="idn">${userIdn}</div>
 	   	</div> 

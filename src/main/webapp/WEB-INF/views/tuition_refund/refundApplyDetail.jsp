@@ -57,10 +57,11 @@ function RefundList(){
 	window.location.href = "${pageContext.request.contextPath}/tuition_refund/refundApplyList";
 }
 function refundApplyOk(tuition_index){
-	OK.submit();
+	window.location.href = "${pageContext.request.contextPath}/admin/refundApply?index="+tuition_index+"&YN=1";
+	
 }
 function refundApplyNo(tuition_index){
-	NO.submit();
+	window.location.href = "${pageContext.request.contextPath}/admin/refundApply?index="+tuition_index+"&YN=2";
 }
 
 </script>
@@ -136,23 +137,17 @@ function refundApplyNo(tuition_index){
        			<td>신청일자</td>
        			<td>${fn:substring(refund.request_date,0,10)}</td>
        		</tr>
-       		<form action="${pageContext.request.contextPath}/admin/refundApply" method="post" name="OK">
-       			<input type="hidden" id="index" name="index" value="${refund.tuition_index}">
-       			<input type="hidden"  name="YN" value="0">
-       		</form>
-       		<form action="${pageContext.request.contextPath}/admin/refundApply" method="post" name="NO">
-       			<input type="hidden" id="index" name="index" value="${refund.tuition_index}">
-       			<input type="hidden"  name="YN" value="1">
-       		</form>
        		</c:forEach>
 	</table>
 	<br>
 	<c:choose>
         <c:when test="${sessionScope.user_id == 'admin'}">
             <div class="admin">
-                <button type="button" class="btn btn-success" onclick="refundApplyOk()">승인</button>
-                <button type="button" class="btn btn-danger" onclick="refundApplyNo()">거절</button>
+            	<c:forEach var="refund" items="${RefundListDetail}">
+                <button type="button" class="btn btn-success" onclick="refundApplyOk(${refund.tuition_index})">승인</button>
+                <button type="button" class="btn btn-danger" onclick="refundApplyNo(${refund.tuition_index})">거절</button>
                 <button type="button" class="btn btn-secondary" onclick="javascript:history.go(-1)">돌아가기</button>
+            	</c:forEach>
             </div>
         </c:when>
         <c:otherwise>

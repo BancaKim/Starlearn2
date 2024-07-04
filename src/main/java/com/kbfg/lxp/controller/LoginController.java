@@ -79,5 +79,10 @@ public class LoginController {
 		String nextPage = (String) map.get("nextPage");
 		return nextPage;
 	}
+	
+	@RequestMapping("/MyPage")
+	public String MyPage( Model model) {
+		return "myPage";
+	}
 
 }

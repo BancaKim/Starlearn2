@@ -113,6 +113,7 @@ function validateForm() {
 			
 			<div style="text-align:right">
 				<button type="button" class="btn btn-warning" onclick="validateForm()">등록</button>
+				<button type="button" class="btn btn-secondary" onclick="javascript:history.go(-1)">돌아가기</button>
 			</div>
 			</div>
 		</c:when>
