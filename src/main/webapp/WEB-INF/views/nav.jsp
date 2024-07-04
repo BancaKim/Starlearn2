@@ -64,7 +64,7 @@
 									<li><a
 										href="${pageContext.request.contextPath}/HRD/HRD_CLOUD">HRD
 											클라우드</a></li>
-									<li><a href="#">SSL</a></li>
+								
 
 								</ul>
 							</div>
@@ -107,8 +107,6 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a
-										href="${pageContext.request.contextPath}/HelpDesk/HelpDeskNotice">공지사항</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/HelpDesk/QnA">Q&A</a></li>
 									<li><a

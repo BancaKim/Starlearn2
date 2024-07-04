@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kbfg.lxp.admin.command.AdminChartsCommand;
 import com.kbfg.lxp.admin.command.AdminChartsRankCommand;
+import com.kbfg.lxp.admin.command.AdminTuition_refundListCommand;
 import com.kbfg.lxp.admin.command.AdminUserDeleteCommand;
 import com.kbfg.lxp.admin.command.AdminUserListCommand;
 import com.kbfg.lxp.admin.command.RepalyInsertCommand;
@@ -24,7 +25,7 @@ public class AdminController {
 	@Autowired AdminChartsRankCommand adminChartsRankCommand;
 	@Autowired AdminUserListCommand adminUserListCommand;
 	@Autowired AdminUserDeleteCommand adminUserDeleteCommand;
-	
+	@Autowired AdminTuition_refundListCommand adminTuition_refundListCommand;
 
 	@RequestMapping("/adminMain")
 	public String adminMain(Model model) {
@@ -56,5 +57,12 @@ public class AdminController {
 		model.addAttribute("request",request);
 		adminUserDeleteCommand.execute(model);
 		return "redirect:adminUserList";
+	}
+	
+	@RequestMapping("/adminTuition_refundList")
+	public String adminTuition_refundList(HttpServletRequest request, Model model) {
+		model.addAttribute("request",request);
+		adminTuition_refundListCommand.execute(model);
+		return "admin/adminTuition_refundList";
 	}
 }
