@@ -299,7 +299,7 @@ table tr td {
 
 
 								<td><a
-									href="applyCancelView?course_ref=${myCourseList.user_course_ref}"
+									href="applyCancelView?course_ref=${myCourseList.course_ref}"
 									id="detail-btn" class="button-link">불참(취소)/회차변경</a></td>
 							</tr>
 						</c:forEach>

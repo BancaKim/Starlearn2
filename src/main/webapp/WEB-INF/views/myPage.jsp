@@ -196,7 +196,7 @@
                 <div id="menu">
                     <div class="menu-item"> 대시보드 </div>
                     <div class="menu-item" onclick="goCourse()"> 연수신청</div>
-                    <div class="menu-item" onclick="goFacility()"> 생환연수</div>
+                    <div class="menu-item" onclick="goFacility()"> 생활연수</div>
                     <div class="menu-item" onclick="goTuition_refund()"> 학습비 지원</div>
                 </div>
             </div>
