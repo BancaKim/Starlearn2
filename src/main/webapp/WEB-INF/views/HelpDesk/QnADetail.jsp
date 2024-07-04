@@ -117,7 +117,8 @@ function validateForm() {
 			</div>
 		</c:when>
 		<c:otherwise>
-			
+			<br><Br>
+			<button type="button" class="btn btn-secondary" onclick="javascript:history.go(-1)">돌아가기</button>
 		</c:otherwise>
 	</c:choose>
 

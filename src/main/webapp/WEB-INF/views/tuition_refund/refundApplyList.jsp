@@ -270,7 +270,7 @@
     
     <div id="yesterdayRefundTable">
         <br><br>
-        <div class="header">학원비 신청 이력</div>
+        <div class="header">현재 신청 이력</div>
         <br>
         <div class="info">
             <div>${RefundApplyCount}건</div>

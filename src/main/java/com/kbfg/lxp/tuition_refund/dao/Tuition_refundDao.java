@@ -137,6 +137,27 @@ public class Tuition_refundDao {
 	}
 
 
+	public int getTuitionCount() {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) FROM tuition_refund WHERE approval IN (0); ";
+	    try {
+	        return template.queryForObject(sql, Integer.class);
+	    } catch (Exception e) {
+	        System.out.println("getTuitionCount");
+	        return 0;
+	    }
+	}
+
+
+	public List<Tuition_refundDto> adminTuition_refundList() {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM tuition_refund WHERE approval IN (0);";
+
+		return template.query(sql, new BeanPropertyRowMapper<Tuition_refundDto>(Tuition_refundDto.class));
+
+	}
+
+
 
 
 	
