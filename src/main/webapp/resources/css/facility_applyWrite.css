@@ -6,6 +6,13 @@ body {
     margin: 0;
     padding: 0;
 }
+main{
+	font-family: 'NanumSquareRound',Arial, sans-serif;
+    max-width: 800px;
+    margin: 100px auto 100px;
+    padding: 20px;
+    height: 
+}
 
 .container {
     font-family: 'NanumSquareRound';
