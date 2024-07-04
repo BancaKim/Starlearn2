@@ -40,7 +40,14 @@ td {
 </style>
 </head>
 <body>
-	<c:import url="../nav.jsp"></c:import>
+	<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="../nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="../nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>>
 	<main style="margin: 150px auto 0;" /* Center align horizontally * />
 
 

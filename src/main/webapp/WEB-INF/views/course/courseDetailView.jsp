@@ -271,8 +271,8 @@ courseView.jsp<%@ page language="java"
 <div class="one-container">
     <c:forEach var="myCourse" items="${myCourseList}">
         <div class="one-image-container">
-            <img src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
-                 alt="Placeholder Image">
+            <img src="${pageContext.request.contextPath}/userupload/${myCourse.course_proflie}"
+                 alt="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg">
             <div class="one-overlay-text">${myCourse.course_name}</div>
             <a href="https://www.example.com"></a>
             <p class="one-font16" style="padding-top: 15px; margin: 0px;">KB±ππŒ¿∫«‡</p>

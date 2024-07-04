@@ -20,7 +20,16 @@ public class DTO_UserCourses {
     private int score;
     private String approver;
     private String approval_status;
+    private String course_proflie;
     
+    
+    
+	public String getCourse_proflie() {
+		return course_proflie;
+	}
+	public void setCourse_proflie(String course_proflie) {
+		this.course_proflie = course_proflie;
+	}
 	public int getUser_course_ref() {
 		return user_course_ref;
 	}

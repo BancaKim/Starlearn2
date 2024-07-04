@@ -35,31 +35,37 @@
         font-size: 32px;
         font-weight: bold;
     }
+
 </style>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 function validateForm() {
-    var title = document.getElementById('title').value.trim();
+    var QnAtitle = document.getElementById('QnAtitle').value.trim();
     var content = document.getElementById('content').value.trim();
+    var selectedValue = document.getElementById('categori').value;
 
-    if (title === '') {
-        swal('유효성 검사 실패', '제목을 입력해주세요.', 'error');
+
+    if (QnAtitle === '') {
+        swal('제목을 입력해주세요.');
         return false;
+    }
+    
+    if (selectedValue === null || selectedValue === "" || selectedValue === "카테고리를 선택해주세요") {
+    	swal('카테고리를 선택해주세요.');
+        return false; // 제출 방지
     }
 
     if (content === '') {
-        swal('유효성 검사 실패', '내용을 입력해주세요.', 'error');
+        swal('내용을 입력해주세요.');
         return false;
     }
-
+	
+    document.qna.submit();
+    
     return true;
 }
 
-function insert() {
-    if (validateForm()) {
-        document.qna.submit();
-    }
-}
+
 
 function back(){
 	window.location.href = "${pageContext.request.contextPath}/HelpDesk/QnA";
@@ -69,19 +75,31 @@ function back(){
 </head>
 <body>
 <main>
-	<div id="title">QnA 질의하기</div>
-	<form action="" method="post" name="qna">
+	<div id="title">QnA 질의하기</div><br>
+	<form action="${pageContext.request.contextPath}/HelpDesk/QnAInset" method="post" name="qna" id="qna">
+	
 	<table class="table table-bordered">
 	 	<tr>
 	 		<td>제목</td>
 	 		<td>
-	 			<input class="form-control form-control-sm" type="text"  id="title" name="title">
+	 			<input class="form-control" type="text" placeholder="제목을 입력해주세요" aria-label="default input example" id="QnAtitle" name="QnAtitle">
 	 		</td>
 	 	</tr>
 	 	<tr>
 	 		<td>작성자</td>
 	 		<td>
-	 			<input class="form-control" type="text" value="Disabled readonly input" aria-label="Disabled input example" disabled readonly>
+	 			<input class="form-control" type="text" value="${info}"  disabled readonly>
+	 		</td>
+	 	</tr>
+	 	<tr>
+	 		<td>카테고리</td>
+	 		<td>
+	 			<select name ="categori" id="categori" class="form-select" aria-label="Default select example">
+				  <option selected disabled>카테고리를 선택해주세요</option>
+				  <option value="연수신청">연수신청</option>
+				  <option value="학원비지원신청">학원비지원신청</option>
+				  <option value="기타">기타</option>
+				</select>
 	 		</td>
 	 	</tr>
 	 	<tr>
@@ -90,12 +108,16 @@ function back(){
 	 			<textarea class="form-control" placeholder="내용을 입력해주세요" id="content" name="content" rows="3"></textarea>
 	 		</td>
 	 	</tr>
+	 	<input type="hidden" value="${dp}" id="dp" name="dp">
+	 	<input type="hidden" value="${user_name}" id="user_name" name="user_name">
+	 	
 	</table>
 	<br><br>
-	<button type="button" class="btn btn-secondary" onclick="insert()">등록하기</button>
+	<button type="button" class="btn btn-secondary" onclick="validateForm()">등록하기</button>
 	<button type="button" class="btn btn-danger" onclick="back()">돌아가기</button>
 	</form>
 </main>
+<br><br><Br>
 <c:import url="../footer.jsp"></c:import>
 </body>
 </html>

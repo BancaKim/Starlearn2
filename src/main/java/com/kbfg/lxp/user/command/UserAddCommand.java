@@ -1,5 +1,6 @@
 package com.kbfg.lxp.user.command;
 
+import java.io.File;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +35,13 @@ public class UserAddCommand implements Command {
    		
    		realFolder=request.getRealPath(saveFolder);
    		boolean result=false;
+   		
+   	    // 디렉토리 존재 여부 확인 및 생성
+        File uploadDirs = new File(realFolder);
+        if (!uploadDirs.exists()) {
+            uploadDirs.mkdirs();
+        }
+
    		
    		try{
    			MultipartRequest multi=null;
