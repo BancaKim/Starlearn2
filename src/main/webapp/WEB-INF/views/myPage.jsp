@@ -156,6 +156,13 @@
         font-size: 12px;
         color: #666;
     }
+    
+    .downimage{
+	position:absolute;
+	bottom:-200px;
+	left: 100px;'   
+    }
+    
 </style>
 </head>
 <body>
@@ -243,6 +250,10 @@
                 </div>          
             </div>
         </div>
+    		<div>
+       <img class="downimage" src="${pageContext.request.contextPath}/resources/images/chart.png"><br>
+    	</div>
     </main>
-</body>
+   
+	</body>
 </html>

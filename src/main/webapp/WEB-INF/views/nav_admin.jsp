@@ -37,8 +37,7 @@
 							<div class="contents__menu">
 								<ul class="inner">
 									<li><a href="${pageContext.request.contextPath}/course/courseResister">연수 등록</a></li>
-									<li><a href=#>연수 삭제</a></li>
-									<li><a href=#>연수 수정</a></li>
+
 								</ul>
 							</div>
 						</div>

@@ -8,12 +8,20 @@
 <meta charset="UTF-8">
 <title>KB 스타런</title>
 <style>
+body{
+ font-family: 'NanumSquareRound';
+ background-color: #fff;
+}
+main{
+ font-family: 'NanumSquareRound';
+  background-color: #fff;
+}
 .date-input {
 	width: 300px; /* 원하는 넓이로 설정 */
 }
 
 .resister_body {
-	background-color: #f4f4f4;
+	background-color: #fff;
 	display: flex;
 	justify-content: center;
 }
@@ -233,14 +241,14 @@ td {
                 <tr>
                     <td colspan="2">
                         <div class="options" style="text-align: right;">
-                            <input type="submit" value="회원 가입">
+                            <input type="submit" value="연수 등록">
                         </div>
                     </td>
                     <td colspan="2"><input type="reset" value="다시 입력"></td>
                 </tr>
             </table>
         </form>
-
+	<br><br><br><br>
 	</main>
 	<c:import url="../footer.jsp"></c:import>
 	<script defer

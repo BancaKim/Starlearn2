@@ -10,6 +10,12 @@
     <link href="${pageContext.request.contextPath}/resources/css/facility_noticeView.css" rel="stylesheet">
     <title>KB 스타런</title>
     
+<style>
+.titletd{
+	width:150px;
+	text-align:center;
+}
+</style>
 </head>
 <body>
 	<c:choose>
@@ -30,23 +36,23 @@
 				<input type="hidden" name="facility_notice_num" value="${content_view.facility_notice_num}"/>
 				<tr class="table-warning">
 					
-					<td> 제목 </td>
+					<td class="titletd"> 제목 </td>
 					<td> ${content_view.facility_notice_title}</td>
 					</tr>
 				<tr>
-					<td> 번호 </td>
+					<td class="titletd"> 번호 </td>
 					<td> ${content_view.facility_notice_num} </td>
 				</tr>
 				<tr>
-					<td> 작성일 </td>
+					<td class="titletd"> 작성일 </td>
 					<td> ${content_view.facility_notice_rolldate} </td>
 				</tr>
 				<tr>
-					<td> 조회수 </td>
+					<td class="titletd"> 조회수 </td>
 					<td> ${content_view.facility_notice_hit} </td>
 				</tr>
 				<tr>
-					<td> 내용 </td>
+					<td class="titletd"> 내용 </td>
 					<td> ${content_view.facility_notice_content}</td>
 				</tr>
 		</table>
