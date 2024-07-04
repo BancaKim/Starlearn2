@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>지원 신청 현황 조회</title>
-<c:import url="../nav.jsp"></c:import>
+
 <style>
       @font-face {
         font-family: 'NanumSquareRound';
@@ -20,17 +20,19 @@
         color: #545045;
         font: normal 1rem/1.25;
         background-color: #fff; /* 바디 배경색을 하얀색으로 설정 */
-        margin: 200px auto 0; /* Center align horizontally */
         height: 100vh;
         text-align: center; 
     }
     main {
         text-align: center; /* Center align content */
         width: 1400px; /* Set fixed width */
-        margin: 200px auto 0; /* Center align horizontally */
         position: relative; /* Set as relative position */
     }
+    #mainbody{
+    	 margin: 200px auto 0; /* Center align horizontally */
+    }
     #title {
+    	text-align: center;
         font-size: 32px;
         font-weight: bold;
     }
@@ -109,14 +111,35 @@
     	border-radius: 16px;
     	border: 1px solid #e8e8e8;
     	margin-left:20px;
+    	text-align:center;
     }
     #my{
     	 display: flex;
+    }
+    #profile{
+    	width:320px;
+    	hight:200px;
+    	text-align:center;
+    }
+    #profile-img{
+    	width:170px;
+    	hight:170px;
+    	padding-top:40px;
+    }
+    #id{
+    	 font-weight: bold;
+    	 font-size:32px;
+    }
+    #idn{
+    	font-size: 15px;
+    	color: #84888b;
     }
        
 </style>
 </head>
 <body>
+	<c:import url="../nav.jsp"></c:import>
+	<div id="mainbody">
     <div id="title">HRD 클라우드</div>
     <br>
     <div id="search">
@@ -156,12 +179,16 @@
     </div>
     <br>
     <div id="my">
-    <div id="video">
-        <video id="vjs_video_3_html5_api" tabindex="-1" role="application" class="vjs-tech" loop="" muted="muted" playsinline="playsinline" autoplay="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240108/1652204_fde64927.mp4"></video>
-    </div>
-    <div id="mypage">
-    	<img id="profile-img" class="profile"
-						src="${pageContext.request.contextPath}/userupload/${user_profile}">
+	    <div id="video">
+	        <video id="vjs_video_3_html5_api" tabindex="-1" role="application" class="vjs-tech" loop="" muted="muted" playsinline="playsinline" autoplay="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240108/1652204_fde64927.mp4"></video>
+	    </div>
+	    <div id="mypage">
+	    	<div id="profile">
+	    	<img id="profile-img" class="profile" src="${pageContext.request.contextPath}/userupload/${user_profile}">
+	   		</div> 
+	   		<div id="id">${user_id}</div>
+	   		<div id="idn">${userIdn}</div>
+	    </div>
     </div>
     </div>
     <main>
