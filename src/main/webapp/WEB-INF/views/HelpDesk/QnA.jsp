@@ -181,21 +181,24 @@
         text-align: left;
     }
 
-    #qnaTable{
+    table{
         z-index: 1;
 	    position: relative;
 	    background-color: #f7f4f0;
 	    width:1100px;
 	    height:70px;
-	    border-radius: 25px;
+	    border-radius: 10px;
 	    
     }
     
-     #qnaTableTR:hover{
-      	border-radius: 25px;
-        background-color: #e7e4df;
-       
+    tr{
+    	height:50px;
     }
+    tr:hover{
+    	border-radius: 25px;
+        background-color: #e7e4df;
+    }
+    
 
     
 </style>
@@ -246,9 +249,10 @@ function QaAListDetail(index) {
         </form>
     </div>
     <br>
-    <c:forEach var="qaAList" items="${QaAList}">
+    
     <div id="qnaTable_div">
     	<table id="qnaTable">
+    		<c:forEach var="qaAList" items="${QaAList}">
     		<tr id="qnaTableTR" onclick="QaAListDetail('${qaAList.index}')">
     			<td>${qaAList.index}</td>
     			<td>${qaAList.categori}</td>
@@ -270,9 +274,11 @@ function QaAListDetail(index) {
     			<td>${qaAList.user_name}</td>
     			<td>${qaAList.date}</td>
     		</tr>
+    		
+    		</c:forEach>
     	</table>
     </div>
-    </c:forEach>
+    
     <br><br>
 </main>
 <c:import url="../footer.jsp"></c:import>
