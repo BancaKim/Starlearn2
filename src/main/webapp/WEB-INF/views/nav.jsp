@@ -132,8 +132,9 @@
 				
 				<c:if test="${user_id != null}">
 				<div class="box">
+					<a href="${pageContext.request.contextPath}/MyPage">
 					<img id="profile-img" class="profile"
-						src="${pageContext.request.contextPath}/userupload/${user_profile}">
+						src="${pageContext.request.contextPath}/userupload/${user_profile}"></a>
 					<div class="dropdown-menu" id="dropdown-menu">
 						<ul class="inner">
 							<li><a href="#">마이페이지</a></li>

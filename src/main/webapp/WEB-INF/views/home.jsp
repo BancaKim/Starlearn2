@@ -25,7 +25,7 @@
 
 	<main>
 	<div class="row g-4 mb-4">
-		<div class="itembox box1 col-3 mycol-3">
+		<div class="itembox box1 col-3 mycol-3 myhome">
 			<div id="home_my">
 				<div style="font-weight: bold; font-size:20px; padding-left:20px; margin-bottom:20px;">${user_id}님 반가워요!</div>
 				<div style="font-size:16px; color:#84888b; padding-left:20px;">${userBean.user_rank} ${userBean.user_position} ${userBean.user_dept}</div>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		
-		<div class="itembox box1 col-9">
+		<div class="itembox box1 col-9 mainhomeVideo">
 			<video id="video" data-v-2187eb61="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240524/1652204_d355685d.mp4" 
 	tabindex="-1" role="application" loop="" muted="muted" playsinline="playsinline" autoplay="">
 		</video>
@@ -52,13 +52,13 @@
 		</div>
 	</div>
 	<div class="row g-4 mb-4">
-		<div class="itembox col-3">
+		<div class="itembox col-3 today">
 			<div class="subtitle">오늘 일정</div>
 			<hr>
 			<p>일정이 없습니다.</p>
 		</div>
-		<div class="itembox col-6">                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-			<img class="hottip" src="${pageContext.request.contextPath}/resources/images/yeonsu.png">
+		<div class="itembox col-6 now">                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+			<img  src="${pageContext.request.contextPath}/resources/images/yeonsu.png">
 		</div>
 		<div class="itembox col-3 training-status">
 			<div class="title-area">
@@ -99,24 +99,28 @@
 			</div>
 		</div>
 	</div>
-	<div class="row g-4 mb-4">
-		<div class="itembox col-3">
-			<img class="hottip" src="${pageContext.request.contextPath}/resources/images/hottip.png">
-
+	<div class="row g-4 mb-4 ">
+		<div class="itembox col-3 hottip">
+			<img src="${pageContext.request.contextPath}/resources/images/hottip.png">
 		</div>
 		<div class="itembox col-9 cloud">
 			<img class="hrdcloud" src="${pageContext.request.contextPath}/resources/images/hrdcloud.jpg">
 		</div>
 	</div>
 	
-	<div class="row g-4 mb-4">
-		<div class="itembox col-3 sslNote">
-			<img class="badge" src="${pageContext.request.contextPath}/resources/images/badge.jpg">
+	
+	
+	<div class="row g-4 mb-4 nonono">
+		<div class="itembox col-3 badgediv">
+			<img id="badgeimg" src="${pageContext.request.contextPath}/resources/images/badge.jpg">
 		</div>
 		<div class="itembox col-9 sslNote">
-			<img class="ssl" src="${pageContext.request.contextPath}/resources/images/ssl.png">
+			<img src="${pageContext.request.contextPath}/resources/images/ssl.png">
 		</div>
 	</div>	
+	
+	
+	
 	<div class="bottom-button">
 			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/hottipicon.png">
 			<img class="bottom-icon" src="${pageContext.request.contextPath}/resources/images/sslicon.png">

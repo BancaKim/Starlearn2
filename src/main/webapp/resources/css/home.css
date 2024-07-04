@@ -27,14 +27,14 @@ main {
 .itembox {
 	border-radius:24px;
 	background-color: #fff;
-    overflow: hidden; /* 이미지가 박스 밖으로 나가지 않도록 */
+    overflow: hidden; /* �씠誘몄�媛� 諛뺤뒪 諛뽰쑝濡� �굹媛�吏� �븡�룄濡� */
 /*     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;  */
 }
 .row:last-child .itembox {
-    height: 100px; /* 또는 원하는 높이 */
+    height: 100px; /* �삉�뒗 �썝�븯�뒗 �넂�씠 */
 }
 
 .box1{
@@ -101,8 +101,13 @@ main {
 	 border-radius: 24px;
 	
 }
-.col-9{
-	border-color : transparent;
+
+
+.col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+    
+
 }
 .mycol-3{
 	text-align:left;
@@ -110,9 +115,7 @@ main {
 .cloud{
 
 }
-.badge{
-	object-fit:contain;
-}
+
 .sslNote{
 	height:600px;
 }
@@ -157,3 +160,44 @@ a{
  	padding-left:170px;
 
  }
+.mainhomeVideo{
+	border:7px solid #f7f4f0
+}
+.myhome{
+	border:7px solid #f7f4f0
+}
+.today{
+	border:7px solid #f7f4f0
+}
+.now{
+	border:7px solid #f7f4f0
+}
+.training-status{
+	border:7px solid #f7f4f0
+}
+.hottip{
+	border:7px solid #f7f4f0
+}
+.cloud{
+	border:7px solid #f7f4f0
+}
+.badge{
+	border:7px solid #f7f4f0;
+	 border-radius: 24px;
+}
+.sslNote{
+	border:7px solid #f7f4f0
+}
+img{
+	border-color:transparent;
+}
+.nonono{
+	 border-radius: 24px;
+}
+.badgeimg{
+	width:350px;
+}
+.badgediv{
+	border-radius: 24px;
+	border:7px solid #f7f4f0;
+}
