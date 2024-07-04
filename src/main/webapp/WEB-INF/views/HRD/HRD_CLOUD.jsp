@@ -168,7 +168,7 @@
 
     .swiper {
       width:1550px;
-      height: 200px;
+      height: 230px;
       margin: 20px auto;
     }
 
@@ -207,6 +207,10 @@
 		font-weight: bold;
 		text-align:left;
 	}
+	 .datetext{
+    	font-size: 12px;
+    	color: #84888b;
+    }
 </style>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -287,42 +291,58 @@
 	    <div class="swiper-slide">
 	    	<a href="https://www.youtube.com/watch?v=cbuZfY2S2UQ&t=3635s">
 	    	<img id="thum"src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240502/049252c897754aa5a0df/Thumbnails/1652204_24733cfd95d54e118d29.PNG" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-	    	</a>
+	    	</a><br>
+	    	<div>[이슈]저작권 어디까지 되나?</div>
+			<div class="datetext">2024.07.04</div>
 	    </div>
 	    <div class="swiper-slide">
 	    	<a href="https://www.youtube.com/watch?v=kWiCuklohdY">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240619/01fc779c14a84282bc7c/Thumbnails/3835551_080ff717dab54883b37a.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[이슈]정상회담 이슈정리</div>
+			<div class="datetext">2022.05.04</div>
 		</div>
 	    <div class="swiper-slide">
 	   		 <a href="https://www.youtube.com/watch?v=qspWEqvsJ5I">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1011004.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[노후]올바른 노후생활</div>
+			<div class="datetext">2024.05.04</div>
 		</div>
 		<div class="swiper-slide">
 			 <a href="https://www.youtube.com/watch?v=qMwzWk81tVM&t=7s">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240610/9c39d49601bf46328618/Thumbnails/2840534_45d8ee7c7b254caf8703.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[자산]생활비 감축하기!!</div>
+			<div class="datetext">2024.03.11</div>
 		</div>
 	  	<div class="swiper-slide">
 	  		 <a href="https://www.youtube.com/watch?v=KMErwuu5q5Q">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240618/18f15151b29a47eca0f7/Thumbnails/2853390_e39463243ae54441adce.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[보험]생명보험 파헤치기</div>
+			<div class="datetext">2024.01.04</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=4WTxn1hcsaI">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240701/2f6bdb11260b4d478416/Thumbnails/1653886_953a25bca8904d8a911d.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[사고]보이스 피싱:걸려온 전화</div>
+			<div class="datetext">2024.01.08</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=IVlbmAcJqdY">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1037021.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[문화]다같이 존중, 다함께</div>
+			<div class="datetext">2024.06.24</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=VleN8IpK2xA">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240627/a0652402eab4475494b6/Thumbnails/1653167_64fed78999d2450a8674.PNG" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[문화]검은돈의 유혹!</div>
+			<div class="datetext">2023.05.04</div>
 		</div>
 		</div>
 		<div class="swiper-button-next"></div>
@@ -394,42 +414,58 @@
 	    <div class="swiper-slide">
 	    	<a href="https://www.youtube.com/watch?v=cbuZfY2S2UQ&t=3635s">
 	    	<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240701/df0e330b442a4a3582ef/Thumbnails/5292737_f945faf3e5804d30afa8.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-	    	</a>
+	    	</a><br>
+	    	<div>[보험]사고사는 어디까지?</div>
+			<div class="datetext">2024.03.04</div>
 	    </div>
 	    <div class="swiper-slide">
 	    	<a href="https://www.youtube.com/watch?v=kWiCuklohdY">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1010878.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[리브엠]리브엠 파헤치기!</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 	    <div class="swiper-slide">
 	   		 <a href="https://www.youtube.com/watch?v=qspWEqvsJ5I">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1022099.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[은실종]은실종 예상문제</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 		<div class="swiper-slide">
 			 <a href="https://www.youtube.com/watch?v=qMwzWk81tVM&t=7s">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1010855.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[은실종]은실종 예상문제</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 	  	<div class="swiper-slide">
 	  		 <a href="https://www.youtube.com/watch?v=KMErwuu5q5Q">
 				<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1010877.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[은실종]은실종 예상문제</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=4WTxn1hcsaI">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240701/2f6bdb11260b4d478416/Thumbnails/1653886_953a25bca8904d8a911d.0000009.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[은실종]은실종 예상문제</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=IVlbmAcJqdY">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240124/2024_jpg/img_366_204/img_366_204/1037021.jpg" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[은실종]은실종 예상문제</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 		<div class="swiper-slide">
 			<a href="https://www.youtube.com/watch?v=VleN8IpK2xA">
 			<img id="thum" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/cms/20240627/a0652402eab4475494b6/Thumbnails/1653167_64fed78999d2450a8674.PNG" class="kb-thumb-list v-lazy-image v-lazy-image-loaded">
-			</a>
+			</a><br>
+	    	<div>[은실종]은실종 예상문제</div>
+			<div class="datetext">2024.07.04</div>
 		</div>
 		</div>
 		<div class="swiper-button-next"></div>
