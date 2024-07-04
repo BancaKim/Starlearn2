@@ -51,7 +51,7 @@
 		<td bgcolor="gray">직급
 		<td>
 		<select name="user_rank" id="userRank">
-			<option value="">직급을 선택하세요</option>
+			<option selected disabled>직급을 선택하세요</option>
 			<option value="L0">L0</option>
 			<option value="L1">L1</option>
 			<option value="L2">L2</option>
@@ -62,7 +62,17 @@
 		</tr>
 		<tr> 
 		<td bgcolor="gray">직위 
-		<td> <input type="text" name="user_position" id="userPosition" size="20"> </td>
+		<td> 
+			<select name="user_position" id="userPosition">
+				<option selected disabled>직위을 선택하세요</option>
+				<option value="계장">계장</option>
+				<option value="대리">대리</option>
+				<option value="과장">과장</option>
+				<option value="차장">차장</option>
+				<option value="수석차장">수석차장</option>
+				<option value="임원">부점장</option>
+			</select>
+		</td>
 		</tr>
 		<tr> 
 		<td bgcolor="gray">부서 

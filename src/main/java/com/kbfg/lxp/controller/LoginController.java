@@ -13,8 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 import com.kbfg.lxp.course.CourseCommand;
 import com.kbfg.lxp.course.CourseViewBooked;
+import com.kbfg.lxp.course.CountCourseCommand;
 import com.kbfg.lxp.user.command.UserAddCommand;
 import com.kbfg.lxp.user.command.UserLoginCommand;
 
@@ -27,7 +29,11 @@ public class LoginController {
 
 	@Autowired UserLoginCommand userLoginCommand;
 	@Autowired UserAddCommand userAddCommand;
+
 	private CourseCommand command;
+	@Autowired CountCourseCommand countCourseCommand;
+
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
@@ -84,6 +90,7 @@ public class LoginController {
 	
 	@RequestMapping("/MyPage")
 	public String MyPage(HttpServletRequest request, Model model) {
+
 	
 	model.addAttribute("request", request);
 	System.out.println("courseViewBooked();");
@@ -95,7 +102,7 @@ public class LoginController {
 		e.printStackTrace();
 	}
 			
-	return "myPage";
+
 	}
 
 }
