@@ -36,9 +36,8 @@ public class UserLoginCommand implements Command {
 		} else {
 			userBean = userDao.getUserData(user_id);
 
-			
-			 String userIdn = userDao.getUserIdn(user_id); String user_profilePath =
-			 userDao.getUserProfileImage(user_id);
+			 String userIdn = userDao.getUserIdn(user_id); 
+			 String user_profilePath = userDao.getUserProfileImage(user_id);
 
 			 HttpSession session = request.getSession();
 

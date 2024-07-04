@@ -21,6 +21,7 @@ main {
     text-align: center;
 	margin: 100px auto 0; 
     background-color: #f7f4f0;
+    font-family: 'NanumSquareRound';
 }
 
 .itembox {
@@ -64,24 +65,36 @@ main {
 	background:linear-gradient(-51deg,#88b530,#99c93c);
 	color:#fff;
 	font-family: 'NanumSquareRound';
+/* 	height: 270px; */
 }
 
 .title-area{
 	padding-left:32px;
 	padding-right:32px;
+	margin-top:20px;
 	display:flex;
 	justify-content:space-between;
 }
-.training-status .status-wrapper ul{}
+.training-status .status-wrapper {
+	margin-top:60px;
+}
+.training-status .status-wrapper ul{
+
+}
 
 .training-status .status-wrapper ul li{
 	list-style:none;
-
+	margin-bottom:20px;
 }
 
 .training-status .status-wrapper ul li .status-inner{
 	display:flex;
 	justify-content:space-between;
+}
+
+.training-status .status-wrapper ul li .status-inner .training-inner{
+	display:flex;
+	align-items:center;
 }
 
 #video{
