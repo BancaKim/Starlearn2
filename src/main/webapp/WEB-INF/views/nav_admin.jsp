@@ -122,7 +122,7 @@
 		</nav>
 	</header>
 
-	<script>
+	<!-- <script>
 		document
 				.getElementById('profile-img')
 				.addEventListener(
@@ -148,7 +148,7 @@
 				}
 			}
 		}
-	</script>
+	</script> -->
 
 </body>
 </html>
