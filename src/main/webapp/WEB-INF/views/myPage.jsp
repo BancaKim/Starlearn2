@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>마이페이지</title>
+<title>스타런</title>
 <style>
     @font-face {
         font-family: 'NanumSquareRound';

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>QnA</title>
+<title>스타런</title>
 	<c:choose>
 		<c:when test="${user_id == 'admin'}">
 			<c:import url="../nav_admin.jsp"></c:import>

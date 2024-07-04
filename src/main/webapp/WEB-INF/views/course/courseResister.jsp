@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KB 스타런</title>
+<title>스타런</title>
 <style>
 body{
  font-family: 'NanumSquareRound';

@@ -22,7 +22,7 @@
 	crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath}/resources/css/nav.css"
 	rel="stylesheet">
-<title>KB 스타런</title>
+<title>스타런</title>
 </head>
 <body>
 	<header>

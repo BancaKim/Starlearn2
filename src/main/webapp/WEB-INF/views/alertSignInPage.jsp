@@ -12,12 +12,12 @@
     <script>
         Swal.fire({
             icon: 'warning',
-            title: '회원가입 오류',
+            title: '로그인 실패',
             text: '${message}',
             confirmButtonText: '확인',
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = '${pageContext.request.contextPath}/signUp';
+                window.location.href = '${pageContext.request.contextPath}/home';
             }
         });
     </script>
