@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>스타런</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adminMain.css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adminUserList.css"/>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
@@ -33,6 +33,7 @@
 	                	<th scope="col">부서</th>
 	                	<th scope="col">입사년도</th>
 	               		<th scope="col">관리자 여부</th>
+	               		<th scope="co1">비고</th>
 	           		 </tr>
 	      			 </thead>
      			<tbody>
@@ -49,6 +50,9 @@
 				  			<td>${ul.user_dept}</td>
 				  			<td>${ul.user_enrollYear}</td>	
 				  			<td>${user.user_isAdmin == 1 ? '관리자' : '일반 사용자'}</td>
+				  			<td>
+				  				<a href="${pageContext.request.contextPath}/admin/adminDelete?user_id=${ul.user_id}"><button type="button" class="btn btn-danger">삭제</button></a>
+				  			</td>
 						</tr>
 					</c:forEach>
 				</tbody>

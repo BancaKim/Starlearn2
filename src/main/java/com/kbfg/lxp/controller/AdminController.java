@@ -1,7 +1,6 @@
 package com.kbfg.lxp.controller;
 
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.kbfg.lxp.admin.command.AdminChartsCommand;
 import com.kbfg.lxp.admin.command.AdminChartsRankCommand;
+import com.kbfg.lxp.admin.command.AdminUserDeleteCommand;
 import com.kbfg.lxp.admin.command.AdminUserListCommand;
 import com.kbfg.lxp.admin.command.RepalyInsertCommand;
 
@@ -23,17 +23,18 @@ public class AdminController {
 	@Autowired AdminChartsCommand adminChartsCommand;
 	@Autowired AdminChartsRankCommand adminChartsRankCommand;
 	@Autowired AdminUserListCommand adminUserListCommand;
+	@Autowired AdminUserDeleteCommand adminUserDeleteCommand;
+	
 
 	@RequestMapping("/adminMain")
 	public String adminMain(Model model) {
 		return "admin/adminMain";
 	}
 	
-
 	@RequestMapping("/adminReplay")
 	public String replayInsert(Model model) {
 		return "admin/replay";
-	}
+		}
 
 	@RequestMapping("/adminCharts")
 	public String adminCharts(Model model) {
@@ -47,5 +48,13 @@ public class AdminController {
 		adminUserListCommand.execute(model);
 		return "admin/adminUserList";
 
+	}
+	
+	
+	@RequestMapping("/adminDelete")
+	public String adminDelete(HttpServletRequest request, Model model) {
+		model.addAttribute("request",request);
+		adminUserDeleteCommand.execute(model);
+		return "redirect:adminUserList";
 	}
 }

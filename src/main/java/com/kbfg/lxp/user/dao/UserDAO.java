@@ -118,10 +118,9 @@ public class UserDAO {
         }
     }
 
-    public boolean userDelete(String user_id) {
+    public void userDelete(String user_id) {
         String sql = "DELETE FROM user WHERE user_id = ?";
-        int result = template.update(sql, user_id);
-        return result > 0;
+        template.update(sql, user_id);
     }
     
     public String getUserIdn(String user_id) {
