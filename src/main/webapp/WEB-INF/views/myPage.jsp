@@ -158,9 +158,10 @@
     }
     
     .downimage{
-	position:absolute;
-	bottom:-200px;
-	left: 100px;'   
+	position:relative;
+	bottom:-250px;
+ /* 	left: 100px;  */
+	width:1000px; 
     }
     
 </style>
@@ -251,7 +252,7 @@
             </div>
         </div>
     		<div>
-       <img class="downimage" src="${pageContext.request.contextPath}/resources/images/chart.png"><br>
+       <img class="downimage" src="${pageContext.request.contextPath}/resources/images/star_friends.png"><br>
     	</div>
     </main>
    
