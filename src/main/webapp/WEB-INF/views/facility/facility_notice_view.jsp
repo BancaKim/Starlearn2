@@ -47,7 +47,6 @@
                    		<li>
                         	<span class="notice-num">${list.facility_notice_num}</span>
                             <a href="content_view?num=${list.facility_notice_num}" class="notice-title">${list.facility_notice_title}</a>
-                            <span class="notice-date">${list.facility_notice_content}</span>
                             <span class="notice-date">${list.facility_notice_rolldate}</span>
                             <span class="notice-views">${list.facility_notice_hit} 조회</span>
                     	</li>

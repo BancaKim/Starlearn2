@@ -18,6 +18,7 @@
 	
 	<main>
 		<div class="container">
+
 	        <div class="instructions">
 	            <h1>신청 안내</h1>
 	            <div>

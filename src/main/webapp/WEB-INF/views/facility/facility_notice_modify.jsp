@@ -14,10 +14,24 @@
 </head>
 
 <body>
+	<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="../nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="../nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>
 <!-- 게시판 수정 -->
-<form action="${pageContext.request.contextPath}/facility/noticeModifyAction?num=${noticedata.facility_notice_num}" method="post" name="modifyform">
-<input type="hidden" name="facility_notice_num" value="${noticedata.facility_notice_num}">
-<table cellpadding="0" cellspacing="0">
+	<main>
+         <div class="breadcrumbs">
+            <a href="#">홈</a> &gt; <a href="#">생활연수</a> &gt; 공지사항
+        </div>
+		<form action="${pageContext.request.contextPath}/facility/noticeModifyAction?num=${noticedata.facility_notice_num}" method="post" name="modifyform">
+		<input type="hidden" name="facility_notice_num" value="${noticedata.facility_notice_num}">
+		
+		
+	<table>
 	<tr align="center" valign="middle">
 		<td colspan="5">MVC 게시판</td>
 	</tr>
@@ -68,6 +82,14 @@
 </table>
 </form>
 <!-- 게시판 수정 -->
+		
+		
+		
+		
+		
+	</main>
+
+
 </body>
 
 
