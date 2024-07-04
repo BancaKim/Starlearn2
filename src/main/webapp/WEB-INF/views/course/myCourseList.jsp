@@ -31,6 +31,7 @@ body {
 main {
 	text-align: center;
 	margin: 200px auto 0; /* Center align horizontally */
+	width:1400px;
 }
 
 #title {
@@ -205,6 +206,7 @@ td:first-child {
 .main {
 	text-align: center;
 	background-color: white;
+	width:1400px;
 }
 
 .subject {
@@ -260,7 +262,7 @@ table tr td {
 </head>
 <body>
 	<main>
-		<div id="title">지원신청 현황 조회</div>
+		<div id="title">연수신청 현황 조회</div>
 		<br>
 
 
@@ -297,7 +299,7 @@ table tr td {
 
 
 								<td><a
-									href="applyCancelView?course_ref=${myCourseList.user_course_ref}"
+									href="applyCancelView?course_ref=${myCourseList.course_ref}"
 									id="detail-btn" class="button-link">불참(취소)/회차변경</a></td>
 							</tr>
 						</c:forEach>

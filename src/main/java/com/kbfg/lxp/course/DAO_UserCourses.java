@@ -55,6 +55,14 @@ public class DAO_UserCourses {
         String query = "DELETE FROM UserCourses WHERE user_course_ref = ?";
         template.update(query, user_course_ref);
     }
+    
+ // 등록 취소 -> progress_status 를 "취소"로 update
+    public void cancelUserCourse(String user_idn, String course_ref) {
+        System.out.println("user_idn"+user_idn);
+        System.out.println("course_ref"+course_ref);
+    	String query = "UPDATE UserCourses SET course_status = '취소' WHERE user_idn = ? AND course_ref = ?;";
+        System.out.println("취소건: "+template.update(query, user_idn, course_ref));
+    }
 
     // List all user courses
     public List<DTO_UserCourses> getAllUserCourses() {
@@ -86,6 +94,39 @@ public class DAO_UserCourses {
             userCourse.setApproval_status(rs.getString("approval_status"));
             return userCourse;
         }
-    }    
+    }
+
+	public int countIng(String userIdn) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) from UserCourses where user_idn=? and approver=0; ";
+	    try {
+	        return template.queryForObject(sql, Integer.class,userIdn);
+	    } catch (Exception e) {
+	        System.out.println("countIng");
+	        return 0;
+	    }
+	}
+
+	public int countFuture(String userIdn) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) from UserCourses where user_idn=? and approver=1; ";
+	    try {
+	        return template.queryForObject(sql, Integer.class,userIdn);
+	    } catch (Exception e) {
+	        System.out.println("countFuture");
+	        return 0;
+	    }
+	}
+
+	public int countFinish(String userIdn) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT count(*) from UserCourses where user_idn=? and approver=2; ";
+	    try {
+	        return template.queryForObject(sql, Integer.class,userIdn);
+	    } catch (Exception e) {
+	        System.out.println("countFinish");
+	        return 0;
+	    }
+	}    
 
 }

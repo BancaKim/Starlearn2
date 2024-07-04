@@ -19,7 +19,7 @@
 .one-main {
 	font-family: 'NanumSquareRound', Arial, sans-serif;
 	padding: 10px 20px;
-	border: 0.2px solid #000000;
+	
 }
 
 .one-main-header-row {
@@ -108,10 +108,11 @@ style>.narrow_margin p {
 </head>
 <body>
 	<c:import url="../nav.jsp"></c:import>
-	<main style="margin: 100px auto 0;">
+	<main style="margin: 100px auto 0; width:1400px;">
 		<div class="one-main">
+			<br><br>
 			<div>
-				<h4 style="text-align: 80px;">진행 중 연수</h4>
+				<h4 style="text-align: 80px;  font-weight:bold;">진행 중 연수</h4>
 			</div>
 			<c:forEach var="myCourse" items="${applyCourseList}">
 				<div class="card d-flex flex-row mx-auto w-80 parent">
@@ -120,7 +121,7 @@ style>.narrow_margin p {
 						alt="Placeholder Image">
 
 					<div class="card-body">
-						<h5 class="card-title">${myCourse.course_name}</h5>
+						<h5 class="card-title" style="font-weight:bold; font-size:30px; ">${myCourse.course_name}</h5>
 						<p></p>
 						<p>${myCourse.course_summary}</p>
 						<p>${myCourse.operating_firm}</p>

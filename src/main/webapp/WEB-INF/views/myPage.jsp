@@ -196,7 +196,7 @@
                 <div id="menu">
                     <div class="menu-item"> 대시보드 </div>
                     <div class="menu-item" onclick="goCourse()"> 연수신청</div>
-                    <div class="menu-item" onclick="goFacility()"> 생환연수</div>
+                    <div class="menu-item" onclick="goFacility()"> 생활연수</div>
                     <div class="menu-item" onclick="goTuition_refund()"> 학습비 지원</div>
                 </div>
             </div>
@@ -212,7 +212,7 @@
                         </svg>
                     </div>
                     <div class="text">
-                        <div class="count">1개</div>
+                        <div class="count">${ing}개</div>
                         <div class="description">진행중 연수</div>
                     </div>          
                 </div>
@@ -225,7 +225,7 @@
                         </svg>
                     </div>
                     <div class="text">
-                        <div class="count">1개</div>
+                        <div class="count">${future}개</div>
                         <div class="description">예정된 연수</div>
                     </div>  
                 </div>
@@ -237,7 +237,7 @@
                         </svg>
                     </div>
                     <div class="text">
-                        <div class="count">1개</div>
+                        <div class="count">${finish}개</div>
                         <div class="description">완료된 연수</div>
                     </div>
                 </div>          
