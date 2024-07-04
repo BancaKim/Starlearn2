@@ -4,7 +4,7 @@ courseView.jsp<%@ page language="java"
 
 <html>
 <head>
-<title>내가 수강한 연수 조회</title>
+<title>스타런</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"

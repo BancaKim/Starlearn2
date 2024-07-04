@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HRD CLOUD</title>
+<title>스타런</title>
 
 <style>
      @font-face {

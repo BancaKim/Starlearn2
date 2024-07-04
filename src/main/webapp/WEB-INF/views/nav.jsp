@@ -22,7 +22,22 @@
 	crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath}/resources/css/nav.css"
 	rel="stylesheet">
-<title>KB 스타런</title>
+    <script>
+        var isLoggedIn = ${not empty sessionScope.user_id};
+        var contextPath = "${pageContext.request.contextPath}";
+
+        function checkLoginStatus() {
+            if (!isLoggedIn) {
+                window.location.href = contextPath + "/home";
+            }
+        }
+
+        window.onload = checkLoginStatus;
+    </script>
+<script>
+	
+</script>
+<title>스타런</title>
 </head>
 <body>
 	<header>

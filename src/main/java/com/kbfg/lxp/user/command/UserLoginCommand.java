@@ -34,7 +34,7 @@ public class UserLoginCommand implements Command {
 		if (isUser == false) {
 			model.addAttribute("isConfirm","no");
 			model.addAttribute("message","비밀번호가 일치하지 않습니다.");
-			model.addAttribute("nextPage", "signIn");
+			model.addAttribute("nextPage", "alertSignInPage");
 		} else {
 			userBean = userDao.getUserData(user_id);
 

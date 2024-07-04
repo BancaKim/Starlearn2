@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KB 스타런</title>
+<title>스타런</title>
 <style>
 .date-input {
 	width: 300px; /* 원하는 넓이로 설정 */
