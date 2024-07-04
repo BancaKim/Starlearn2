@@ -13,10 +13,10 @@ import org.springframework.ui.Model;
 import com.kbfg.lxp.Command;
 import com.kbfg.lxp.HelpDesk.Dao.HelpDeskDao;
 import com.kbfg.lxp.HelpDesk.Dto.HelpDeskDto;
+import com.kbfg.lxp.admin.dao.AdminReplayDAO;
+import com.kbfg.lxp.admin.dto.AdminReplayBean;
 import com.kbfg.lxp.tuition_refund.dao.Tuition_refundDao;
-import com.kbfg.lxp.tuition_refund.dto.Tuition_refundDto;
 import com.kbfg.lxp.user.dao.UserDAO;
-import com.kbfg.lxp.user.dto.UserBean;
 
 @Component
 public class QaAListDetailCommand implements Command  {
@@ -25,6 +25,9 @@ public class QaAListDetailCommand implements Command  {
 	@Autowired UserDAO userDao;
 	@Autowired HelpDeskDao helpDeskDao;
 	@Autowired HelpDeskDto helpDeskDto;
+	@Autowired AdminReplayBean adminReplayBean;
+	@Autowired AdminReplayDAO adminReplayDao;
+	
 	@Override
 	public void execute(Model model) {
 		// TODO Auto-generated method stub
@@ -34,8 +37,14 @@ public class QaAListDetailCommand implements Command  {
 
 		String index = request.getParameter("index");
 		List<HelpDeskDto> QaAListDetail = helpDeskDao.QaAListDetail(index);
-
+		List<AdminReplayBean> QaAReplay = adminReplayDao.QaAReplay(index);
+		
+		
+		
 		model.addAttribute("QaAListDetail", QaAListDetail);
+		model.addAttribute("replay", QaAReplay);
+		model.addAttribute("index", index);
+		model.addAttribute("name", "°ü¸®ÀÚ");
 
 	}
 }

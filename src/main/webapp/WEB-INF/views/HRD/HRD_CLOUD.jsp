@@ -160,7 +160,8 @@
         <video id="vjs_video_3_html5_api" tabindex="-1" role="application" class="vjs-tech" loop="" muted="muted" playsinline="playsinline" autoplay="" src="https://lxpcms-ncloud.cdn.ntruss.com/contents/hmpg/baner/thumb/20240108/1652204_fde64927.mp4"></video>
     </div>
     <div id="mypage">
-    	
+    	<img id="profile-img" class="profile"
+						src="${pageContext.request.contextPath}/userupload/${user_profile}">
     </div>
     </div>
     <main>
