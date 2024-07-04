@@ -70,8 +70,6 @@
 						</div>
 					</li>
 					<li class="item">
-						<a href="${pageContext.request.contextPath}/admin/adminCharts"><span class="item__name">[관리자]스타런분석</span></a>
-
 						<div class="item__name">[관리자]스타런분석</div>
 						<div class="item__contents">
 							<div class="contents__menu">
