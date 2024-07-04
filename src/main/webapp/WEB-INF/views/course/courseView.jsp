@@ -179,7 +179,7 @@ body {
 <body>
 
 	<c:import url="../nav.jsp"></c:import>
-	<main style="margin: 100px auto 0;" /* Center align horizontally * />
+	<main style="margin: 100px auto 0;">
 
 	<div class="one-main">
 		<!-- <p>one-main</p> -->

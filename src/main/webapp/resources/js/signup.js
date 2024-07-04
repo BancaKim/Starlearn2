@@ -28,7 +28,7 @@ function id() {
     var id = document.getElementById("id");
 
     if (id.value.length < 4 || id.value.length > 12) {
-        alert("4~12자로 입력해주세요");
+        alert("아이디를 4~12자로 입력해주세요");
         id.value = "";
         id.focus();
         return 0;
@@ -51,7 +51,7 @@ function pw() {
     var pw = document.getElementById("password");
 
     if (pw.value.length < 4 || pw.value.length > 12) {
-        alert("4~12자로 입력해주세요");
+        alert("비밀번호를 4~12자로 입력해주세요");
         pw.value = "";
         pw.focus();
         return 0;
@@ -143,10 +143,10 @@ function dept() {
 }
 
 function phone() {
-    var phone = document.getElementById("user_ph");
+    var phone = document.getElementById("ph");
 
     if (phone.value == "") {
-        alert("직위를 입력해주세요.");
+        alert("핸드폰번호를 입력해주세요.");
         phone.value = "";
         phone.focus();
         return 0;

@@ -47,6 +47,20 @@ public class UserDAO {
         return result > 0;
     }
 	
+	public boolean hasIdn(String user_idn) {
+		String sql = "SELECT COUNT(*) FROM user WHERE user_idn=?";
+		int result=0;
+		
+		try {
+			result = template.queryForObject(sql, Integer.class, user_idn);
+		} catch (EmptyResultDataAccessException e) {
+			return false;
+		}
+		
+		System.out.println("hasIdn result:"+result);
+		return result > 0;
+	}
+	
 	public boolean insertUser(UserBean userdata) {
 
 		String sql = "INSERT INTO user (user_id, user_name, user_pw, user_idn, user_rank, user_position, user_dept, user_ph, user_birthYear, user_birthMonth, user_birthDay, user_enrollYear, user_profile, user_isAdmin) " +

@@ -53,45 +53,46 @@
 	</div>
 	<div class="row g-4 mb-4">
 		<div class="itembox col-3">
-			<div class="subtitle">오늘</div> 일정
+			<div class="subtitle">오늘 일정</div>
+			<hr>
+			<p>일정이 없습니다.</p>
 		</div>
-		<div class="itembox col-6">
-			<div class="subtitle">지금 주목할 연수</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-			
+		<div class="itembox col-6">                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+			<img class="hottip" src="${pageContext.request.contextPath}/resources/images/yeonsu.png">
 		</div>
 		<div class="itembox col-3 training-status">
 			<div class="title-area">
 				<div class="titles">
-					<h2>연수현황</h2>
+					<h3>연수현황</h3>
 				</div>
 			</div>
 			<div class="status-wrapper">
 				<ul class="status-list">
 					<li class="status-item">
 						<div class="status-inner">
-							<div>
-							<i class="fa-regular fa-clock"></i>
-							<h3>진행중 연수</h3>
+							<div class="training-inner">
+							<i class="fa-regular fa-clock"></i>&nbsp;
+							<h5>진행중 연수</h5>
 							</div>
-							<i class="fa-solid fa-chevron-right"></i>
+							<a href="${pageContext.request.contextPath}/course/courseView"><i class="fa-solid fa-chevron-right"></i></a>
 						</div>
 					</li>
 					<li class="status-item">
 						<div class="status-inner">
-							<div>
-							<i class="fa-regular fa-circle-play"></i>
-							<h3>예정된 연수</h3>
+							<div class="training-inner">
+							<i class="fa-regular fa-circle-play"></i>&nbsp;
+							<h5>예정된 연수</h5>
 							</div>
-							<i class="fa-solid fa-chevron-right"></i>
+							<a href="${pageContext.request.contextPath}/course/courseViewBooked"><i class="fa-solid fa-chevron-right"></i></a>
 						</div>
 					</li>
 					<li class="status-item">
 						<div class="status-inner">
-							<div>
-							<i class="fa-regular fa-circle-check"></i>
-							<h3>완료된 연수</h3>
+							<div class="training-inner">
+							<i class="fa-regular fa-circle-check"></i>&nbsp;
+							<h5>완료된 연수</h5>
 							</div>
-							<i class="fa-solid fa-chevron-right"></i>
+							<a href="#"><i class="fa-solid fa-chevron-right"></i></a>
 						</div>
 					</li>
 				</ul>
