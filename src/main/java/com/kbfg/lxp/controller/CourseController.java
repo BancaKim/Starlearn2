@@ -18,6 +18,7 @@ import com.kbfg.lxp.course.CourseResisterAction;
 import com.kbfg.lxp.course.CourseViewAction;
 import com.kbfg.lxp.course.CourseViewBooked;
 import com.kbfg.lxp.course.MyCourseList;
+import com.kbfg.lxp.course.StaticActionL3;
 import com.kbfg.lxp.course.UserCourseResisterAction;
 import com.kbfg.lxp.user.util.Constant;
 
@@ -161,6 +162,20 @@ public class CourseController {
 		command.execute(model);
 
 		return "redirect:courseView";
+	}
+	
+	
+	
+	@RequestMapping("/courseStatic")
+	public String courseStatic(HttpServletRequest request, Model model) throws Exception {
+
+		model.addAttribute("request", request);
+		System.out.println("courseStatic();");
+
+		command = new StaticActionL3();
+		command.execute(model);
+
+		return "course/courseStatic";
 	}
 
 }
