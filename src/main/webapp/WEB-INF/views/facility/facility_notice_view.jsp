@@ -12,7 +12,14 @@
     
 </head>
 <body>
-	<c:import url="../nav.jsp"></c:import>
+	<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="../nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="../nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>
 	
 	  <main>
         <div class="container">
@@ -22,7 +29,9 @@
             <h1>공지사항</h1>
             
             <c:if test="${sessionScope.user_id == 'admin'}">
-            	<a href="notice_write"><button>글쓰기</button></a>
+            	<a href="notice_write">
+            	<button type="button" class="btn btn-outline-secondary">글쓰기</button>
+            	</a>
             </c:if>
             
             <div class="search-container">
@@ -38,7 +47,6 @@
                    		<li>
                         	<span class="notice-num">${list.facility_notice_num}</span>
                             <a href="content_view?num=${list.facility_notice_num}" class="notice-title">${list.facility_notice_title}</a>
-                            <span class="notice-date">${list.facility_notice_content}</span>
                             <span class="notice-date">${list.facility_notice_rolldate}</span>
                             <span class="notice-views">${list.facility_notice_hit} 조회</span>
                     	</li>

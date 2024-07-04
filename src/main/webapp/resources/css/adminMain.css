@@ -14,11 +14,12 @@ body {
 }
 
 main {
+    font-family: 'NanumSquareRound';
 	width:1200px;
 	padding-left: 160px;
     padding-right: 160px;
     text-align: center;
-	margin: 150px auto 0; Center align horizontally 
+	margin: 150px auto 0; 
   	background-color: #f7f4f0;
 }
 

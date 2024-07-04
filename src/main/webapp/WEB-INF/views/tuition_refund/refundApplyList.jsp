@@ -35,6 +35,16 @@
         font-size: 32px;
         font-weight: bold;
     }
+        #year {
+        display: none; /* 초기에는 숨겨진 상태 */
+        height: 70px;
+        background-color: #f7f4f0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px; /* 상단 여백 추가 */
+    }
     
     #menu {
         padding: 8px;
@@ -63,16 +73,7 @@
         width: 150px;
     }
     
-    #year {
-        display: none; /* 초기에는 숨겨진 상태 */
-        height: 70px;
-        background-color: #f7f4f0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px; /* 상단 여백 추가 */
-    }
+
     
     .menu-item.vertical-middle {
         display: flex;
@@ -270,7 +271,7 @@
     
     <div id="yesterdayRefundTable">
         <br><br>
-        <div class="header">학원비 신청 이력</div>
+        <div class="header">현재 신청 이력</div>
         <br>
         <div class="info">
             <div>${RefundApplyCount}건</div>

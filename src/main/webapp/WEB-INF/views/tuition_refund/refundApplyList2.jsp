@@ -256,6 +256,9 @@
     function RefundList(){
     	window.location.href = "${pageContext.request.contextPath}/tuition_refund/refundApplyList";
     }
+    function detail(tuition_index) {
+        window.location.href = "${pageContext.request.contextPath}/tuition_refund/RefundListDetail?tuition_index=" + tuition_index;
+    }
 </script>
 </head>
 <body>
@@ -317,7 +320,7 @@
 	                    </td>
 	                    <td>${refund.refund_price}</td>
 	                    <td>
-	                    	<button type="button" id="detail-btn" onclick="">
+	                    	<button type="button" id="detail-btn" onclick="detail('${refund.tuition_index}')">
 	  						상세
 							</button>
 	

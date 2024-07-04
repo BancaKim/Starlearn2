@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
@@ -20,8 +21,12 @@ public class CourseViewAction implements CourseCommand {
 	
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
-
+		HttpSession session = request.getSession();
+		
 		LocalDate today = LocalDate.now();
+		
+		System.out.println("today"+today);
+		String user_idn = (String) session.getAttribute("userIdn");
 
 		System.out.println(request.getParameter("weekDate"));
 
@@ -60,18 +65,18 @@ public class CourseViewAction implements CourseCommand {
 		List myCourseList=new ArrayList();
 		
 		CourseList= dao.list();
-		String user_idn = "1234";
+
 		
 		
 		
-		myCourseList=new ArrayList();
+		/* myCourseList=new ArrayList<DTO_UserCourses>(); */
 		myCourseList=dao.getItem(today, user_idn);
 		int itemNum = myCourseList.size();
 		
 		System.out.println("dao.list().size()"+CourseList.size());
 		System.out.println("dao.getItem().size()"+myCourseList.size());
 		
-		
+	
 		request.setAttribute("myCourseList", myCourseList);
 		request.setAttribute("itemNum", itemNum);
 	

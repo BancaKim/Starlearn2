@@ -29,6 +29,7 @@
 		<nav class="navbar">
 			<div class="left-container">
 				<a href="${pageContext.request.contextPath}/home" class="logo"> </a>
+				${user_id}
 				<ul class="main-menu">
 					<li class="item">
 						<div class="item__name">[관리자]연수관리</div>
@@ -47,18 +48,46 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href=#>회원조회</a></li>
-									<li><a href=#>회원삭제</a></li>
+									<li><a href="${pageContext.request.contextPath}/admin/adminUserList">회원조회</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
 					<li class="item">
-						<a href="#"><span class="item__name">[관리자]학원비 지원승인</span></a>
+						<a href="${pageContext.request.contextPath}/admin/adminTuition_refundList"><span class="item__name">[관리자]학원비 지원승인</span></a>
+					</li>
+							
+								
+					<li class="item">
+
+						<div class="item__name">[관리자]생활연수</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
+								</ul>
+							</div>
+						</div>
 					</li>
 					<li class="item">
-						<a href="${pageContext.request.contextPath}/admin/adminMain"><span class="item__name">[관리자]스타런분석</span></a>
+						<div class="item__name">[관리자]스타런분석</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a href="${pageContext.request.contextPath}/admin/adminCharts">직원 통계</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseStatic">연수 통계</a></li>			
+								</ul>
+							</div>
+						</div>
+
 					</li>
+					
+					
+					
+					<li class="item">
+						<a href="${pageContext.request.contextPath}/HelpDesk/QnA"><span class="item__name">[관리자]QnA 관리</span></a>
+					</li>
+					
 				</ul>
 			</div>
 			<div class="right-container">
@@ -93,7 +122,7 @@
 		</nav>
 	</header>
 
-	<script>
+	<!-- <script>
 		document
 				.getElementById('profile-img')
 				.addEventListener(
@@ -119,7 +148,7 @@
 				}
 			}
 		}
-	</script>
+	</script> -->
 
 </body>
 </html>

@@ -37,7 +37,7 @@
 								<ul class="inner">
 									<li><a
 										href="${pageContext.request.contextPath}/course/courseView">진행중인연수</a></li>
-									<li><a href=#>예정된 연수</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseViewBooked">예정된 연수</a></li>
 								</ul>
 							</div>
 						</div>
@@ -48,8 +48,8 @@
 							<div class="contents__menu">
 								<ul class="inner">
 									<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청</a></li>
-									<li><a href=#>연간연수 일정</a></li>
-									<li><a href=#>연수신청 현황조회</a></li>
+								<!-- 	<li><a href=#>연간연수 일정</a></li> -->
+									<li><a href="${pageContext.request.contextPath}/course/myCourseList">연수신청 현황조회</a></li>
 
 								</ul>
 							</div>
@@ -64,7 +64,7 @@
 									<li><a
 										href="${pageContext.request.contextPath}/HRD/HRD_CLOUD">HRD
 											클라우드</a></li>
-									<li><a href="#">SSL</a></li>
+								
 
 								</ul>
 							</div>
@@ -95,7 +95,6 @@
 									<li><a
 										href="${pageContext.request.contextPath}/facility/apply_main">생활연수
 											신청</a></li>
-									<li><a href=#>생활연수 신청내역</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
 								</ul>
@@ -107,8 +106,6 @@
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a
-										href="${pageContext.request.contextPath}/HelpDesk/HelpDeskNotice">공지사항</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/HelpDesk/QnA">Q&A</a></li>
 									<li><a
@@ -134,8 +131,9 @@
 				
 				<c:if test="${user_id != null}">
 				<div class="box">
+					<a href="${pageContext.request.contextPath}/MyPage">
 					<img id="profile-img" class="profile"
-						src="${pageContext.request.contextPath}/userupload/${user_profile}">
+						src="${pageContext.request.contextPath}/userupload/${user_profile}"></a>
 					<div class="dropdown-menu" id="dropdown-menu">
 						<ul class="inner">
 							<li><a href="#">마이페이지</a></li>
@@ -151,7 +149,7 @@
 		</nav>
 	</header>
 
-	<script>
+	<!-- <script>
 		document
 				.getElementById('profile-img')
 				.addEventListener(
@@ -177,7 +175,7 @@
 				}
 			}
 		}
-	</script>
+	</script> -->
 
 </body>
 </html>

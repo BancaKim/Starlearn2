@@ -7,7 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>QnA</title>
-<c:import url="../nav.jsp"></c:import>
+	<c:choose>
+		<c:when test="${user_id == 'admin'}">
+			<c:import url="../nav_admin.jsp"></c:import>
+		</c:when>
+		<c:otherwise>
+			<c:import url="../nav.jsp"></c:import>		
+		</c:otherwise>
+	</c:choose>
 <style>
     @font-face {
         font-family: 'NanumSquareRound';
@@ -174,21 +181,24 @@
         text-align: left;
     }
 
-    #qnaTable{
+    table{
         z-index: 1;
 	    position: relative;
 	    background-color: #f7f4f0;
 	    width:1100px;
 	    height:70px;
-	    border-radius: 25px;
+	    border-radius: 10px;
 	    
     }
     
-     #qnaTableTR:hover{
-      	border-radius: 25px;
-        background-color: #e7e4df;
-       
+    tr{
+    	height:50px;
     }
+    tr:hover{
+    	border-radius: 25px;
+        background-color: #e7e4df;
+    }
+    
 
     
 </style>
@@ -196,6 +206,10 @@
 function QnAWritePage() {
     window.location.href = "${pageContext.request.contextPath}/HelpDesk/QnAwriteView"; // 여기에 이동할 페이지의 URL을 입력합니다.
 }
+function QaAListDetail(index) {
+	  window.location.href = "${pageContext.request.contextPath}/HelpDesk/QaAListDetail?index=" + index;
+}
+
 </script>
 </head>
 <body>
@@ -224,7 +238,7 @@ function QnAWritePage() {
         <form>
             <br>
             <div style="position: relative;">
-                <span>총159건</span>
+                <span>총${QaAListCount}건</span> &nbsp;&nbsp;
                 <input type="text" id="search-area" name="search-area" placeholder="Q&A 검색">
                 <button id="search-btn" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -238,16 +252,33 @@ function QnAWritePage() {
     
     <div id="qnaTable_div">
     	<table id="qnaTable">
-    		<tr id="qnaTableTR">
-    			<td>1</td>
-    			<td>기타</td>
-    			<td>처리중</td>
-    			<td>직무필수과정 pccp</td>
-    			<td>이윤석</td>
-    			<td>2024.06.27 17:30</td>
+    		<c:forEach var="qaAList" items="${QaAList}">
+    		<tr id="qnaTableTR" onclick="QaAListDetail('${qaAList.index}')">
+    			<td>${qaAList.index}</td>
+    			<td>${qaAList.categori}</td>
+    			<td>
+    				 <c:choose>
+					    <c:when test="${qaAList.replyYN == 0}">
+					        처리중
+					    </c:when>
+					    <c:when test="${qaAList.replyYN == 1}">
+					        처리완료
+					    </c:when>
+					    <c:otherwise>
+					        기타  
+					    </c:otherwise>
+					</c:choose>
+
+    			</td>
+    			<td>${qaAList.title}</td>
+    			<td>${qaAList.user_name}</td>
+    			<td>${qaAList.date}</td>
     		</tr>
+    		
+    		</c:forEach>
     	</table>
     </div>
+    
     <br><br>
 </main>
 <c:import url="../footer.jsp"></c:import>

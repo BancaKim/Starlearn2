@@ -57,16 +57,15 @@ function RefundList(){
 	window.location.href = "${pageContext.request.contextPath}/tuition_refund/refundApplyList";
 }
 function refundApplyOk(tuition_index){
-	window.location.href = "${pageContext.request.contextPath}/";
+	window.location.href = "${pageContext.request.contextPath}/admin/refundApply?index="+tuition_index+"&YN=1";
+	
 }
 function refundApplyNo(tuition_index){
-	window.location.href = "${pageContext.request.contextPath}/";
+	window.location.href = "${pageContext.request.contextPath}/admin/refundApply?index="+tuition_index+"&YN=2";
 }
-function back(){
-	window.location.href = "${pageContext.request.contextPath}/";
-}
-</script>
 
+</script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <body>
 <main>
 	<div id="title">지원신청 상세 조회</div>
@@ -75,7 +74,7 @@ function back(){
 		<c:forEach var="refund" items="${RefundListDetail}">
 		<tr>
 			  <td>신청직원</td>
-			  <td>${info}</td>
+			  <td>${refund.user_idn}</td>
 		</tr>
        	<tr>
 	          <td>학습구분 및 분야</td>
@@ -136,7 +135,7 @@ function back(){
        		</tr>
        		<tr>
        			<td>신청일자</td>
-       			<td>${refund.request_date}</td>
+       			<td>${fn:substring(refund.request_date,0,10)}</td>
        		</tr>
        		</c:forEach>
 	</table>
@@ -144,9 +143,11 @@ function back(){
 	<c:choose>
         <c:when test="${sessionScope.user_id == 'admin'}">
             <div class="admin">
-                <button type="button" class="btn btn-success" onclick="refundApplyOk('${RefundListDetail.tuition_index}')">승인</button>
-                <button type="button" class="btn btn-danger" onclick="refundApplyNo('${RefundListDetail.tuition_index}')">거절</button>
-                <button type="button" class="btn btn-secondary" onclick="back()">돌아가기</button>
+            	<c:forEach var="refund" items="${RefundListDetail}">
+                <button type="button" class="btn btn-success" onclick="refundApplyOk(${refund.tuition_index})">승인</button>
+                <button type="button" class="btn btn-danger" onclick="refundApplyNo(${refund.tuition_index})">거절</button>
+                <button type="button" class="btn btn-secondary" onclick="javascript:history.go(-1)">돌아가기</button>
+            	</c:forEach>
             </div>
         </c:when>
         <c:otherwise>

@@ -25,8 +25,17 @@ public class DAO_UserCourses {
 
     // Create
     public void addUserCourse(DTO_UserCourses userCourse) {
-        String query = "INSERT INTO UserCourses (user_idn, course_ref, session_number, course_name, course_category, course_subcategory, course_status, enrollment_status, course_start_date, course_end_date, completion_date, position_at_completion, mileage, score, approver, approval_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-       template.update(query, userCourse.getUser_idn(), userCourse.getCourse_ref(), userCourse.getSession_number(), userCourse.getCourse_name(), userCourse.getCourse_category(), userCourse.getCourse_subcategory(), userCourse.getCourse_status(), userCourse.getEnrollment_status(), userCourse.getCourse_start_date(), userCourse.getCourse_end_date(), userCourse.getCompletion_date(), userCourse.getPosition_at_completion(), userCourse.getMileage(), userCourse.getScore(), userCourse.getApprover(), userCourse.getApproval_status());
+       String query = "INSERT INTO UserCourses (user_idn, course_ref, session_number, course_name, course_category, course_subcategory, course_status, enrollment_status, course_start_date, course_end_date, completion_date, position_at_completion, mileage, score, approver, approval_status, course_proflie) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+       
+//       // 완성된 쿼리 출력
+//       String formattedQuery = String.format(
+//           "INSERT INTO UserCourses (user_idn, course_ref, session_number, course_name, course_category, course_subcategory, course_status, enrollment_status, course_start_date, course_end_date, completion_date, position_at_completion, mileage, score, approver, approval_status) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
+//           userCourse.getUser_idn(), userCourse.getCourse_ref(), userCourse.getSession_number(), userCourse.getCourse_name(), userCourse.getCourse_category(), userCourse.getCourse_subcategory(), userCourse.getCourse_status(), userCourse.getEnrollment_status(), userCourse.getCourse_start_date(), userCourse.getCourse_end_date(), userCourse.getCompletion_date(), userCourse.getPosition_at_completion(), userCourse.getMileage(), userCourse.getScore(), userCourse.getApprover(), userCourse.getApproval_status()
+//       );
+//       System.out.println("Executing query: " + formattedQuery);
+//       
+       
+       template.update(query, userCourse.getUser_idn(), userCourse.getCourse_ref(), userCourse.getSession_number(), userCourse.getCourse_name(), userCourse.getCourse_category(), userCourse.getCourse_subcategory(), userCourse.getCourse_status(), userCourse.getEnrollment_status(), userCourse.getCourse_start_date(), userCourse.getCourse_end_date(), userCourse.getCompletion_date(), userCourse.getPosition_at_completion(), userCourse.getMileage(), userCourse.getScore(), userCourse.getApprover(), userCourse.getApproval_status(), userCourse.getCourse_proflie());
     }
 
     // Read

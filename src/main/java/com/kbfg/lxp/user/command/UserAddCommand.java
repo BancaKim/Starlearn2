@@ -1,5 +1,6 @@
 package com.kbfg.lxp.user.command;
 
+import java.io.File;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,12 @@ public class UserAddCommand implements Command {
    		realFolder=request.getRealPath(saveFolder);
    		boolean result=false;
    		
+        File uploadDirs = new File(realFolder);
+        if (!uploadDirs.exists()) {
+            uploadDirs.mkdirs();
+        }
+
+   		
    		try{
    			MultipartRequest multi=null;
    			multi=new MultipartRequest(request,
@@ -58,22 +65,33 @@ public class UserAddCommand implements Command {
 			userdata.setUser_profile(multi.getFilesystemName((String)multi.getFileNames().nextElement()));
 			
 			Boolean hasUser = userDao.hasUser(userdata.getUser_id());
+			Boolean hasIdn = userDao.hasIdn(userdata.getUser_idn());
+			
 			String user_id = userdata.getUser_id();
 			
-			if(hasUser==false) {
-				if(userDao.insertUser(userdata)) {
-					HttpSession session = request.getSession();
-					session.setAttribute("user_id", user_id);
-					session.setMaxInactiveInterval(60 * 30);
-					model.addAttribute("message", "signup:sucess");
-					model.addAttribute("nextPage", "home");
-				} else {
-					model.addAttribute("message", "signup error");
-					model.addAttribute("nextPage", "signUp");
+			if(hasUser==false) { //아이디 중복 아님
+				if(hasIdn==false) { //사번 중복아님
+					if(userDao.insertUser(userdata)) { //db저장완료
+						HttpSession session = request.getSession();
+						session.setAttribute("user_id", user_id);
+						String user_profilePath = userDao.getUserProfileImage(user_id);
+						session.setAttribute("user_profile", user_profilePath);
+						userdata = userDao.getUserData(user_id);
+						session.setAttribute("userBean",userdata);
+						session.setMaxInactiveInterval(60 * 30);
+						model.addAttribute("message", "회원가입에 성공하였습니다.");
+						model.addAttribute("nextPage", "successPage");
+						} else {
+							model.addAttribute("message", "signup db error");
+							model.addAttribute("nextPage", "signUp");
+						}
+				} else { //사번 중복
+				model.addAttribute("message", "사번이 이미 존재합니다.");
+				model.addAttribute("nextPage", "alertPage");
 				}
 			} else {
-				model.addAttribute("message", "id already exist!");
-				model.addAttribute("nextPage", "home");
+				model.addAttribute("message", "아이디가 이미 존재합니다.");
+				model.addAttribute("nextPage", "alertPage");
 			}
    		} catch (Exception ex) {
    			ex.printStackTrace();

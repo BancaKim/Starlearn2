@@ -1,5 +1,7 @@
 package com.kbfg.lxp.user.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -45,6 +47,20 @@ public class UserDAO {
         return result > 0;
     }
 	
+	public boolean hasIdn(String user_idn) {
+		String sql = "SELECT COUNT(*) FROM user WHERE user_idn=?";
+		int result=0;
+		
+		try {
+			result = template.queryForObject(sql, Integer.class, user_idn);
+		} catch (EmptyResultDataAccessException e) {
+			return false;
+		}
+		
+		System.out.println("hasIdn result:"+result);
+		return result > 0;
+	}
+	
 	public boolean insertUser(UserBean userdata) {
 
 		String sql = "INSERT INTO user (user_id, user_name, user_pw, user_idn, user_rank, user_position, user_dept, user_ph, user_birthYear, user_birthMonth, user_birthDay, user_enrollYear, user_profile, user_isAdmin) " +
@@ -81,6 +97,15 @@ public class UserDAO {
             return null;
         }
     }
+    public List<UserBean> getAllUserData() {
+    	String sql = "SELECT * FROM user";
+    	
+    	try {
+    		return template.query(sql, new BeanPropertyRowMapper(UserBean.class));
+    	} catch (EmptyResultDataAccessException e) {
+    		return null;
+    	}
+    }
 
     public int getUserCount() {
         String sql = "SELECT COUNT(*) FROM user";
@@ -107,10 +132,9 @@ public class UserDAO {
         }
     }
 
-    public boolean userDelete(String user_id) {
+    public void userDelete(String user_id) {
         String sql = "DELETE FROM user WHERE user_id = ?";
-        int result = template.update(sql, user_id);
-        return result > 0;
+        template.update(sql, user_id);
     }
     
     public String getUserIdn(String user_id) {

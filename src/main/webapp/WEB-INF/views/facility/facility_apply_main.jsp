@@ -17,24 +17,22 @@
 	<c:import url="../nav.jsp"></c:import>
 	
 	<main>
-            <a href="#" class="back-button">&lt; 이전</a>
-                <h1>생활연수 신청</h1>
+		<div class="maintitle">생활연수 신청</div>
         <div class="tab-container">
             <button class="tab active">연수원</button>
             <button class="tab">체육시설</button>
         </div>
 
-        <section class="notice-board">
+       <section class="notice-board">
             <h2>공지사항</h2>
             <ul>
             <c:forEach items="${noticelist}" var="item">
             	<li>
                     <span class="number">${item.facility_notice_num}</span>
-                    <span class="title">${item.facility_notice_title}</span>
-                    <span class="date">${item.facility_notice_hit} 조회</span>
-                    <span class="views">${item.facility_notice_rolldate}</span>
+                    <a href="content_view?num=${item.facility_notice_num}" class="notice-title"><span class="title">${item.facility_notice_title}</span></a>
+                    <span class="date">${item.facility_notice_rolldate}</span>
+                    <span class="views">${item.facility_notice_hit} 조회</span>
                 </li>
-            
             </c:forEach>
             </ul>
         </section>
@@ -168,16 +166,6 @@
 				</div>   
         </section>
 
-
-
-
-        <section class="quick-links">
-            <h2>생활연수 바로가기</h2>
-            <div class="link-container">
-                <a href="#" class="quick-link">생활연수 FAQ</a>
-                <a href="#" class="quick-link">생활연수 운영지침</a>
-            </div>
-        </section>
     </main>
 	
 	<c:import url="../footer.jsp"></c:import>

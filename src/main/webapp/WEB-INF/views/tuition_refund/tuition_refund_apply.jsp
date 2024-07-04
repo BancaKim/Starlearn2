@@ -545,20 +545,7 @@ function updateAcademy_proofName(input) {
        				<input class="form-control form-control-lg" type="text" value="960,000" aria-label=".form-control-lg example" readonly>
 				</td>
        		</tr>
-       		
-       		<tr >
-       			<td class="subject">지원신청 누계액</td>
-       			<td class="form">
-       				<input class="form-control form-control-lg" type="text"  value="${requestAmount}" aria-label=".form-control-lg example" readonly>
-				</td>
-       		</tr>
-       		
-       		<tr >
-       			<td class="subject">지원 누계액</td>
-       			<td class="form">
-       				<input class="form-control form-control-lg" type="text"  value="${ApplyAmount}" aria-label=".form-control-lg example" readonly>
-				</td>
-       		</tr>
+
        	 
        	 </table>
        	  <br>

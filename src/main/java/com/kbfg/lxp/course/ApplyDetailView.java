@@ -20,7 +20,7 @@ public class ApplyDetailView implements CourseCommand {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		HttpSession session = request.getSession();
-
+		LocalDate today = LocalDate.now();
 		DAO_Course dao = new DAO_Course();
 		DTO_Course courseDetail = new DTO_Course();
 		String user_idn = (String) session.getAttribute("userIdn");
@@ -30,7 +30,7 @@ public class ApplyDetailView implements CourseCommand {
 		courseDetail = dao.getCourseById(course_ref);
 
 		request.setAttribute("courseDetail", courseDetail);
-		
+		request.setAttribute("today", today);
 //		System.out.println(courseDetail.getCourse_name());
 	}
 

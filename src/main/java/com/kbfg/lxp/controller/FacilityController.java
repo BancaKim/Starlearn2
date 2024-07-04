@@ -92,10 +92,7 @@ public class FacilityController {
 	public String noticeModifyAction(HttpServletRequest request, Model model) {
 		model.addAttribute("request", request);
 		facilityNoticeModifyActionCommand.execute(model);
-
-		Map<String, Object> map = model.asMap();
-		String nextPage = (String) map.get("nextPage");
-		return nextPage;
+		return "redirect:notice_view";
 	}
 	
 	@RequestMapping("/notice_delete")
