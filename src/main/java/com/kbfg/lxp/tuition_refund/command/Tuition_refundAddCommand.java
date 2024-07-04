@@ -22,7 +22,6 @@ public class Tuition_refundAddCommand implements Command{
 	@Override
 	public void execute(Model model) {
 		// TODO Auto-generated method stub
-		System.out.println("add들어옴");
 		
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
@@ -33,7 +32,7 @@ public class Tuition_refundAddCommand implements Command{
 	    String learning_division = request.getParameter("categorySelect");
 	    String learning_field = request.getParameter("subCategorySelect");
 
-	    int ApplyAmount = tuitionDao.getApplyAmount(user_id); //지원 금액
+	    int ApplyAmount = tuitionDao.getApplyAmount(user_id);
 	    System.out.println(request.getParameter("academy_price"));
 	    String price1 = request.getParameter("academy_price");
 	    price1 = price1.replace(",", "");
@@ -70,9 +69,9 @@ public class Tuition_refundAddCommand implements Command{
 	    
         boolean result=tuitionDao.insertTuitionRefund(tuitionDto);
         if(result) {
-        	System.out.println("학원비 지원 신청 완료");
+        	System.out.println("�븰�썝鍮� 吏��썝 �떊泥� �셿猷�");
         }else {
-        	System.out.println("학원비 지원 신청 실패");
+        	System.out.println("�븰�썝鍮� 吏��썝 �떊泥� �떎�뙣");
         }
 	   		
        

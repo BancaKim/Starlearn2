@@ -116,7 +116,7 @@ style>.narrow_margin p {
 			<c:forEach var="myCourse" items="${applyCourseList}">
 				<div class="card d-flex flex-row mx-auto w-80 parent">
 					<img style="width: 170px; height: 270px; border-radius: 15px;"
-						src="${pageContext.request.contextPath}/resources/images/courseDefaultImate.jpg"
+						src="${pageContext.request.contextPath}/userupload/${myCourse.course_proflie}"
 						alt="Placeholder Image">
 
 					<div class="card-body">
