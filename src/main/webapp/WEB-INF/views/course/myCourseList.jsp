@@ -296,11 +296,9 @@ table tr td {
 								<%-- <td>${myCourseList.course_name}</td> --%>
 
 
-								<td>
-									<button type="button" id="detail-btn"
-										onclick="detail('${refund.tuition_index}')">불참(취소)/회차변경</button>
-
-								</td>
+								<td><a
+									href="applyCancelView?course_ref=${myCourseList.user_course_ref}"
+									id="detail-btn" class="button-link">불참(취소)/회차변경</a></td>
 							</tr>
 						</c:forEach>
 					</tr>

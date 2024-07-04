@@ -1,5 +1,6 @@
 package com.kbfg.lxp.course;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -27,6 +28,12 @@ public class CourseResisterAction implements CourseCommand {
 
         realFolder = request.getServletContext().getRealPath(saveFolder);
         boolean result = false;
+        
+        // 디렉토리 존재 여부 확인 및 생성
+        File uploadDirs = new File(realFolder);
+        if (!uploadDirs.exists()) {
+            uploadDirs.mkdirs();
+        }
 
         DTO_Course course = new DTO_Course();
         DAO_Course dao = new DAO_Course();
