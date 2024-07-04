@@ -157,7 +157,7 @@
 	            <div class="button-group">
 	                <button type="button" onclick="javascript:history.go(-1)">이전</button>
 	                <button type="submit">신청</button>
-	            </div>
+	            </div>s
 	        </form>
 	    </div>
     </main>
