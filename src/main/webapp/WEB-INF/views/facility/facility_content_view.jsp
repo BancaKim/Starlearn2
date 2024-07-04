@@ -29,20 +29,21 @@
 			<table width="500" cellpadding="0" cellspacing="0" border="1"  class="table-warning">
 				<input type="hidden" name="facility_notice_num" value="${content_view.facility_notice_num}"/>
 				<tr class="table-warning">
+					
+					<td> 제목 </td>
+					<td> ${content_view.facility_notice_title}</td>
+					</tr>
+				<tr>
 					<td> 번호 </td>
 					<td> ${content_view.facility_notice_num} </td>
-				</tr>
-				<tr>
-					<td> 조회수 </td>
-					<td> ${content_view.facility_notice_hit} </td>
 				</tr>
 				<tr>
 					<td> 작성일 </td>
 					<td> ${content_view.facility_notice_rolldate} </td>
 				</tr>
 				<tr>
-					<td> 제목 </td>
-					<td> ${content_view.facility_notice_title}</td>
+					<td> 조회수 </td>
+					<td> ${content_view.facility_notice_hit} </td>
 				</tr>
 				<tr>
 					<td> 내용 </td>

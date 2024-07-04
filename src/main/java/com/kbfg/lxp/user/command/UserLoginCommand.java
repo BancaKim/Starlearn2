@@ -32,7 +32,9 @@ public class UserLoginCommand implements Command {
 		Boolean isUser = userDao.isUser(user_id, user_pw);
 
 		if (isUser == false) {
-			model.addAttribute("nextPage", "redirect:signIn");
+			model.addAttribute("isConfirm","no");
+			model.addAttribute("message","비밀번호가 일치하지 않습니다.");
+			model.addAttribute("nextPage", "signIn");
 		} else {
 			userBean = userDao.getUserData(user_id);
 
@@ -47,6 +49,7 @@ public class UserLoginCommand implements Command {
 			 session.setAttribute("user_profile", user_profilePath);
 			 
 		 	 model.addAttribute("userBean", userBean);
+			 model.addAttribute("message","로그인 성공");
 			 model.addAttribute("nextPage", "home");
 			}
 		}

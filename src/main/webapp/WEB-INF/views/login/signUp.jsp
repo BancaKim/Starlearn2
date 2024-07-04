@@ -9,7 +9,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="${pageContext.request.contextPath}/resources/css/signup.css" rel="stylesheet">
     <title>KB 스타런</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   	<script src="${pageContext.request.contextPath}/resources/js/signup.js"></script>
 </head>
 <body>
 	<c:import url="../nav.jsp"></c:import>
@@ -164,7 +165,7 @@
     </main>
 	
 	<c:import url="../footer.jsp"></c:import>
-	<script defer src="${pageContext.request.contextPath}/resources/js/signup.js">
-</script>
+
+
 </body>
 </html>
