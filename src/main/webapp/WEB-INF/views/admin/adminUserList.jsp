@@ -12,9 +12,11 @@
 	<style>
 		main{
 			font-family: 'NanumSquareRound';
+			backgound-color:#fff;
 		}
 		body{
 			font-family: 'NanumSquareRound';
+			backgound-color:#fff;
 		}
 	</style>
 </head>

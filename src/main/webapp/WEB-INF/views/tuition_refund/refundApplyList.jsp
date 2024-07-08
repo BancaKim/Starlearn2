@@ -292,8 +292,9 @@
                 </tr>
             </thead>
             <tbody>
+            	<c:forEach var="refund" items="${RefundApplyList}">
                 <tr>
-                	<c:forEach var="refund" items="${RefundApplyList}">
+                	
 	                    <td>${refund.tuition_index}</td>
 	                    <td>${refund.learning_division}/${refund.learning_field}</td>
 	                    <td>${refund.academy_course}</td>
@@ -321,8 +322,9 @@
 							</button>
 	
 	                    </td>
-                    </c:forEach>
+                    
                 </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>

@@ -30,7 +30,7 @@ public class CourseResisterAction implements CourseCommand {
         realFolder = request.getServletContext().getRealPath(saveFolder);
         boolean result = false;
         
-        // µð·ºÅä¸® Á¸Àç ¿©ºÎ È®ÀÎ ¹× »ý¼º
+        // ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         File uploadDirs = new File(realFolder);
         if (!uploadDirs.exists()) {
             uploadDirs.mkdirs();
@@ -72,12 +72,12 @@ public class CourseResisterAction implements CourseCommand {
             System.out.println("course.getCourse_start_date() :" + course.getCourse_start_date());
 
             if(dao.insert(course)) {
-            	System.out.println("dao.insert(course): ¿¬¼ö°úÁ¤ ÀÔ·ÂÀÌ Á¤»óÀûÀ¸·Î ¼öÇàµÇ¾ú½À´Ï´Ù.");
-				model.addAttribute("message", "¿¬¼ö°úÁ¤ ÀÔ·ÂÀÌ Á¤»óÀûÀ¸·Î ¼öÇàµÇ¾ú½À´Ï´Ù.");
+            	System.out.println("dao.insert(course): ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+				model.addAttribute("message", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				model.addAttribute("nextPage", "redirect:courseApplyView");
             }
             else {
-            	model.addAttribute("message", "¿¬¼ö°úÁ¤ ÀÔ·Â¿¡ ½ÇÆÐÇß½À´Ï´Ù.");
+            	model.addAttribute("message", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				model.addAttribute("nextPage", "course/courseResister");
             };
 
