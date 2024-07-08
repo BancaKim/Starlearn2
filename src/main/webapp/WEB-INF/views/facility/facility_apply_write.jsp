@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
     <link href="${pageContext.request.contextPath}/resources/css/facility_applyWrite.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>KB 스타런</title>
+    <title>스타런</title>
 </head>
 <body>
 	<c:import url="../nav.jsp"></c:import>
@@ -155,9 +155,9 @@
 	                </ul>
 	            </div>
 	            <div class="button-group">
-	                <button type="button">이전</button>
+	                <button type="button" onclick="javascript:history.go(-1)">이전</button>
 	                <button type="submit">신청</button>
-	            </div>
+	            </div>s
 	        </form>
 	    </div>
     </main>

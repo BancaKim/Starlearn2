@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>마이페이지</title>
+<title>스타런</title>
 <style>
     @font-face {
         font-family: 'NanumSquareRound';
@@ -156,6 +156,14 @@
         font-size: 12px;
         color: #666;
     }
+    
+    .downimage{
+	position:relative;
+	bottom:-250px;
+ /* 	left: 100px;  */
+	width:1000px; 
+    }
+    
 </style>
 </head>
 <body>
@@ -243,6 +251,10 @@
                 </div>          
             </div>
         </div>
+    		<div>
+       <img class="downimage" src="${pageContext.request.contextPath}/resources/images/star_friends.png"><br>
+    	</div>
     </main>
-</body>
+   
+	</body>
 </html>

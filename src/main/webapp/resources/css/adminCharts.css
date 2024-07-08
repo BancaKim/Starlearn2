@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: 'NanumSquareRound';
-    background-color: #f7f4f0;
+    background-color: #fff;
     color: #545045;
     font: normal 1rem/1.25;
 }
@@ -20,7 +20,7 @@ main {
     padding-right: 160px;
     text-align: center;
 	margin: 150px auto 0;  
-  	background-color: #f7f4f0;
+  	background-color: #fff;
 }
 
 .admin_menu {

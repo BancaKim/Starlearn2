@@ -68,12 +68,14 @@ public class UserAddCommand implements Command {
 			Boolean hasIdn = userDao.hasIdn(userdata.getUser_idn());
 			
 			String user_id = userdata.getUser_id();
+			String userIdn = userDao.getUserIdn(user_id); 
 			
 			if(hasUser==false) { //아이디 중복 아님
 				if(hasIdn==false) { //사번 중복아님
 					if(userDao.insertUser(userdata)) { //db저장완료
 						HttpSession session = request.getSession();
 						session.setAttribute("user_id", user_id);
+						session.setAttribute("userIdn", userIdn);
 						String user_profilePath = userDao.getUserProfileImage(user_id);
 						session.setAttribute("user_profile", user_profilePath);
 						userdata = userDao.getUserData(user_id);

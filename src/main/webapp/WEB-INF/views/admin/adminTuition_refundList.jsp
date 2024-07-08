@@ -18,7 +18,7 @@
 		</c:otherwise>
 	</c:choose>
     <meta charset="UTF-8">
-    <title>학원비 지원신청 </title>
+    <title>스타런</title>
     <style>
     	@font-face {
 		    font-family: 'NanumSquareRound';

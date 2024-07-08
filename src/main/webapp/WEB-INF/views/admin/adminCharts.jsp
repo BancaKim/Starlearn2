@@ -13,6 +13,9 @@
         body, input, button, select, textarea {
             font-family: 'NanumSquareRound', sans-serif;
         }
+        main{
+        	background-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -25,11 +28,12 @@
 		</c:otherwise>
 	</c:choose>
 	<main>
-		<div id="title">데이터 분석</div>
+		<div id="title">직원 통계</div>
 		<section class="charts_container">
 			<div id="columnchart_values" style="width: 800px; height: 500px;"></div>
 			<div id="piechart_ranks" style="width: 800px; height: 500px;"></div>
 		</section>
+		<br><br><br><br><br><br>
 	</main>
 	
 	<c:import url="../footer.jsp"></c:import>
@@ -103,5 +107,6 @@
             chart.draw(data, options);
         }
 	</script>
+	
 </body>
 </html>

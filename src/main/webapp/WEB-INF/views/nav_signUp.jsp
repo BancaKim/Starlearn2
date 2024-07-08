@@ -22,6 +22,9 @@
 	crossorigin="anonymous"></script>
 <link href="${pageContext.request.contextPath}/resources/css/nav.css"
 	rel="stylesheet">
+<script>
+	
+</script>
 <title>스타런</title>
 </head>
 <body>
@@ -29,64 +32,92 @@
 		<nav class="navbar">
 			<div class="left-container">
 				<a href="${pageContext.request.contextPath}/home" class="logo"> </a>
-				${user_id}
 				<ul class="main-menu">
 					<li class="item">
-						<div class="item__name">[관리자]연수관리</div>
+						<div class="item__name">나의강의실</div>
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href="${pageContext.request.contextPath}/course/courseResister">연수 등록</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/course/courseView">진행중인연수</a></li>
+									<li><a href="${pageContext.request.contextPath}/course/courseViewBooked">예정된 연수</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="item">
+						<div class="item__name">연수신청</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a href="${pageContext.request.contextPath}/course/courseApplyView">연수신청</a></li>
+								<!-- 	<li><a href=#>연간연수 일정</a></li> -->
+									<li><a href="${pageContext.request.contextPath}/course/myCourseList">연수신청 현황조회</a></li>
 
 								</ul>
 							</div>
 						</div>
 					</li>
 					<li class="item">
-						<div class="item__name">[관리자]회원관리</div>
+						<div class="item__name">자기주도 학습</div>
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href="${pageContext.request.contextPath}/admin/adminUserList">회원조회</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class="item">
-						<a href="${pageContext.request.contextPath}/admin/adminTuition_refundList"><span class="item__name">[관리자]학원비 지원승인</span></a>
-					</li>
-							
+
+									<li><a
+										href="${pageContext.request.contextPath}/HRD/HRD_CLOUD">HRD
+											클라우드</a></li>
 								
-					<li class="item">
 
-						<div class="item__name">[관리자]생활연수</div>
-						<div class="item__contents">
-							<div class="contents__menu">
-								<ul class="inner">
-									<li><a href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
 								</ul>
 							</div>
 						</div>
 					</li>
 					<li class="item">
-						<div class="item__name">[관리자]스타런분석</div>
+						<div class="item__name">자기주도 학습지원</div>
 						<div class="item__contents">
 							<div class="contents__menu">
 								<ul class="inner">
-									<li><a href="${pageContext.request.contextPath}/admin/adminCharts">직원 통계</a></li>
-									<li><a href="${pageContext.request.contextPath}/course/courseStatic">연수 통계</a></li>			
+
+									<li><a
+										href="${pageContext.request.contextPath}/tuition_refund/tuition_refund_apply">학원비
+											지원신청</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/tuition_refund/refundApplyList">지원신청
+											현황조회</a></li>
+
 								</ul>
 							</div>
 						</div>
-
 					</li>
-					
-					
-					
 					<li class="item">
-						<a href="${pageContext.request.contextPath}/HelpDesk/QnA"><span class="item__name">[관리자]QnA 관리</span></a>
+						<div class="item__name">생활연수</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a
+										href="${pageContext.request.contextPath}/facility/apply_main">생활연수
+											신청</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/facility/notice_view">공지사항</a></li>
+								</ul>
+							</div>
+						</div>
 					</li>
-					
+					<li class="item">
+						<div class="item__name">Help Desk</div>
+						<div class="item__contents">
+							<div class="contents__menu">
+								<ul class="inner">
+									<li><a
+										href="${pageContext.request.contextPath}/HelpDesk/QnA">Q&A</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/HelpDesk/introduceHR">HR(인재개발)
+											소개</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
 			<div class="right-container">
@@ -101,11 +132,11 @@
 						class="fa-solid fa-right-from-bracket"></i></a>
 				</div>
 				
-				
 				<c:if test="${user_id != null}">
 				<div class="box">
+					<a href="${pageContext.request.contextPath}/MyPage">
 					<img id="profile-img" class="profile"
-						src="https://oimg1.kbstar.com/img/oabout/2021/bibi.png"/>
+						src="${pageContext.request.contextPath}/userupload/${user_profile}"></a>
 					<div class="dropdown-menu" id="dropdown-menu">
 						<ul class="inner">
 							<li><a href="#">마이페이지</a></li>

@@ -11,12 +11,13 @@
 <meta charset="UTF-8">
     <link href="${pageContext.request.contextPath}/resources/css/facility_main.css" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>KB 스타런</title>
+    <title>스타런</title>
 </head>
 <body>
 	<c:import url="../nav.jsp"></c:import>
 	
 	<main>
+		<br><Br><Br>
 		<div class="maintitle">생활연수 신청</div>
         <div class="tab-container">
             <button class="tab active">연수원</button>

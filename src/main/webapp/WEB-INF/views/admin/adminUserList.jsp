@@ -9,6 +9,16 @@
 <title>스타런</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adminUserList.css"/>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<style>
+		main{
+			font-family: 'NanumSquareRound';
+			backgound-color:#fff;
+		}
+		body{
+			font-family: 'NanumSquareRound';
+			backgound-color:#fff;
+		}
+	</style>
 </head>
 <body>
 	<c:choose>
@@ -21,7 +31,7 @@
 	</c:choose>
 	<main>
 		  <div class="content__inner">
-                    <h1>회원정보 관리</h1>
+                    <h1>회원정보 관리</h1><br>
             <div class="member_table">
 				<table>
 	        		<thead>

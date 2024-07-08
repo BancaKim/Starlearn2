@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>지원 신청 현황 조회</title>
+<title>스타런</title>
 <c:choose>
 		<c:when test="${user_id == 'admin'}">
 			<c:import url="../nav_admin.jsp"></c:import>

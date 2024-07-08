@@ -4,7 +4,7 @@ courseView.jsp<%@ page language="java"
 
 <html>
 <head>
-<title>안쓰는 파일</title>
+<title>스타런</title>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"

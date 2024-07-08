@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>지원 신청 현황 조회</title>
+<title>스타런</title>
 <c:import url="../nav.jsp"></c:import>
 <style>
     @font-face {
@@ -292,8 +292,9 @@
                 </tr>
             </thead>
             <tbody>
+            	<c:forEach var="refund" items="${RefundApplyList}">
                 <tr>
-                	<c:forEach var="refund" items="${RefundApplyList}">
+                	
 	                    <td>${refund.tuition_index}</td>
 	                    <td>${refund.learning_division}/${refund.learning_field}</td>
 	                    <td>${refund.academy_course}</td>
@@ -321,8 +322,9 @@
 							</button>
 	
 	                    </td>
-                    </c:forEach>
+                    
                 </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>

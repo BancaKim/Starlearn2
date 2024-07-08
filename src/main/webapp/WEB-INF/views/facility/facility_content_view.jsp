@@ -8,8 +8,14 @@
 <meta charset="UTF-8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="${pageContext.request.contextPath}/resources/css/facility_noticeView.css" rel="stylesheet">
-    <title>KB 스타런</title>
+    <title>스타런</title>
     
+<style>
+.titletd{
+	width:150px;
+	text-align:center;
+}
+</style>
 </head>
 <body>
 	<c:choose>
@@ -30,23 +36,23 @@
 				<input type="hidden" name="facility_notice_num" value="${content_view.facility_notice_num}"/>
 				<tr class="table-warning">
 					
-					<td> 제목 </td>
+					<td class="titletd"> 제목 </td>
 					<td> ${content_view.facility_notice_title}</td>
 					</tr>
 				<tr>
-					<td> 번호 </td>
+					<td class="titletd"> 번호 </td>
 					<td> ${content_view.facility_notice_num} </td>
 				</tr>
 				<tr>
-					<td> 작성일 </td>
+					<td class="titletd"> 작성일 </td>
 					<td> ${content_view.facility_notice_rolldate} </td>
 				</tr>
 				<tr>
-					<td> 조회수 </td>
+					<td class="titletd"> 조회수 </td>
 					<td> ${content_view.facility_notice_hit} </td>
 				</tr>
 				<tr>
-					<td> 내용 </td>
+					<td class="titletd"> 내용 </td>
 					<td> ${content_view.facility_notice_content}</td>
 				</tr>
 		</table>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>QnA</title>
+<title>스타런</title>
 <c:import url="../nav.jsp"></c:import>
 <style>
     @font-face {

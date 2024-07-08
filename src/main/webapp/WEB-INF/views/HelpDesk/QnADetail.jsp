@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>QnA</title>
+<title>스타런</title>
 	<c:choose>
 		<c:when test="${user_id == 'admin'}">
 			<c:import url="../nav_admin.jsp"></c:import>
@@ -97,7 +97,7 @@ function validateForm() {
 		<td>${reply.content}</td>
 	</tr>
 	<tr>
-		<td id="user">${name}&nbsp;${reply.date} | ${qnaDetail.date}</td>
+		<td id="user">관리자 &nbsp;${reply.date} | ${qnaDetail.date}</td>
 	</tr>
 	</c:forEach>
 </table>
