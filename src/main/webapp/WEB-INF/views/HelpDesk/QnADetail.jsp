@@ -97,7 +97,7 @@ function validateForm() {
 		<td>${reply.content}</td>
 	</tr>
 	<tr>
-		<td id="user">${name}&nbsp;${reply.date} | ${qnaDetail.date}</td>
+		<td id="user">관리자 &nbsp;${reply.date} | ${qnaDetail.date}</td>
 	</tr>
 	</c:forEach>
 </table>
