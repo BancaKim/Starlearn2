@@ -4,10 +4,25 @@
 
 <html>
 <head>
-    <title>내가 수강한 연수 조회</title>
+    <title>스타런</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+	main{
+		font-family: 'NanumSquareRound';
+	}
+	body{
+		font-family: 'NanumSquareRound';
+	}
+	#title{
+			font-family: 'NanumSquareRound';
+		text-align:center;
+		font-size:32px;
+	   font-weight: bold;
+
+	}
+</style>
 </head>
 <body>
 	<c:choose>
@@ -21,6 +36,7 @@
 	
     <h2>Monthly Report by Level 3</h2>
     <br><br><br><br>
+    	<div id="title">연수 통계</div>
 <section style="width: 90%; padding-left: 200px; font-size: 24px">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
